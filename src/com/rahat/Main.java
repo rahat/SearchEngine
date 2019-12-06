@@ -10,9 +10,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        // UI Initialization
         Parent root = FXMLLoader.load(getClass().getResource("SearchEngine.fxml"));
         primaryStage.setTitle("Search Engine");
-        primaryStage.setScene(new Scene(root, 720, 480));
+        primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
 

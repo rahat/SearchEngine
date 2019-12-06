@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"f77cda59e6",applicationID:"8433084"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width">
+  <!--[if lt IE 9]>
+    <script src="https://www.citymetric.com/sites/all/themes/creative-responsive-theme/js/vendor/modernizr.js"></script>
+    <![endif]-->
+ <!-- Online Advertising -->
+<script type="text/javascript">
+  window.streamampClientConfig = {targets: {"category": "Fabric"}};
+
+</script>   
+
+<title>The newly opened observation deck at the top of NYC's One World Trade Center offers one hell of a view | CityMetric</title>
+<link type="text/css" rel="stylesheet" href="https://www.citymetric.com/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.citymetric.com/sites/default/files/css/css_5pO73qc-z-zv4xoH8aIAp_Prq1thKg1qz9beR7eKaZg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.citymetric.com/sites/default/files/css/css_SxuiVx0sIJjiVVpGTJ56YwYgbNVzHHEIbtxvnpVJX10.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.citymetric.com/sites/default/files/css/css_ltD9rQEee0sBE4hICdM3CIbRdxEDgmVQHUkmr37wdyM.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="https://www.citymetric.com/sites/all/themes/creative-responsive-theme/style.css?v=1.1">
+
+
+<script type="text/javascript" src="https://www.citymetric.com/sites/all/modules/resp_img/resp_img.js?nb7yx7"></script>
+<script type="text/javascript" src="https://www.citymetric.com/sites/default/files/js/js_qikmINIYTWe4jcTUn8cKiMr8bmSDiZB9LQqvceZ6wlM.js"></script>
+<script type="text/javascript" src="https://www.citymetric.com/sites/default/files/js/js_3wXAYf3E-hdqRiOzukoLWkd9grylwK1DsjmmM0cpjJg.js"></script>
+<script type="text/javascript" src="https://www.citymetric.com/sites/default/files/js/js_46uqzImVcVA7xLaEQnl8wIXtuJxFoE46H1D-WbhdvhE.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-53043404-3", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.citymetric.com/sites/default/files/js/js_iEF7jXn6Qk_WVZf47IQcu5VnwT1L7SUIDigGASuBNuI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"creative_responsive_theme","theme_token":"8lm5v3JrV8FF_60iQONJXE7bbWHLTAm0-LYQ_TFwQVI","js":{"modules\/statistics\/statistics.js":1,"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"sites\/all\/modules\/waypoints\/waypoints.min.js":1,"misc\/jquery.form.js":1,"misc\/ajax.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/views_load_more\/views_load_more.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/themes\/creative-responsive-theme\/js\/custom.js":1,"sites\/all\/themes\/creative-responsive-theme\/js\/jquery.cookiesdirective.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/forward\/forward.css":1,"sites\/all\/themes\/creative-responsive-theme\/style.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"respImg":{"default_suffix":"thumb_tab","current_suffix":false,"forceRedirect":"0","forceResize":"1","reloadOnResize":"1","useDevicePixelRatio":1,"suffixes":{"citythumb_tab":96,"thumb_tab":1}},"viewsLoadMore":{"infinate_articles-block":{"view_name":"infinate_articles","view_display_id":"block","waypoints":"infinite","opts":{"offset":"100%"}}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:dbca52e979ed0eddb61d4c40f687b8c4":{"view_name":"infinate_articles","view_display_id":"block","view_args":"1087","view_path":"node\/1087","view_base_path":null,"view_dom_id":"dbca52e979ed0eddb61d4c40f687b8c4","pager_element":0}}},"urlIsAjaxTrusted":{"\/views\/ajax":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"statistics":{"data":{"nid":"1087"},"url":"\/modules\/statistics\/statistics.php"}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>-->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5050f80154ce5136"></script>
+
+
+
+<script type="text/javascript" src="//static.amp.services/clients/MIRAJ/CityMetric.js"></script>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.citymetric.com/sites/all/themes/creative-responsive-theme/js/jquery.sticky.js"></script>
+<script type="text/javascript" src="/sites/all/themes/creative-responsive-theme/js/stickyHeader.js"></script>
+<script type="text/javascript" src="https://widgets.outbrain.com/outbrain.js"></script>
+<script type="text/javascript"><!--
+
+jQuery("#sectiion_tag").hover( 
+                  function () { //alert("ok");
+                    jQuery(this).addClass("hide");
+                  },
+                  function () {
+                    jQuery(this).removeClass("hide");
+                  }
+        );
+   
+
+</script>
+
+<script type="text/javascript">
+    $(window).load(function(){
+      $("#stickydiv").sticky({ topSpacing: 140 });
+    });
+</script>
+
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+
+      jQuery(".home-articles-list .views-row-2 .featured-image a").removeAttr("href");
+      jQuery(".home-articles-list .views-row-3 .featured-image a").removeAttr("href");
+      jQuery(".home-articles-list .views-row-4 .featured-image a").removeAttr("href");
+      jQuery(".home-articles-list .views-row-5 .featured-image a").removeAttr("href");
+      jQuery(".home-articles-list .views-row-6 .featured-image a").removeAttr("href");
+      jQuery(".home-articles-list .views-row-7 .featured-image a").removeAttr("href");
+      var pos = jQuery(window).scrollTop();
+            jQuery(window).scroll(function(event){
+
+
+
+var i = 1;
+
+      $('.article-content').each(function() {
+          // CHECK IF THE DATA IS IN THE ARRAY                  
+          if ( $( this ).hasClass( "readit" ) ) {
+            }
+            else {
+              $(this).addClass('readit');
+              $('<div class="mpu1"></div>').appendTo( $(this) );
+			  
+              //jQuery(this).css("background-color","orange");
+
+              if($(jQuery(this)).find('hr').length != 0) {
+                      //alert('van hr');
+                      var divText1 = $('hr', this);
+                      $('.mpu1', this).insertAfter(divText1);
+              }
+
+              else if($(jQuery(this)).find('blockquote').length != 0) {
+                      //alert('van bq');
+                      var divText2 = $('blockquote', this);
+                      $('.mpu1', this).insertAfter(divText2);
+              }
+
+              else {
+                      //alert('normal');
+                      var divText3 = $('p:eq(0)', this);
+                      $('.mpu1', this).insertAfter(divText3);
+              }
+			  
+
+
+            }
+			
+			
+			
+			
+			
+      });
+
+
+
+
+                 var scroll = jQuery(window).scrollTop();
+                    if(scroll < pos) {
+                            // console.log('scrolling up-->'+scroll);
+ 
+                             
+                    } else {
+                            // console.log('scrolling down-->'+scroll);
+                jQuery(".home-articles-list .views-row-2 .featured-image a").removeAttr("href");
+                jQuery(".home-articles-list .views-row-3 .featured-image a").removeAttr("href");
+                jQuery(".home-articles-list .views-row-4 .featured-image a").removeAttr("href");
+                jQuery(".home-articles-list .views-row-5 .featured-image a").removeAttr("href");
+                jQuery(".home-articles-list .views-row-6 .featured-image a").removeAttr("href");
+                jQuery(".home-articles-list .views-row-7 .featured-image a").removeAttr("href");
+                    }
+                    pos = scroll;
+                 
+            });
+
+
+
+});
+
+
+</script>
+
+
+<script>
+  (function() {
+    var cx = '003814154721740791387:wmh2cpc5rcm';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+<!-- Outbrain -->
+<script type="text/javascript">
+
+
+
+var first1=0;
+
+
+jQuery(document).ready(function(){
+
+//Load the second article onlym when you get to the bottom of the first.
+jQuery(window).bind('scroll', function() {
+
+
+
+
+
+    jQuery('.mpu1').each(function() {
+
+            var count2 = jQuery(".article-content").find('.mpu1').length;
+            count2 -= 1;
+
+
+            for (b = 0; b <= count2; b++) {
+
+                var element = jQuery(".mpu1").eq(b);
+
+                var topOfElement = element.offset().top;
+                var bottomOfElement = element.offset().top + element.outerHeight(true);
+
+                var scrollTopPosition = jQuery(window).scrollTop() + $(window).height();
+                var windowScrollTop = jQuery(window).scrollTop()
+
+                if (windowScrollTop > topOfElement && windowScrollTop < bottomOfElement) {
+                    // Element is partially visible (above viewable area)
+                     console.log("Element is partially visible (above viewable area)");
+
+
+               if (element.hasClass("Added") || jQuery(".mpu1").eq(b).hasClass("Added")) {
+
+
+                    } else {
+                        
+                        console.log('removed all ads');
+ 
+                          // Cleaning ads 
+                         jQuery(".mpu1").empty();
+                         jQuery(".mpu1").removeClass("Added");
+
+                         jQuery(".infinite-leaderboard").empty();
+                         jQuery(".infinite-leaderboard").removeClass("Added");
+                        
+                        jQuery(".mpu1").eq(b).append("<div id='Unit6'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit6'); });<\/script><\/div>");
+                        jQuery(".infinite-leaderboard").eq(b).append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+                        if (first1 != 0) {
+
+                            streamamp.refreshBids("Unit5");
+                            streamamp.refreshBids("Unit6");
+
+                        }
+                        first1++;
+
+
+                        element.addClass("Added");
+                        jQuery(".mpu1").eq(b).addClass("Added");
+                        jQuery(".infinite-leaderboard").eq(b).addClass("Added");
+                          console.log('added all ads'); 
+                    }
+
+
+
+                
+
+                } else if (windowScrollTop > bottomOfElement && windowScrollTop > topOfElement) {
+                    // Element is hidden (above viewable area)
+                      console.log("Element is hidden (above viewable area)");
+
+                    //jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+                } else if (scrollTopPosition < topOfElement && scrollTopPosition < bottomOfElement) {
+                    // Element is hidden (below viewable area)
+                     console.log("Element is hidden (below viewable area)");
+
+                   // jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+
+                } else if (scrollTopPosition < bottomOfElement && scrollTopPosition > topOfElement) {
+                    // Element is partially visible (below viewable area)
+                    //console.log("Element is partially visible (below viewable area)");
+
+                } else {
+                    // Element is completely visible
+                    console.log("Element is completely visible");
+                  
+                  
+
+
+                   if (element.hasClass("Added") || jQuery(".mpu1").eq(b).hasClass("Added")) {
+
+
+                    } else {
+                        
+                        console.log('removed all ads');
+ 
+                          // Cleaning ads 
+                         jQuery(".mpu1").empty();
+                         jQuery(".mpu1").removeClass("Added");
+
+                         jQuery(".infinite-leaderboard").empty();
+                         jQuery(".infinite-leaderboard").removeClass("Added");
+
+
+                        jQuery(".mpu1").eq(b).append("<div id='Unit6'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit6'); });<\/script><\/div>");
+                        jQuery(".infinite-leaderboard").eq(b).append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+                        if (first1 != 0) {
+
+                            streamamp.refreshBids("Unit5");
+                            streamamp.refreshBids("Unit6");
+
+                        }
+                        first1++;
+
+
+                      //  element.addClass("Added");
+                        jQuery(".mpu1").eq(b).addClass("Added");
+                        jQuery(".infinite-leaderboard").eq(b).addClass("Added");
+                          console.log('added all ads'); 
+                    }
+
+
+
+                }
+
+            }
+
+        });
+
+
+
+     $('.secondary-content-box.related-articles1').each(function() {
+
+        var count = $(".view-content").find('.secondary-content-box.related-articles1').length;
+
+       // alert(count);
+
+        for(i=0;i<=count;i++){
+
+           if (document.getElementsByClassName("related-articles1")[i].classList.contains('Added')) {
+
+
+
+        }else{
+
+          var currentLocation = window.location;
+
+          //var my_count=i+1;
+
+          if(i==0){
+            my_count=1;
+
+          }else{
+            my_count=2;
+          }
+            var element = document.createElement("div");
+            element.setAttribute("class", "OUTBRAIN");
+             element.setAttribute("data-src", ""+currentLocation+"");
+             element.setAttribute("data-widget-id", "AR_"+my_count+"");
+             element.setAttribute("data-ob-template", "ProgressiveMediaInternationalLtd");  
+
+           element.appendChild(document.createTextNode(''));
+
+
+
+          document.getElementsByClassName("related-articles1")[i].appendChild(element);
+          //document.getElementsByClassName("related-articles")[i].innerHTML += "TEST"; 
+
+          document.getElementsByClassName("related-articles1")[i].className += " Added";
+
+          OBR.extern.researchWidget();
+        }
+
+    } 
+    // outbrain end 
+      //  alert(count);
+      //  alert('test')
+  });
+
+}); 
+
+  });
+</script>
+ 
+
+<!-- Outbrain  End -->
+
+<script>
+
+ var nextSlotId = 0;
+ function generateNextSlotName() {
+   var id = nextSlotId++;
+   return 'adslot' + id;
+ }
+ function generateNextMobSlotName() {
+   var id = nextSlotId++;
+   return 'mobslot' + id;
+ }
+function generateNextArticleSlotName() {
+   var id = nextSlotId++;
+   return 'articleslot' + id;
+ }
+
+  var j = 0;
+  var k = 0;
+  var l = 0;
+
+ 
+
+   function moreArticleContent() {
+   var slotArticleName = generateNextArticleSlotName();
+   var slotArticleDiv = document.createElement('div');
+   slotArticleDiv.id = slotArticleName;
+
+    var count2 = $(".view-content").find('.mpu1').length;
+
+
+         jQuery('.mpu1').each(function() {         
+            if ( jQuery( this ).hasClass( "filled" ) ) {
+              //console.log('filled');
+
+            }
+            else {
+               //console.log('come');
+                jQuery(this).addClass('filled');
+                infiniteInArticleAds();
+             }
+        }); 
+
+
+   // console.log(count2);
+
+
+      var check3 = document.getElementsByClassName('mpu1')[l]; 
+      if(check3 != null){
+        check3.appendChild(slotArticleDiv);
+      } 
+
+     l += 1;
+ }
+
+
+
+
+
+  /* InArticle MPU */
+    var mpuSlot0;
+    var nextSlotId = 0;
+    var o = 0;
+
+    function generateNextSlotName1() {
+       var id = nextSlotId++;
+       return 'mpuSlot' + id;
+     }
+
+    function infiniteInArticleAds() {
+     var slotName1 = generateNextSlotName1();
+     var slotDiv = document.createElement('div');
+     slotDiv.id = slotName1;
+     document.getElementsByClassName('mpu1')[o].appendChild(slotDiv);
+     googletag.cmd.push(function() {
+ 
+       o += 1;
+    }
+  /* InArticle MPU */
+
+
+</script>
+
+
+   
+
+
+
+	<!-- permitive -->		 
+	<script>
+		!function(e,n,t,r,o,i){if(!n){n=n||{},window.permutive=n,n.q=[],n.config=i||{},n.config.projectId=r,n.config.apiKey=o,n.config.environment=n.config.environment||"production";for(var c=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user"],a=0;a<c.length;a++){var s=c[a];n[s]=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);n.q.push({functionName:e,arguments:t})}}(s)}var p=window.Worker?"async":"blocking",g=e.createElement("script");g.type="text/javascript",g.async=!0;var m=("https:"==e.location.protocol?"https://":"http://")+"cdn.permutive.com";g.src=m+"/"+r+"-"+p+".js";var u=e.getElementsByTagName(t)[0];u.parentNode.insertBefore(g,u)}}(document,window.permutive,"script","e82dc6a7-79a5-49b7-b1ed-a89a37f2fe8b","62905692-4299-42af-951f-aa610546b2b1",{});
+					permutive.addon("web", { page: {
+			article: { id:"1087",title:"Title: The newly opened observation deck at the top of NYC&#039;s One World Trade Center offers one hell of a view" }}});
+			</script>
+	<!-- end premitive --->
+
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/5269235/City_Metric/1x3', [1, 3], 'div-gpt-ad-1566229811403-0').addService(googletag.pubads());
+    googletag.defineSlot('/5269235/City_Metric/Unit4', [[320, 50], [300, 250], [300, 600], [320, 100]], 'Mercedes_MPU').addService(googletag.pubads());
+    googletag.defineSlot('/5269235/City_Metric/Unit7', [300, 250], 'Mercedes_MPU').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-1087 node-type-article site-header-low">
+
+
+  <div id="eantics"></div>
+    
+<!-- .website-logos -->
+
+<div class="elsewhere">
+  <div class="row">
+    <div class="new-statesman-logo"><a href="http://www.newstatesman.com/" target="_blank"><img src="https://www.newstatesman.com/sites/default/files/nsnewlogo_2014.jpg" alt="New Statesman"></a></div>
+    <div class="centre-for-cities-logo"><a href="http://www.centreforcities.org/"  target="_blank"><img src="/sites/all/themes/creative-responsive-theme/images/center_for_cities_logo.png" alt="CityMetric Intelligence"></a></div>
+  </div>
+</div>
+
+
+
+<div id="sticky_point"></div>
+<header class="site-header clearfix">
+
+
+<div id="logo"><a href="/" title="Home"><img src="https://www.citymetric.com/sites/default/files/citymetric-logo.png"/></a></div>
+  <nav class="row site-nav">
+    <ul class="large-7 columns clearfix">
+      <li class="site-menu">
+        <div class="menu-toggle">Menu</div>
+        <div class="screen-reader-text nav-heading">Site Menu</div>
+          <div class="scrollable-menu">
+          <ul>
+
+                         <li class="hot-topic"><a href='https://www.citymetric.com/topic/housing'>Housing</a></li>
+           <!-- <li class="hot-topic"><a href='https://www.citymetric.com/topic/theory'>In Theory</a></li>
+            <li class="hot-topic"><a href='https://www.citymetric.com/topic/midlands-engine'>Midlands Engine</a></li>-->
+
+                        <li class="hot-topic"><a href='https://www.citymetric.com/topic/theory'>In Theory</a></li>
+           <!-- <li class="hot-topic"><a href='https://www.citymetric.com/topic/theory'>In Theory</a></li>
+            <li class="hot-topic"><a href='https://www.citymetric.com/topic/midlands-engine'>Midlands Engine</a></li>-->
+
+                        <li class="hot-topic"><a href='https://www.citymetric.com/topic/midlands-engine'>Midlands Engine</a></li>
+           <!-- <li class="hot-topic"><a href='https://www.citymetric.com/topic/theory'>In Theory</a></li>
+            <li class="hot-topic"><a href='https://www.citymetric.com/topic/midlands-engine'>Midlands Engine</a></li>-->
+
+                        <li class="hot-topic"><a href='https://www.citymetric.com/topic/tube-maps'>Tube maps</a></li>
+           <!-- <li class="hot-topic"><a href='https://www.citymetric.com/topic/theory'>In Theory</a></li>
+            <li class="hot-topic"><a href='https://www.citymetric.com/topic/midlands-engine'>Midlands Engine</a></li>-->
+
+                        <li class="nb" style="padding:0; border:0;">
+              <ul class="menu"><li class="first leaf"><a href="/section/business" title="">Business</a></li>
+<li class="leaf"><a href="/section/transport" title="">Transport</a></li>
+<li class="leaf"><a href="/section/politics" title="">Politics</a></li>
+<li class="leaf"><a href="/section/fabric" title="">Fabric</a></li>
+<li class="leaf"><a href="/section/horizons" title="">Horizons</a></li>
+<li class="leaf"><a href="/content/about-citymetric">About CityMetric</a></li>
+<li class="leaf"><a href="/content/contact-us">Contact us</a></li>
+<li class="leaf"><a href="/section/skylines" title="">Skylines</a></li>
+<li class="last leaf"><a href="https://www.newstatesman.com/privacy-policy" title="">Privacy Policy</a></li>
+</ul>            </li>
+            <li class="menu-close">Close</li>
+          </ul>
+        </div>
+        <!-- .scrollable-menu -->
+      </li>
+      <li class="site-search">
+        <div class="search-toggle">Search</div>
+        <form class="custom" method="GET" action="https://www.citymetric.com/search-results">
+            <input type="search" class="search-box" placeholder="What are you looking for?" name="keyword">
+            <button class="search-button">Search</button>
+        </form>
+
+      
+     
+      </li>
+           <!--<li class="daily-feed">
+        <div class="daily-feed-toggle" title="Subscribe">Daily Feed</div>
+                <form class="custom" method="get" action="/content/citymetric-newsletter-sign?key=">
+          <p>Subscribe to our newsletter:</p>
+          <label class="screen-reader-text">Email address:</label>
+          <input class="email-address" placeholder="Email address" name="key">
+          <button class="button">Subscribe</button>
+          <div class="daily-feed-close">Close</div>
+        </form>
+      </li>-->
+          <li class="twitter-link"><a href="https://twitter.com/CityMetric" target="_blank">Tweet</a></li>
+      <li class="facebook-link">
+     <a href="https://www.facebook.com/CityMetric" target="_blank">Tweet</a></li>
+
+     	 <!--<li>
+		<a href="https://www.citymetric.com/section/skylines" style="text-decoration: none;color: #000000;">The Skylines Podcast</a>
+     </li>-->
+
+
+
+
+    </ul>
+      <div  class="large-5 columns clearfix citinav">
+		  <a href="https://www.citymetric.com/content/skylines-podcast" style="text-decoration: none;color: #FFFFFF;">The Skylines Podcast</a>
+		  <a href="http://www.centreforcities.org/data-tool"  target="_blank">Data Tools</a>
+		  <a href="/content/about-citymetric"> About CityMetric </a>
+		  <a href="/content/contact-us">Contact us</a>
+	  </div>
+  </nav>
+
+        
+
+      <div class="row header_ad" style="text-align: center; position: relative; overflow: visible">
+        
+          <!--Smartad # 4236: CityMetric  - 1051 x 160 Above Article Images
+          <iframe WIDTH="1051" HEIGHT="172" SCROLLING="NO" src="//www.dianomi.com/smartads.epl?id=4236"  style="width: 100%; height: 172px; border: none; overflow: hidden;"></iframe>
+          -->
+
+          <div class="top-banners">
+
+              <div class="leaderboard">
+                  <!-- /5269235/New_Statesman/Unit1 -->
+                  <div id='Unit1'>
+                      <script type='text/javascript'>
+                        googletag.cmd.push(function() { googletag.display('Unit1'); });
+                      </script>
+                  </div>
+              </div>
+
+          </div>
+          <!-- top-banners -->
+
+          <span class="close_iframe">Close</span>
+
+      </div>
+      <!-- .header_ad -->
+
+    
+
+</header>
+
+
+
+
+<div id="container" class="row main-content">
+    <div class="content-sidebar-wrap large-8 primary-content columns ">
+    <div id="content">
+            <section id="post-content" role="main">                                                          <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+    
+
+
+<div class="article-content ">
+
+  <article id="node-1087" class="node node-article node-full node-full clearfix"  about="/skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087" typeof="sioc:Item foaf:Document">
+
+ 
+ <header>
+     <div class="article-meta">
+			      <ul>
+				  <li class="article-category"> <div class="field field-name-field-primary-section field-type-taxonomy-term-reference field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/section/fabric" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Fabric</a></div></div></div></li>
+				  <li class="article-tag"> <a href="/topic/pictured">Pictured</a></li>
+				  <li class="article-date article-time">May 29, 2015      </li>
+			      </ul>
+			  </div>
+			         
+     
+      <h1  class="inf_class" data-analyticsid="/skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087"><a href="/skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087"> The newly opened observation deck at the top of NYC&#039;s One World Trade Center offers one hell of a view</a></h1>
+       
+              
+     <div class="byline">By <span rel="sioc:has_creator"><a href="/authors/citymetric-staff" title="View user profile." class="username" xml:lang="" about="/users/citymetric-staff" typeof="sioc:UserAccount" property="foaf:name" datatype="">CityMetric staff</a></span> 
+	 </div>
+         
+     
+       
+    </header>
+   
+
+<div class="featured-image"> <div class="field field-name-field-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even" rel="og:image rdfs:seeAlso" resource="https://www.citymetric.com/sites/default/files/article_2015/05/457376754.jpg"><a href="https://www.citymetric.com/sites/default/files/styles/nodeimage/public/article_2015/05/457376754.jpg?itok=ouvpYfVP" title="The newly opened observation deck at the top of NYC&#039;s One World Trade Center offers one hell of a view" class="colorbox" rel="gallery-node-1087-HuNKWfU1LSU"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/nodeimage/public/article_2015/05/457376754.jpg?itok=ouvpYfVP"   alt="" title="" /></a></div></div></div>  </div>
+<div class="image_caption"><div class="field field-name-field-image-caption field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">The view from below: One World Trade Center. Image: Getty.</div></div></div></div>
+
+
+
+  <div class="content article-body ">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>
+	It's a Friday afternoon, we're all about ready to wind down for the weekend, so let's kick back, relax and look at some pretty pictures of New York City.
+<hr /><p>
+	Today, the observation deck which tops off New York's One world Trade Center opens to the public. The building occupies the site where the Twin Towers stood until 9/11, and like the taller of its predecessors, stands 1,368 feet tall. Throw in a broadcast mast/faintly gratuitous spire*, though, and that figure rises to 1776 feet, to represent the date of the Declaration of Independence, and the building has become known, inevitably, as the Freedom Tower.
+<p>
+	The observation deck, which occupies the 100th, 101st and 102nd floors and highest floor, is not quite the highest such tourist attraction in the world: that honour goes to the one in Dubai's Burj Khalifa, which is on the 148th floor. But it’s pretty high nonetheless, and New York is prettier than Dubai anyway, so here are some pictures. 
+                              <!-- /5269235/City_Metric/1x3 -->
+                              <div id='div-gpt-ad-1566229811403-0' style='width: 1px; height: 3px;'>
+                                <script>
+                                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1566229811403-0'); });
+                                </script>
+                              </div>
+<p>
+	This one shows the sun rising over Manhattan and Brooklyn this morning:
+<p class="rtecenter">
+	<img alt="" src="/sites/default/files/bodyimage_201505/475094884.jpg" style="height:533px; width:800px" />
+<p>
+	Here are some of the buildings to the north in the dusk:
+<p class="rtecenter">
+	<img alt="" src="/sites/default/files/bodyimage_201505/475095162.jpg" style="height:533px; width:800px" />
+<p>
+	Here's the reflection of the early morning light on the Hudson River:
+<p class="rtecenter">
+	<img alt="" src="/sites/default/files/bodyimage_201505/475095130.jpg" style="height:533px; width:800px" />
+<p>
+	This is the view to the south east. That's Brooklyn, with the Atlantic Ocean beyond it:
+<p class="rtecenter">
+	<img alt="" src="/sites/default/files/bodyimage_201505/475095146_0.jpg" style="height:533px; width:800px" />
+<p>
+	The Brooklyn and Manhattan Bridges across the East River:
+<p class="rtecenter">
+	<img alt="" src="/sites/default/files/bodyimage_201505/475095182.jpg" style="height:533px; width:800px" />
+<p>
+	Someone mopping the floor, as the sun rises over Long Island.
+<p class="rtecenter">
+	<img alt="" src="/sites/default/files/bodyimage_201505/head.jpg" style="height:533px; width:800px" />
+<p>
+	As a bonus, and because we love you, here's time lapse video showing the tower's construction between 2004 and 2013. It's the work EarthCam, who describe themselves as "Webcam Technology Experts". So there you go.
+<p class="rtecenter">
+<iframe frameborder="0" height="315" src="https://www.youtube.com/embed/Nn11DWH_LEA" width="560"></iframe>
+<p class="rteright">
+	<span style="font-size:14px"><em>Images: Spencer Platt/Getty.</em></span>
+<p>
+	<span style="font-size:14px"><em>EDITOR'S NOTE: This article originally placed the observation deck, incorrectly, on the 104th floor. It also failed to identify the purpose of the mast. We thank anonymous hero "Z100Brody" for the corrections, and for the </em></span><span style="font-size:14px"><em>tone in which he communicated them.</em></span>
+</div></div></div>     <!-- /5269235/City_Metric/1x1 -->
+  <div id='1x1'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('1x1'); });
+    </script>
+  </div>
+
+  <!-- /5269235/City_Metric/1x2 -->
+  <div id='1x2'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('1x2'); });
+    </script>
+  </div>
+  <!-- /5269235/City_Metric/1x3 -->
+  <div id='1x3'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('1x3'); });
+    </script>
+  </div>
+ 
+
+  
+<div class='clear'>&nbsp;</div>
+    <div class='secondary-content-box related-articles1'>
+
+    </div>
+  <div class='related-articles clearfix '><h3>Related Articles</h3><div class="view view-related-article- view-id-related_article_ view-display-id-block view-dom-id-f0879a75c48b36a641a31a14809edd36">
+        
+  
+  
+      <div class="view-content">
+          <ul class="row">          <li class="large-4 columns">  
+          <a href="/fabric/why-hasn-t-neighbourhood-planning-taken-britain-4772"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/people_power_totnes.jpg?itok=AI3MP2vP"   alt="" /></a>    
+          <strong><a href="/fabric/why-hasn-t-neighbourhood-planning-taken-britain-4772">Why hasn’t neighbourhood planning taken off in Britain?</a></strong>  </li>
+          <li class="large-4 columns">  
+          <a href="/fabric/why-charles-rennie-mackintoshs-legacy-grander-designing-glasgow-school-art-4816"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/glasgow_school_of_art.jpg?itok=osXTgkcf"   alt="" /></a>    
+          <strong><a href="/fabric/why-charles-rennie-mackintoshs-legacy-grander-designing-glasgow-school-art-4816">Why Charles Rennie Mackintosh&#039;s legacy is grander than designing the Glasgow School of Art</a></strong>  </li>
+          <li class="large-4 columns">  
+          <a href="/fabric/defence-suburban-skyscrapers-4835"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/hale_works.jpg?itok=O2moCk47"   alt="" /></a>    
+          <strong><a href="/fabric/defence-suburban-skyscrapers-4835">In defence of... suburban skyscrapers</a></strong>  </li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div></div> <div class='clear'>&nbsp;</div></div>
+<div class="content article-body">
+ <iframe width="456" height="320" scrolling="NO" src="//www.dianomi.com/smartads.epl?id=3403" style="width: 100%; border: none; overflow: hidden;"></iframe>
+</div>
+ 
+<div class="clear">&nbsp;</div>
+      <footer class="share-article">
+
+                   <div class="content active" id="panel2-1">
+                     
+                
+                    <ul class="share-buttons">
+                          <li class="cta-link twitter-button">
+                                                      <a href="http://twitter.com/intent/tweet?text=The+newly+opened+observation+deck+at+the+top+of+NYC%27s+One+World+Trade+Center+offers+one+hell+of+a+view&nbsp; &nbsp; https://www.citymetric.com//skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087" target="_blank">Tweet</a>
+                          </li>
+
+						  	  
+						  
+							  <li class="cta-link facebook-button">
+								<a href="https://www.facebook.com/dialog/feed?app_id=436611949712853&link=https://www.citymetric.com&picture=https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2015/05/457376754.jpg?itok=Atqx62cp&name=The+newly+opened+observation+deck+at+the+top+of+NYC%27s+One+World+Trade+Center+offers+one+hell+of+a+view&description=Ooooooooh.https://www.citymetric.com//skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087&redirect_uri=http%3A%2F%2Fwww.facebook.com%2F" target="_blank">Share</a>
+							  </li>
+							                           <li class="cta-link pinterest-button">                                                     
+								<a href="http://pinterest.com/pin/create/button/?url=https://www.citymetric.com//skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087&description=The+newly+opened+observation+deck+at+the+top+of+NYC%27s+One+World+Trade+Center+offers+one+hell+of+a+view&media=https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2015/05/457376754.jpg?itok=Atqx62cp" target="_blank">Pin</a>
+							</li>
+														<li class="cta-link linkedin-button">                
+							<!--<a class="btn btn-default" href="http://www.linkedin.com/shareArticle?url=https://www.citymetric.com/skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087" target="_blank">-->
+							<a class="btn btn-default btn-xs" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.citymetric.com/skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087&title=The+newly+opened+observation+deck+at+the+top+of+NYC%27s+One+World+Trade+Center+offers+one+hell+of+a+view&summary=Ooooooooh.&picture=https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2015/05/457376754.jpg?itok=Atqx62cp&name=The+newly+opened+observation+deck+at+the+top+of+NYC%27s+One+World+Trade+Center+offers+one+hell+of+a+view"target="_blank">
+							   
+							   <i class="fa fa-linkedin fa-lg linkin"></i>
+							</a> 
+							</li>
+														<li class="cta-link google_plus-button">
+  <a class="btn btn-default" href="https://plus.google.com/share?url=https://www.citymetric.com/skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087" target="_blank">
+   <i class="fa fa-google-plus fa-lg google"></i>
+</a></li>
+                         
+                     </ul>
+
+                   </div>
+<div style=" " class="newsletter-mar"> 
+   <ul class="links inline"><li class="forward_link first last"><a href="/forward?path=skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087" title="Forward this page to a friend" class="forward-page"><img class="forward-icon" typeof="foaf:Image" src="https://www.citymetric.com/sites/all/themes/creative-responsive-theme/images/forward-32.png" alt="Email this page" /></a></li>
+</ul>       <!--<ul class="category-actions">
+	      <li class="category-subscription">
+		  <div class="category-subscription-toggle"></div>
+		  <form class="custom"  method="get" action="/content/citymetric-newsletter-sign?key=">
+		      <p style="margin-bottom: 5px;">Subscribe to our newsletter:</p>
+		      <label class="screen-reader-text">Email address:</label>
+		      <input class="email-address" placeholder="Email address" name="key">
+		      <button class="button">Subscribe</button>
+		  </form>
+   </li>
+	    </ul>-->  
+      </div>
+    </footer>
+  
+  
+  </article> <!-- /.node -->
+
+ <div class="leaderboard article-footer-leaderboard">
+       <!-- City_Metric_Bottom_Leaderboard_Dynamic -->
+          <div class="infinite-leaderboard"></div>
+  </div>
+   <div class="mobile-banner in-between-articles-mpu">
+       <!-- City_Metric_Bottom_Leaderboard_Dynamic -->
+          <div class="infinite-mpu"></div>
+  </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+  jQuery(document).ready(function(){
+
+
+
+
+
+	  
+jQuery('.field-name-body img').each(function(i,el){
+	  var img = jQuery(el);
+	 var width_Img = img.width();
+   if (width_Img > 610) {
+	jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	 
+    jQuery(this).css('max-width', '100%');
+	jQuery(this).css('width', '100%');
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media');
+	}
+  
+   if( (width_Img >500)&&(width_Img <609)) {
+   jQuery(this).removeAttr('width');
+   jQuery(this).removeAttr('height');	 
+   jQuery(this).css('max-width', '550px');
+   jQuery(this).css('width', '100%');		
+   jQuery(this).css('height', '100%'); 
+    jQuery(this).addClass('manage-media5');
+   }
+   
+    if( (width_Img >400)&&(width_Img <500)) {
+    jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	  
+    jQuery(this).css('max-width', '450px');
+    jQuery(this).css('width', '100%');		
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media4');
+   }
+   
+    if(width_Img < 400) {  
+    jQuery(this).removeAttr('width');
+	jQuery(this).removeAttr('height');	   
+    jQuery(this).css('max-width', '100%');
+    jQuery(this).css('width', '');	
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media3');
+   }   
+    });
+	  	  
+ });
+ 	
+ function saradhi_image() {
+	jQuery('.field-name-body img').each(function(i,el){
+	  var img = jQuery(el);
+	 var width_Img = img.width();
+ if (width_Img > 610) {
+	jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	 
+    jQuery(this).css('max-width', '100%');
+	jQuery(this).css('width', '100%');
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media');
+	}
+  
+   if( (width_Img >500)&&(width_Img <609)) {
+   jQuery(this).removeAttr('width');
+   jQuery(this).removeAttr('height');	 
+   jQuery(this).css('max-width', '550px');
+   jQuery(this).css('width', '100%');		
+   jQuery(this).css('height', '100%'); 
+    jQuery(this).addClass('manage-media5');
+   }
+   
+    if( (width_Img >400)&&(width_Img <500)) {
+    jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	  
+    jQuery(this).css('max-width', '450px');
+    jQuery(this).css('width', '100%');		
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media4');
+   }
+   
+    if(width_Img < 400) {  
+    jQuery(this).removeAttr('width');
+	jQuery(this).removeAttr('height');	   
+    jQuery(this).css('max-width', '100%');
+    jQuery(this).css('width', '');	
+    jQuery(this).css('max-height', '100%');
+	 jQuery(this).addClass('manage-media3');
+   }   
+    });
+}
+ 
+  jQuery(window).scroll(function() {
+	   saradhi_image();
+
+});
+ 
+ 
+
+</script>
+
+
+
+
+
+
+
+
+
+<div class="clear">&nbsp;</div>
+  </div>
+  
+</div> <!-- /.block -->
+<div id="block-views-infinate-articles-block" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-infinate-articles view-id-infinate_articles view-display-id-block view-dom-id-dbca52e979ed0eddb61d4c40f687b8c4">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+    
+
+
+<div class="article-content ">
+
+  <article id="node-4858" class="node node-article clearfix"  about="/horizons/which-european-cities-have-most-different-names-different-languages-4858" typeof="sioc:Item foaf:Document">
+
+ 
+ <header>
+     <div class="article-meta">
+			      <ul>
+				  <li class="article-category"> <div class="field field-name-field-primary-section field-type-taxonomy-term-reference field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/section/horizons" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Horizons</a></div></div></div></li>
+				  <li class="article-tag"> <a href="/topic/maps">Maps</a></li>
+				  <li class="article-date article-time">November 28, 2019      </li>
+			      </ul>
+			  </div>
+			         
+     
+      <h1  class="inf_class" data-analyticsid="/horizons/which-european-cities-have-most-different-names-different-languages-4858"><a href="/horizons/which-european-cities-have-most-different-names-different-languages-4858"> Which European cities have the most different names in different languages?</a></h1>
+       
+              
+     <div class="byline">By <span rel="sioc:has_creator"><a href="/authors/2150" title="View user profile." class="username" xml:lang="" about="/users/alix-mortimer" typeof="sioc:UserAccount" property="foaf:name" datatype="">Alix Mortimer</a></span> 
+	 </div>
+         
+     
+       
+    </header>
+   
+
+<div class="featured-image"> <div class="field field-name-field-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even" rel="og:image rdfs:seeAlso" resource="https://www.citymetric.com/sites/default/files/article_2019/11/cities_with_italian_names.png"><a href="https://www.citymetric.com/sites/default/files/styles/nodeimage/public/article_2019/11/cities_with_italian_names.png?itok=eoV51jTU" title="Which European cities have the most different names in different languages?" class="colorbox" rel="gallery-node-4858-HuNKWfU1LSU"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/nodeimage/public/article_2019/11/cities_with_italian_names.png?itok=eoV51jTU"   alt="" title="" /></a></div></div></div>  </div>
+<div class="image_caption"><div class="field field-name-field-image-caption field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">Edimburgo! A detail from the Italian version of the map. Image: Alix Mortimer/Google Maps.</div></div></div></div>
+
+
+
+  <div class="content article-body ">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>
+	When you realise, aged ten in a museum or railway station, that other places shockingly have <em>names for themselves</em>, different to the ones you’re familiar with, it’s like developing a cultural <a href="https://www.newstatesman.com/2018/09/four-year-old-pretty-likely-be-tory-conservative-labour-conference-children">Theory of Mind</a>. This contributes substantially to my enjoyment of international departure boards, even without the clak-clak-clak noise (what will Prague be called here?!)
+<p>
+	Last week it occurred to me that I have never seen a map of European cities labelled with their endonyms (names for themselves) and exonyms (external names). And so, I thought I would make one. 
+<p>
+	I used <a href="https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits">a list of the 108 highest population cities</a> in the EU and rendered the names into its <a href="https://en.wikipedia.org/wiki/Languages_of_the_European_Union#Knowledge">five most spoken languages</a> as best I could (English, German, French, Italian, Spanish). This is the result: 
+                              <!-- /5269235/City_Metric/1x3 -->
+                              <div id='div-gpt-ad-1566229811403-0' style='width: 1px; height: 3px;'>
+                                <script>
+                                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1566229811403-0'); });
+                                </script>
+                              </div>
+<p class="rtecenter">
+<iframe height="480" src="https://www.google.com/maps/d/u/0/embed?mid=1JTK03PKG7GCJSs28ewg-H5NU7e14tE5f" width="640"></iframe>
+<p>
+	My working hypothesis is that that, the earlier a city became highly connected, the more exonyms it should have. More languages named it before conventions were standardised, and political control itself was sometimes up for grabs. So an ancient foundation like Naples (<em>Neapolis</em>), which remained great and contested throughout the middle ages and into the modern era, has four versions (IT: Napoli, ES: Nápoles, DE: Neapel, EN/FR Naples). On the other hand, nobody ever had occasion to create exonyms for the equally estimable Wigan (EN) or Wuppertal (DE), because both experienced their growth in the industrial age.
+<p>
+	In fact, my map includes a long tail of German and British cities whose growth lies mostly post-1700, and who mostly don’t have exonyms. Of the 108 cities, 42 have no exonyms across the five languages at all (allowing for some accent mark differences). German and UK cities together are overrepresented in this humdrum sub-group (24 have no exonyms, from a total of 39).
+<p class="rtecenter">
+	<a class="colorbox colorbox-insert-image" href="https://www.citymetric.com/sites/default/files/article_body_2019/11/fig_1_-_cities_with_no_exonyms_excepting_the_odd_accent_mark.png" rel="gallery-all"><img alt="" class="image-large"  src="/sites/default/files/styles/large/public/article_body_2019/11/fig_1_-_cities_with_no_exonyms_excepting_the_odd_accent_mark.png?itok=Dizmor9F"  /></a>
+<p class="rtecenter">
+	<em style="font-size: 14px; text-align: center;">Click to expand.</em>
+<p>
+	Even so, sufficiently heavy modern contact can create some orthographic waves. Manchester, a small town before 1700, is spelt the same way everywhere except Spain, <a href="https://es.wikipedia.org/wiki/M%C3%A1nchester">where they put a jaunty little quiff on top of the a</a>, and honestly who can begrudge them that.
+<p>
+	Counter-examples suggest other processes. Amsterdam was a medieval and early modern trading city and ought to be prime for an exonym or two, but everyone calls it Amsterdam. Is this a case of the phonetics being so uncontroversial that no other renderings sprang to mind? Is Madrid similar?
+<p>
+	At the other end, these are the cities with the greatest number of exonyms (note that some use one of the five test languages).
+<p class="rtecenter">
+	<a class="colorbox colorbox-insert-image" href="https://www.citymetric.com/sites/default/files/article_body_2019/11/fig_2_-_cities_with_highest_number_of_exonyms_excluding_accent_mark_variation.png" rel="gallery-all"><img alt="" class="image-large"  src="/sites/default/files/styles/large/public/article_body_2019/11/fig_2_-_cities_with_highest_number_of_exonyms_excluding_accent_mark_variation.png?itok=FczPeYcB"  /></a>
+<p class="rtecenter">
+	<span style="font-size:14px;"><em>Click to expand.</em></span>
+<p>
+	Mostly these are the historically weighty places one would expect, but again there are odd exceptions. The Hague has five exonyms, though it lacks the historicity of an Athens or a Florence. Probably the explanation is that it’s a toponym – the medieval term for “enclosure/hunting ground”. French (La Haye), Spanish (La Haya) and Italian (L’Aia) seem to be substituting their own terms for that thing, “translating” the name rather than varying it.
+<p>
+	I’ve also, hesitantly, included cities (Brussels, Antwerp) with multilingual autochthonous populations, so strictly speaking these are not exonyms at all. It may be that a bigger analysis would find regions where exonyms are more likely to arise regardless, because borders are closer and political control has shifted around. The areas flipping in and out of the Holy Roman and then Austro-Hungarian empires, or trading coasts, would be a neat study.
+<p class="rtecenter">
+	<a class="colorbox colorbox-insert-image" href="https://www.citymetric.com/sites/default/files/article_body_2019/11/fig_3_-_languages_and_exonyms.png" rel="gallery-all"><img alt="" class="image-large"  src="/sites/default/files/styles/large/public/article_body_2019/11/fig_3_-_languages_and_exonyms.png?itok=YFnJjLaz"  /></a>
+<p>
+	English has proportionately the fewest exonyms and Italian has the most. Often these are of the “put an -o on the end” school (Berlino, Dublino, Salonicco – conceivably this is revenge for Turin, which everybody else refuses to call Torino). Elsewhere, they preserve an appealing <em>Romanitas</em> – Italian is the only language to have an exonym for Plovdiv in Bulgaria, so they make it count with the classical Philipoppoli. It was also news to me that Munich is Monaco di Baviera, because one Monaco near one border wasn’t enough, so they duplicated it and then had to differentiate again.
+<p class="rtecenter">
+	<a class="colorbox colorbox-insert-image" href="https://www.citymetric.com/sites/default/files/article_body_2019/11/fig_4_-_italian_cartographers_pictured_here_on_glue.png" rel="gallery-all"><img alt="" class="image-large"  src="/sites/default/files/styles/large/public/article_body_2019/11/fig_4_-_italian_cartographers_pictured_here_on_glue.png?itok=WZWyMqHW"  /></a>
+<p>
+	Using this dataset made for some haunting omissions of places which have never grown enough to make the cut (Venice, Venedig, Venise, Venezia, Venecia!). Adding Venice, plus half a dozen French cities of similar venerability, would have somewhat undermined my investigation, but made for a much more fun map. This is why we can’t have nice data.
+<hr /><p>
+	 
+</div></div></div>     <!-- /5269235/City_Metric/1x1 -->
+  <div id='1x1'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('1x1'); });
+    </script>
+  </div>
+
+  <!-- /5269235/City_Metric/1x2 -->
+  <div id='1x2'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('1x2'); });
+    </script>
+  </div>
+  <!-- /5269235/City_Metric/1x3 -->
+  <div id='1x3'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('1x3'); });
+    </script>
+  </div>
+ 
+
+  
+<div class='clear'>&nbsp;</div>
+    <div class='secondary-content-box related-articles1'>
+
+    </div>
+  <div class='related-articles clearfix '><h3>Related Articles</h3><div class="view view-related-article- view-id-related_article_ view-display-id-block view-dom-id-8ba027e88f8e0f2b5f35d8c2af358e6e">
+        
+  
+  
+      <div class="view-content">
+          <ul class="row">          <li class="large-4 columns">  
+          <a href="/horizons/yes-flying-less-can-help-tackle-climate-change-4830"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/gettyimages-1155832493.jpg?itok=1qgJD5QK"   alt="" /></a>    
+          <strong><a href="/horizons/yes-flying-less-can-help-tackle-climate-change-4830">Yes, flying less can help tackle climate change</a></strong>  </li>
+          <li class="large-4 columns">  
+          <a href="/horizons/extinction-rebellion-showing-us-just-how-good-car-free-cities-can-look-4824"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/gettyimages-1174204650.jpg?itok=pdcTB_vw"   alt="" /></a>    
+          <strong><a href="/horizons/extinction-rebellion-showing-us-just-how-good-car-free-cities-can-look-4824">Extinction Rebellion is showing us just how good car-free cities can look</a></strong>  </li>
+          <li class="large-4 columns">  
+          <a href="/horizons/how-smart-cities-could-help-visually-impaired-4819"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/10/gettyimages-474060754.jpg?itok=9YaxdeUb"   alt="" /></a>    
+          <strong><a href="/horizons/how-smart-cities-could-help-visually-impaired-4819">How smart cities could help the visually impaired</a></strong>  </li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div></div> <div class='clear'>&nbsp;</div></div>
+<div class="content article-body">
+ <iframe width="456" height="320" scrolling="NO" src="//www.dianomi.com/smartads.epl?id=3403" style="width: 100%; border: none; overflow: hidden;"></iframe>
+</div>
+ 
+<div class="clear">&nbsp;</div>
+      <footer class="share-article">
+
+                   <div class="content active" id="panel2-1">
+                     
+                
+                    <ul class="share-buttons">
+                          <li class="cta-link twitter-button">
+                                                      <a href="http://twitter.com/intent/tweet?text=Which+European+cities+have+the+most+different+names+in+different+languages%3F&nbsp; &nbsp; https://www.citymetric.com//horizons/which-european-cities-have-most-different-names-different-languages-4858" target="_blank">Tweet</a>
+                          </li>
+
+						  	  
+						  
+							  <li class="cta-link facebook-button">
+								<a href="https://www.facebook.com/dialog/feed?app_id=436611949712853&link=https://www.citymetric.com&picture=https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/cities_with_italian_names.png?itok=meofNk5j&name=Which+European+cities+have+the+most+different+names+in+different+languages%3F&description=An important investigation.https://www.citymetric.com//horizons/which-european-cities-have-most-different-names-different-languages-4858&redirect_uri=http%3A%2F%2Fwww.facebook.com%2F" target="_blank">Share</a>
+							  </li>
+							                           <li class="cta-link pinterest-button">                                                     
+								<a href="http://pinterest.com/pin/create/button/?url=https://www.citymetric.com//horizons/which-european-cities-have-most-different-names-different-languages-4858&description=Which+European+cities+have+the+most+different+names+in+different+languages%3F&media=https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/cities_with_italian_names.png?itok=meofNk5j" target="_blank">Pin</a>
+							</li>
+														<li class="cta-link linkedin-button">                
+							<!--<a class="btn btn-default" href="http://www.linkedin.com/shareArticle?url=https://www.citymetric.com/horizons/which-european-cities-have-most-different-names-different-languages-4858" target="_blank">-->
+							<a class="btn btn-default btn-xs" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.citymetric.com/horizons/which-european-cities-have-most-different-names-different-languages-4858&title=Which+European+cities+have+the+most+different+names+in+different+languages%3F&summary=An important investigation.&picture=https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/cities_with_italian_names.png?itok=meofNk5j&name=Which+European+cities+have+the+most+different+names+in+different+languages%3F"target="_blank">
+							   
+							   <i class="fa fa-linkedin fa-lg linkin"></i>
+							</a> 
+							</li>
+														<li class="cta-link google_plus-button">
+  <a class="btn btn-default" href="https://plus.google.com/share?url=https://www.citymetric.com/horizons/which-european-cities-have-most-different-names-different-languages-4858" target="_blank">
+   <i class="fa fa-google-plus fa-lg google"></i>
+</a></li>
+                         
+                     </ul>
+
+                   </div>
+<div style=" " class="newsletter-mar"> 
+   <ul class="links inline"><li class="forward_link first last"><a href="/forward?path=horizons/which-european-cities-have-most-different-names-different-languages-4858" title="Forward this page to a friend" class="forward-page"><img class="forward-icon" typeof="foaf:Image" src="https://www.citymetric.com/sites/all/themes/creative-responsive-theme/images/forward-32.png" alt="Email this page" /></a></li>
+</ul>       <!--<ul class="category-actions">
+	      <li class="category-subscription">
+		  <div class="category-subscription-toggle"></div>
+		  <form class="custom"  method="get" action="/content/citymetric-newsletter-sign?key=">
+		      <p style="margin-bottom: 5px;">Subscribe to our newsletter:</p>
+		      <label class="screen-reader-text">Email address:</label>
+		      <input class="email-address" placeholder="Email address" name="key">
+		      <button class="button">Subscribe</button>
+		  </form>
+   </li>
+	    </ul>-->  
+      </div>
+    </footer>
+  
+  
+  </article> <!-- /.node -->
+
+ <div class="leaderboard article-footer-leaderboard">
+       <!-- City_Metric_Bottom_Leaderboard_Dynamic -->
+          <div class="infinite-leaderboard"></div>
+  </div>
+   <div class="mobile-banner in-between-articles-mpu">
+       <!-- City_Metric_Bottom_Leaderboard_Dynamic -->
+          <div class="infinite-mpu"></div>
+  </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+  jQuery(document).ready(function(){
+
+
+
+
+
+	  
+jQuery('.field-name-body img').each(function(i,el){
+	  var img = jQuery(el);
+	 var width_Img = img.width();
+   if (width_Img > 610) {
+	jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	 
+    jQuery(this).css('max-width', '100%');
+	jQuery(this).css('width', '100%');
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media');
+	}
+  
+   if( (width_Img >500)&&(width_Img <609)) {
+   jQuery(this).removeAttr('width');
+   jQuery(this).removeAttr('height');	 
+   jQuery(this).css('max-width', '550px');
+   jQuery(this).css('width', '100%');		
+   jQuery(this).css('height', '100%'); 
+    jQuery(this).addClass('manage-media5');
+   }
+   
+    if( (width_Img >400)&&(width_Img <500)) {
+    jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	  
+    jQuery(this).css('max-width', '450px');
+    jQuery(this).css('width', '100%');		
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media4');
+   }
+   
+    if(width_Img < 400) {  
+    jQuery(this).removeAttr('width');
+	jQuery(this).removeAttr('height');	   
+    jQuery(this).css('max-width', '100%');
+    jQuery(this).css('width', '');	
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media3');
+   }   
+    });
+	  	  
+ });
+ 	
+ function saradhi_image() {
+	jQuery('.field-name-body img').each(function(i,el){
+	  var img = jQuery(el);
+	 var width_Img = img.width();
+ if (width_Img > 610) {
+	jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	 
+    jQuery(this).css('max-width', '100%');
+	jQuery(this).css('width', '100%');
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media');
+	}
+  
+   if( (width_Img >500)&&(width_Img <609)) {
+   jQuery(this).removeAttr('width');
+   jQuery(this).removeAttr('height');	 
+   jQuery(this).css('max-width', '550px');
+   jQuery(this).css('width', '100%');		
+   jQuery(this).css('height', '100%'); 
+    jQuery(this).addClass('manage-media5');
+   }
+   
+    if( (width_Img >400)&&(width_Img <500)) {
+    jQuery(this).removeAttr('width');
+    jQuery(this).removeAttr('height');	  
+    jQuery(this).css('max-width', '450px');
+    jQuery(this).css('width', '100%');		
+    jQuery(this).css('height', '100%');
+	 jQuery(this).addClass('manage-media4');
+   }
+   
+    if(width_Img < 400) {  
+    jQuery(this).removeAttr('width');
+	jQuery(this).removeAttr('height');	   
+    jQuery(this).css('max-width', '100%');
+    jQuery(this).css('width', '');	
+    jQuery(this).css('max-height', '100%');
+	 jQuery(this).addClass('manage-media3');
+   }   
+    });
+}
+ 
+  jQuery(window).scroll(function() {
+	   saradhi_image();
+
+});
+ 
+ 
+
+</script>
+
+
+
+
+
+
+
+
+
+<div class="clear">&nbsp;</div>
+  </div>
+    </div>
+  
+      <div class="item-list"><ul class="pager pager-load-more"><li class="pager-next first last"><a href="/skylines/newly-opened-observation-deck-top-nycs-one-world-trade-center-offers-one-hell-view-1087?page=1"></a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+ </section>
+      <!-- /#main -->
+    </div>
+      </div>
+    <aside role="complementary" class="large-4 columns secondary-content">
+
+    <div class="sc-toggle">More content</div>
+    <div class="scrolling-content"> 
+
+        <div class="sticky-mpu" style="text-align: center; padding: 2em 0">
+            <!-- /5269235/City_Metric/Unit4 -->
+            <div id='Unit4'>
+              <script type='text/javascript'>
+                googletag.cmd.push(function() { googletag.display('Unit4'); });
+              </script>
+            </div>
+        </div>
+        <!-- .sticky-mpu -->
+
+      <div class="region region-sidebar-second">
+  <div id="block-views-most-popular-block-2" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-most-popular view-id-most_popular view-display-id-block_2 sc-item sc-article-list editors-pick view-dom-id-0370a783e7e5b59b327e74bb13232315">
+            <div class="view-header">
+      <div class="editors-pick">
+<h4>Editor's Pick</h4>
+</div>
+    </div>
+  
+  
+  
+      <div class="view-content">
+          <ul>          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/epping.jpeg?itok=623YQSmW"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/skylines/podcast-woods-4842">Podcast: Into the Woods</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/skylines" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Skylines</a> </li>
+					      <li class="article-tag"><a href="/topic/podcast" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Podcast</a> </li>
+					     
+					  </ul>
+
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 6, 2019 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/gettyimages-1184602562.jpg?itok=9GzogW16"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/politics/i-ranked-every-uk-constituency-deprivation-and-then-coloured-them-party-affiliation-fun">I ranked every UK constituency by deprivation and then coloured them by party affiliation – for fun!</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/politics" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Politics</a> </li>
+					      <li class="article-tag"><a href="/topic/britain" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Britain</a> </li>
+					     
+					  </ul>
+
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 5, 2019 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/gettyimages-1155832493.jpg?itok=1qgJD5QK"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/horizons/yes-flying-less-can-help-tackle-climate-change-4830">Yes, flying less can help tackle climate change</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/horizons" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Horizons</a> </li>
+					      <li class="article-tag"><a href="/topic/aviation" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Aviation</a> </li>
+					     
+					  </ul>
+
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 3, 2019 </li></ul>
+
+
+</span>  </span></li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-block-3" class="block block-block">
+
+      
+  <div class="content">
+      <!-- /5269235/City_Metric/Unit2 -->
+  <!--<div id='Unit2'>
+    <script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('Unit2'); });
+    </script>
+  </div>--->
+
+ <!--Smartad # 4237: CityMetric  - 300x600 Right Rail-->
+<iframe WIDTH="300" HEIGHT="600" SCROLLING="NO" src="//www.dianomi.com/smartads.epl?id=4237"  style="width: 300px; height: 600px; border: none; overflow: hidden;"></iframe>
+  </div>
+  
+</div> <!-- /.block -->
+<div id="block-views-most-popular-block-1" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-most-popular view-id-most_popular view-display-id-block_1 sc-item sc-article-list view-dom-id-83ec8a11c8a6672dda2623bee2eaa98d">
+            <div class="view-header">
+      <div class="most-popular">
+<h4>Most Popular</h4>
+</div>
+    </div>
+  
+  
+  
+      <div class="view-content">
+          <ul>          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2015/09/sheff.jpg?itok=UlcsvVby"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/skylines/where-are-largest-cities-britain-1404">Where are the largest cities in Britain?</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/fabric" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Fabric</a> </li>
+					      <li class="article-tag"><a href="/topic/demographics" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Demographics</a></li>
+					     
+					  </ul>
+ 
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">September 16, 2015 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/cities_with_italian_names.png?itok=meofNk5j"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/horizons/which-european-cities-have-most-different-names-different-languages-4858">Which European cities have the most different names in different languages?</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/horizons" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Horizons</a> </li>
+					      <li class="article-tag"><a href="/topic/maps" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Maps</a></li>
+					     
+					  </ul>
+ 
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 28, 2019 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/gettyimages-1184602562.jpg?itok=9GzogW16"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/politics/i-ranked-every-uk-constituency-deprivation-and-then-coloured-them-party-affiliation-fun">I ranked every UK constituency by deprivation and then coloured them by party affiliation – for fun!</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/politics" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Politics</a> </li>
+					      <li class="article-tag"><a href="/topic/britain" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Britain</a></li>
+					     
+					  </ul>
+ 
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 5, 2019 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2015/04/landfill.jpg?itok=S8Vl291X"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/skylines/9-building-materials-made-entirely-waste-products-932">9 building materials made entirely from waste products</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/fabric" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Fabric</a> </li>
+					      <li class="article-tag"><a href="/topic/waste" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Waste</a></li>
+					     
+					  </ul>
+ 
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">April 15, 2015 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2018/01/gettyimages-464625284.jpg?itok=Lh3bgDi7"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/transport/new-manchester-metrolink-map-both-prettier-and-easier-use-3642">The new Manchester Metrolink map is both prettier and easier to use</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/transport" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Transport</a> </li>
+					      <li class="article-tag"><a href="/topic/metro-maps" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Metro maps</a></li>
+					     
+					  </ul>
+ 
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">January 31, 2018 </li></ul>
+
+
+</span>  </span></li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-block-4" class="block block-block">
+
+      
+  <div class="content">
+    <!-- /5269235/City_Metric/Unit3 --><!--<div id="Unit3"><script type='text/javascript'>
+      googletag.cmd.push(function() { googletag.display('Unit3'); });
+    </script></div>
+<p>--->
+<!--Smartad # 4237: CityMetric  - 300x600 Right Rail--><iframe width="300" height="600" scrolling="NO" src="//www.dianomi.com/smartads.epl?id=4237" style="width: 300px; height: 600px; border: none; overflow: hidden;"></iframe>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-views-most-popular-block-3" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-most-popular view-id-most_popular view-display-id-block_3 sc-item sc-article-list view-dom-id-1e2fa0e48c4c8463528efc35fa955b51">
+            <div class="view-header">
+      <div class="lastest">
+<h4>Latest</h4>
+</div>
+    </div>
+  
+  
+  
+      <div class="view-content">
+          <ul>          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/traffic.jpg?itok=SJhM-KWo"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/transport/we-can-reclaim-cities-car-without-inconveniencing-people-4671">We can reclaim cities from the car without inconveniencing people</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/transport" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Transport</a> </li>
+					      <li class="article-tag"><a href="/topic/roads" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Roads</a></li>
+					     					  </ul>
+
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 27, 2019 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/middlesbrough_head.png?itok=yWXuZnCO"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/transport/buses-are-back-agenda-neither-party-has-strategy-halting-their-decline-4857">Buses are back on the agenda – but neither party has a strategy for halting their decline</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/transport" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Transport</a> </li>
+					      <li class="article-tag"><a href="/topic/britain" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Britain</a></li>
+					     					  </ul>
+
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 26, 2019 </li></ul>
+
+
+</span>  </span></li>
+          <li class="row">  
+  <div>        <div class="large-4 small-4 columns thumbnail"><img typeof="foaf:Image" src="https://www.citymetric.com/sites/default/files/styles/citythumb/public/article_2019/11/gettyimages-495298219.jpg?itok=gGw2KfVW"   alt="" /></div>  </div>  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="large-8 small-8 columns article-text">
+				      <h5><a href="/transport/seven-thoughts-tfl-s-decision-suspend-uber-s-licence-operate-cabs-london-again-4856">Seven thoughts on TfL’s decision to suspend of Uber’s licence to operate cabs in London, again</a></h5>
+				      <div class="article-meta">
+					  <ul>
+					      <li class="article-category"><a href="/section/transport" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Transport</a> </li>
+					      <li class="article-tag"><a href="/topic/taxis" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Taxis</a></li>
+					     					  </ul>
+
+				      </div>
+				  </div></span>  </div>  
+  <span>        <span> <ul class="sc-artivle-date"> <li class="article-date">November 25, 2019 </li></ul>
+
+
+</span>  </span></li>
+      </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+
+      <div class="clear">&nbsp;</div>
+
+      <div class="sticky-wrapper" id="stickydiv-sticky-wrapper">
+
+          <div class="sidebar-banner sticky-wrapper" id="stickydiv">
+
+
+            <!-- /5269235/City_Metric/Unit7 
+            <div id='div-gpt-ad-1570018760934-0' style='width: 300px; height: 250px;'>
+             <script>
+               googletag.cmd.push(function() { googletag.display('Mercedes_MPU'); });
+             </script>
+            </div>-->
+
+            <!--
+            <div id="Unit4">
+               /5269235/City_Metric/Unit4 
+              <div id="Mercedes_MPU">
+                <script>
+                  googletag.cmd.push(function() { googletag.display('Mercedes_MPU'); });
+                </script>
+              </div>
+            </div>
+            -->
+
+            <!--Smartad # 4237: CityMetric  - 300x600 Right Rail-->
+            <iframe WIDTH="300" HEIGHT="600" SCROLLING="NO" src="//www.dianomi.com/smartads.epl?id=4237"  style="width: 300px; height: 600px; border: none; overflow: hidden;"></iframe>
+
+
+            <div class="clear">&nbsp;</div>
+
+        </div>
+      </div>
+  </aside>
+  <!-- /#sidebar-first -->
+  </div>
+<div id="footer" class="large-12 columns">
+
+<!-- /5269235/City_Metric/1x3 -->
+<div id='div-gpt-ad-1511802897422-0' style='height:3px; width:1px;'>
+<script>
+googletag.cmd.push(function()
+{ googletag.display('div-gpt-ad-1511802897422-0'); }
+);
+</script>
+</div>
+    <div class="footer_credit">
+    <div class="footer_inner_credit">
+            <div id="foot">
+              </div>
+            <div id="copyright">
+        <p class="copyright"><a title="Home"><img src="https://www.citymetric.com/sites/default/files/citymetric-logo.png" /> </a>
+                  </p>
+        <p class="credits"> <a href="/content/about-citymetric"> About CityMetric </a> <a href="/content/contact-us">Contact us</a> <a href="/content/privacy-policy">Privacy policy</a><a href="/content/terms-and-conditions">Terms & conditions</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <script type="text/javascript" src="https://www.citymetric.com/sites/default/files/js/js_VU7P4CTgUZdF2SyFko5LLAg9ZK0OSVjXVaAFnTLgVt0.js"></script>
+
+  <script type="text/javascript">
+    (function ($) {
+      // Cookie setting script wrapper
+      var cookieScripts = function () {      // Internal javascript called
+        //console.log("Running");
+        
+        // Loading external javascript file
+        $.cookiesDirective.loadScript({
+          //uri:'https://www.citymetric.com/sites/all/themes/creative-responsive-theme/js/external.js',
+          appendTo: 'eantics'
+        });
+      }
+           
+      $.cookiesDirective({
+        privacyPolicyUri: '/content/privacy-policy',
+        explicitConsent: false,
+        position : 'top',
+        scriptWrapper: cookieScripts, 
+        cookieScripts: 'Google Analytics, My Stats Ultimate ', 
+        backgroundColor: 'rgba(0,0,0,0.6);',
+        linkColor: '#ca0028'
+      });
+})(jQuery);
+  </script>
+
+
+
+<!-- AdYouLike -->
+<script type="text/javascript" async crossorigin="anonymous" src="//adyoulike.omnitagjs.com"></script>
+
+
+
+<script type="text/javascript">
+moreArticleContent();
+</script>
+
+
+
+<!-- Ad-blocker -->
+
+<script src="/sites/all/themes/creative-responsive-theme/js/blockadblock.js"></script>
+
+
+<!-- Ad blocker content -->
+
+
+<div class="donate" id="donate" style="display:none;">
+    <div class="close"><a><i class="fa fa-times"></a></i></div>
+  <!--  <p>We notice that you're using ad blocker. If we can't support the site on advertising revenue, we'll have to introduce a pay wall - which, let's be honest, would suck.</p>
+    <p>That's the bad news. The good news is that, if you contribute now, you can support CityMetric's quality, independent journalism another way - and this message will disappear for the next 30 days.</p>-->	
+	<p>We notice that you're using ad blocker. If we can't support the site on advertising revenue, CityMetric will go the way of, I dunno, the Aldwych branch of the Piccadilly line. Which, let's be honest, would suck.</p>
+	<p>That's the bad news. The good news is that, if you contribute now, you can support CityMetric's quality, independent journalism another way - and this message will disappear for the next 30 days.</p>
+	
+    <div class="magazine">
+       
+    </div>
+    <div class="ipad-edition" style="display:none;">
+  
+    </div>
+    <div class="iphone-edition" style="display:none;">
+      
+    </div>
+    <div class="cta-link donate-link"><a onclick="setCookie()">Contribute</a></div>
+    
+</div> 
+
+<div class="donate-toggle" id="donate-toggle" style="display:none;">
+    Close
+</div>
+
+<!-- Ad blocker content end-->
+
+<script>
+
+/* Reached top mpu */
+   jQuery(function(){
+    jQuery(document).scroll(function(){
+    if(jQuery('.sticky-mpu').length > 0){
+        if(jQuery(this).scrollTop() >= jQuery('.scrolling-content').offset().top - 0) {
+            jQuery('body').addClass("reached-top-mpu");
+            }
+            else{
+                jQuery('body').removeClass("reached-top-mpu");
+            }
+    }
+    });
+ }); 
+
+
+/* Reached Dianomi */
+   jQuery(function(){
+    jQuery(document).scroll(function(){
+    if(jQuery('.sticky-mpu').length > 0){
+        if(jQuery(this).scrollTop() >= jQuery('.stickydiv-sticky-wrapper').offset().top - 0) {
+            jQuery('body').addClass("reached-dianomi");
+            }
+            else{
+                jQuery('body').removeClass("reached-dianomi");
+            }
+    }
+    });
+ }); 
+
+
+
+
+
+
+
+
+
+
+//intiate the donation cookie
+function setCookie() {
+    var expdate = new Date ();
+      expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 30));
+      document.cookie="donation=Initiated; path=/ ";
+      //window.location.href="https://dev-ns-subs.pantheon.io/city-metric-donate/";
+      window.location.href="https://subscribe.newstatesman.com/city-metric-donate/";
+}
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+//check if the user has payed and set dontion cookie to payed
+function checkCookie() {
+  var expdate = new Date ();
+      expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 30));
+    var donate = getCookie("donation");
+    if (donate == "Initiated") {
+        document.getElementById("donate").style.display="none";
+        document.getElementById("donate-toggle").style.display="none";
+        document.body.style.overflow = "visible";
+        document.cookie="donation=Payed ; path=/ ; expires = " + expdate ;     
+    } else {
+
+        }
+    }
+
+    function hideDonationPopup() {
+    var expdate = new Date ();
+      expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000));
+      document.cookie="donationPopup=hide; path=/; expires = " + expdate ; 
+}
+
+$('.close').click(function(e) { 
+    document.getElementById("donate").style.display="none";
+    document.getElementById("donate-toggle").style.display="none";
+    document.body.style.overflow = "visible";
+    hideDonationPopup();
+});
+
+
+$('.donate-toggle').click(function(e) { 
+
+if(e.target.id!="donate")
+{ 
+    document.getElementById("donate").style.display="none";
+    document.getElementById("donate-toggle").style.display="none";
+    document.body.style.overflow = "visible";
+    hideDonationPopup();
+  }
+ // else{
+  //  e.stopPropagation();
+ // }
+});
+
+</script>
+
+<script>
+    function adBlockDetected() {
+    var donate = getCookie("donation");
+    var donationPopup = getCookie("donationPopup");
+    if ((donate == "Payed") || (donationPopup == "hide"))
+        {           
+            document.getElementById("donate").style.display="none";
+            document.getElementById("donate-toggle").style.display="none";
+            document.body.style.overflow = "visible";
+        }
+        else
+        {
+            document.getElementById('donate').style.display = 'block';
+            document.getElementById('donate-toggle').style.display = 'block';
+            document.body.style.overflow = "hidden";
+        }
+  
+    //alert('ad blocker detected');
+    jQuery(".ad-blocker-wraper").css("ad-blocker-detected");
+    
+    }
+    function adBlockNotDetected() {
+        //alert('No Adblocker found');
+    }
+
+    if (typeof blockAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        blockAdBlock.setOption({debug: true});
+        blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+
+    function checkAgain() {
+
+        // setTimeout 300ms for the recheck is visible when you click on the button
+        setTimeout(function () {
+            if (typeof blockAdBlock === 'undefined') {
+                adBlockDetected();
+            } else {
+                blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+                blockAdBlock.check();
+            }
+        }, 300);
+    }
+
+
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f77cda59e6","applicationID":"8433084","transactionName":"YwZSZ0oFWhFRWkNeCVpMcVBMDVsMH1dYUwNrE1FUXTtCC1VO","queueTime":0,"applicationTime":313,"atts":"T0FREQIfSR8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

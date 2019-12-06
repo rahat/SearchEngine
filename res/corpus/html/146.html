@@ -1,0 +1,2149 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#" class="cssgrid">
+<head prefix="og: http://ogp.me/ns#
+	fb: http://ogp.me/ns/fb#">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c8454aa091",applicationID:"84495514"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+	<meta property="fb:pages" content="9800035481" />
+	<meta name="msvalidate.01" content="87B78205BB25666E656DA3EB49F3FD42" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="st:robots" content="follow, index">
+	<title>&#8216;Joker&#8217; Most Profitable Comic Book Film Ever Released | IndieWire</title>
+			<!-- Hotjar Tracking Code for https://www.indiewire.com -->
+		<script>
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:676291,hjsv:5};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+		<!-- BEGIN Amazon Apstag -->
+<script>
+	!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+	apstag.init({
+		pubID: 3157,
+		adServer: 'googletag',
+		videoAdServer: 'DFP',
+		bidTimeout: 2e3
+	});
+</script>
+<!-- End Amazon Apstag -->
+<!-- Start: IAS script -->
+<script type='text/javascript' src='https://static.adsafeprotected.com/vans-adapter-google-ima.js'></script>
+<!-- End: IAS script -->
+
+<!-- BEGIN Krux Control Tag -->
+<script class="kxct" data-id="KZEd1R95" data-timing="async" data-version="3.0" type="text/javascript">
+  window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+
+	Krux('ns:penskemediacorporation', 'consent:get', function(errors, body) {
+
+		if ( 'undefined' !== typeof pmc_meta && 'undefined' !== typeof pmc_meta.country && 'us' === pmc_meta.country.toLowerCase() ) {
+			Krux( 'ns:penskemediacorporation', 'consent:set', { dc: true, al: true, tg: true, cd: true, sh: true, re: true } );
+		}
+	} );
+
+  (function(){
+    var k=document.createElement('script');k.type='text/javascript';k.async=true;
+    k.src="https:\/\/cdn.krxd.net\/controltag\/KZEd1R95.js";
+    var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+  }());
+
+</script>
+<!-- END Krux Controltag -->
+
+<!-- GPT interchange code -->
+<script>
+	window.Krux || ((Krux = function() {
+		Krux.q.push(arguments);
+	}).q = []);
+	(function() {
+		function retrieve(n) {
+			var m, k = 'kxpenskemediacorporation_' + n;
+			if (window.localStorage) {
+				return window.localStorage[k] || "";
+			} else if (navigator.cookieEnabled) {
+				m = document.cookie.match(k + '=([^;]*)');
+				return (m && unescape(m[1])) || "";
+			} else {
+				return '';
+			}
+		}
+		Krux.user = retrieve('user');
+		Krux.segments = retrieve('segs') && retrieve('segs').split(',') || [];
+	})();
+</script>
+
+<!-- Quantcast Tag, part 1 -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+})();
+</script>
+<!-- Quantcast tag End, part 1 -->
+
+<!-- Cloudinary analysis tag - start -->
+<script>
+LUX=(function(){var a=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMarks)?LUX.gaMarks:[]);var d=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMeasures)?LUX.gaMeasures:[]);var h="LUX_start";var j=window.performance;var k=("undefined"!==typeof(LUX)&&LUX.ns?LUX.ns:(Date.now?Date.now():+(new Date())));if(j&&j.timing&&j.timing.navigationStart){k=j.timing.navigationStart}function e(){if(j){if(j.now){return j.now()}else{if(j.webkitNow){return j.now()}else{if(j.msNow){return j.now()}else{if(j.mozNow){return j.now()}}}}}var m=Date.now?Date.now():+(new Date());return m-k}function b(m){if(j){if(j.mark){return j.mark(m)}else{if(j.webkitMark){return j.webkitMark(m)}}}a.push({name:m,entryType:"mark",startTime:e(),duration:0});return}function l(o,s,m){if("undefined"===typeof(s)&&g(h)){s=h}if(j){if(j.measure){if(s){if(m){return j.measure(o,s,m)}else{return j.measure(o,s)}}else{return j.measure(o)}}else{if(j.webkitMeasure){return j.webkitMeasure(o,s,m)}}}var q=0,n=e();if(s){var r=g(s);if(r){q=r.startTime}else{if(j&&j.timing&&j.timing[s]){q=j.timing[s]-j.timing.navigationStart}else{return}}}if(m){var p=g(m);if(p){n=p.startTime}else{if(j&&j.timing&&j.timing[m]){n=j.timing[m]-j.timing.navigationStart}else{return}}}d.push({name:o,entryType:"measure",startTime:q,duration:(n-q)});return}function g(m){return c(m,f())}function c(p,o){for(i=o.length-1;i>=0;i--){var n=o[i];if(p===n.name){return n}}return undefined}function f(){if(j){if(j.getEntriesByType){return j.getEntriesByType("mark")}else{if(j.webkitGetEntriesByType){return j.webkitGetEntriesByType("mark")}}}return a}return{mark:b,measure:l,gaMarks:a,gaMeasures:d}})();LUX.ns=(Date.now?Date.now():+(new Date()));LUX.ac=[];LUX.cmd=function(a){LUX.ac.push(a)};LUX.init=function(){LUX.cmd(["init"])};LUX.send=function(){LUX.cmd(["send"])};LUX.addData=function(a,b){LUX.cmd(["addData",a,b])};
+</script>
+<script src="https://cdn.speedcurve.com/js/lux.js?id=239521540" async defer></script>
+<!-- Cloudinary analysis tag - end -->
+
+
+<meta name="description" content="&quot;Avengers: Endgame&quot; may be the highest grossing film ever released (unadjusted for inflation), but it&#039;s not as profitable as &quot;Joker.&quot;" />
+<meta name="keywords" content="" />
+<meta name="news_keywords" content="Box Office, Joker, Warner Bros." />
+
+<script type="text/javascript">dataLayer = window.dataLayer || []; /* Google Tag Manager */</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pmc_meta = {"lob":"indiewire","page-type":"article","env":"desktop","primary-category":"Film","primary-vertical":"","vertical":"","category":["Film"],"tag":["Box Office","Joker","Warner Bros."],"author":["Zack Sharf"],"logged-in":"","subscriber-type":"","country":"us","is_eu":false,"post-options":""};
+
+/* ]]> */
+</script>
+		<script>
+			(function(d,w){
+				var i, parts, name, c, rdecode = /(%[0-9A-Z]{2})+/g, rspace = /\+/g, ac = (d ? d.split('; ') : []);
+				for(w.pmc_cookies = {}, i = 0; i < ac.length; i++) {
+					parts = ac[i].split('='), name = parts[0].replace(rdecode, decodeURIComponent), c = parts.slice(1).join('=');
+					if(c.charAt(0) === '"') { c = c.slice(1, -1); } c = c.replace(rdecode, decodeURIComponent).replace(rspace, ' '); w['pmc_cookies'][name] = c;
+				}
+			})(document.cookie, window);
+
+			pmc_meta=pmc_meta || {}, pmc_meta.omni_visit_id = window.pmc_cookies.omni_visit_id || "indiewire." + new Date().getTime() + '.' + (function(l,b,a,c,i,d){for(i=0;i<256;i++){l[i]=(i<16?'0':'')+(i).toString(16);}if(c&&c.getRandomValues){try{d=new Uint32Array(4),c.getRandomValues(d);}catch(e){d=0;}}d=d||[b()*a>>>0,b()*a>>>0,b()*a>>>0,b()*a>>>0];a=d[0],b=d[1],c=d[2],d=d[3];return l[a&0xff]+l[a>>8&0xff]+l[a>>16&0xff]+l[a>>24&0xff]+'-'+l[b&0xff]+l[b>>8&0xff]+'-'+l[b>>16&0x0f|0x40]+l[b>>24&0xff]+'-'+l[c&0x3f|0x80]+l[c>>8&0xff]+'-'+l[c>>16&0xff]+l[c>>24&0xff]+l[d&0xff]+l[d>>8&0xff]+l[d>>16&0xff]+l[d>>24&0xff];})([],Math.random,0x100000000,window.crypto||window.msCrypto);
+			var d = new Date(); d.setTime(d.getTime() + ( 60 * 60 * 1000 )); var expires = d.toGMTString(); var path = "/"; var domain = window.location.hostname;
+			document.cookie = 'omni_visit_id=' + encodeURIComponent(pmc_meta.omni_visit_id) + ( expires ? '; expires=' + expires : '' ) + ( path ? '; path=' + path : '' ) + ( domain ? '; domain=' + domain : '' );
+		</script>
+				<script type="text/javascript">
+		if( window.hasOwnProperty( 'pmc_meta' ) ) {
+			if( !window.hasOwnProperty( 'dataLayer' ) || !window.dataLayer.hasOwnProperty('push') ) {
+				window.dataLayer = [];
+			}
+			window.dataLayer.push( pmc_meta );
+		}
+		</script>
+
+				<script>
+			window.pmc_is_adblocked = false;
+		</script>
+		
+<script async='async' src='https://cdn.adsafeprotected.com/iasPET.1.js'></script>
+<link rel="dns-prefetch" href="i0.wp.com" />
+<link rel="dns-prefetch" href="i1.wp.com" />
+<link rel="dns-prefetch" href="i2.wp.com" />
+<link rel="dns-prefetch" href="google-analytics.com" />
+<link rel="dns-prefetch" href="partner.googleadservices.com" />
+<link rel="dns-prefetch" href="googletagservices.com" />
+<link rel="dns-prefetch" href="google-analytics.com" />
+<link rel="dns-prefetch" href="googletagmanager.com" />
+<link rel="dns-prefetch" href="fonts.gstatic.com" />
+<link rel="dns-prefetch" href="pages.email.indiewire.com" />
+<link rel="dns-prefetch" href="twitter.com" />
+<link rel="dns-prefetch" href="platform.twitter.com" />
+<link rel="dns-prefetch" href="load.instinctiveads.com" />
+<link rel="dns-prefetch" href="adg.bzgint.com" />
+<link rel="dns-prefetch" href="c.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="aax.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="cdn.krxd.net" />
+<link rel="dns-prefetch" href="ag.innovid.com" />
+<link rel="dns-prefetch" href="match.adsrvr.org" />
+<link rel="dns-prefetch" href="ads.rubiconproject.com" />
+<link rel="dns-prefetch" href="js.moatads.com" />
+<link rel="dns-prefetch" href="cm.g.doubleclick.net" />
+<link rel="dns-prefetch" href="adserver.genesismediaus.com" />
+<link rel="dns-prefetch" href="schema.org" />
+<link rel="dns-prefetch" href="widgets.outbrain.com" />
+<link rel="dns-prefetch" href="images.outbrain.com" />
+<link rel="dns-prefetch" href="b.scorecardresearch.com" />
+<link rel="dns-prefetch" href="sb.scorecardresearch.com" />
+<link rel="dns-prefetch" href="pixel.quantserve.com" />
+<link rel="dns-prefetch" href="secure.quantserve.com" />
+<link rel="dns-prefetch" href="content.jwplatform.com" />
+<link rel="dns-prefetch" href="cc.swiftype.com" />
+<link rel="dns-prefetch" href="dl9fvu4r30qs1.cloudfront.net" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//d9etzk30b05yg.cloudfront.net' />
+<link rel='dns-prefetch' href='//s.swiftypecdn.com' />
+<link rel='dns-prefetch' href='//content.jwplatform.com' />
+<link rel='dns-prefetch' href='//cdn.roiq.ranker.com' />
+<link rel='dns-prefetch' href='//www.lightboxcdn.com' />
+<link rel='dns-prefetch' href='//securepubads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//load.instinctiveads.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="IndieWire &raquo; Feed" href="https://www.indiewire.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="IndieWire &raquo; Comments Feed" href="https://www.indiewire.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="IndieWire &raquo; &#8216;Joker&#8217; Stuns Box Office to Become Most Profitable Comic Book Film Ever Released Comments Feed" href="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.indiewire.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0' href='https://www.indiewire.com/_static/??-eJyVkNFqwzAMRX9orpZB2fow9inDdpRMVLGCJKfk7xcS2gX2kj7ZRr5H9164jYFK5tqiQTaDlswhseRrYEoadQbzmfE0UDktH15gUWQpjsVh5NpTMRiHHPb3niVFDl0t2UnKRt4NZEJVWlYeJsbqMkTHNijyejKVq0E0QzdIlbhdt2xmj2I7luhU+jAtbuROW91ynFGfSt2JOOoj6/Y8rDbJtFRjP1ExpKjw/Req01XcHofdqPN5xH2i55pxGbdSLExv/0x8DZ/N+b15vTTny8cvQeraig==' type='text/css' media='all' />
+<link rel='stylesheet' id='pt-teko-css'  href='https://fonts.googleapis.com/css?family=PT+Sans%3A400%2C700%7CTeko%3A300%2C400&#038;ver=5.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='all-css-2' href='https://www.indiewire.com/_static/??-eJx9zVEOgjAQhOELWbcYCX0xnoWUQQpsbbpLCLdXiRoTCW//wzcZmpPx96iIStqBIRRiEzCHDBJdRhy9yIH2WEabIZ052cL96TROtxCFEnvz23XD9LSfNttfPH1HPTTVflhH737xK1+Ksjrb0llXPQAdr0so' type='text/css' media='all' />
+<style id='pmc-adm-style-inline-css' type='text/css'>
+div.admz, div.admz-sp { margin-left: auto; margin-right: auto; text-align: center; } #skin-ad-inject-container { display: none; }
+</style>
+
+
+	<link rel="manifest" href="/manifest.json">
+
+
+
+	<!-- Smart Banner start -->
+	<meta name="apple-itunes-app" content="app-id=1400654071">
+	<!-- Smart Banner end -->
+
+<script type="text/javascript" src="https://www.indiewire.com/wp-content/plugins/pmc-plugins/pmc-global-functions/js/pmc-utils.js"></script>			<script type="text/javascript">
+			var pmc_do_analytics_pagecount = true;		//flag to allow analytics code to count a page view
+			var pmc_common_urls = {
+				parent_theme_uri: 'https://www.indiewire.com/wp-content/themes/indiewire/',
+				current_theme_uri: 'https://www.indiewire.com/wp-content/themes/indiewire/',
+				fb_channel_uri: 'https://www.indiewire.com/wp-content/plugins/pmc-plugins/partner/facebook/channel.html'
+			};
+			</script>
+		<script type="text/javascript">
+			(function(i,r){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,'ga');
+
+			function loadGA(cookieOk){
+				// Default to true so the non-gated version still sets cookies
+				cookieOk = (typeof cookieOk !== 'undefined') ?  cookieOk : true;
+				// Load the GA script.
+				(function(s,o,g,a,m){a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(document,'script','//www.google-analytics.com/analytics.js');
+
+				var pmc_ga_dimensions = {"dimension1":"article","dimension3":"1202188266","dimension4":"zack-sharf","dimension5":"film","dimension6":"box-office|joker|warner-bros","dimension8":"film","dimension10":"2019","dimension11":"11","dimension12":"08","dimension13":"11","dimension14":"26","dimension25":"2019-11-08T16:26:16+00:00","dimension26":"2019-11-08 11:26:16","dimension27":"Friday","dimension29":"anonymous"};				pmc_ga_dimensions["dimension15"] = document.location.protocol.replace(':', '');
+				if ( cookieOk ) {
+					(function(dim){
+									if( 'undefined' !== typeof pmc_meta && 'string' === typeof pmc_meta.omni_visit_id ){
+				dim["dimension28"] = pmc_meta.omni_visit_id;
+			}
+							})(pmc_ga_dimensions);
+				}
+				var pmc_ga_fields_obj = {"useAmpClientId":true};				if ( cookieOk === false ) {
+					// if storage consent is not granted, don't set cookies.
+					pmc_ga_fields_obj['storage'] = 'none';
+					pmc_ga_fields_obj['storeGac'] = false;
+				}
+				ga('create', "UA-3922545-4", 'auto', pmc_ga_fields_obj);
+				ga('set', 'forceSSL', true);
+
+									if ( window.pmc && pmc.tracking ) {
+						ga('set', 'hitCallback', function() { pmc.tracking.do_call_events(); });
+						var utms = pmc.tracking.get_properties_string();
+
+						if ( utms !== '' ) {
+							// the utm params are gone already so add them back
+							ga('set', 'location', location.href.split('#')[0] + ( location.search ? '&' : '?' ) + utms);
+						}
+					}
+												ga('require', 'linkid', 'linkid.js');
+				ga('require', 'displayfeatures');				ga('set', pmc_ga_dimensions);
+				
+		ga( 'require', "GTM-MMWGSBV" );
+
+		
+								
+				ga('require', "GTM-MMWGSBV");
+				ga('linker:autoLink', []);
+
+				
+				ga('send', 'pageview');
+
+							}
+
+		</script>
+
+		<script type='text/javascript' src='https://www.indiewire.com/_static/??-eJylj9sKwjAMhl/IWncxdBfis9Qu1nY5zB48vL2dB/DGIQiBhI8/H4m+jMqzxdJD0qHWqUC8vdoypIWeCyjyLpoMS/L8DlvhDJz1iMV5TtoEc62QqEKFYnrPbhI5EYegjMVvmyNZ9Tk7lL1BdShssxd+nDPxCCRnUDkaO1T5v7onn3vpV9NRZEhVsqNt066bVde03SbcAe+Xin8='></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var configuration = {"rendererBaseUrl":"\/\/renderer.qmerce.com","randomBaseUrl":"\/\/random.qmerce.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' async="async" src='//d9etzk30b05yg.cloudfront.net/js/sdk/v2.0/apester-javascript-sdk.min.js?ver=5.2.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_apstag = {"is_enabled":"enabled","is_gallery":"enabled","is_video":"enabled"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_comscore_options = {"pageview_candidate_url":"\/\/www.indiewire.com\/wp-content\/plugins\/pmc-plugins\/pmc-comscore\/xml\/comscore-pageview-candidate.xml"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.indiewire.com/_static/??-eJyNjk0KwjAQhS9kOlXU4kI8yzQdS2ImCZ0JBU+vlQpZZvV+4H08WLOxKSpFhRzK7KJAZmtqj0UTo9JkFgo/DS6+BFCEVGAsLkzgvznnzssBWpCM7xQNZlGc/6ANUfcdu9gKtInFpoU2SJ1b98/FyUhUXdmb/cSD78fL0F/Pp/42+A+DD3Ow'></script>
+<script type='text/javascript' src='//content.jwplatform.com/libraries/NMELGwDP.js?ver=5.2.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_adm_config = {"dfp_skin_main_content":["layout-container"],"lazy_load_override":"enable","page_level_referrer_targeting":"enable","auto_refresh":"enable"};
+var pmc_header_bidder = {"active":""};
+var pmcadm_floating_preroll_data = {"cookie_name":"pmc-ads-6378bf7fef332c67c9d1c70e37381361","media_id":"0ahnX9pa","time_gap":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.indiewire.com/_static/??-eJydkcFOwzAQRH8I25SWhAviDNfyA469kI1sr/FuUuXv65Yi5QASibQHr+U3Hs2YU1aOkkASk8P4iYlNjk4tzxN6oHpjZyhmYMOuYBY98J1Z0NJDBDaYPMIJC1xeBuxMRyQsxWa11w/6XkdM/0EncmB6sL4QxVXQ8DVCmfVa9uL1hnqS71nB8g/Moca14dOaKoXwTmqnD7pZI3DEmAO82cker828ph4Kik3uVx9/1Wx9vLZLY3HQjSy17eWyQStTmD8whOq5CjA4QUqKOoYybRIMZP0mEC3fqJf4vHts903z1DbtcAa6mR7N'></script>
+<script async="async" type='text/javascript' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js?ver=1'></script>
+<script type='text/javascript' src='https://load.instinctiveads.com/i.js?ver=5.2.4'></script>
+<link rel='https://api.w.org/' href='https://www.indiewire.com/wp-json/' />
+<meta name="generator" content="WordPress 5.2.4" />
+<link rel='shortlink' href='https://wp.me/p7Aica-1jmg5k' />
+<link rel="alternate" type="application/json+oembed" href="https://www.indiewire.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.indiewire.com%2F2019%2F11%2Fjoker-most-profitable-comic-book-film-ever-box-office-1202188266%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.indiewire.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.indiewire.com%2F2019%2F11%2Fjoker-most-profitable-comic-book-film-ever-box-office-1202188266%2F&#038;format=xml" />
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><meta name="author" content="Zack Sharf">		<style>
+		.getty.alignleft {
+			margin-right: 5px;
+		}
+		.getty.alignright {
+			margin-left: 5px;
+		}
+		</style>
+		
+<script src="https://tagan.adlightning.com/penske/op.js" defer></script>
+	<script type="text/javascript">
+		// Adding IndexExchange wrapper tag to the page
+		function pmc_add_index_wrapper_script() {
+			var ref = document.getElementsByTagName('script')[0];
+			var script = document.createElement('script');
+			script.src = 'https://js-sec.indexww.com/ht/p/182698-23476390810320.js';
+			ref.parentNode.insertBefore(script, ref);
+		}
+
+		if( 'object' === typeof pmc_meta &&
+			'undefined' !== typeof pmc_meta.is_eu &&
+			true === pmc_meta.is_eu
+		) {
+			pmc.hooks.add_action( 'pmc_adm_consent_data_ready', function( consent_data ) {
+				if ( 'object' === typeof consent_data && 'undefined' !== typeof consent_data.returnValue ) {
+					pmc_add_index_wrapper_script();
+				}
+			});
+		} else {
+			pmc_add_index_wrapper_script()
+		}
+	</script>
+		<script>
+			try {
+				// Don't rely on jQuery being loaded yet.
+				document.addEventListener( 'DOMContentLoaded', function() {
+					// Record in GA event if ads are blocked.
+					if ( true === window.pmc_is_adblocked ) {
+						ga( 'send', 'event', 'ad_blocker', 'blocked', 'ads_blocked', {
+							nonInteraction: true
+						});
+					}
+				});
+			} catch( err ) {
+				// Do nothing...
+			}
+		</script>
+				<link rel="search" type="application/opensearchdescription+xml"
+		      href="https://www.indiewire.com/pmc-opensearch"
+		      title="IndieWire  Search"/>
+	<link rel="canonical" href="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/" />
+
+<!-- Swiftype Meta Tags Start -->
+<meta class="swiftype" name="content_type" data-type="string" content="Article" />
+<meta class="swiftype" name="title" data-type="string" content="&#039;Joker&#039; Stuns Box Office to Become Most Profitable Comic Book Film Ever Released" />
+<meta class="swiftype" name="author" data-type="string" content="Zack Sharf" />
+<meta class="swiftype" name="published_at" data-type="date" content="2019-11-08 11:26:16" />
+<meta class="swiftype" name="image" data-type="enum" content="https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?w=300" />
+<meta class="swiftype" name="comment_count" data-type="integer" content="21" />
+<meta class="swiftype" name="tags" data-type="string" content="Box Office" />
+<meta class="swiftype" name="tags" data-type="string" content="Joker" />
+<meta class="swiftype" name="tags" data-type="string" content="Warner Bros." />
+<meta class="swiftype" name="topics" data-type="string" content="Film" />
+<meta class="swiftype" name="body" data-type="text" content="IndieWire box office reporter Tom Brueggemann wrote in the middle of October that Warner Bros.&#039; revisionist comic book drama &quot;Joker&quot; could be headed near or past the coveted $1 billion at the worldwide box office. One month later, &quot;Joker&quot; is all but destined to join the $1 billion club, no small feat for an R-rated movie that trades in standard action beats for more character-focused drama. A new report from Forbes&#039; senior contributor Scott Mendelson says &quot;Joker&quot; will be near $957 million worldwide by the end of November 8, making $1 billion all but assured. More importantly, &quot;Joker&quot; has become the most profitable comic book film ever released.
+
+With a reported production budget of $62.5 million, &quot;Joker&quot; has so far earned just over 15 times its cost and counting (15.3x if we&#039;re being exact). Forbes reports that multiplier makes &quot;Joker&quot; more profitable than any other comic book release&nbsp;in terms of budget versus global gross. &quot;Joker&quot; has surpassed the likes of profitable comic book films &quot;Venom&quot; ($854 million box office/$90 million budget), Tim Burton&#039;s &quot;Batman&quot; ($411 million/$35 million), &quot;Deadpool&quot; ($783 million/$58 million), &quot;Teenage Mutant Ninja Turtles&quot; ($200 million/$13.5 million), and &quot;The Mask&quot; ($351 million/$23 million).
+
+Moreover, when &quot;Joker&quot; crosses $1 billion sometime this month it will be the cheapest movie to do so. Most $1 billion grossers are massive studio tentpoles with budgets above $100 million (see all of the Marvel movies for an example). According to Forbes, &quot;Jurassic Park&quot; is currently the cheapest $1 billion grosser with a $63 million production budget.
+
+&quot;Joker&#039;s&quot; box office success around the world has been unprecedented. The movie was always going to catch the eye of comic book movie fans because of its source material, but the casting of Joaquin Phoenix in the title role and the movie&#039;s awards bona fides (Phoenix is a Best Actor frontrunner and the film picked up the Golden Lion at the Venice Film Festival) have made &quot;Joker&quot; appointment viewing for the non-comic book crowd as well.
+
+In the U.S., &quot;Joker&quot; has held on at the box office stronger than many of its comic book movie contemporaries. &quot;Joker&quot; has never had a drop above the 50% mark since opening October 4. In recent weeks, the Todd Phillips-directed film has dropped just 29% from weekend to weekend. The film continues to play nationwide and its box office should only hang on once nominations for Phoenix start being announced." />
+<!-- Swiftype Meta Tags End -->
+
+
+<style type="text/css">
+.vvqbox {
+	visibility: visible !important;
+	display: block;
+	clear: both;
+	width: 100%;
+}
+.vvqbox div {
+	margin: 10px auto;
+}
+.vvqbox img {
+	max-width: 100%;
+	height: 100%;
+}
+.vvqbox object {
+	max-width: 100%;
+}
+</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pmc_site_config = {"rot13_hostname":"jjj.vaqvrjver.pbz","hostname":"www.indiewire.com","is_proxied":null};
+
+/* ]]> */
+</script>
+		<script type='text/javascript'>
+			var pmc_tracking_url = "https://s3.amazonaws.com/heartbeat.pmc.com/track?host=www.indiewire.com&path=%2F2019%2F11%2Fjoker-most-profitable-comic-book-film-ever-box-office-1202188266%2F&ct=article&lob=indiewire&loc=us&env=desktop&post_id=1202188266&comment_count=21";
+			var pmc_tracking_image = new Image();
+			if ( 'undefined' !== typeof pmc_meta && 'string' === typeof pmc_meta.omni_visit_id ) {
+				pmc_tracking_url = pmc_tracking_url + '&omni_visit_id=' + pmc_meta.omni_visit_id;
+			}
+			if ( 'string' === typeof window.location.hash && window.location.hash.length ) {
+				pmc_tracking_url = pmc_tracking_url + "&h=" + encodeURIComponent( window.location.hash );
+			}
+			pmc_tracking_image.src = pmc_tracking_url + "&ts=" + Date.now();
+		</script>
+				<style type="text/css">
+						.site-title,
+				.site-description {
+					position: absolute;
+					clip: rect(1px, 1px, 1px, 1px);
+				}
+					</style>
+		<meta property="og:site_name" content="IndieWire" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/" />
+<meta property="og:title" content="&#8216;Joker&#8217; Stuns Box Office to Become Most Profitable Comic Book Film Ever Released" />
+<meta property="og:description" content="&quot;Avengers: Endgame&quot; may be the highest grossing film ever released (unadjusted for inflation), but it&#039;s nowhere near as profitable as &quot;Joker.&quot;" />
+<meta property="article:published_time" content="2019-11-08T16:26:16+00:00" />
+<meta property="article:modified_time" content="2019-11-08T16:26:16+00:00" />
+<meta property="article:author" content="https://www.indiewire.com/author/zacksharf/" />
+<meta property="article:section" content="Film" />
+<meta property="article:tag" content="Box Office" />
+<meta property="article:tag" content="Joker" />
+<meta property="article:tag" content="Warner Bros." />
+<meta property="og:image" content="https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png" />
+<meta property="og:image:width" content="780" />
+<meta property="og:image:height" content="411" />
+<link rel="amphtml" href="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/amp/"><meta name="fragment" content="!" />
+<script type="text/javascript">
+	ajaxurl = 'https://www.indiewire.com/wp-admin/admin-ajax.php';
+	gpid = '1202188266';
+	cpage = ''
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pmc_krux = {"lob":"indiewire","page-type":"article","env":"desktop","primary-category":"Film","primary-vertical":"","vertical":"","category":["Film"],"tag":["Box Office","Joker","Warner Bros."],"author":["Zack Sharf"],"logged-in":"","subscriber-type":""};
+
+/* ]]> */
+</script>
+<link rel="icon" href="https://www.indiewire.com/wp-content/uploads/2018/04/cropped-iw_favicon.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://www.indiewire.com/wp-content/uploads/2018/04/cropped-iw_favicon.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.indiewire.com/wp-content/uploads/2018/04/cropped-iw_favicon.png?w=180" />
+<meta name="msapplication-TileImage" content="https://www.indiewire.com/wp-content/uploads/2018/04/cropped-iw_favicon.png?w=270" />
+			<style type="text/css" id="wp-custom-css">
+				/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/
+.gallery-thumbs div.gallery-multi div img {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.gallery-thumbs div.gallery-multi div img:hover {
+  opacity: 0.7;
+}
+.page-title {
+  font: 40px/1 'Lato', Arial, sans-serif;
+  text-shadow: none;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding: 0 0 15px 0;
+  color: #000;
+  font-weight: bold;
+}
+.page-id-1201672621 .grouping.borders .center {
+  width: 100%;
+  border-right: none;
+}
+.page-id-1201672621 #main-article .entry-content h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 3px;
+}
+.page-id-1201672621 #main-article .entry-content h5 {
+  font-style: italic;
+}
+.page-id-1201672621 #main-article .entry-content .size-medium {
+  float: left;
+  margin: 9px 20px 9px 0;
+  max-width: 210px;
+  filter: grayscale(1);
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+}
+@media only screen and (max-width: 600px) {
+  .page-id-1201672621 #main-article .entry-content .size-medium {
+    float: none;
+    max-width: none;
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+}
+.grouping.borders .right-side {
+  max-width: none;
+}
+.l-page {
+  display: block;
+}
+			</style>
+		</head>
+<body class="post-template-default single single-post postid-1202188266 single-format-standard pmc-gallery__ waitingForCmp pmc-desktop pmc-no-tablet pmc-no-mobile geo-us pmc-group-pmc-product">
+		<!-- Google Tag Manager -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3K4Q7"
+					  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W3K4Q7');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Placeholder for Floating Video Ad -->
+<div class="floating-preroll-ad">
+	<div class="floating-preroll-ad-container">
+		<span class="floating-preroll-ad-close">&times;</span>
+		<div id="jwplayer_floating_preroll_ad"></div>
+	</div>
+</div>
+
+<script type='text/javascript' src="https://content.jwplatform.com/libraries/tDEymOrh.js"></script>
+
+<!-- End Placeholder Floating Video Ad -->
+<!-- Placeholder for Responsive Skin Ad -->
+<div id="skin-ad-section">
+
+	<div id="skin-ad-left-rail-container"></div>
+
+	<div id="skin-ad-right-rail-container"></div>
+	<div id="skin-ad-inject-container">
+			<div class="admz" id="adm-responsive-skin-ad">
+					<div class="adma google-publisher" data-device="Desktop" data-width="1">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="gpt-iw-ros-skin-uid1" class=" adw-1 adh-1"></div>
+	</div>
+			</div>
+				</div>
+	</div>
+</div>
+
+<!-- End Placeholder for Responsive Skin Ad -->		<!-- Begin comScore Tag -->
+<noscript> <img src="https://sb.scorecardresearch.com/p?c1=2&c2=6035310&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" /> </noscript>
+<!-- End comScore Tag -->
+
+		
+	<div id="leaderboard-no-padding">
+		<div id="leaderboard" class="iw-leaderboard-ad">
+				<div class="admz" id="adm-leaderboard">
+					<div class="adma google-publisher" data-device="Desktop" data-width="970">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="div-gpt-indiewire-ros-leaderboard-uid2" class="ad-rotatable adw-970 adh-90"></div>
+	</div>
+			</div>
+				</div>
+		</div><!-- END #leaderboard -->
+	</div>
+
+				<main id="layout-container" class="l-page">
+							<div id="back-to-brand">
+	<a href="https://www.indiewire.com">
+		<i class="fa fa-angle-double-left" aria-hidden="true"></i>Back to IndieWire	</a>
+</div>						<header id="masthead-section">
+			<div class="masthead-module">
+				<div class="module-hidden-on-mobile module-hidden-on-tablet">
+					<div class="header-flex-container">
+						<div id="top-logo" class="header-flex-item">
+							<a href="https://www.indiewire.com"></a>
+						</div>
+													<div id="masthead-right-side" class="header-flex-item">
+								<ul id="main-nav" class="" role="navigation"><li id="menu-item-1201713179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201713179"><a href="/page/2/">News</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201714795" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714795"><a href="/page/2/">All News</a></li>
+	<li id="menu-item-1201747581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201747581"><a href="/gallery/">Galleries</a></li>
+	<li id="menu-item-1201979727" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979727"><a href="https://www.indiewire.com/t/lists/">Lists</a></li>
+	<li id="menu-item-1201979729" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979729"><a href="https://www.indiewire.com/t/box-office/">Box Office</a></li>
+	<li id="menu-item-1201979731" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979731"><a href="https://www.indiewire.com/t/trailers/">Trailers</a></li>
+	<li id="menu-item-1201979732" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979732"><a href="https://www.indiewire.com/t/festivals/">Festivals</a></li>
+	<li id="menu-item-1201681939" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201681939"><a href="https://www.indiewire.com/t/acquisitions/">Acquisitions</a></li>
+	<li id="menu-item-1201683026" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201683026"><a href="https://www.indiewire.com/v/thompsononhollywood/">Thompson on Hollywood</a></li>
+</ul>
+</li>
+<li id="menu-item-1201713193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201713193"><a href="https://www.indiewire.com/c/film/">Film</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201714796" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714796"><a href="https://www.indiewire.com/c/film/">All Film</a></li>
+	<li id="menu-item-1201713194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713194"><a href="https://www.indiewire.com/t/reviews/">Reviews</a></li>
+	<li id="menu-item-1201713195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713195"><a href="https://www.indiewire.com/t/interviews/">Interviews</a></li>
+	<li id="menu-item-1202160207" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202160207"><a href="https://www.indiewire.com/t/best-of-the-decade/">Best of the Decade</a></li>
+	<li id="menu-item-1202160501" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202160501"><a href="https://www.indiewire.com/2019/04/best-indie-movies-2019-films-1202126991/">Best Indies of 2019</a></li>
+	<li id="menu-item-1201714806" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714806"><a href="https://www.indiewire.com/2019/02/highest-grossing-indie-films-2019-1202031574/">Indie Box Office</a></li>
+	<li id="menu-item-1201713198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713198"><a href="https://www.indiewire.com/t/video/">Video</a></li>
+	<li id="menu-item-1201713201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713201"><a href="https://www.indiewire.com/t/podcasts/">Podcasts</a></li>
+</ul>
+</li>
+<li id="menu-item-1201681950" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201681950"><a href="https://www.indiewire.com/c/television/">TV</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201714799" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714799"><a href="https://www.indiewire.com/c/television/">All TV</a></li>
+	<li id="menu-item-1201713174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713174"><a href="https://www.indiewire.com/t/tv-reviews/">Reviews</a></li>
+	<li id="menu-item-1201713175" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713175"><a href="https://www.indiewire.com/t/tv-interviews/">Interviews</a></li>
+	<li id="menu-item-1201723559" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201723559"><a href="https://www.indiewire.com/t/fall-tv-preview/%20">Fall TV Preview</a></li>
+	<li id="menu-item-1201725775" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201725775"><a href="https://www.indiewire.com/t/emmys/">Emmys</a></li>
+	<li id="menu-item-1201818271" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201818271"><a href="https://www.indiewire.com/t/upfronts/">Upfronts</a></li>
+	<li id="menu-item-1201713176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713176"><a href="https://www.indiewire.com/t/video/">Video</a></li>
+	<li id="menu-item-1201713200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713200"><a href="https://www.indiewire.com/t/podcasts/">Podcasts</a></li>
+</ul>
+</li>
+<li id="menu-item-1201681946" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201681946"><a href="https://www.indiewire.com/c/awards/">Awards</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201714801" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714801"><a href="https://www.indiewire.com/c/awards/">All Awards</a></li>
+	<li id="menu-item-1202186160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202186160"><a href="https://www.indiewire.com/2019/04/oscars-golden-globes-awards-calendar-2020-january-1202059333/">Awards Calendar</a></li>
+	<li id="menu-item-1201681947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201681947"><a href="https://www.indiewire.com/t/fyc-awards-brunch/">Consider This FYC Brunch</a></li>
+	<li id="menu-item-1201683037" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201683037"><a href="https://www.indiewire.com/2019/04/oscar-predictions-2020-academy-awards-nominations-1202126726/">Oscar Predictions</a></li>
+	<li id="menu-item-1202190079" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202190079"><a href="https://www.indiewire.com/feature/golden-globes-2020-predictions-1202187206/">Golden Globes Predictions</a></li>
+	<li id="menu-item-1201713243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713243"><a href="https://www.indiewire.com/t/top-of-the-line/">Top of the Line</a></li>
+	<li id="menu-item-1201682763" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201682763"><a href="https://www.indiewire.com/v/thompsononhollywood/">Thompson on Hollywood</a></li>
+	<li id="menu-item-1201713244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713244"><a href="https://www.indiewire.com/t/animation/">Animation</a></li>
+	<li id="menu-item-1201713246" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713246"><a href="https://www.indiewire.com/t/podcasts/">Podcasts</a></li>
+	<li id="menu-item-1201893320" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201893320"><a href="https://www.indiewire.com/c/awards-spotlight/">Awards Spotlight</a></li>
+</ul>
+</li>
+<li id="menu-item-1201681953" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201681953"><a href="https://www.indiewire.com/c/filmmaker-toolkit/">Toolkit</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201714803" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714803"><a href="https://www.indiewire.com/c/filmmaker-toolkit/">All Toolkit</a></li>
+	<li id="menu-item-1201988280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201988280"><a href="https://www.indiewire.com/t/filmmaker-toolkit-podcast/">Toolkit Podcast</a></li>
+	<li id="menu-item-1201713202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713202"><a href="https://www.indiewire.com/t/filmmaker-toolkit/">Toolkit</a></li>
+</ul>
+</li>
+<li id="menu-item-1201681957" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201681957"><a href="#">More</a>
+<ul class="sub-menu">
+	<li id="menu-item-1201681962" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201681962"><a href="https://www.indiewire.com/about-us/">About</a></li>
+	<li id="menu-item-1201681963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201681963"><a href="https://www.indiewire.com/team/">Team</a></li>
+	<li id="menu-item-1201681961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201681961"><a href="https://www.indiewire.com/advertise/">Advertise with Indiewire</a></li>
+	<li id="menu-item-1201944586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201944586"><a href="https://www.indiewire.com/tips/">Confidential Tips</a></li>
+</ul>
+</li>
+</ul>							</div>
+							<div class="header-flex-item">
+										<section id="swiftype-search-widget" class="swiftype">
+			<div class="search_form block search_form_widget">
+				<div data-st-search-form="small_search_form"></div>
+			</div>
+		</section>
+									</div>
+												</div>
+				</div>
+				<div class="module-hidden-on-desktop mobile-masthead">
+					<div id="mobile-search-container">
+						<form role="search" method="get" class="search-form" action="/">
+							<label>
+								<span class="fa fa-search"></span>
+								<input type="search" class="search-field" value="" name="s" placeholder="Search">
+							</label>
+							<input type="submit" value=" " title="Search">
+						</form>
+					</div>
+					<div id="mobile-top">
+						<a href="#" id="mobile-menu">
+							<span class="fa fa-bars"></span>
+						</a>
+						<a href="https://www.indiewire.com" id="mobile-logo"><img alt="Indiewire" src="https://www.indiewire.com/wp-content/themes/indiewire/sprites/logo/Logo_IndieWire.png" alt="IndieWire"/></a>
+						<span id="mobile-search"><span class="fa fa-search"></span></span>
+						<ul id="mobile-nav" class="" role="navigation"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201713179"><a href="/page/2/">News</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714795"><a href="/page/2/">All News</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201747581"><a href="/gallery/">Galleries</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979727"><a href="https://www.indiewire.com/t/lists/">Lists</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979729"><a href="https://www.indiewire.com/t/box-office/">Box Office</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979731"><a href="https://www.indiewire.com/t/trailers/">Trailers</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-1201979732"><a href="https://www.indiewire.com/t/festivals/">Festivals</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201681939"><a href="https://www.indiewire.com/t/acquisitions/">Acquisitions</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201683026"><a href="https://www.indiewire.com/v/thompsononhollywood/">Thompson on Hollywood</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201713193"><a href="https://www.indiewire.com/c/film/">Film</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714796"><a href="https://www.indiewire.com/c/film/">All Film</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713194"><a href="https://www.indiewire.com/t/reviews/">Reviews</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713195"><a href="https://www.indiewire.com/t/interviews/">Interviews</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202160207"><a href="https://www.indiewire.com/t/best-of-the-decade/">Best of the Decade</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202160501"><a href="https://www.indiewire.com/2019/04/best-indie-movies-2019-films-1202126991/">Best Indies of 2019</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714806"><a href="https://www.indiewire.com/2019/02/highest-grossing-indie-films-2019-1202031574/">Indie Box Office</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713198"><a href="https://www.indiewire.com/t/video/">Video</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713201"><a href="https://www.indiewire.com/t/podcasts/">Podcasts</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201681950"><a href="https://www.indiewire.com/c/television/">TV</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714799"><a href="https://www.indiewire.com/c/television/">All TV</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713174"><a href="https://www.indiewire.com/t/tv-reviews/">Reviews</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713175"><a href="https://www.indiewire.com/t/tv-interviews/">Interviews</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201723559"><a href="https://www.indiewire.com/t/fall-tv-preview/%20">Fall TV Preview</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201725775"><a href="https://www.indiewire.com/t/emmys/">Emmys</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201818271"><a href="https://www.indiewire.com/t/upfronts/">Upfronts</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713176"><a href="https://www.indiewire.com/t/video/">Video</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713200"><a href="https://www.indiewire.com/t/podcasts/">Podcasts</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201681946"><a href="https://www.indiewire.com/c/awards/">Awards</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714801"><a href="https://www.indiewire.com/c/awards/">All Awards</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202186160"><a href="https://www.indiewire.com/2019/04/oscars-golden-globes-awards-calendar-2020-january-1202059333/">Awards Calendar</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201681947"><a href="https://www.indiewire.com/t/fyc-awards-brunch/">Consider This FYC Brunch</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201683037"><a href="https://www.indiewire.com/2019/04/oscar-predictions-2020-academy-awards-nominations-1202126726/">Oscar Predictions</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1202190079"><a href="https://www.indiewire.com/feature/golden-globes-2020-predictions-1202187206/">Golden Globes Predictions</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713243"><a href="https://www.indiewire.com/t/top-of-the-line/">Top of the Line</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201682763"><a href="https://www.indiewire.com/v/thompsononhollywood/">Thompson on Hollywood</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713244"><a href="https://www.indiewire.com/t/animation/">Animation</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713246"><a href="https://www.indiewire.com/t/podcasts/">Podcasts</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201893320"><a href="https://www.indiewire.com/c/awards-spotlight/">Awards Spotlight</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1201681953"><a href="https://www.indiewire.com/c/filmmaker-toolkit/">Toolkit</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201714803"><a href="https://www.indiewire.com/c/filmmaker-toolkit/">All Toolkit</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201988280"><a href="https://www.indiewire.com/t/filmmaker-toolkit-podcast/">Toolkit Podcast</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1201713202"><a href="https://www.indiewire.com/t/filmmaker-toolkit/">Toolkit</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1201681957"><a href="#">More</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201681962"><a href="https://www.indiewire.com/about-us/">About</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201681963"><a href="https://www.indiewire.com/team/">Team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201681961"><a href="https://www.indiewire.com/advertise/">Advertise with Indiewire</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201944586"><a href="https://www.indiewire.com/tips/">Confidential Tips</a></li>
+</ul>
+</li>
+</ul>					</div>
+				</div>
+			</div>
+		</header>
+		<div class="grouping borders last article-page" id="">
+	<div class="padding-bottom sticky-anchor padding-right center content-well">
+		<div class="sticky-left">
+					<article id="main-article" class="post-1202188266 post type-post status-publish format-standard has-post-thumbnail hentry category-film tag-box-office tag-joker tag-warner-bros">
+
+<heading id="article-heading">
+		<h1>&#8216;Joker&#8217; Stuns Box Office to Become Most Profitable Comic Book Film Ever Released</h1>
+	</heading>
+	<div id="article-promo"><h2>"Avengers: Endgame" may be the highest grossing film ever released (unadjusted for inflation), but it's nowhere near as profitable as "Joker."</h2></div>	<div class="byline-table flex-container">
+		<div class="flex-item">
+			<!-- Author byline -->
+			<div class="byline-flex-container" id="article-byline">
+
+				
+					<div class="author-avatar byline-flex-item">
+						<a rel="author" href="https://www.indiewire.com/author/zack-sharf/">
+							<img src="https://i2.wp.com/www.indiewire.com/wp-content/uploads/2018/06/Zack-Sharf.png?resize=96%2C96&#038;ssl=1" alt="" class="avatar avatar-96 photo"/>
+						</a>
+					</div>
+
+					<div class="author-info byline-flex-item">
+						<p class="author-name">
+															<a rel="author"
+									 href="https://www.indiewire.com/author/zack-sharf/">Zack Sharf</a>
+													</p>
+						<p class="post-time">
+							Nov 8, 2019 11:26 am						</p>
+						<p class="social-info">
+							<span class="fa fa-twitter"></span> <a href="https://twitter.com/intent/follow?screen_name=zsharf">@zsharf</a>						</p>
+					</div>
+
+				
+			</div>
+			<!-- /Author byline -->
+		</div>
+		<!-- Share Tools -->
+		<div class="flex-item">
+			<svg xmlns="http://www.w3.org/2000/svg" style="display:none;" height="0" width="0">
+<symbol id="pmc-social-share-bar-comment" viewBox="0 0 1792 1792"><path d="M1792 896q0 174-120 321.5t-326 233-450 85.5q-70 0-145-8-198 175-460 242-49 14-114 22-17 2-30.5-9t-17.5-29v-1q-3-4-.5-12t2-10 4.5-9.5l6-9 7-8.5 8-9q7-8 31-34.5t34.5-38 31-39.5 32.5-51 27-59 26-76q-157-89-247.5-220t-90.5-281q0-130 71-248.5t191-204.5 286-136.5 348-50.5q244 0 450 85.5t326 233 120 321.5z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-email" viewBox="0 0 1792 1792"><path d="M1792 710v794q0 66-47 113t-113 47H160q-66 0-113-47T0 1504V710q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38T639 1015q-91-64-262-182.5T172 690q-62-42-117-115.5T0 438q0-78 41.5-130T160 256h1472q65 0 112.5 47t47.5 113z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-facebook" viewBox="0 0 1792 1792"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759H734V905H479V609h255V391q0-186 104-288.5T1115 0q147 0 228 12z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-linkedin" viewBox="0 0 1792 1792"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-pinit" viewBox="0 0 1792 1792"><path d="M1664 896q0 209-103 385.5T1281.5 1561 896 1664q-111 0-218-32 59-93 78-164 9-34 54-211 20 39 73 67.5t114 28.5q121 0 216-68.5t147-188.5 52-270q0-114-59.5-214T1180 449t-255-63q-105 0-196 29t-154.5 77-109 110.5-67 129.5T377 866q0 104 40 183t117 111q30 12 38-20 2-7 8-31t8-30q6-23-11-43-51-61-51-151 0-151 104.5-259.5T904 517q151 0 235.5 82t84.5 213q0 170-68.5 289T980 1220q-61 0-98-43.5T859 1072q8-35 26.5-93.5t30-103T927 800q0-50-27-83t-77-33q-62 0-105 57t-43 142q0 73 25 122l-99 418q-17 70-13 177-206-91-333-281T128 896q0-209 103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-show-more" viewBox="0 0 1792 1792"><path d="M1600 736v192q0 40-28 68t-68 28h-416v416q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-416h-416q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h416v-416q0-40 28-68t68-28h192q40 0 68 28t28 68v416h416q40 0 68 28t28 68z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-print" viewBox="0 0 1792 1792"><path d="M448 1536h896v-256h-896v256zm0-640h896v-384h-160q-40 0-68-28t-28-68v-160h-640v640zm1152 64q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm128 0v416q0 13-9.5 22.5t-22.5 9.5h-224v160q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-224q-13 0-22.5-9.5t-9.5-22.5v-416q0-79 56.5-135.5t135.5-56.5h64v-544q0-40 28-68t68-28h672q40 0 88 20t76 48l152 152q28 28 48 76t20 88v256h64q79 0 135.5 56.5t56.5 135.5z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-reddit" viewBox="0 0 1792 1792"><path d="M1095 1167q16 16 0 31-62 62-199 62t-199-62q-16-15 0-31 6-6 15-6t15 6q48 49 169 49 120 0 169-49 6-6 15-6t15 6zM788 986q0 37-26 63t-63 26-63.5-26-26.5-63q0-38 26.5-64t63.5-26 63 26.5 26 63.5zm395 0q0 37-26.5 63t-63.5 26-63-26-26-63 26-63.5 63-26.5 63.5 26 26.5 64zm251-120q0-49-35-84t-85-35-86 36q-130-90-311-96l63-283 200 45q0 37 26 63t63 26 63.5-26.5T1359 448t-26.5-63.5T1269 358q-54 0-80 50l-221-49q-19-5-25 16l-69 312q-180 7-309 97-35-37-87-37-50 0-85 35t-35 84q0 35 18.5 64t49.5 44q-6 27-6 56 0 142 140 243t337 101q198 0 338-101t140-243q0-32-7-57 30-15 48-43.5t18-63.5zm358 30q0 182-71 348t-191 286-286 191-348 71-348-71-286-191-191-286T0 896t71-348 191-286T548 71 896 0t348 71 286 191 191 286 71 348z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-close" viewBox="0 0 1792 1792"><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-tumblr" viewBox="0 0 1792 1792"><path d="M1328 1329l80 237q-23 35-111 66t-177 32q-104 2-190.5-26T787 1564t-95-106-55.5-120-16.5-118V676H452V461q72-26 129-69.5t91-90 58-102 34-99T779 12q1-5 4.5-8.5T791 0h244v424h333v252h-334v518q0 30 6.5 56t22.5 52.5 49.5 41.5 81.5 14q78-2 134-29z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-twitter" viewBox="0 0 1792 1792"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5T1369.5 1125 1185 1335.5t-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5T285 1033q33 5 61 5 43 0 85-11-112-23-185.5-111.5T172 710v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5T884 653q-8-38-8-74 0-134 94.5-228.5T1199 256q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/>
+</symbol>
+<symbol id="pmc-social-share-bar-whatsapp" viewBox="0 0 1792 1792"><path d="M1113 974q13 0 97.5 44t89.5 53q2 5 2 15 0 33-17 76-16 39-71 65.5t-102 26.5q-57 0-190-62-98-45-170-118t-148-185q-72-107-71-194v-8q3-91 74-158 24-22 52-22 6 0 18 1.5t19 1.5q19 0 26.5 6.5t15.5 27.5q8 20 33 88t25 75q0 21-34.5 57.5t-34.5 46.5q0 7 5 15 34 73 102 137 56 53 151 101 12 7 22 7 15 0 54-48.5t52-48.5zm-203 530q127 0 243.5-50t200.5-134 134-200.5 50-243.5-50-243.5-134-200.5-200.5-134-243.5-50-243.5 50-200.5 134-134 200.5-50 243.5q0 203 120 368l-79 233 242-77q158 104 345 104zm0-1382q153 0 292.5 60t240.5 161 161 240.5 60 292.5-60 292.5-161 240.5-240.5 161-292.5 60q-195 0-365-94l-417 134 136-405q-108-178-108-389 0-153 60-292.5t161-240.5 240.5-161 292.5-60z"/>
+</symbol></svg><div class="share-container">
+	<ul class="share-buttons">
+					<li>
+									<a data-href="https://www.facebook.com/sharer.php?u=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;sdk=joey&#038;display=popup&#038;ref=plugin&#038;src=share_button" href="https://www.facebook.com/sharer.php?u=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;sdk=joey&#038;display=popup&#038;ref=plugin&#038;src=share_button"
+				 					class="btn-facebook"
+											target="_blank"
+											title="Share on Facebook">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-facebook"></use>
+						</svg>
+											</a>
+				</li>
+						<li>
+									<a data-href="https://twitter.com/intent/tweet?url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;text=%E2%80%98Joker%E2%80%99%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;via=indiewire" href="https://twitter.com/intent/tweet?url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;text=%E2%80%98Joker%E2%80%99%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;via=indiewire"
+				 					class="btn-twitter"
+											target="_blank"
+											title="Tweet">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-twitter"></use>
+						</svg>
+											</a>
+				</li>
+						<li>
+									<a data-href="https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&#038;canonicalUrl&#038;url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;posttype=link&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released" href="https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&#038;canonicalUrl&#038;url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;posttype=link&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released"
+				 					class="btn-tumblr"
+											target="_blank"
+											title="Post to Tumblr">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-tumblr"></use>
+						</svg>
+											</a>
+				</li>
+						<li>
+									<a data-href="http://pinterest.com/pin/create/link/?url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;description=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released" href="http://pinterest.com/pin/create/link/?url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;description=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released"
+				 					class="btn-pinterest"
+											target="_blank"
+											title="Pin it">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-pinit"></use>
+						</svg>
+											</a>
+				</li>
+							<li>
+					<a href="#share-more" class="showShareMore btn-more" target="_blank" title="More Share Options">
+					<svg>
+						<use xlink:href="#pmc-social-share-bar-show-more"></use>
+					</svg>
+				</a>
+			</li>
+		</ul>
+	<div class="shareMore">
+		<ul class="shareModal">
+			<li>
+				Share This Article				<a class="closeShare" href="#closeShare">
+					<svg>
+						<use xlink:href="#pmc-social-share-bar-close"></use>
+					</svg>
+				</a>
+			</li>
+							<li>
+											<a data-href="http://www.reddit.com/submit?url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released" href="http://www.reddit.com/submit?url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released"
+											class="btn-reddit"
+											target="_blank"
+																title="Submit to Reddit">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-reddit"></use>
+						</svg>
+						<span>
+							Reddit						</span>
+					</a>
+				</li>
+							<li>
+											<a data-href="http://www.linkedin.com/shareArticle?mini=1&#038;url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;summary&#038;source=indiewire" href="http://www.linkedin.com/shareArticle?mini=1&#038;url=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/&#038;title=‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;summary&#038;source=indiewire"
+											class="btn-linkedin"
+											target="_blank"
+																title="Share on LinkedIn">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-linkedin"></use>
+						</svg>
+						<span>
+							LinkedIn						</span>
+					</a>
+				</li>
+							<li>
+											<a data-href="" href=""
+											class="btn-whatsapp"
+																data-action="share/whatsapp/share"
+											title="Share on WhatsApp">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-whatsapp"></use>
+						</svg>
+						<span>
+							WhatsApp						</span>
+					</a>
+				</li>
+							<li>
+											<a data-href="mailto:?subject=indiewire%20:%20‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;body=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/%20-%20‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released" href="mailto:?subject=indiewire%20:%20‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released&#038;body=https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/%20-%20‘Joker’%20Stuns%20Box%20Office%20to%20Become%20Most%20Profitable%20Comic%20Book%20Film%20Ever%20Released"
+											class="btn-email"
+											target="_blank"
+																title="Email">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-email"></use>
+						</svg>
+						<span>
+							Email						</span>
+					</a>
+				</li>
+							<li>
+											<a href="javascript:window.print()"
+											class="btn-print"
+																title="Print This Page">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-print"></use>
+						</svg>
+						<span>
+							Print						</span>
+					</a>
+				</li>
+							<li>
+											<a data-href="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/#comments" href="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/#comments"
+											class="btn-comment"
+																title="Talk">
+						<svg>
+							<use xlink:href="#pmc-social-share-bar-comment"></use>
+						</svg>
+						<span>
+							Talk						</span>
+					</a>
+				</li>
+					</ul>
+	</div>
+</div>
+
+		</div>
+		<!-- /Share Tools -->
+	</div>
+
+	<div class="wp-caption"><img width="780" height="411" src="https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?w=780" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="&quot;Joker&quot;" srcset="https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png 910w, https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?resize=300,158 300w, https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?resize=150,79 150w, https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?resize=110,58 110w, https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?resize=285,150 285w, https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?resize=320,168 320w, https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?resize=640,337 640w, https://www.indiewire.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-10-at-4.06.45-PM.png?resize=800,421 800w" sizes="(max-width: 780px) 100vw, 780px" /><div class="image-caption wp-caption-text"><p>&#8220;Joker&#8221;</p>
+</div><p class="image-credit">Warner Bros.</p></div>
+		<div class="entry-content">
+
+			<p>IndieWire <a href="https://www.indiewire.com/t/box-office/" id="auto-tag_box-office" data-tag="box-office">box office</a> reporter Tom Brueggemann <a  href="https://www.indiewire.com/2019/10/joker-1-billion-gemini-man-box-office-disaster-1202181040/"  >wrote</a> in the middle of October that Warner Bros.&#8217; revisionist comic book drama &#8220;<a href="https://www.indiewire.com/t/joker/" id="auto-tag_joker" data-tag="joker">Joker</a>&#8221; could be headed near or past the coveted $1 billion at the worldwide box office. One month later, &#8220;Joker&#8221; is all but destined to join the $1 billion club, no small feat for an R-rated movie that trades in standard action beats for more character-focused drama. A new report from <a  href="https://www.forbes.com/sites/scottmendelson/2019/11/08/box-office-dc-films-joker-tops-955-million-to-become-more-profitable-than-deadpool-venom-and-batman/#c2250d718ff9"  rel="nofollow"  target="_blank"  >Forbes&#8217; senior contributor</a> Scott Mendelson says &#8220;Joker&#8221; will be near $957 million worldwide by the end of November 8, making $1 billion all but assured. More importantly, &#8220;Joker&#8221; has become the most profitable comic book film ever released.</p>
+<p>With a reported production budget of $62.5 million, &#8220;Joker&#8221; has so far earned just over 15 times its cost and counting (15.3x if we&#8217;re being exact). <a  href="https://www.forbes.com/sites/scottmendelson/2019/11/08/box-office-dc-films-joker-tops-955-million-to-become-more-profitable-than-deadpool-venom-and-batman/#c2250d718ff9"  rel="nofollow"  target="_blank"  >Forbes reports</a> that multiplier makes &#8220;Joker&#8221; more profitable than any other comic book release&nbsp;in terms of budget versus global gross. &#8220;Joker&#8221; has surpassed the likes of profitable comic book films &#8220;Venom&#8221; ($854 million box office/$90 million budget), Tim Burton&#8217;s &#8220;Batman&#8221; ($411 million/$35 million), &#8220;Deadpool&#8221; ($783 million/$58 million), &#8220;Teenage Mutant Ninja Turtles&#8221; ($200 million/$13.5 million), and &#8220;The Mask&#8221; ($351 million/$23 million).</p>
+<p>	<div class="admz" id="adm-inline-article-ad-1">
+					<div class="adma google-publisher" data-device="Desktop" data-width="300">
+				
+<div class="pmc-adm-goog-pub-div ad-text">
+	<div id="gpt-iw-article-mid-article-uid0" class="ad-rotatable adw-300 adh-250"></div>
+	</div>
+			</div>
+				</div>
+
+<section class="c-related variant-original">
+	<h3 class="c-heading">Related</h3>
+	<ul class="c-related__list">
+					<li class="c-related__list-item" data-index="1">
+				<a class="c-card__title" target="_blank" href="https://www.indiewire.com/2019/11/frozen-ii-box-office-a-beautiful-day-in-the-neighborhood-21-bridges-1202191787/" title="&#039;Frozen 2&#039; Thaws Box Office, but It&#039;s a Chilly &#039;Beautiful Day in the Neighborhood&#039;" data-label="related-article" >
+					&#039;Frozen 2&#039; Thaws Box Office, but It&#039;s a Chilly &#039;Beautiful Day in the Neighborhood&#039;				</a>
+			</li>
+						<li class="c-related__list-item" data-index="2">
+				<a class="c-card__title" target="_blank" href="https://www.indiewire.com/2019/11/box-office-dark-waters-arthouse-openers-1202191841/" title="&#039;Dark Waters&#039; Leads Tepid Arthouse Openers at Crowded Box Office" data-label="related-article" >
+					&#039;Dark Waters&#039; Leads Tepid Arthouse Openers at Crowded Box Office				</a>
+			</li>
+				</ul>
+</section>
+
+
+<section class="c-related variant-evergreen-link hide">
+	<h3 class="c-heading">Related</h3>
+	<ul class="c-related__list">
+					<li class="c-related__list-item" data-index="1">
+				<a class="c-card__title" target="_blank" href="https://www.indiewire.com/gallery/mcu-tv-shows-everything-need-to-know-marvel-series/" title="Everything You Need to Know About the Marvel Cinematic Universe&#039;s Upcoming TV Shows" data-label="related-evergreen" >
+					Everything You Need to Know About the Marvel Cinematic Universe&#039;s Upcoming TV Shows				</a>
+			</li>
+						<li class="c-related__list-item" data-index="2">
+				<a class="c-card__title" target="_blank" href="https://www.indiewire.com/feature/disney-plus-launch-guide-1202187511/" title="Disney+ User&#039;s Guide: Everything You Need to Know About the Streaming Service" data-label="related-evergreen" >
+					Disney+ User&#039;s Guide: Everything You Need to Know About the Streaming Service				</a>
+			</li>
+				</ul>
+</section>
+</p>
+<p>Moreover, when &#8220;Joker&#8221; crosses $1 billion sometime this month it will be the cheapest movie to do so. Most $1 billion grossers are massive studio tentpoles with budgets above $100 million (see all of the Marvel movies for an example). According to Forbes, &#8220;Jurassic Park&#8221; is currently the cheapest $1 billion grosser with a $63 million production budget.</p>
+<p>
+<div class="pmc-contextual-player">
+			<h3>
+			Popular on IndieWire		</h3>
+	
+	<div id="jwplayer_contextual_player_div"></div>
+	
+	<script type="text/javascript">
+		function buildJW() {
+			if ('function' === typeof jwplayer) {
+				contextual_player = jwplayer('jwplayer_contextual_player_div').setup({
+					playlist: "https:\/\/cdn.jwplayer.com\/v2\/playlists\/ZGMnJvbf?semantic=true&backfill=true&search=__CONTEXTUAL__",
+					width: "100%",
+					aspectratio: "16:9",
+					autostart: "viewable",
+					mute: true,
+					floating: false,
+									});
+			}
+		}
+	</script>
+	<script onload="buildJW()" type="text/javascript" src=https://content.jwplatform.com/libraries/h0UHtPJd.js></script>
+</div>
+</p>
+<p>&#8220;Joker&#8217;s&#8221; box office success around the world has been unprecedented. The movie was always going to catch the eye of comic book movie fans because of its source material, but the casting of Joaquin Phoenix in the title role and the movie&#8217;s awards bona fides (Phoenix is a Best Actor frontrunner and the film picked up the Golden Lion at the Venice Film Festival) have made &#8220;Joker&#8221; appointment viewing for the non-comic book crowd as well.</p>
+<p>In the U.S., &#8220;Joker&#8221; has held on at the box office stronger than many of its comic book movie contemporaries. &#8220;Joker&#8221; has never had a drop above the 50% mark since opening October 4. In recent weeks, the Todd Phillips-directed film has dropped just 29% from weekend to weekend. The film continues to play nationwide and its box office should only hang on once nominations for Phoenix start being announced.</p>
+<p class="article-singup-link">
+	<strong>Sign Up: </strong><a target="_blank" href="//indiewire.com/email" title="Stay on top of the latest breaking film and TV news! Sign up for our Email Newsletters here.">Stay on top of the latest breaking film and TV news! Sign up for our Email Newsletters here.</a>
+</p>
+								</div><!-- .entry-content -->
+		<div id="article-tags">
+		<p><strong>This Article is related to:</strong> <a href="https://www.indiewire.com/c/film/" rel="category tag">Film</a> and tagged <a href="https://www.indiewire.com/t/box-office/" rel="tag">Box Office</a>, <a href="https://www.indiewire.com/t/joker/" rel="tag">Joker</a>, <a href="https://www.indiewire.com/t/warner-bros/" rel="tag">Warner Bros.</a></p>
+	</div><!-- .entry-meta -->
+
+	<div class="ad">
+			<div class="admz" id="adm-sponsored-article-ad-1">
+					<div class="adma google-publisher" data-device="Desktop" data-width="1">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="gpt-iw-ros-endarticle-desktop-uid3" class=" adw-1 adh-2"></div>
+	</div>
+			</div>
+				</div>
+	</div>
+</article><!-- #post-## -->
+
+							<div class="widget widget_pmc_outbrain_widget"><div class="outbrain-widget">
+			<div class="OUTBRAIN" data-src="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/" data-widget-id="AR_1" data-ob-template="Indiewire" ></div>
+			<div class="OUTBRAIN" data-src="https://www.indiewire.com/2019/11/joker-most-profitable-comic-book-film-ever-box-office-1202188266/" data-widget-id="AR_2" data-ob-template="Indiewire" ></div>
+	</div>
+</div>
+<div class="generic-ad-module">
+	<interaction data-token="56e712cad791afe502395c6d" data-context="true" data-tags="" data-fallback="true"></interaction>
+</div>
+
+<div class="generic-ad-module">
+	<!-- Indiewire/Core/ROS/MediumRectangle -->
+	<div id="med_rec_bottom">
+			<div class="admz" id="adm-single-bottom">
+					<div class="adma google-publisher" data-device="Desktop" data-width="620">
+				
+<div class="pmc-adm-goog-pub-div ad-text">
+	<div id="div-gpt-indiewire-ros-620x250-uid4" class="ad-rotatable adw-620 adh-250"></div>
+	</div>
+			</div>
+						<div class="adma google-publisher" data-device="Desktop" data-width="1">
+				
+<div class="pmc-adm-goog-pub-div ">
+	<div id="gpt-iw-article-inline-uid5" class=" adw-1 adh-1"></div>
+	</div>
+			</div>
+				</div>
+	</div>
+	<br>
+</div>
+			
+			<noscript>JavaScript is required to load the comments.</noscript>
+<div id="comments-loading" style="display:none">Loading comments...</div>
+<div id="comments-loaded"></div>
+<script type="text/javascript">document.getElementById('comments-loading').style.display = 'block';</script>
+		
+		</div>
+	</div>
+
+	<div class="right-side">
+		<div class="admz" id="adm-right-rail-1">
+					<div class="adma google-publisher" data-device="Desktop" data-width="300">
+				
+<div class="pmc-adm-goog-pub-div right-rail-1 ad-text">
+	<div id="div-gpt-indiewire-ros-300x250-uid6" class="ad-rotatable adw-300 adh-250"></div>
+	</div>
+			</div>
+				</div>
+<aside id="featured_hp_most_popular-6" class="widget widget_featured_hp_most_popular">
+<section class="l-section ">
+
+	
+<h2 class="c-heading c-heading--border-top c-heading--blue-secondary">
+	<a href="#" class="c-heading__link">
+
+		Most			<span class="c-heading__secondary">
+				Popular			</span>
+			
+	</a>
+</h2>
+
+	<ol class="o-story-list o-story-list--horizontal o-story-list--no-separator u-bg-icon--parent u-bg-icon--digits u-bg-icon--digits-small">
+
+		
+						<li class="o-story-list__item u-padding-b-0">
+		
+						<article class="o-tease">
+				
+<h3 class="c-title c-title--small c-title--minor">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/11/star-wars-rise-of-skywalker-tv-spot-duel-of-the-fates-1202192956/">
+		&#039;Star Wars: The Rise of Skywalker&#039;: New TV Spot Goes Epic With John Williams&#039; Iconic &#039;Duel of the Fates&#039;	</a>
+</h3>
+				</article>
+				
+			</li>
+
+		
+						<li class="o-story-list__item u-padding-b-0">
+		
+						<article class="o-tease">
+				
+<h3 class="c-title c-title--small c-title--minor">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/11/godfrey-gao-dies-filming-china-1202192818/">
+		Taiwanese-Canadian Actor Godfrey Gao Dies at 35: Henry Golding, Lily Collins, and More React	</a>
+</h3>
+				</article>
+				
+			</li>
+
+		
+						<li class="o-story-list__item u-padding-b-0">
+		
+						<article class="o-tease">
+				
+<h3 class="c-title c-title--small c-title--minor">
+	<a class="c-title__link" href="https://www.indiewire.com/feature/best-music-videos-of-the-decade-1202192033/">
+		The Best Music Videos of the Decade	</a>
+</h3>
+				</article>
+				
+			</li>
+
+		
+						<li class="o-story-list__item u-padding-b-0">
+		
+						<article class="o-tease">
+				
+<h3 class="c-title c-title--small c-title--minor">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/11/et-thanksgiving-ad-1202192950/">
+		Elliott and E.T. Are All Grown Up in Reunion Short Celebrating Steven Spielberg&#039;s Classic – and Comcast	</a>
+</h3>
+				</article>
+				
+			</li>
+
+		
+	</ol> <!-- /.o-story-list -->
+
+</section>
+</aside>		<aside id="zoninator_zoneposts_widget-3" class="widget widget-zone-posts">
+		<h2 class="widgettitle">Featured Posts</h2>
+
+		
+		<ul>
+							<li>
+					<a href="https://www.indiewire.com/gallery/gift-guide-film-tv-books-clothes-games/">
+						IndieWire 2019 Holiday Gift Guide: 22 Clever Gift Ideas for Film and TV Fans					</a>
+				</li>
+							<li>
+					<a href="https://www.indiewire.com/gallery/best-movies-of-2010s-decade/">
+						The 100 Best Movies of the Decade					</a>
+				</li>
+							<li>
+					<a href="https://www.indiewire.com/2019/11/2020-sundance-films-wish-list-1202190036/">
+						Sundance Wish List: 60 Films We Hope Will Head to Park City in 2020					</a>
+				</li>
+							<li>
+					<a href="https://www.indiewire.com/2019/11/a-beautiful-day-in-the-neighborhood-marielle-heller-biopic-mr-rogers-1202190638/">
+						&#8216;A Beautiful Day in the Neighborhood&#8217;: Marielle Heller Reveals Her Secret to Avoiding Biopic Traps					</a>
+				</li>
+							<li>
+					<a href="https://www.indiewire.com/2019/11/the-golden-globes-what-are-they-why-they-matter-date-time-channel-1202191436/">
+						The Golden Globes: What They Are, and Why They Matter To TV					</a>
+				</li>
+					</ul>
+
+		</aside>			<div class="admz" id="adm-widget-indiewire-ros-300x600">
+					<div class="adma google-publisher" data-device="Desktop" data-width="300">
+				
+<div class="pmc-adm-goog-pub-div sticky-right-rail-bottom ad-text">
+	<div id="div-gpt-indiewire-ros-300x600-uid7" class="ad-rotatable adw-300 adh-600"></div>
+	</div>
+			</div>
+				</div>
+<aside id="featured_hp_podcasts_toolkit-3" class="widget widget_featured_hp_podcasts_toolkit">
+
+	<section>
+		
+
+<h2 class="c-heading c-heading--border-top c-heading--blue-secondary">
+	<a href="https://www.indiewire.com/c/podcast/" class="c-heading__link">
+
+		Podcasts
+	</a>
+</h2>
+<p class="c-tagline">Listen to these IndieWire podcasts.</p>
+<ul class="o-story-list">
+	
+		<li class="o-story-list__item">
+
+		
+<article class="o-tease u-bg-icon u-bg-icon--podcast">
+
+	
+	<div class="o-tease__content ">
+
+						<p class="c-metadata c-metadata--redbold">IndieWire: Screen Talk</p>
+				
+<h3 class="c-title  c-title--minor u-margin-tb-0 c-title--small">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/11/screen-talk-267-independent-spirit-awards-nominations-1202191554/">
+		Independent Spirit Awards: Do Adam Sandler and Robert Pattinson Stand a Chance in Awards Season?	</a>
+</h3>
+	</div> <!-- /.o-tease__content -->
+
+</article> <!-- /.o-tease -->
+
+	</li>
+
+	
+		<li class="o-story-list__item">
+
+		
+<article class="o-tease u-bg-icon u-bg-icon--podcast">
+
+	
+	<div class="o-tease__content ">
+
+						<p class="c-metadata c-metadata--redbold">IndieWire: Millions of Screens</p>
+				
+<h3 class="c-title  c-title--minor u-margin-tb-0 c-title--small">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/11/paul-rudd-living-with-yourself-season-2-netflix-podcast-millions-of-screens-episode-6-1202191068/">
+		Interview: Paul Rudd, Jonathan Dayton, and Valerie Faris on Netflix&#8217;s &#8220;Living With Yourself&#8221;	</a>
+</h3>
+	</div> <!-- /.o-tease__content -->
+
+</article> <!-- /.o-tease -->
+
+	</li>
+
+	
+		<li class="o-story-list__item">
+
+		
+<article class="o-tease u-bg-icon u-bg-icon--podcast">
+
+	
+	<div class="o-tease__content ">
+
+						<p class="c-metadata c-metadata--redbold">IndieWire: Screen Talk</p>
+				
+<h3 class="c-title  c-title--minor u-margin-tb-0 c-title--small">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/11/screen-talk-266-little-women-oscars-1202189837/">
+		&#8216;Little Women&#8217; Is an Oscar Contender, but Where Does That Leave &#8216;Ford v Ferrari&#8217; and &#8216;Waves&#8217;?	</a>
+</h3>
+	</div> <!-- /.o-tease__content -->
+
+</article> <!-- /.o-tease -->
+
+	</li>
+
+	</ul>
+	</section>
+
+	<section class="u-padding-t-20">
+
+	
+
+<h2 class="c-heading c-heading--border-top c-heading--blue-secondary">
+	<a href="https://www.indiewire.com/c/filmmaker-toolkit/" class="c-heading__link">
+
+		IndieWire			<span class="c-heading__secondary">
+				Toolkit			</span>
+			
+	</a>
+</h2>
+<p class="c-tagline">Interviews with leading film and TV creators about their process and craft.</p>
+<ul class="o-story-list">
+	
+		<li class="o-story-list__item">
+
+		
+<article class="o-tease u-bg-icon u-bg-icon--bullet">
+
+	
+	<div class="o-tease__content ">
+
+		
+<h3 class="c-title  c-title--minor u-margin-tb-0 c-title--small">
+	<a class="c-title__link" href="https://www.indiewire.com/feature/large-format-cameras-arri-alexa-65-film-language-joker-roma-midsommar-1202179944/">
+		Large Format Cameras Are Changing Film Language, From &#8216;Joker&#8217; to &#8216;Midsommar&#8217;	</a>
+</h3>
+	</div> <!-- /.o-tease__content -->
+
+</article> <!-- /.o-tease -->
+
+	</li>
+
+	
+		<li class="o-story-list__item">
+
+		
+<article class="o-tease u-bg-icon u-bg-icon--bullet">
+
+	
+	<div class="o-tease__content ">
+
+		
+<h3 class="c-title  c-title--minor u-margin-tb-0 c-title--small">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/10/francis-ford-coppola-cotton-club-encore-filmmaker-toolkit-podcast-episode-93-1202180943/">
+		&#8216;Cotton Club Encore&#8217;: How Fear Destroyed Francis Ford Coppola&#8217;s Original Artistic Vision	</a>
+</h3>
+	</div> <!-- /.o-tease__content -->
+
+</article> <!-- /.o-tease -->
+
+	</li>
+
+	
+		<li class="o-story-list__item">
+
+		
+<article class="o-tease u-bg-icon u-bg-icon--bullet">
+
+	
+	<div class="o-tease__content ">
+
+		
+<h3 class="c-title  c-title--minor u-margin-tb-0 c-title--small">
+	<a class="c-title__link" href="https://www.indiewire.com/2019/09/ad-astra-kubrick-2001-a-space-odyssey-james-gray-filmmaker-toolkit-podcast-episode-92-1202176870/">
+		&#8216;I&#8217;m Not Kubrick&#8217;: James Gray on the Hell of Filming Brad Pitt Alone in a Black Box	</a>
+</h3>
+	</div> <!-- /.o-tease__content -->
+
+</article> <!-- /.o-tease -->
+
+	</li>
+
+	</ul>
+	</section>
+
+</aside><div class="u-padding-tb-20">
+	<div class="u-position-relative u-border-dark-blue u-flex u-flex-align-items-center u-flex-direction-column u-box-shadow-b-blue u-padding-20">
+		<figure class="c-figure c-figure--logo">
+	<a href="https://www.indiewire.com">
+		<img width="170" src="https://www.indiewire.com/wp-content/themes/indiewire/images/indiewire-color.png" alt="indiewire" />
+	</a>
+</figure>
+		<div class="c-title c-title--minor u-padding-tb-20 u-text-align-center c-title--small-medium u-line-height-medium u-max-width-250">Get The Latest IndieWire Alerts And Newsletters Delivered Directly To Your Inbox</div>
+		<div class="">
+			<a class="c-button c-button--medium u-airplane-icon u-airplane-icon--sidebar u-style-anchor-white" href="https://pages.email.indiewire.com/newslettersignup/">
+				Subscribe			</a>
+		</div>
+	</div>
+</div>
+</div><!-- #secondary -->
+</div>
+
+
+			<div class="ad-above-footer">
+			</div>
+	
+<div class="l-section l-newswire u-padding-b-5 u-padding-b-30@tablet-min">
+
+	<h2 class="c-heading c-heading--border-top c-heading--blue-secondary">
+		Newswire	</h2>
+
+	<ul class="o-story-list o-story-list--newswire o-story-list--no-separator">
+									
+	<li class="o-story-list__item">
+
+		<article class="o-story o-story--newswire">
+			<a href="https://variety.com/2019/music/news/allison-moorer-shelby-lynne-blood-book-memoir-1203419251/" class="o-story__wrap">
+				<figure class="c-figure">
+					<div class="u-crop u-crop--16x9">
+
+												<img src="https://pmcvariety.files.wordpress.com/2019/11/dsc_0883-e1574958295671.jpg?resize=230%2C135&#038;w=300"
+						srcset="https://pmcvariety.files.wordpress.com/2019/11/dsc_0883-e1574958295671.jpg?resize=230%2C135&#038;w=300 300w, https://pmcvariety.files.wordpress.com/2019/11/dsc_0883-e1574958295671.jpg?resize=230%2C135&#038;w=600 600w"
+						alt="Allison Moorer and Shelby Lynne, Reconfronting a Family Trauma, Find ‘Blood’ is Thicker Than Silence"
+						sizes="(max-width: 959px) 46%, (max-width: 1259px) 22%, 300px"
+						class="c-figure__image" width="300" height="171"
+						>
+					</div>
+				</figure>
+
+				<div class="o-story__content">
+
+					<h3 class="c-title c-title--minor c-title--normal c-title--small u-margin-tb-10 u-line-height-medium">
+						Allison Moorer and Shelby Lynne, Reconfronting a Family Trauma, Find ‘Blood’ is Thicker Than Silence					</h3>
+
+					<span class="c-metadata c-metadata--bold u-flex-order-n1">
+						Variety					</span>
+
+					<div class="c-timestamp c-timestamp--position-bottom">
+						1 hour ago					</div>
+
+				</div>
+			</a>
+		</article>
+
+	</li>
+
+													
+	<li class="o-story-list__item">
+
+		<article class="o-story o-story--newswire">
+			<a href="https://www.rollingstone.com/product-recommendations/electronics/best-black-friday-deals-914179/" class="o-story__wrap">
+				<figure class="c-figure">
+					<div class="u-crop u-crop--16x9">
+
+												<img src="https://i1.wp.com/www.rollingstone.com/wp-content/uploads/2019/11/shutterstock_1263203356.jpg?resize=230%2C135&#038;ssl=1&#038;w=300"
+						srcset="https://i1.wp.com/www.rollingstone.com/wp-content/uploads/2019/11/shutterstock_1263203356.jpg?resize=230%2C135&#038;ssl=1&#038;w=300 300w, https://i1.wp.com/www.rollingstone.com/wp-content/uploads/2019/11/shutterstock_1263203356.jpg?resize=230%2C135&#038;ssl=1&#038;w=600 600w"
+						alt="The Best Black Friday 2019 Deals You Can Shop Right Now [Updating]"
+						sizes="(max-width: 959px) 46%, (max-width: 1259px) 22%, 300px"
+						class="c-figure__image" width="300" height="171"
+						>
+					</div>
+				</figure>
+
+				<div class="o-story__content">
+
+					<h3 class="c-title c-title--minor c-title--normal c-title--small u-margin-tb-10 u-line-height-medium">
+						The Best Black Friday 2019 Deals You Can Shop Right Now [Updating]					</h3>
+
+					<span class="c-metadata c-metadata--bold u-flex-order-n1">
+						Rolling Stone					</span>
+
+					<div class="c-timestamp c-timestamp--position-bottom">
+						2 hours ago					</div>
+
+				</div>
+			</a>
+		</article>
+
+	</li>
+
+													
+	<li class="o-story-list__item">
+
+		<article class="o-story o-story--newswire">
+			<a href="https://deadline.com/2019/11/tim-allen-the-view-thought-police-ruining-comedy-joy-behar-1202796989/" class="o-story__wrap">
+				<figure class="c-figure">
+					<div class="u-crop u-crop--16x9">
+
+												<img src="https://pmcdeadline2.files.wordpress.com/2019/05/lms-s7_ep722_0007-e1557787794791.jpg?resize=230%2C135&#038;w=300"
+						srcset="https://pmcdeadline2.files.wordpress.com/2019/05/lms-s7_ep722_0007-e1557787794791.jpg?resize=230%2C135&#038;w=300 300w, https://pmcdeadline2.files.wordpress.com/2019/05/lms-s7_ep722_0007-e1557787794791.jpg?resize=230%2C135&#038;w=600 600w"
+						alt="‘The View’: Tim Allen Speaks Out Against “Thought Police,” Finds Surprising Agreement With Joy Behar"
+						sizes="(max-width: 959px) 46%, (max-width: 1259px) 22%, 300px"
+						class="c-figure__image" width="300" height="171"
+						>
+					</div>
+				</figure>
+
+				<div class="o-story__content">
+
+					<h3 class="c-title c-title--minor c-title--normal c-title--small u-margin-tb-10 u-line-height-medium">
+						‘The View’: Tim Allen Speaks Out Against “Thought Police,” Finds Surprising Agreement With Joy Behar					</h3>
+
+					<span class="c-metadata c-metadata--bold u-flex-order-n1">
+						Deadline					</span>
+
+					<div class="c-timestamp c-timestamp--position-bottom">
+						40 mins ago					</div>
+
+				</div>
+			</a>
+		</article>
+
+	</li>
+
+													
+	<li class="o-story-list__item">
+
+		<article class="o-story o-story--newswire">
+			<a href="https://tvline.com/2019/11/28/servant-premiere-apple-tv-plus-m-night-shyamalan/" class="o-story__wrap">
+				<figure class="c-figure">
+					<div class="u-crop u-crop--16x9">
+
+												<img src="https://pmctvline2.files.wordpress.com/2019/11/servant-premiere-recap-m-night-shyamalan-apple-tv-plus.jpg?resize=230%2C135&#038;w=300"
+						srcset="https://pmctvline2.files.wordpress.com/2019/11/servant-premiere-recap-m-night-shyamalan-apple-tv-plus.jpg?resize=230%2C135&#038;w=300 300w, https://pmctvline2.files.wordpress.com/2019/11/servant-premiere-recap-m-night-shyamalan-apple-tv-plus.jpg?resize=230%2C135&#038;w=600 600w"
+						alt="Apple TV+&#039;s Servant Premiere: Grade It!"
+						sizes="(max-width: 959px) 46%, (max-width: 1259px) 22%, 300px"
+						class="c-figure__image" width="300" height="171"
+						>
+					</div>
+				</figure>
+
+				<div class="o-story__content">
+
+					<h3 class="c-title c-title--minor c-title--normal c-title--small u-margin-tb-10 u-line-height-medium">
+						Apple TV+&#039;s Servant Premiere: Grade It!					</h3>
+
+					<span class="c-metadata c-metadata--bold u-flex-order-n1">
+						TVLine					</span>
+
+					<div class="c-timestamp c-timestamp--position-bottom">
+						3 hours ago					</div>
+
+				</div>
+			</a>
+		</article>
+
+	</li>
+
+													
+	<li class="o-story-list__item">
+
+		<article class="o-story o-story--newswire">
+			<a href="https://www.goldderby.com/article/2019/queen-and-slim-reviews-critics-daniel-kaluuya-lena-waithe-news/" class="o-story__wrap">
+				<figure class="c-figure">
+					<div class="u-crop u-crop--16x9">
+
+												<img src="https://i2.wp.com/www.goldderby.com/wp-content/uploads/2019/11/queen-and-slim.jpg?resize=230%2C135&#038;ssl=1&#038;w=300"
+						srcset="https://i2.wp.com/www.goldderby.com/wp-content/uploads/2019/11/queen-and-slim.jpg?resize=230%2C135&#038;ssl=1&#038;w=300 300w, https://i2.wp.com/www.goldderby.com/wp-content/uploads/2019/11/queen-and-slim.jpg?resize=230%2C135&#038;ssl=1&#038;w=600 600w"
+						alt="‘Queen and Slim’ reviews: ‘An extraordinary Black Odyssey’ from Lena Waithe and Melina Matsoukas"
+						sizes="(max-width: 959px) 46%, (max-width: 1259px) 22%, 300px"
+						class="c-figure__image" width="300" height="171"
+						>
+					</div>
+				</figure>
+
+				<div class="o-story__content">
+
+					<h3 class="c-title c-title--minor c-title--normal c-title--small u-margin-tb-10 u-line-height-medium">
+						‘Queen and Slim’ reviews: ‘An extraordinary Black Odyssey’ from Lena Waithe and Melina Matsoukas					</h3>
+
+					<span class="c-metadata c-metadata--bold u-flex-order-n1">
+						GoldDerby					</span>
+
+					<div class="c-timestamp c-timestamp--position-bottom">
+						2 hours ago					</div>
+
+				</div>
+			</a>
+		</article>
+
+	</li>
+
+							</ul>
+
+</div><!-- /.l-section -->
+<footer class="l-footer">
+
+	<div class="l-footer__primary u-invert-colors u-grid-3-pack">
+		<nav class="l-footer__menu">
+			
+<div class="c-page-nav c-page-nav--footer u-text-align-center@tablet-min" data-dropdown>
+	<h4 class="c-page-nav__item c-page-nav__item--heading c-page-nav__chevron u-text-transform-uppercase is-active is-heading" data-dropdown-list-item="true">
+		IndieWire	</h4>
+	<ul class="c-page-nav__list" data-dropdown-list>
+		<li class="c-page-nav__item  menu-item menu-item-type-post_type menu-item-object-page" data-dropdown-list-item="true"><a href="https://www.indiewire.com/about-us/" class="c-page-nav__link " title="About">About</a></li><li class="c-page-nav__item  menu-item menu-item-type-post_type menu-item-object-page" data-dropdown-list-item="true"><a href="https://www.indiewire.com/advertise/" class="c-page-nav__link " title="Advertise with Indiewire">Advertise with Indiewire</a></li><li class="c-page-nav__item  menu-item menu-item-type-post_type menu-item-object-page" data-dropdown-list-item="true"><a href="https://www.indiewire.com/team/" class="c-page-nav__link " title="Team">Team</a></li><li class="c-page-nav__item  menu-item menu-item-type-post_type menu-item-object-page" data-dropdown-list-item="true"><a href="https://www.indiewire.com/contact-us/" class="c-page-nav__link " title="Contact Us">Contact Us</a></li><li class="c-page-nav__item  menu-item menu-item-type-custom menu-item-object-custom" data-dropdown-list-item="true"><a href="https://variety.com" class="c-page-nav__link " title="Variety Media">Variety Media</a></li>
+	</ul><!-- .c-page-nav__list -->
+</div><!-- .c-page-nav--footer -->
+		</nav>
+		<nav class="l-footer__menu">
+			
+<div class="c-page-nav c-page-nav--footer u-text-align-center@tablet-min" data-dropdown>
+	<h4 class="c-page-nav__item c-page-nav__item--heading c-page-nav__chevron u-text-transform-uppercase is-active is-heading" data-dropdown-list-item="true">
+		Legal	</h4>
+	<ul class="c-page-nav__list" data-dropdown-list>
+		<li class="c-page-nav__item  menu-item menu-item-type-custom menu-item-object-custom" data-dropdown-list-item="true"><a href="https://pmc.com/privacy-policy/" class="c-page-nav__link " title="Privacy Policy">Privacy Policy</a></li><li class="c-page-nav__item  menu-item menu-item-type-custom menu-item-object-custom" data-dropdown-list-item="true"><a href="https://pmc.com/privacy-policy/#california" class="c-page-nav__link " title="Your Privacy Rights">Your Privacy Rights</a></li><li class="c-page-nav__item  menu-item menu-item-type-custom menu-item-object-custom" data-dropdown-list-item="true"><a href="https://pmc.com/terms-of-service/" class="c-page-nav__link " title="Terms of Use">Terms of Use</a></li><li class="c-page-nav__item privacy-consent menu-item menu-item-type-custom menu-item-object-custom" data-dropdown-list-item="true"><a href="#" class="c-page-nav__link " title="Privacy Preferences">Privacy Preferences</a></li>	</ul><!-- .c-page-nav__list -->
+</div><!-- .c-page-nav--footer -->
+		</nav>
+		<nav class="l-footer__menu">
+			
+<div class="c-page-nav c-page-nav--footer u-text-align-center@tablet-min" data-dropdown>
+	<h4 class="c-page-nav__item c-page-nav__item--heading c-page-nav__chevron u-text-transform-uppercase is-active is-heading" data-dropdown-list-item="true">
+		Sitemap	</h4>
+	<ul class="c-page-nav__list" data-dropdown-list>
+		<li class="c-page-nav__item  menu-item menu-item-type-taxonomy menu-item-object-category" data-dropdown-list-item="true"><a href="https://www.indiewire.com/c/news/" class="c-page-nav__link " title="News">News</a></li><li class="c-page-nav__item  menu-item menu-item-type-taxonomy menu-item-object-category" data-dropdown-list-item="true"><a href="https://www.indiewire.com/c/television/" class="c-page-nav__link " title="Television">Television</a></li><li class="c-page-nav__item  menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent" data-dropdown-list-item="true"><a href="https://www.indiewire.com/c/film/" class="c-page-nav__link " title="Film">Film</a></li><li class="c-page-nav__item  menu-item menu-item-type-taxonomy menu-item-object-category" data-dropdown-list-item="true"><a href="https://www.indiewire.com/c/awards/" class="c-page-nav__link " title="Awards">Awards</a></li><li class="c-page-nav__item  menu-item menu-item-type-taxonomy menu-item-object-category" data-dropdown-list-item="true"><a href="https://www.indiewire.com/c/filmmaker-toolkit/" class="c-page-nav__link " title="Toolkit">Toolkit</a></li>	</ul><!-- .c-page-nav__list -->
+</div><!-- .c-page-nav--footer -->
+		</nav>
+	</div><!-- .l-footer__nav -->
+
+	<div class="c-pmc-footer">
+
+	<div class="c-pmc-footer__logo">
+		<a href="https://www.pmc.com">
+			<svg id="svg-pmc-logo-black" viewbox="0 0 137 21" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#000">
+        <path d="M137.3062 20.6972h-30.4185c-4.4206 0-7.7483-1.8544-7.7483-6.454V6.927c0-4.7149 2.7236-6.7825 7.9126-6.7825h30.2542V3.001h-30.1927c-2.8125 0-4.9328.8945-4.9328 3.9876v7.0493c0 2.4205 1.7498 3.8028 4.624 3.8028h30.5015v2.8565zM91 4v16h-3V5.7779zM46 4v16h3V5.7779zM46.1518.1236h2.7949L68.514 12.0648 88.573.1236h2.2817l-.0098 1.7059-20.493 12.2599c-1.2895.7723-4.7335-.3295-4.7335-.3295L46.1518 2.077V.1235z" />
+        <path d="M37.8174 7.5128c0 3.1214-2.6766 4.6855-5.7756 4.6855H3.124v8.4884H.0006l-.001-11.3038h32.186c1.7195 0 2.6072-.653 2.5905-2.2817l-.0205-1.9317c-.0186-1.7186-.8084-2.137-2.57-2.137H-.0004V.1232H32.515c2.8976 0 5.3024 1.1575 5.3024 4.101v3.2886z"/>
+    </g>
+    <g fill="#c92228">
+        <path d="M91.313 1.8296L91.3122.1237h-2.2905L66.066 13.76l.525.31a4.081 4.081 0 0 0 4.2183.0195l.5718-.3432 19.932-11.9167z" />
+    </g>
+</svg>
+		</a>
+	</div>
+
+	<div class="c-pmc-footer__legal">
+		Copyright © 2018 Penske Business Media, LLC. All rights reserved.		<br/>
+		Powered by WordPress.com VIP	</div>
+
+	<!-- Brand Navigation -->
+	<nav class="c-pmc-footer__nav">
+		<div class="c-page-nav c-page-nav--pmc-footer u-text-transform-uppercase" data-dropdown>
+			<h4 class="c-page-nav__item c-page-nav__item--heading c-page-nav__chevron is-active is-heading" data-dropdown-list-item="true">Our Brands</h4>
+			<ul class="c-page-nav__list" data-dropdown-list>
+									<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://variety.com/">
+							Variety						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://deadline.com/">
+							Deadline						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://www.rollingstone.com/">
+							Rolling Stone						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://wwd.com/">
+							WWD						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://hollywoodlife.com/">
+							HollywoodLife						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://www.goldderby.com/">
+							Gold Derby						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://spy.com/">
+							Spy						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://robbreport.com/">
+							Robb Report						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://footwearnews.com/">
+							Footwear News						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://bgr.com/">
+							BGR						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://www.indiewire.com/">
+							IndieWire						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://sourcingjournal.com/">
+							Sourcing Journal						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://tvline.com/">
+							TVLine						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://fairchildlive.com/">
+							Fairchild Media						</a>
+					</li>
+										<li class="c-page-nav__item">
+						<a class="c-page-nav__link" href="https://www.sheknows.com/">
+							She Knows						</a>
+					</li>
+								</ul>
+		</div><!-- .c-page-nav--pmc-footer -->
+	</nav>
+
+</div>
+
+
+</footer><!-- .l-footer -->
+
+		<!-- pmc-tags-footer Neustar -->
+<script type="text/javascript">function setUpAgknTag(tag) { tag.setBpId("penskemedia");tag.setCat("Film");tag.addEchoKeyValue("SUBCATEGORY",""); } </script>
+<script src="//js.agkn.com/prod/v0/tag.js" async></script>
+<!-- end pmc-tags-footer Neustar --><!-- Start: Localize Video Player Events -->
+<script type="text/javascript">
+/* <![CDATA[ */
+	var pmc_video_player_event_tracking = {"basic":{"autoplay":"0","content_consumed":"0","play":"0","_100_percent_played":"0","error":"0","show_ad":"0","skip_ad":"0"},"advanced":{"pause":"0","seconds_played":{"_5":"0","_10":"0","_30":"0","_60":"0","_90":"0","_120":"0","_300":"0","_600":"0"},"percent_played":{"_5":"0","_10":"0","_25":"0","_50":"0","_75":"0","_95":"0"},"jump_forward":"0","jump_backward":"0","mute":"0","unmute":"0","volume_up":"0","volume_down":"0","settings":"0","full_screen":"0","watch_on_youtube":"0"}};
+/* ]]> */
+</script>
+<!-- End: Localize Video Player Events -->
+
+<!-- pmc-adm targeting -->
+<script>
+if ( typeof pmc !== 'undefined' && typeof pmc.hooks !== 'undefined' ) {
+	pmc.hooks.add_filter( 'pmc-adm-set-targeting-keywords', function( keywords ) {
+		try {
+			if ( typeof Krux !== 'undefined' ) {
+				if ( typeof keywords['ksg'] === 'undefined' ) {
+					keywords['ksg']  = Krux.segments;
+				}
+				if ( typeof keywords['kuid'] === 'undefined' ) {
+					keywords['kuid']  = Krux.user;
+				}
+			}
+		} catch(e) {}
+		return keywords;
+	} );
+}
+
+(function() {
+	if( window.hasOwnProperty('pmc_krux' ) ) {
+		window.pmc_krux['destination-url'] = window.location.href;
+		if( document.hasOwnProperty('referrer') && document.referrer.length ) {
+			window.pmc_krux['referrer'] = document.referrer;
+		}
+		if( 'undefined' !== typeof pmc_meta && 'string' === typeof pmc_meta.omni_visit_id ) {
+			window.pmc_krux['omni_visit_id'] = pmc_meta.omni_visit_id;
+		}
+	}
+})();
+
+</script>
+		<!-- pmc-tags-bottom Digioh --><!--START Lightbox Javascript-->
+<script type='text/javascript' src='https://www.lightboxcdn.com/vendor/9be7649b-28a3-41f4-8ba9-b631a7fea93b/lightbox_inline.js'></script>
+<!--END Lightbox Javascript-->
+<!-- end pmc-tags-bottom Digioh --><!-- pmc-tags-bottom SkimLinks -->
+<script type="text/javascript" src="https://s.skimresources.com/js/87443X1557200.skimlinks.js" async></script>
+<!-- end pmc-tags-bottom SkimLinks -->		<!-- Begin comScore Tag -->
+<script type="text/javascript">
+	var _comscore = _comscore || []; _comscore.push({ c1: "2", c2: "6035310", c3: "", c4: "", c5: "", c6: "", c15: "" }); (function() { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); })();
+</script>
+<!-- End comScore Tag -->
+
+<!-- Quantcast Tag, part 2 -->
+<script type="text/javascript">
+_qevents.push([
+	{ qacct:"p-31f3D02tYU8zY" } // PMC P-Code
+]);
+</script>
+<noscript>
+	<div style="display:none;">
+		<img src="//pixel.quantserve.com/pixel?a.1=p-60R-umvc0T-Cw&a.2=p-31f3D02tYU8zY" border="0" height="1" width="1" alt="Quantcast"/>
+	</div>
+</noscript>
+<!-- Quantcast tag End, part 2 -->
+
+<!-- START callback function for onhashchange(when the hash tag in the url gets updated) -->
+<script type="text/javascript">
+	function global_urlhashchanged() {
+		
+		// Track PV in GA
+		try {
+			ga( 'send', 'pageview', location.pathname + location.hash );
+		} catch(err) {}
+
+		// Track Quantcast
+		try {
+
+			// need to reset the array containing the options previously sent
+			// as quantcast does not send the same key twice.
+			if (__qc && __qc.qpixelsent && __qc.qpixelsent.length > 0) {
+				__qc.qpixelsent.length = 0;
+			}
+			// First Quantcast Tag
+			_qoptions=[
+				{ qacct:"p-60R-umvc0T-Cw" }, // Tvline P-code
+				{ qacct:"p-31f3D02tYU8zY" } // PMC P-Code
+			];
+
+			quantserve();
+
+		} catch(err) {}
+
+		// Track Comscore
+		try {
+			setTimeout(function(){ var url = "http" + (/^https:/.test(document.location.href) ? "s" : "") + "://beacon.scorecardresearch.com/scripts/beacon.dll" + "?c1=2&amp;c2=6035310&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c7=" + escape(document.location.href) + "&amp;c8=" + escape(document.title) + "&amp;c9=" + escape(document.referrer) + "&amp;c10=" + escape(screen.width+'x'+screen.height) + "&amp;rn=" + (new Date()).getTime(); var i = new Image(); i.src = url; }, 1);
+			COMSCORE.beacon({c1:2,c2:"6035310",c3:"6035310",c4:"",c5:"",c6:"",c15:""});
+		} catch(err) {}
+
+		// Track pageview end
+	}
+</script>
+
+
+<!-- DO NOT REMOVE, comment for engineering, 4BAfe4nkpyAktm3S -->
+				<div id="pmc-ad-bait" class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links" style="width: 0 !important; height: 0 !important; position: fixed !important; left: -99999px !important;">ad</div>
+
+		<script>
+			if ( 'undefined' !== typeof jQuery ) {
+				var $pmc_ad_bait = jQuery('#pmc-ad-bait');
+				if ( $pmc_ad_bait.length ) {
+					if ( 'block' !== $pmc_ad_bait.css('display') ) {
+						window.pmc_is_adblocked = true;
+					}
+				}
+			}
+		</script>
+		<script type='text/javascript' class="script-mobile">
+	if ( 'undefined' !== typeof pmc_adm_gpt ) {
+		pmc_adm_gpt.init({
+    "ad_targetings": {
+        "host": "indiewire.com",
+        "kw": [
+            "film",
+            "box-office",
+            "joker",
+            "warner-bros"
+        ],
+        "topic": [],
+        "featured-video": "no",
+        "content-video": "no",
+        "ci": "IndieWire-1202188266"
+    },
+    "ad_list": {
+        "default": [
+            {
+                "targeting": {
+                    "pos": [
+                        "atf",
+                        "leaderboard",
+                        "top"
+                    ],
+                    "refresh": "0"
+                },
+                "slot": "8352/Indiewire/ros/leaderboard",
+                "id": "div-gpt-indiewire-ros-leaderboard-uid2",
+                "width": [
+                    [
+                        970,
+                        250
+                    ],
+                    [
+                        728,
+                        90
+                    ],
+                    [
+                        970,
+                        66
+                    ],
+                    [
+                        970,
+                        90
+                    ],
+                    [
+                        970,
+                        300
+                    ],
+                    [
+                        1000,
+                        150
+                    ]
+                ],
+                "adunit-order": "1",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "is_ad_rotatable": "YES",
+                "ad_refresh_time": 15000
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "top",
+                        "rail-top",
+                        "right-rail-top",
+                        "atf"
+                    ],
+                    "refresh": "0"
+                },
+                "slot": "8352/Indiewire/ros/right-rail-top",
+                "id": "div-gpt-indiewire-ros-300x250-uid6",
+                "width": [
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        300,
+                        251
+                    ]
+                ],
+                "adunit-order": "2",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "is_ad_rotatable": "YES",
+                "ad_refresh_time": 15000
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "skin",
+                        "top"
+                    ],
+                    "refresh": "0"
+                },
+                "slot": "8352/indiewire/ros/skin",
+                "id": "gpt-iw-ros-skin-uid1",
+                "adunit-order": "3",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "is_ad_rotatable": "NO",
+                "ad_refresh_time": 15000,
+                "oop": true
+            },
+            {
+                "targeting": {
+                    "refresh": "0"
+                },
+                "slot": "8352/indiewire/ros/inline",
+                "id": "gpt-iw-article-inline-uid5",
+                "adunit-order": "9",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "is_ad_rotatable": "NO",
+                "ad_refresh_time": 15000,
+                "oop": true
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "mid",
+                        "mid-article1",
+                        "mid-articleX",
+                        "mid-article"
+                    ],
+                    "refresh": "0"
+                },
+                "slot": "8352/indiewire/ros/mid-article",
+                "id": "gpt-iw-article-mid-article-uid0",
+                "width": [
+                    [
+                        2,
+                        2
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        300,
+                        251
+                    ],
+                    [
+                        620,
+                        350
+                    ],
+                    [
+                        2,
+                        4
+                    ],
+                    [
+                        4,
+                        2
+                    ]
+                ],
+                "adunit-order": "10",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "is_ad_rotatable": "YES",
+                "ad_refresh_time": 15000
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "native"
+                    ],
+                    "refresh": "0"
+                },
+                "slot": "8352/indiewire/ros/End-Article",
+                "id": "gpt-iw-ros-endarticle-desktop-uid3",
+                "width": [
+                    [
+                        1,
+                        1
+                    ]
+                ],
+                "adunit-order": "10",
+                "bidders": false,
+                "is_lazy_load": "yes",
+                "is_ad_rotatable": "NO",
+                "ad_refresh_time": 15000
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "btf",
+                        "rail-bottom",
+                        "right-rail-bottom",
+                        "bottom"
+                    ],
+                    "refresh": "0"
+                },
+                "slot": "8352/Indiewire/ros/right-rail-bottom",
+                "id": "div-gpt-indiewire-ros-300x600-uid7",
+                "width": [
+                    [
+                        300,
+                        600
+                    ],
+                    [
+                        300,
+                        1050
+                    ],
+                    [
+                        160,
+                        600
+                    ],
+                    [
+                        300,
+                        250
+                    ]
+                ],
+                "adunit-order": "10",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "is_ad_rotatable": "YES",
+                "ad_refresh_time": 15000
+            },
+            {
+                "targeting": {
+                    "pos": [
+                        "btf",
+                        "river",
+                        "bottom"
+                    ],
+                    "refresh": "0"
+                },
+                "slot": "8352/Indiewire/ros/river",
+                "id": "div-gpt-indiewire-ros-620x250-uid4",
+                "width": [
+                    [
+                        620,
+                        250
+                    ],
+                    [
+                        300,
+                        250
+                    ]
+                ],
+                "adunit-order": "11",
+                "bidders": false,
+                "is_lazy_load": "no",
+                "is_ad_rotatable": "YES",
+                "ad_refresh_time": 15000
+            }
+        ]
+    },
+    "ad_vast_tags": []
+});
+	}
+</script>
+
+	<div style="display:none">
+	</div>
+<div id="pmc-gallery-modal"></div><script type="text/liquid" id="ac_article">
+	<div class="ac_title ac_article">{{ result | highlight: 'title' | unescape }}</div>
+	<div class="ac_sub">{{ result.published_at | date: "%h %d, %Y" }}</div>
+</script>
+
+<script type="text/liquid" id="ac_tag">
+	<div class="ac_title ac_tag">
+		<a href="{{ result.url }}">{{ result.name }}</a>
+	</div>
+</script>
+<noscript><img src="https://s3.amazonaws.com/heartbeat.pmc.com/track?host=www.indiewire.com&#038;path=%2F2019%2F11%2Fjoker-most-profitable-comic-book-film-ever-box-office-1202188266%2F&#038;ct=article&#038;lob=indiewire&#038;loc=us&#038;env=desktop&#038;post_id=1202188266&#038;comment_count=21" border="0" width="0" height="0" style="z-index: 0; bottom: -1px; left: -1px; display: inline; position: fixed;" /></noscript><script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201948'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2019Novaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var krux_event_pixels = {"gallery_slide_view":""};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_breaking_news_hash = {"hash":"01c5549b8e"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_ga_event_tracking = {"events":[{"selector":"a.page-links__next","category":"article-page","label":"next-page-in-article","nonInteraction":true},{"selector":".c-related__list-item a","category":"article-page","label":"","action":"click","url":true}],"device":"[D]"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_floating_video = {"selector":".right-side","position":"0","offset":"20"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_share_bar_lob_ga_tracking = {"permalink":"https:\/\/www.indiewire.com\/2019\/11\/joker-most-profitable-comic-book-film-ever-box-office-1202188266\/","is_mobile":"","share_list":{"facebook":{"name":"Facebook","title":"Share on Facebook","class":"btn-facebook","url":"https:\/\/www.facebook.com\/sharer.php","popup":true,"javascript":false,"popup_title":"Share on Facebook"},"twitter":{"name":"Twitter","title":"Tweet","class":"btn-twitter","url":"https:\/\/twitter.com\/intent\/tweet","popup":true,"javascript":false,"popup_title":"Share on Twitter"},"tumblr":{"name":"Tumblr","title":"Post to Tumblr","class":"btn-tumblr","url":"https:\/\/www.tumblr.com\/widgets\/share\/tool\/preview","popup":true,"javascript":false,"popup_title":"Share on Tumblr"},"pinit":{"name":"Pin It","title":"Pin it","class":"btn-pinterest","url":"http:\/\/pinterest.com\/pin\/create\/link\/","popup":true,"javascript":false,"popup_title":"Share on Pinterest"},"reddit":{"name":"Reddit","title":"Submit to Reddit","class":"btn-reddit","url":"http:\/\/www.reddit.com\/submit","popup":true,"javascript":false,"popup_title":"Share on Reddit"},"linkedin":{"name":"LinkedIn","title":"Share on LinkedIn","class":"btn-linkedin","url":"http:\/\/www.linkedin.com\/shareArticle","popup":true,"javascript":false,"popup_title":"Share on LinkedIn"},"whatsapp":{"name":"WhatsApp","title":"Share on WhatsApp","class":"btn-whatsapp","url":"whatsapp:\/\/send","popup":false,"javascript":false,"popup_title":"Share on Whats App"},"email":{"name":"Email","title":"Email","class":"btn-email","url":"mailto:","popup":true,"javascript":false,"popup_title":"Send an Email"},"print":{"name":"Print","title":"Print This Page","class":"btn-print","url":"javascript:window.print()","popup":false,"javascript":true,"popup_title":"Print the Article"},"comment":{"name":"Talk","title":"Talk","class":"btn-comment","url":"","popup":false,"javascript":false,"popup_title":"Post a Comment"}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.indiewire.com/_static/??-eJytkttOwzAMhl+ILOvFhHaBeBSUJm7nLrWDk/Tw9qQZoE0CaRPcWY7/7/cheg7KMiWgpMesgs89UtQDpGDsWY/ssoeo59ALn3g3xCd9pfgqD6NV13HvuTVedZlsQt54BWHWwEgp3gs5S15UMv0mrnHABfy96lbAnJF6RTBX/5vEbkS6lzRE5bEVI1gWMQE5lkv+PYOsCpaijnXKZrf/+eWvdp9ApAlhrjY3mWs8kvXZQR05kwOJlgUeaaBn7j2oTDgVdTmjIePXhLYyobSUVJLyO8oyf3O+tKczaug6sOkR/86zSduhJnTA2sQIqUKDNyvII6jIFssA8WQEVGtEv7UZvdtgnVSt+wfU9zKG+Dq+NIfnZn9sDsfj8AHVGUPm'></script>
+<script type='text/javascript' src='https://s.swiftypecdn.com/cc/7Trui6DqJ8tpzFU-Dhvj.js?ver=2.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SwiftypeConfigs = {"engine_key":"7Trui6DqJ8tpzFU-Dhvj","redirect_to":"\/results","home_url":"https:\/\/www.indiewire.com\/","placeholder_image":"https:\/\/www.indiewire.com\/wp-content\/themes\/indiewire\/sprites\/logo\/Logo_IndieWire.png","image_size":"medium","sort_field":"_score","specific_dates":"1","sort_direction":"desc","autocomplete":{"tags":{"include":true,"name":"Tags"},"articles":{"include":true,"name":"Content"}},"author_list":[],"date_filters":{"date_options:radio-options":{"title":"Date Filter","default_option":0},"0":"content_type_facet:checkbox-facet","topics_facet:checkbox-facet":{"limit":7,"allowed_items":[],"disallowed_items":[]},"tags_facet:checkbox-facet":{"limit":7,"allowed_items":[],"disallowed_items":[]},"author_facet:checkbox-facet":[]},"custom_facet_settings":[],"meta_tags":{"post_types":{"post":"Article","pmc-gallery":"Gallery","film":"Film","survey":"Survey","ballot":"Ballot","poll":"Poll","profile":"Profile","award":"Award","video":"Video"},"show_content_type_meta_tag":true,"tags":["post_tag"],"topics":["category"],"custom_topics":[],"comment_count":true,"appeared_in_print":false},"trans":{"search":"Search","search_button":"Search","reference":"Relevance","pub_date_new":"Published Date (newest first)","pub_date_old":"Published Date (oldest first)","most_commented":"Most Commented","clear":"Clear","content_type":"Content Type","topics":"Topics","tags":"Tags","all":"All","twentyfour_hours":"Past 24 Hours","seven_days":"Past 7 Days","thirty_days":"Past 30 Days","twelve_months":"Past 12 Months","specific_dates":"Specific Dates"},"q":"","from_str":"From:","to_str":"To:","refine_search_str":"Refine Search","author":"Author","appeared_in_print":"Appeared in Print?"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pmc_video_player_ads = {"is_jwplayer_midroll_enable":"0","first_jwplayer_midroll_call_time":"25","second_jwplayer_midroll_call_time":"500"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.indiewire.com/_static/??-eJylj0EOgkAMRS8kNAZHVsaFR/AEA1OwhHYmdJBweyGgMZGNupv+9L3+gSEkpZeIEiG0fU2iELhM3t86UBXHgGBVMSo0Ctc1ungOXiZYUyZJG93Bb8JnVL6ECeEfvgmpqO47G8nLN93u5NBPiR2xm0XLbN3mB+MNGRVIHOFAHc4AW9o8+LG7li16at1SmdnP2JlPe5NnuTHH7NA8AJ81nfo='></script>
+<script type='text/javascript' src='https://cdn.roiq.ranker.com/client/assets/minified/roiq_dfp_targeting.js?ver=5.2.4'></script>
+<script type='text/javascript' src='https://www.indiewire.com/_static/??-eJyVy0EOAiEMheELCYjJxLAwnsV0GqekBaTghNsP7lzq6i3e/7m9GErAfUV1UR1kEUzNVCw8rFCyUU9uRpBTm4drG8pMKa2EO1X8oHeGua+OdVgYwHj5S8Kj5q7IPwMtuTE9t2a+6F1ufrn6c/BLCPEAZmxP2g=='></script>
+<script type='text/javascript' src='https://www.lightboxcdn.com/vendor/9be7649b-28a3-41f4-8ba9-b631a7fea93b/lightbox_inline.js?ver=5.2.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var cmp_init_params = "{\"Language\":\"en\",\"Initial Screen Reject Button Text\":\"Deny All\",\"Initial Screen Accept Button Text\":\"Accept and Move On\",\"Initial Screen Purpose Link Text\":\"Manage My Consents\",\"Purpose Screen Header Title Text\":\"Privacy settings\",\"Purpose Screen Body Text\":\"You can set your consent preferences and determine how you want your data to be used based on the purposes below. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data.\",\"Vendor Screen Body Text\":\"You can set consent preferences for each individual third-party company below. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may disclose that they use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policies for more information and to opt out.\",\"Vendor Screen Accept All Button Text\":\"Accept all\",\"Vendor Screen Reject All Button Text\":\"Reject all\",\"Initial Screen Body Text\":\"By clicking below, you accept our use of cookies and other online technologies to send you targeted ads, for social media, data analytics and to understand your use of the site.  To learn more about the cookies we use, <b><a href=\\\"https:\\\/\\\/pmc.com\\\/privacy-policy\\\/#cookies\\\" target=\\\"_blank\\\">click here<\\\/a><\\\/b>. <br> <br> If you wish to set your vendor preferences, please click Manage My Consents below.\",\"Initial Screen Body Text Option\":1,\"Publisher Name\":\"IndieWire\",\"Publisher Logo\":\"https:\\\/\\\/pmccorp2.files.wordpress.com\\\/2018\\\/05\\\/indiewire_color.png\",\"Publisher Purpose IDs\":[1,2,3,4,5],\"Display UI\":\"inEU\"}";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.indiewire.com/_static/??-eJylzsEKwkAMBNAfchsFl3qRfktIF9mlSbObLNa/V3ooHgVvAzM8Bp4aaBVP4qBLf2QxUKbwnXFmKAb7bPOOy6fFV2oDZxmKneAHo3YUJzQPxApoltx2lDVkyf6vUyu1pGvz49bE90scz9cx3mIsbxbRVn4='></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"channelUrl":"https:\/\/www.indiewire.com\/wp-content\/plugins\/facebook\/channel.php","xfbml":true});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script>
+<div id="fb-root"></div><script type="text/javascript">(function(d){var id="facebook-jssdk";if(!d.getElementById(id)){var js=d.createElement("script"),ref=d.getElementsByTagName("script")[0];js.id=id,js.async=true,js.src="https:\/\/connect.facebook.net\/en_US\/all.js",ref.parentNode.insertBefore(js,ref)}})(document)</script>
+<script type='text/javascript' src='https://www.indiewire.com/wp-includes/js/wp-embed.min.js?m=1571091599g'></script>
+<script async="async" type='text/javascript' src='https://widgets.outbrain.com/outbrain.js?ver=5.2.4'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201948.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.9.1',blog:'112084106',post:'1202188266',tz:'-5',srv:'www.indiewire.com'} ]);
+	_stq.push([ 'clickTrackerInit', '112084106', '1202188266' ]);
+</script>
+<script>!function ( d, s, id ) {
+		var js, fjs = d.getElementsByTagName( s )[ 0 ], p = /^http:/.test( d.location ) ? 'http' : 'https';
+		if ( !d.getElementById( id ) ) {
+			js = d.createElement( s );
+			js.id = id;
+			js.src = p + "://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore( js, fjs );
+		}
+	}( document, "script", "twitter-wjs" );</script>
+	</main> <!-- this should close the #layout-contanier div from header.php -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c8454aa091","applicationID":"84495514","transactionName":"ZwYHYhBRC0JWURILX15MJFUWWQpfGEEPDFdcBg==","queueTime":0,"applicationTime":279,"atts":"S0EQFFhLGB0VU0RYS00e","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

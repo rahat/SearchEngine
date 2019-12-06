@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" lang="en-US" ng-app="Mi">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script type="text/javascript">(window.NREUM || (NREUM = {})).loader_config = {
+        xpid: "VQECWF5UChAHUlNTBwgBVw==",
+        licenseKey: "09f0cb5c68",
+        applicationID: "76210961"
+    };
+    window.NREUM || (NREUM = {}), __nr_require = function (t, n, e) {
+        function r(e) {
+            if (!n[e]) {
+                var o = n[e] = {exports: {}};
+                t[e][0].call(o.exports, function (n) {
+                    var o = t[e][1][n];
+                    return r(o || n)
+                }, o, o.exports)
+            }
+            return n[e].exports
+        }
+
+        if ("function" == typeof __nr_require) return __nr_require;
+        for (var o = 0; o < e.length; o++) r(e[o]);
+        return r
+    }({
+        1: [function (t, n, e) {
+            function r(t) {
+                try {
+                    s.console && console.log(t)
+                } catch (n) {
+                }
+            }
+
+            var o, i = t("ee"), a = t(20), s = {};
+            try {
+                o = localStorage.getItem("__nr_flags").split(","), console && "function" == typeof console.log && (s.console = !0, o.indexOf("dev") !== -1 && (s.dev = !0), o.indexOf("nr_dev") !== -1 && (s.nrDev = !0))
+            } catch (c) {
+            }
+            s.nrDev && i.on("internal-error", function (t) {
+                r(t.stack)
+            }), s.dev && i.on("fn-err", function (t, n, e) {
+                r(e.stack)
+            }), s.dev && (r("NR AGENT IN DEVELOPMENT MODE"), r("flags: " + a(s, function (t, n) {
+                return t
+            }).join(", ")))
+        }, {}], 2: [function (t, n, e) {
+            function r(t, n, e, r, s) {
+                try {
+                    p ? p -= 1 : o(s || new UncaughtException(t, n, e), !0)
+                } catch (f) {
+                    try {
+                        i("ierr", [f, c.now(), !0])
+                    } catch (d) {
+                    }
+                }
+                return "function" == typeof u && u.apply(this, a(arguments))
+            }
+
+            function UncaughtException(t, n, e) {
+                this.message = t || "Uncaught error with no additional information", this.sourceURL = n, this.line = e
+            }
+
+            function o(t, n) {
+                var e = n ? null : c.now();
+                i("err", [t, e])
+            }
+
+            var i = t("handle"), a = t(21), s = t("ee"), c = t("loader"), f = t("gos"), u = window.onerror, d = !1,
+                l = "nr@seenError", p = 0;
+            c.features.err = !0, t(1), window.onerror = r;
+            try {
+                throw new Error
+            } catch (h) {
+                "stack" in h && (t(9), t(8), "addEventListener" in window && t(5), c.xhrWrappable && t(10), d = !0)
+            }
+            s.on("fn-start", function (t, n, e) {
+                d && (p += 1)
+            }), s.on("fn-err", function (t, n, e) {
+                d && !e[l] && (f(e, l, function () {
+                    return !0
+                }), this.thrown = !0, o(e))
+            }), s.on("fn-end", function () {
+                d && !this.thrown && p > 0 && (p -= 1)
+            }), s.on("internal-error", function (t) {
+                i("ierr", [t, c.now(), !0])
+            })
+        }, {}], 3: [function (t, n, e) {
+            t("loader").features.ins = !0
+        }, {}], 4: [function (t, n, e) {
+            function r(t) {
+            }
+
+            if (window.performance && window.performance.timing && window.performance.getEntriesByType) {
+                var o = t("ee"), i = t("handle"), a = t(9), s = t(8), c = "learResourceTimings", f = "addEventListener",
+                    u = "resourcetimingbufferfull", d = "bstResource", l = "resource", p = "-start", h = "-end",
+                    m = "fn" + p, w = "fn" + h, v = "bstTimer", g = "pushState", y = t("loader");
+                y.features.stn = !0, t(7), "addEventListener" in window && t(5);
+                var x = NREUM.o.EV;
+                o.on(m, function (t, n) {
+                    var e = t[0];
+                    e instanceof x && (this.bstStart = y.now())
+                }), o.on(w, function (t, n) {
+                    var e = t[0];
+                    e instanceof x && i("bst", [e, n, this.bstStart, y.now()])
+                }), a.on(m, function (t, n, e) {
+                    this.bstStart = y.now(), this.bstType = e
+                }), a.on(w, function (t, n) {
+                    i(v, [n, this.bstStart, y.now(), this.bstType])
+                }), s.on(m, function () {
+                    this.bstStart = y.now()
+                }), s.on(w, function (t, n) {
+                    i(v, [n, this.bstStart, y.now(), "requestAnimationFrame"])
+                }), o.on(g + p, function (t) {
+                    this.time = y.now(), this.startPath = location.pathname + location.hash
+                }), o.on(g + h, function (t) {
+                    i("bstHist", [location.pathname + location.hash, this.startPath, this.time])
+                }), f in window.performance && (window.performance["c" + c] ? window.performance[f](u, function (t) {
+                    i(d, [window.performance.getEntriesByType(l)]), window.performance["c" + c]()
+                }, !1) : window.performance[f]("webkit" + u, function (t) {
+                    i(d, [window.performance.getEntriesByType(l)]), window.performance["webkitC" + c]()
+                }, !1)), document[f]("scroll", r, {passive: !0}), document[f]("keypress", r, !1), document[f]("click", r, !1)
+            }
+        }, {}], 5: [function (t, n, e) {
+            function r(t) {
+                for (var n = t; n && !n.hasOwnProperty(u);) n = Object.getPrototypeOf(n);
+                n && o(n)
+            }
+
+            function o(t) {
+                s.inPlace(t, [u, d], "-", i)
+            }
+
+            function i(t, n) {
+                return t[1]
+            }
+
+            var a = t("ee").get("events"), s = t("wrap-function")(a, !0), c = t("gos"), f = XMLHttpRequest,
+                u = "addEventListener", d = "removeEventListener";
+            n.exports = a, "getPrototypeOf" in Object ? (r(document), r(window), r(f.prototype)) : f.prototype.hasOwnProperty(u) && (o(window), o(f.prototype)), a.on(u + "-start", function (t, n) {
+                var e = t[1], r = c(e, "nr@wrapped", function () {
+                    function t() {
+                        if ("function" == typeof e.handleEvent) return e.handleEvent.apply(e, arguments)
+                    }
+
+                    var n = {object: t, "function": e}[typeof e];
+                    return n ? s(n, "fn-", null, n.name || "anonymous") : e
+                });
+                this.wrapped = t[1] = r
+            }), a.on(d + "-start", function (t) {
+                t[1] = this.wrapped || t[1]
+            })
+        }, {}], 6: [function (t, n, e) {
+            function r(t, n, e) {
+                var r = t[n];
+                "function" == typeof r && (t[n] = function () {
+                    var t = i(arguments), n = {};
+                    o.emit(e + "before-start", [t], n);
+                    var a;
+                    n[m] && n[m].dt && (a = n[m].dt);
+                    var s = r.apply(this, t);
+                    return o.emit(e + "start", [t, a], s), s.then(function (t) {
+                        return o.emit(e + "end", [null, t], s), t
+                    }, function (t) {
+                        throw o.emit(e + "end", [t], s), t
+                    })
+                })
+            }
+
+            var o = t("ee").get("fetch"), i = t(21), a = t(20);
+            n.exports = o;
+            var s = window, c = "fetch-", f = c + "body-", u = ["arrayBuffer", "blob", "json", "text", "formData"],
+                d = s.Request, l = s.Response, p = s.fetch, h = "prototype", m = "nr@context";
+            d && l && p && (a(u, function (t, n) {
+                r(d[h], n, f), r(l[h], n, f)
+            }), r(s, "fetch", c), o.on(c + "end", function (t, n) {
+                var e = this;
+                if (n) {
+                    var r = n.headers.get("content-length");
+                    null !== r && (e.rxSize = r), o.emit(c + "done", [null, n], e)
+                } else o.emit(c + "done", [t], e)
+            }))
+        }, {}], 7: [function (t, n, e) {
+            var r = t("ee").get("history"), o = t("wrap-function")(r);
+            n.exports = r;
+            var i = window.history && window.history.constructor && window.history.constructor.prototype,
+                a = window.history;
+            i && i.pushState && i.replaceState && (a = i), o.inPlace(a, ["pushState", "replaceState"], "-")
+        }, {}], 8: [function (t, n, e) {
+            var r = t("ee").get("raf"), o = t("wrap-function")(r), i = "equestAnimationFrame";
+            n.exports = r, o.inPlace(window, ["r" + i, "mozR" + i, "webkitR" + i, "msR" + i], "raf-"), r.on("raf-start", function (t) {
+                t[0] = o(t[0], "fn-")
+            })
+        }, {}], 9: [function (t, n, e) {
+            function r(t, n, e) {
+                t[0] = a(t[0], "fn-", null, e)
+            }
+
+            function o(t, n, e) {
+                this.method = e, this.timerDuration = isNaN(t[1]) ? 0 : +t[1], t[0] = a(t[0], "fn-", this, e)
+            }
+
+            var i = t("ee").get("timer"), a = t("wrap-function")(i), s = "setTimeout", c = "setInterval",
+                f = "clearTimeout", u = "-start", d = "-";
+            n.exports = i, a.inPlace(window, [s, "setImmediate"], s + d), a.inPlace(window, [c], c + d), a.inPlace(window, [f, "clearImmediate"], f + d), i.on(c + u, r), i.on(s + u, o)
+        }, {}], 10: [function (t, n, e) {
+            function r(t, n) {
+                d.inPlace(n, ["onreadystatechange"], "fn-", s)
+            }
+
+            function o() {
+                var t = this, n = u.context(t);
+                t.readyState > 3 && !n.resolved && (n.resolved = !0, u.emit("xhr-resolved", [], t)), d.inPlace(t, g, "fn-", s)
+            }
+
+            function i(t) {
+                y.push(t), h && (b ? b.then(a) : w ? w(a) : (E = -E, R.data = E))
+            }
+
+            function a() {
+                for (var t = 0; t < y.length; t++) r([], y[t]);
+                y.length && (y = [])
+            }
+
+            function s(t, n) {
+                return n
+            }
+
+            function c(t, n) {
+                for (var e in t) n[e] = t[e];
+                return n
+            }
+
+            t(5);
+            var f = t("ee"), u = f.get("xhr"), d = t("wrap-function")(u), l = NREUM.o, p = l.XHR, h = l.MO, m = l.PR,
+                w = l.SI, v = "readystatechange",
+                g = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"], y = [];
+            n.exports = u;
+            var x = window.XMLHttpRequest = function (t) {
+                var n = new p(t);
+                try {
+                    u.emit("new-xhr", [n], n), n.addEventListener(v, o, !1)
+                } catch (e) {
+                    try {
+                        u.emit("internal-error", [e])
+                    } catch (r) {
+                    }
+                }
+                return n
+            };
+            if (c(p, x), x.prototype = p.prototype, d.inPlace(x.prototype, ["open", "send"], "-xhr-", s), u.on("send-xhr-start", function (t, n) {
+                r(t, n), i(n)
+            }), u.on("open-xhr-start", r), h) {
+                var b = m && m.resolve();
+                if (!w && !m) {
+                    var E = 1, R = document.createTextNode(E);
+                    new h(a).observe(R, {characterData: !0})
+                }
+            } else f.on("fn-end", function (t) {
+                t[0] && t[0].type === v || a()
+            })
+        }, {}], 11: [function (t, n, e) {
+            function r() {
+                var t = window.NREUM;
+                if (!t.loader_config) return null;
+                var n = (t.loader_config.accountID || "").toString() || null,
+                    e = (t.loader_config.agentID || "").toString() || null,
+                    r = (t.loader_config.trustKey || "").toString() || null;
+                if (!n || !e) return null;
+                var a = i.generateCatId(), s = i.generateCatId(), c = Date.now(), f = o(a, s, c, n, e, r);
+                return {header: f, guid: a, traceId: s, timestamp: c}
+            }
+
+            function o(t, n, e, r, o, i) {
+                var a = "btoa" in window && "function" == typeof window.btoa;
+                if (!a) return null;
+                var s = {v: [0, 1], d: {ty: "Browser", ac: r, ap: o, id: t, tr: n, ti: e}};
+                return i && r !== i && (s.d.tk = i), btoa(JSON.stringify(s))
+            }
+
+            var i = t(18);
+            n.exports = {generateTracePayload: r, generateTraceHeader: o}
+        }, {}], 12: [function (t, n, e) {
+            function r(t) {
+                var n = this.params, e = this.metrics;
+                if (!this.ended) {
+                    this.ended = !0;
+                    for (var r = 0; r < p; r++) t.removeEventListener(l[r], this.listener, !1);
+                    n.aborted || (e.duration = s.now() - this.startTime, this.loadCaptureCalled || 4 !== t.readyState ? null == n.status && (n.status = 0) : a(this, t), e.cbTime = this.cbTime, d.emit("xhr-done", [t], t), c("xhr", [n, e, this.startTime]))
+                }
+            }
+
+            function o(t, n) {
+                var e = t.responseType;
+                if ("json" === e && null !== n) return n;
+                var r = "arraybuffer" === e || "blob" === e || "json" === e ? t.response : t.responseText;
+                return w(r)
+            }
+
+            function i(t, n) {
+                var e = f(n), r = t.params;
+                r.host = e.hostname + ":" + e.port, r.pathname = e.pathname, t.sameOrigin = e.sameOrigin
+            }
+
+            function a(t, n) {
+                t.params.status = n.status;
+                var e = o(n, t.lastSize);
+                if (e && (t.metrics.rxSize = e), t.sameOrigin) {
+                    var r = n.getResponseHeader("X-NewRelic-App-Data");
+                    r && (t.params.cat = r.split(", ").pop())
+                }
+                t.loadCaptureCalled = !0
+            }
+
+            var s = t("loader");
+            if (s.xhrWrappable) {
+                var c = t("handle"), f = t(13), u = t(11).generateTracePayload, d = t("ee"),
+                    l = ["load", "error", "abort", "timeout"], p = l.length, h = t("id"), m = t(16), w = t(15),
+                    v = window.XMLHttpRequest;
+                s.features.xhr = !0, t(10), t(6), d.on("new-xhr", function (t) {
+                    var n = this;
+                    n.totalCbs = 0, n.called = 0, n.cbTime = 0, n.end = r, n.ended = !1, n.xhrGuids = {}, n.lastSize = null, n.loadCaptureCalled = !1, t.addEventListener("load", function (e) {
+                        a(n, t)
+                    }, !1), m && (m > 34 || m < 10) || window.opera || t.addEventListener("progress", function (t) {
+                        n.lastSize = t.loaded
+                    }, !1)
+                }), d.on("open-xhr-start", function (t) {
+                    this.params = {method: t[0]}, i(this, t[1]), this.metrics = {}
+                }), d.on("open-xhr-end", function (t, n) {
+                    "loader_config" in NREUM && "xpid" in NREUM.loader_config && this.sameOrigin && n.setRequestHeader("X-NewRelic-ID", NREUM.loader_config.xpid);
+                    var e = !1;
+                    if ("init" in NREUM && "distributed_tracing" in NREUM.init && (e = !!NREUM.init.distributed_tracing.enabled), e && this.sameOrigin) {
+                        var r = u();
+                        r && r.header && (n.setRequestHeader("newrelic", r.header), this.dt = r)
+                    }
+                }), d.on("send-xhr-start", function (t, n) {
+                    var e = this.metrics, r = t[0], o = this;
+                    if (e && r) {
+                        var i = w(r);
+                        i && (e.txSize = i)
+                    }
+                    this.startTime = s.now(), this.listener = function (t) {
+                        try {
+                            "abort" !== t.type || o.loadCaptureCalled || (o.params.aborted = !0), ("load" !== t.type || o.called === o.totalCbs && (o.onloadCalled || "function" != typeof n.onload)) && o.end(n)
+                        } catch (e) {
+                            try {
+                                d.emit("internal-error", [e])
+                            } catch (r) {
+                            }
+                        }
+                    };
+                    for (var a = 0; a < p; a++) n.addEventListener(l[a], this.listener, !1)
+                }), d.on("xhr-cb-time", function (t, n, e) {
+                    this.cbTime += t, n ? this.onloadCalled = !0 : this.called += 1, this.called !== this.totalCbs || !this.onloadCalled && "function" == typeof e.onload || this.end(e)
+                }), d.on("xhr-load-added", function (t, n) {
+                    var e = "" + h(t) + !!n;
+                    this.xhrGuids && !this.xhrGuids[e] && (this.xhrGuids[e] = !0, this.totalCbs += 1)
+                }), d.on("xhr-load-removed", function (t, n) {
+                    var e = "" + h(t) + !!n;
+                    this.xhrGuids && this.xhrGuids[e] && (delete this.xhrGuids[e], this.totalCbs -= 1)
+                }), d.on("addEventListener-end", function (t, n) {
+                    n instanceof v && "load" === t[0] && d.emit("xhr-load-added", [t[1], t[2]], n)
+                }), d.on("removeEventListener-end", function (t, n) {
+                    n instanceof v && "load" === t[0] && d.emit("xhr-load-removed", [t[1], t[2]], n)
+                }), d.on("fn-start", function (t, n, e) {
+                    n instanceof v && ("onload" === e && (this.onload = !0), ("load" === (t[0] && t[0].type) || this.onload) && (this.xhrCbStart = s.now()))
+                }), d.on("fn-end", function (t, n) {
+                    this.xhrCbStart && d.emit("xhr-cb-time", [s.now() - this.xhrCbStart, this.onload, n], n)
+                }), d.on("fetch-before-start", function (t) {
+                    var n, e = t[1] || {};
+                    "string" == typeof t[0] ? n = t[0] : t[0] && t[0].url && (n = t[0].url), n && (this.sameOrigin = f(n).sameOrigin);
+                    var r = !1;
+                    if ("init" in NREUM && "distributed_tracing" in NREUM.init && (r = !!NREUM.init.distributed_tracing.enabled), r && this.sameOrigin) {
+                        var o = u();
+                        if (!o || !o.header) return;
+                        var i = o.header;
+                        if ("string" == typeof t[0]) {
+                            var a = {};
+                            for (var s in e) a[s] = e[s];
+                            a.headers = new Headers(e.headers || {}), a.headers.set("newrelic", i), this.dt = o, t.length > 1 ? t[1] = a : t.push(a)
+                        } else t[0] && t[0].headers && (t[0].headers.append("newrelic", i), this.dt = o)
+                    }
+                })
+            }
+        }, {}], 13: [function (t, n, e) {
+            n.exports = function (t) {
+                var n = document.createElement("a"), e = window.location, r = {};
+                n.href = t, r.port = n.port;
+                var o = n.href.split("://");
+                !r.port && o[1] && (r.port = o[1].split("/")[0].split("@").pop().split(":")[1]), r.port && "0" !== r.port || (r.port = "https" === o[0] ? "443" : "80"), r.hostname = n.hostname || e.hostname, r.pathname = n.pathname, r.protocol = o[0], "/" !== r.pathname.charAt(0) && (r.pathname = "/" + r.pathname);
+                var i = !n.protocol || ":" === n.protocol || n.protocol === e.protocol,
+                    a = n.hostname === document.domain && n.port === e.port;
+                return r.sameOrigin = i && (!n.hostname || a), r
+            }
+        }, {}], 14: [function (t, n, e) {
+            function r() {
+            }
+
+            function o(t, n, e) {
+                return function () {
+                    return i(t, [f.now()].concat(s(arguments)), n ? null : this, e), n ? void 0 : this
+                }
+            }
+
+            var i = t("handle"), a = t(20), s = t(21), c = t("ee").get("tracer"), f = t("loader"), u = NREUM;
+            "undefined" == typeof window.newrelic && (newrelic = u);
+            var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                l = "api-", p = l + "ixn-";
+            a(d, function (t, n) {
+                u[n] = o(l + n, !0, "api")
+            }), u.addPageAction = o(l + "addPageAction", !0), u.setCurrentRouteName = o(l + "routeName", !0), n.exports = newrelic, u.interaction = function () {
+                return (new r).get()
+            };
+            var h = r.prototype = {
+                createTracer: function (t, n) {
+                    var e = {}, r = this, o = "function" == typeof n;
+                    return i(p + "tracer", [f.now(), t, e], r), function () {
+                        if (c.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], e), o) try {
+                            return n.apply(this, arguments)
+                        } catch (t) {
+                            throw c.emit("fn-err", [arguments, this, t], e), t
+                        } finally {
+                            c.emit("fn-end", [f.now()], e)
+                        }
+                    }
+                }
+            };
+            a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, n) {
+                h[n] = o(p + n)
+            }), newrelic.noticeError = function (t, n) {
+                "string" == typeof t && (t = new Error(t)), i("err", [t, f.now(), !1, n])
+            }
+        }, {}], 15: [function (t, n, e) {
+            n.exports = function (t) {
+                if ("string" == typeof t && t.length) return t.length;
+                if ("object" == typeof t) {
+                    if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t.byteLength) return t.byteLength;
+                    if ("undefined" != typeof Blob && t instanceof Blob && t.size) return t.size;
+                    if (!("undefined" != typeof FormData && t instanceof FormData)) try {
+                        return JSON.stringify(t).length
+                    } catch (n) {
+                        return
+                    }
+                }
+            }
+        }, {}], 16: [function (t, n, e) {
+            var r = 0, o = navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);
+            o && (r = +o[1]), n.exports = r
+        }, {}], 17: [function (t, n, e) {
+            function r(t, n) {
+                var e = t.getEntries();
+                e.forEach(function (t) {
+                    "first-paint" === t.name ? a("timing", ["fp", Math.floor(t.startTime)]) : "first-contentful-paint" === t.name && a("timing", ["fcp", Math.floor(t.startTime)])
+                })
+            }
+
+            function o(t) {
+                if (t instanceof c && !u) {
+                    var n, e = Math.round(t.timeStamp);
+                    n = e > 1e12 ? Date.now() - e : s.now() - e, u = !0, a("timing", ["fi", e, {type: t.type, fid: n}])
+                }
+            }
+
+            if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) {
+                var i, a = t("handle"), s = t("loader"), c = NREUM.o.EV;
+                if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) {
+                    i = new PerformanceObserver(r);
+                    try {
+                        i.observe({entryTypes: ["paint"]})
+                    } catch (f) {
+                    }
+                }
+                if ("addEventListener" in document) {
+                    var u = !1, d = ["click", "keydown", "mousedown", "pointerdown", "touchstart"];
+                    d.forEach(function (t) {
+                        document.addEventListener(t, o, !1)
+                    })
+                }
+            }
+        }, {}], 18: [function (t, n, e) {
+            function r() {
+                function t() {
+                    return n ? 15 & n[e++] : 16 * Math.random() | 0
+                }
+
+                var n = null, e = 0, r = window.crypto || window.msCrypto;
+                r && r.getRandomValues && (n = r.getRandomValues(new Uint8Array(31)));
+                for (var o, i = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx", a = "", s = 0; s < i.length; s++) o = i[s], "x" === o ? a += t().toString(16) : "y" === o ? (o = 3 & t() | 8, a += o.toString(16)) : a += o;
+                return a
+            }
+
+            function o() {
+                function t() {
+                    return n ? 15 & n[e++] : 16 * Math.random() | 0
+                }
+
+                var n = null, e = 0, r = window.crypto || window.msCrypto;
+                r && r.getRandomValues && Uint8Array && (n = r.getRandomValues(new Uint8Array(31)));
+                for (var o = [], i = 0; i < 16; i++) o.push(t().toString(16));
+                return o.join("")
+            }
+
+            n.exports = {generateUuid: r, generateCatId: o}
+        }, {}], 19: [function (t, n, e) {
+            function r(t, n) {
+                if (!o) return !1;
+                if (t !== o) return !1;
+                if (!n) return !0;
+                if (!i) return !1;
+                for (var e = i.split("."), r = n.split("."), a = 0; a < r.length; a++) if (r[a] !== e[a]) return !1;
+                return !0
+            }
+
+            var o = null, i = null, a = /Version\/(\S+)\s+Safari/;
+            if (navigator.userAgent) {
+                var s = navigator.userAgent, c = s.match(a);
+                c && s.indexOf("Chrome") === -1 && s.indexOf("Chromium") === -1 && (o = "Safari", i = c[1])
+            }
+            n.exports = {agent: o, version: i, match: r}
+        }, {}], 20: [function (t, n, e) {
+            function r(t, n) {
+                var e = [], r = "", i = 0;
+                for (r in t) o.call(t, r) && (e[i] = n(r, t[r]), i += 1);
+                return e
+            }
+
+            var o = Object.prototype.hasOwnProperty;
+            n.exports = r
+        }, {}], 21: [function (t, n, e) {
+            function r(t, n, e) {
+                n || (n = 0), "undefined" == typeof e && (e = t ? t.length : 0);
+                for (var r = -1, o = e - n || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = t[n + r];
+                return i
+            }
+
+            n.exports = r
+        }, {}], 22: [function (t, n, e) {
+            n.exports = {exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart}
+        }, {}], ee: [function (t, n, e) {
+            function r() {
+            }
+
+            function o(t) {
+                function n(t) {
+                    return t && t instanceof r ? t : t ? c(t, s, i) : i()
+                }
+
+                function e(e, r, o, i) {
+                    if (!l.aborted || i) {
+                        t && t(e, r, o);
+                        for (var a = n(o), s = m(e), c = s.length, f = 0; f < c; f++) s[f].apply(a, r);
+                        var d = u[y[e]];
+                        return d && d.push([x, e, r, a]), a
+                    }
+                }
+
+                function p(t, n) {
+                    g[t] = m(t).concat(n)
+                }
+
+                function h(t, n) {
+                    var e = g[t];
+                    if (e) for (var r = 0; r < e.length; r++) e[r] === n && e.splice(r, 1)
+                }
+
+                function m(t) {
+                    return g[t] || []
+                }
+
+                function w(t) {
+                    return d[t] = d[t] || o(e)
+                }
+
+                function v(t, n) {
+                    f(t, function (t, e) {
+                        n = n || "feature", y[e] = n, n in u || (u[n] = [])
+                    })
+                }
+
+                var g = {}, y = {}, x = {
+                    on: p,
+                    addEventListener: p,
+                    removeEventListener: h,
+                    emit: e,
+                    get: w,
+                    listeners: m,
+                    context: n,
+                    buffer: v,
+                    abort: a,
+                    aborted: !1
+                };
+                return x
+            }
+
+            function i() {
+                return new r
+            }
+
+            function a() {
+                (u.api || u.feature) && (l.aborted = !0, u = l.backlog = {})
+            }
+
+            var s = "nr@context", c = t("gos"), f = t(20), u = {}, d = {}, l = n.exports = o();
+            l.backlog = u
+        }, {}], gos: [function (t, n, e) {
+            function r(t, n, e) {
+                if (o.call(t, n)) return t[n];
+                var r = e();
+                if (Object.defineProperty && Object.keys) try {
+                    return Object.defineProperty(t, n, {value: r, writable: !0, enumerable: !1}), r
+                } catch (i) {
+                }
+                return t[n] = r, r
+            }
+
+            var o = Object.prototype.hasOwnProperty;
+            n.exports = r
+        }, {}], handle: [function (t, n, e) {
+            function r(t, n, e, r) {
+                o.buffer([t], r), o.emit(t, n, e)
+            }
+
+            var o = t("ee").get("handle");
+            n.exports = r, r.ee = o
+        }, {}], id: [function (t, n, e) {
+            function r(t) {
+                var n = typeof t;
+                return !t || "object" !== n && "function" !== n ? -1 : t === window ? 0 : a(t, i, function () {
+                    return o++
+                })
+            }
+
+            var o = 1, i = "nr@id", a = t("gos");
+            n.exports = r
+        }, {}], loader: [function (t, n, e) {
+            function r() {
+                if (!E++) {
+                    var t = b.info = NREUM.info, n = p.getElementsByTagName("script")[0];
+                    if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && n)) return u.abort();
+                    f(y, function (n, e) {
+                        t[n] || (t[n] = e)
+                    }), c("mark", ["onload", a() + b.offset], null, "api");
+                    var e = p.createElement("script");
+                    e.src = "https://" + t.agent, n.parentNode.insertBefore(e, n)
+                }
+            }
+
+            function o() {
+                "complete" === p.readyState && i()
+            }
+
+            function i() {
+                c("mark", ["domContent", a() + b.offset], null, "api")
+            }
+
+            function a() {
+                return R.exists && performance.now ? Math.round(performance.now()) : (s = Math.max((new Date).getTime(), s)) - b.offset
+            }
+
+            var s = (new Date).getTime(), c = t("handle"), f = t(20), u = t("ee"), d = t(19), l = window,
+                p = l.document, h = "addEventListener", m = "attachEvent", w = l.XMLHttpRequest, v = w && w.prototype;
+            NREUM.o = {
+                ST: setTimeout,
+                SI: l.setImmediate,
+                CT: clearTimeout,
+                XHR: w,
+                REQ: l.Request,
+                EV: l.Event,
+                PR: l.Promise,
+                MO: l.MutationObserver
+            };
+            var g = "" + location, y = {
+                    beacon: "bam.nr-data.net",
+                    errorBeacon: "bam.nr-data.net",
+                    agent: "js-agent.newrelic.com/nr-1153.min.js"
+                }, x = w && v && v[h] && !/CriOS/.test(navigator.userAgent),
+                b = n.exports = {offset: s, now: a, origin: g, features: {}, xhrWrappable: x, userAgent: d};
+            t(14), t(17), p[h] ? (p[h]("DOMContentLoaded", i, !1), l[h]("load", r, !1)) : (p[m]("onreadystatechange", o), l[m]("onload", r)), c("mark", ["firstbyte", s], null, "api");
+            var E = 0, R = t(22)
+        }, {}], "wrap-function": [function (t, n, e) {
+            function r(t) {
+                return !(t && t instanceof Function && t.apply && !t[a])
+            }
+
+            var o = t("ee"), i = t(21), a = "nr@original", s = Object.prototype.hasOwnProperty, c = !1;
+            n.exports = function (t, n) {
+                function e(t, n, e, o) {
+                    function nrWrapper() {
+                        var r, a, s, c;
+                        try {
+                            a = this, r = i(arguments), s = "function" == typeof e ? e(r, a) : e || {}
+                        } catch (f) {
+                            l([f, "", [r, a, o], s])
+                        }
+                        u(n + "start", [r, a, o], s);
+                        try {
+                            return c = t.apply(a, r)
+                        } catch (d) {
+                            throw u(n + "err", [r, a, d], s), d
+                        } finally {
+                            u(n + "end", [r, a, c], s)
+                        }
+                    }
+
+                    return r(t) ? t : (n || (n = ""), nrWrapper[a] = t, d(t, nrWrapper), nrWrapper)
+                }
+
+                function f(t, n, o, i) {
+                    o || (o = "");
+                    var a, s, c, f = "-" === o.charAt(0);
+                    for (c = 0; c < n.length; c++) s = n[c], a = t[s], r(a) || (t[s] = e(a, f ? s + o : o, i, s))
+                }
+
+                function u(e, r, o) {
+                    if (!c || n) {
+                        var i = c;
+                        c = !0;
+                        try {
+                            t.emit(e, r, o, n)
+                        } catch (a) {
+                            l([a, e, r, o])
+                        }
+                        c = i
+                    }
+                }
+
+                function d(t, n) {
+                    if (Object.defineProperty && Object.keys) try {
+                        var e = Object.keys(t);
+                        return e.forEach(function (e) {
+                            Object.defineProperty(n, e, {
+                                get: function () {
+                                    return t[e]
+                                }, set: function (n) {
+                                    return t[e] = n, n
+                                }
+                            })
+                        }), n
+                    } catch (r) {
+                        l([r])
+                    }
+                    for (var o in t) s.call(t, o) && (n[o] = t[o]);
+                    return n
+                }
+
+                function l(n) {
+                    try {
+                        t.emit("internal-error", n)
+                    } catch (e) {
+                    }
+                }
+
+                return t || (t = o), e.inPlace = f, e.flag = a, e
+            }
+        }, {}]
+    }, {}, ["loader", 2, 12, 4, 3]);</script>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+
+    <script>
+        var countryCode = "US";
+    </script>
+
+
+    <title>Key Dates - NBA Global</title>
+    <link rel="alternate" hreflang="en-us" href="http://global.nba.com/key-dates/"/>
+    <link rel="alternate" hreflang="it-it" href="http://global.nba.com/nba-2017-18-date-importanti/?lang=it"/>
+    <link rel="alternate" hreflang="pt-br" href="http://global.nba.com/principais-datas-da/?lang=pt-br"/>
+    <link rel="alternate" hreflang="pt-pt" href="http://global.nba.com/datas-importantes-da-nba-2017-2018/?lang=pt-pt"/>
+    <link rel="alternate" hreflang="ru-ru"
+          href="http://global.nba.com/%d0%9e%d0%a1%d0%9d%d0%9e%d0%92%d0%9d%d0%ab%d0%95-%d0%94%d0%90%d0%a2%d0%ab-%d0%a1%d0%95%d0%97%d0%9e%d0%9d%d0%90/?lang=ru"/>
+    <link rel="alternate" hreflang="zh-tw"
+          href="http://global.nba.com/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f/?lang=zh-hant"/>
+    <link rel="alternate" hreflang="es-es" href="http://global.nba.com/fechas-clave-de-la-temporada-2017-18/?lang=es"/>
+    <link rel="alternate" hreflang="ja"
+          href="http://global.nba.com/2017-18-nba%e3%81%ae%e4%b8%bb%e3%81%aa%e6%97%a5%e7%a8%8b/?lang=ja"/>
+    <link rel="alternate" hreflang="ko-kr"
+          href="http://global.nba.com/2017-18%eb%85%84-nba-%ec%a3%bc%ec%9a%94-%ec%9d%bc%ec%a0%95/?lang=ko"/>
+    <link rel="alternate" hreflang="zh-hk"
+          href="http://global.nba.com/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f/?lang=zh-hk"/>
+    <link rel="alternate" hreflang="fr-fr" href="http://global.nba.com/2017-18-nba-dates-cles/?lang=fr"/>
+    <link rel="alternate" hreflang="de-de" href="http://global.nba.com/nba-2017-18-wichtige-termine/?lang=de"/>
+    <link rel="alternate" hreflang="es-419" href="http://global.nba.com/fechas-clave/?lang=es-la"/>
+    <link rel="alternate" hreflang="th-th"
+          href="http://global.nba.com/%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%aa%e0%b8%b3%e0%b8%84%e0%b8%b1%e0%b8%8d%e0%b8%82%e0%b8%ad%e0%b8%87-nba-%e0%b8%a4%e0%b8%94%e0%b8%b9%e0%b8%81%e0%b8%b2%e0%b8%a5-2017-18/?lang=th"/>
+    <link rel="alternate" hreflang="tr-tr" href="http://global.nba.com/2017-18-nba-onemli-tarihler/?lang=tr"/>
+    <link rel="alternate" hreflang="ms-my" href="http://global.nba.com/tarikh-tarikh-utama-nba-2017-18/?lang=ms"/>
+
+    <!-- This site is optimized with the Yoast SEO plugin v12.4 - https://yoast.com/wordpress/plugins/seo/ -->
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <link rel="canonical" href="http://global.nba.com/key-dates/"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Key Dates - NBA Global"/>
+    <meta property="og:description"
+          content="2019-20 NBA KEY DATES UPCOMING DATES EVENT October 22nd, 2019 Kia NBA Tip Off 2019 December 12th, 2019 2019 NBA Mexico Games, Dallas Mavericks vs. Detroit Pistons (Mexico City) December 14th, 2019 2019 NBA Mexico Games, Phoenix Suns vs. San Antonio Spurs (Mexico City) January 5th, 2020 10-day contracts may now be signed January 10th, &hellip;"/>
+    <meta property="og:url" content="http://global.nba.com/key-dates/"/>
+    <meta property="og:site_name" content="NBA Global"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description"
+          content="2019-20 NBA KEY DATES UPCOMING DATES EVENT October 22nd, 2019 Kia NBA Tip Off 2019 December 12th, 2019 2019 NBA Mexico Games, Dallas Mavericks vs. Detroit Pistons (Mexico City) December 14th, 2019 2019 NBA Mexico Games, Phoenix Suns vs. San Antonio Spurs (Mexico City) January 5th, 2020 10-day contracts may now be signed January 10th, [&hellip;]"/>
+    <meta name="twitter:title" content="Key Dates - NBA Global"/>
+    <script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "http://global.nba.com/#website",
+                "url": "http://global.nba.com/",
+                "name": "NBA Global",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "http://global.nba.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "http://global.nba.com/key-dates/#webpage",
+                "url": "http://global.nba.com/key-dates/",
+                "inLanguage": "en-US",
+                "name": "Key Dates - NBA Global",
+                "isPartOf": {
+                    "@id": "http://global.nba.com/#website"
+                },
+                "datePublished": "2015-11-05T17:36:36-05:00",
+                "dateModified": "2019-10-22T23:08:45-04:00"
+            }
+        ]
+    }</script>
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel='dns-prefetch' href='//assets.adobedtm.com'/>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+    <link rel="alternate" type="application/rss+xml" title="NBA Global &raquo; Feed"
+          href="http://global.nba.com/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="NBA Global &raquo; Comments Feed"
+          href="http://global.nba.com/comments/feed/"/>
+    <link rel='stylesheet' id='google-fonts-css'
+          href='//fonts.googleapis.com/css?family=Roboto%3A300%2C500%7CRusso+One&#038;ver=5.2.4' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='font-awesome-css'
+          href='https://ak-static.cms.nba.com/wp-content/plugins/types/vendor/toolset/toolset-common/res/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
+          type='text/css' media='screen'/>
+    <link rel='stylesheet' id='nba-global-nav-hidden-css'
+          href='http://global.nba.com/styles/nav/main/v3/hidden.module.css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='nba-global-nav-css' href='http://global.nba.com/styles/nav/main/v3/style.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='nba-global-typography-css'
+          href='http://global.nba.com/styles/custom/uikit-typography.css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='nba-global-theme-css'
+          href='https://ak-static.cms.nba.com/wp-content/themes/nba-global/css/theme.css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='video-js-css'
+          href='https://ak-static.cms.nba.com/wp-content/plugins/video-embed-thumbnail-generator/video-js/video-js.css?ver=4.12.7'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='video-js-kg-skin-css'
+          href='https://ak-static.cms.nba.com/wp-content/plugins/video-embed-thumbnail-generator/video-js/kg-video-js-skin.css?ver=4.501'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='kgvid_video_styles-css'
+          href='https://ak-static.cms.nba.com/wp-content/plugins/video-embed-thumbnail-generator/css/kgvid_styles.css?ver=4.501'
+          type='text/css' media='all'/>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var wpml_browser_redirect_params = {
+            "pageLanguage": "en", "languageUrls": {
+                "en_US": "http:\/\/global.nba.com\/key-dates\/",
+                "en": "http:\/\/global.nba.com\/key-dates\/",
+                "US": "http:\/\/global.nba.com\/key-dates\/",
+                "it_IT": "http:\/\/global.nba.com\/nba-2017-18-date-importanti\/?lang=it",
+                "it": "http:\/\/global.nba.com\/nba-2017-18-date-importanti\/?lang=it",
+                "IT": "http:\/\/global.nba.com\/nba-2017-18-date-importanti\/?lang=it",
+                "pt_BR": "http:\/\/global.nba.com\/principais-datas-da\/?lang=pt-br",
+                "pt": "http:\/\/global.nba.com\/principais-datas-da\/?lang=pt-br",
+                "BR": "http:\/\/global.nba.com\/principais-datas-da\/?lang=pt-br",
+                "pt-br": "http:\/\/global.nba.com\/principais-datas-da\/?lang=pt-br",
+                "pt_PT": "http:\/\/global.nba.com\/datas-importantes-da-nba-2017-2018\/?lang=pt-pt",
+                "PT": "http:\/\/global.nba.com\/datas-importantes-da-nba-2017-2018\/?lang=pt-pt",
+                "pt-pt": "http:\/\/global.nba.com\/datas-importantes-da-nba-2017-2018\/?lang=pt-pt",
+                "ru_RU": "http:\/\/global.nba.com\/%d0%9e%d0%a1%d0%9d%d0%9e%d0%92%d0%9d%d0%ab%d0%95-%d0%94%d0%90%d0%a2%d0%ab-%d0%a1%d0%95%d0%97%d0%9e%d0%9d%d0%90\/?lang=ru",
+                "ru": "http:\/\/global.nba.com\/%d0%9e%d0%a1%d0%9d%d0%9e%d0%92%d0%9d%d0%ab%d0%95-%d0%94%d0%90%d0%a2%d0%ab-%d0%a1%d0%95%d0%97%d0%9e%d0%9d%d0%90\/?lang=ru",
+                "RU": "http:\/\/global.nba.com\/%d0%9e%d0%a1%d0%9d%d0%9e%d0%92%d0%9d%d0%ab%d0%95-%d0%94%d0%90%d0%a2%d0%ab-%d0%a1%d0%95%d0%97%d0%9e%d0%9d%d0%90\/?lang=ru",
+                "zh_TW": "http:\/\/global.nba.com\/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f\/?lang=zh-hant",
+                "zh": "http:\/\/global.nba.com\/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f\/?lang=zh-hant",
+                "TW": "http:\/\/global.nba.com\/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f\/?lang=zh-hant",
+                "zh-hant": "http:\/\/global.nba.com\/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f\/?lang=zh-hant",
+                "es_ES": "http:\/\/global.nba.com\/fechas-clave-de-la-temporada-2017-18\/?lang=es",
+                "es": "http:\/\/global.nba.com\/fechas-clave-de-la-temporada-2017-18\/?lang=es",
+                "ES": "http:\/\/global.nba.com\/fechas-clave-de-la-temporada-2017-18\/?lang=es",
+                "ja": "http:\/\/global.nba.com\/2017-18-nba%e3%81%ae%e4%b8%bb%e3%81%aa%e6%97%a5%e7%a8%8b\/?lang=ja",
+                "ko_KR": "http:\/\/global.nba.com\/2017-18%eb%85%84-nba-%ec%a3%bc%ec%9a%94-%ec%9d%bc%ec%a0%95\/?lang=ko",
+                "ko": "http:\/\/global.nba.com\/2017-18%eb%85%84-nba-%ec%a3%bc%ec%9a%94-%ec%9d%bc%ec%a0%95\/?lang=ko",
+                "KR": "http:\/\/global.nba.com\/2017-18%eb%85%84-nba-%ec%a3%bc%ec%9a%94-%ec%9d%bc%ec%a0%95\/?lang=ko",
+                "zh_HK": "http:\/\/global.nba.com\/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f\/?lang=zh-hk",
+                "HK": "http:\/\/global.nba.com\/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f\/?lang=zh-hk",
+                "zh-hk": "http:\/\/global.nba.com\/%e8%b3%bd%e5%ad%a3%e9%87%8d%e8%a6%81%e6%97%a5%e6%9c%9f\/?lang=zh-hk",
+                "fr_FR": "http:\/\/global.nba.com\/2017-18-nba-dates-cles\/?lang=fr",
+                "fr": "http:\/\/global.nba.com\/2017-18-nba-dates-cles\/?lang=fr",
+                "FR": "http:\/\/global.nba.com\/2017-18-nba-dates-cles\/?lang=fr",
+                "de_DE": "http:\/\/global.nba.com\/nba-2017-18-wichtige-termine\/?lang=de",
+                "de": "http:\/\/global.nba.com\/nba-2017-18-wichtige-termine\/?lang=de",
+                "DE": "http:\/\/global.nba.com\/nba-2017-18-wichtige-termine\/?lang=de",
+                "es_419": "http:\/\/global.nba.com\/fechas-clave\/?lang=es-la",
+                "419": "http:\/\/global.nba.com\/fechas-clave\/?lang=es-la",
+                "es-la": "http:\/\/global.nba.com\/fechas-clave\/?lang=es-la",
+                "th_TH": "http:\/\/global.nba.com\/%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%aa%e0%b8%b3%e0%b8%84%e0%b8%b1%e0%b8%8d%e0%b8%82%e0%b8%ad%e0%b8%87-nba-%e0%b8%a4%e0%b8%94%e0%b8%b9%e0%b8%81%e0%b8%b2%e0%b8%a5-2017-18\/?lang=th",
+                "th": "http:\/\/global.nba.com\/%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%aa%e0%b8%b3%e0%b8%84%e0%b8%b1%e0%b8%8d%e0%b8%82%e0%b8%ad%e0%b8%87-nba-%e0%b8%a4%e0%b8%94%e0%b8%b9%e0%b8%81%e0%b8%b2%e0%b8%a5-2017-18\/?lang=th",
+                "TH": "http:\/\/global.nba.com\/%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%aa%e0%b8%b3%e0%b8%84%e0%b8%b1%e0%b8%8d%e0%b8%82%e0%b8%ad%e0%b8%87-nba-%e0%b8%a4%e0%b8%94%e0%b8%b9%e0%b8%81%e0%b8%b2%e0%b8%a5-2017-18\/?lang=th",
+                "tr_TR": "http:\/\/global.nba.com\/2017-18-nba-onemli-tarihler\/?lang=tr",
+                "tr": "http:\/\/global.nba.com\/2017-18-nba-onemli-tarihler\/?lang=tr",
+                "TR": "http:\/\/global.nba.com\/2017-18-nba-onemli-tarihler\/?lang=tr",
+                "ms_MY": "http:\/\/global.nba.com\/tarikh-tarikh-utama-nba-2017-18\/?lang=ms",
+                "ms": "http:\/\/global.nba.com\/tarikh-tarikh-utama-nba-2017-18\/?lang=ms",
+                "MY": "http:\/\/global.nba.com\/tarikh-tarikh-utama-nba-2017-18\/?lang=ms"
+            }, "cookie": {"name": "_icl_visitor_lang_js", "domain": "global.nba.com", "path": "\/", "expiration": 24}
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript'
+            src='https://ak-static.cms.nba.com/wp-content/plugins/sitepress-multilingual-cms/dist/js/browser-redirect/app.js?ver=4.3.2'></script>
+    <script type='text/javascript'
+            src='https://ak-static.cms.nba.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+    <script type='text/javascript'
+            src='https://ak-static.cms.nba.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+    <script type='text/javascript'
+            src='//assets.adobedtm.com/1d1f22b7fbd1c6b82b92f8fffd66868071b86080/satelliteLib-ee11cdfdbe421bb980fa3d53b4776b11e077d777.js'></script>
+    <script type='text/javascript'
+            src='https://ak-static.cms.nba.com/wp-content/themes/nba-global/js/globaldtm.js'></script>
+
+    <link rel='shortlink' href='http://global.nba.com/?p=11470'/>
+    <meta name="generator" content="WPML ver:4.3.2 stt:60,62,65,1,4,3,27,28,29,63,43,42,46,2,64,53,54;"/>
+    <script type="text/javascript">document.createElement('video');
+    document.createElement('audio');</script>
+
+    <script type='text/javascript'>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function () {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+                '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+</head>
+
+<body class="page-template-default page page-id-11470">
+<header class="site-header">
+
+
+    <header>
+        <section class="nba-nav-wrapper">
+            <div>
+                <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation"
+                     class="block-mainnavigation">
+                    <h2 class="block-title visually-hidden">Main navigation</h2>
+                    <nav class="nba-nav nba-primary-nav">
+                        <div class="nba-nav__container nba-nav__container--left">
+                            <button class="nba-nav__container--button"></button>
+                            <div class="nba-nav__container--separator"></div>
+                            <a title="Home" class="nba-nav__container--logo" href="/"></a>
+                        </div>
+                        <div class="nba-nav__container nba-nav__container--center">
+                            <ul class="nba-nav__container--center-menu" data-dropdown-menu>
+                                <li class="nba-nav__container--center-menu-item"><a href="http://www.nba.com/games"
+                                                                                    data-drupal-link-system-path="games">Games</a>
+                                </li>
+                                <li class="nba-nav__container--center-menu-item"><a href="http://www.nba.com/news"
+                                                                                    data-drupal-link-system-path="node/131240">Top
+                                    Stories</a></li>
+                                <li class="nba-nav__container--center-menu-item"><a href="http://www.nba.com/video"
+                                                                                    data-drupal-link-system-path="node/131241">Video</a>
+                                </li>
+                                <li class="nba-nav__container--center-menu-item"><a href="http://www.nba.com/standings"
+                                                                                    title="Test"
+                                                                                    data-drupal-link-system-path="standings">Standings</a>
+                                </li>
+                                <li class="nba-nav__container--center-menu-item"><a
+                                        href="http://stats.nba.com/">Stats</a></li>
+                                <li class="nba-nav__container--center-menu-item"><a href="http://www.nba.com/players"
+                                                                                    data-drupal-link-system-path="players">Players</a>
+                                </li>
+                                <li class="nba-nav__container--center-menu-item"><a href="http://www.nba.com/teams"
+                                                                                    data-drupal-link-system-path="teams">Teams</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nba-nav__container nba-nav__container--right">
+                            <ul class="nba-nav__container--right-add-to-secondary">
+                                <li class="nba-nav__container--right-item"><a class="nba-nav__store"
+                                                                              href="http://www.nba.com/global/storelinkhandler.html">Store</a>
+                                </li>
+                                <li class="nba-nav__container--right-item"><a class="nba-nav__tickets"
+                                                                              href="http://nbatickets.nba.com/">Tickets</a>
+                                </li>
+                                <!--                      <li class="nba-nav__account-item nba-nav__container--right-item">
+                        <a class="nba-nav__account">My Account</a>
+                        <ul class="nba-nav__submenu"> </ul>
+                     </li> -->
+                                <li class="nba-nav__container--right-item nba-nav__search-item"><a
+                                        href="http://www.nba.com/search" title="Search Site"
+                                        class="nba-nav__search"></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </nav>
+                <nav role="navigation" aria-labelledby="block-mainaccordionmenu-menu" id="block-mainaccordionmenu"
+                     class="block-mainaccordionmenu">
+                    <h2 class="block-title visually-hidden">Main Accordion Menu</h2>
+                    <aside class="nba-secondary-nav__wrapper">
+                        <nav class="nba-secondary-nav__container">
+                            <section class="nba-secondary-nav__ss--left-slide">
+                                <ul class="nba-secondary-nav__list--top"></ul>
+                                <span class="nba-secondary-nav__list--item-more hide-for-medium">More</span>
+                            </section>
+                            <section class="nba-secondary-nav__ss--right-slide">
+                                <ul class="nba-secondary-nav__list--middle" role="menu">
+                                    <li class="nba-secondary-nav__list--item nba-secondary-nav__list--item-back hide-for-medium">
+                                        <span>Back</span></li>
+                                    <li class="nba-secondary-nav__list--separator nba-secondary-nav__list--item"><a
+                                            href="http://www.nba.com/leaguepass/"
+                                            data-drupal-link-system-path="leaguepass">NBA LEAGUE PASS</a></li>
+                                    <li class="nba-secondary-nav__list--separator nba-secondary-nav__list--item"><a
+                                            href="http://www.nba.com/nbatv/">NBA TV</a></li>
+                                    <li class="nba-secondary-nav__list--separator nba-secondary-nav__list--item"><a
+                                            href="http://nba.com/fantasy/">Fantasy</a></li>
+                                    <li class="nba-secondary-nav__list--separator nba-secondary-nav__list--item"><a
+                                            href="http://wnba.com/">WNBA</a></li>
+                                    <li class="nba-secondary-nav__list--separator nba-secondary-nav__list--item"><a
+                                            href="http://gleague.nba.com/">NBA G League</a></li>
+                                    <li class="nba-secondary-nav__list--separator nba-secondary-nav__list--item"><a
+                                            href="http://pr.nba.com/">NBA Communications</a></li>
+                                    <li class="nba-secondary-nav__list--item nba-secondary-nav__list--item--dropdown">
+                                        <a href="http://official.nba.com/">NBA Official</a>
+                                        <ul class="menu">
+                                            <li><a href="http://official.nba.com/"
+                                                   data-drupal-link-system-path="node/146807">Officiating News</a></li>
+                                            <li><a href="http://official.nba.com/referee-assignments/">Daily Ref
+                                                Assignments</a></li>
+                                            <li><a href="http://official.nba.com/replay/">Replay Center</a></li>
+                                            <li><a href="http://videorulebook.nba.com/">Video Rulebook</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nba-secondary-nav__list--item nba-secondary-nav__list--item--dropdown">
+                                        <a href="" data-drupal-link-system-path="&lt;front&gt;">NBA Initiatives</a>
+                                        <ul class="menu">
+                                            <li><a href="http://cares.nba.com/">NBA Cares</a></li>
+                                            <li><a href="http://jr.nba.com/">Jr. NBA</a></li>
+                                            <li><a href="http://green.nba.com/">NBA Green</a></li>
+                                            <li><a href="http://fit.nba.com/">NBA Fit</a></li>
+                                            <li><a href="http://hoopsfortroops.nba.com/">Hoops For Troops</a></li>
+                                            <li><a href="http://www.nba.com/enebea/index.html">Ene-be-a</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nba-secondary-nav__list--item nba-secondary-nav__list--item--dropdown">
+                                        <a href="" data-drupal-link-system-path="&lt;front&gt;">NBA Info</a>
+                                        <ul class="menu">
+                                            <li><a href="http://contact.nba.com/">Contact Us</a></li>
+                                            <li><a href="http://careers.nba.com/">Careers</a></li>
+                                            <li><a href="http://www.nba.com/history">NBA History</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </aside>
+                </nav>
+            </div>
+        </section>
+    </header>
+
+
+</header>
+
+<main id="the-content" class="the-content container container_template_page" role="main">
+
+    <article class="entry main-entry entry__type_page">
+
+        <header class="entry__header entry-header">
+            <h1 class="entry-header__title">
+                <a href="http://global.nba.com/key-dates/">Key Dates</a>
+            </h1>
+
+        </header>
+
+        <div class="entry__content entry-content">
+            <div class="sib-table-container">
+                <div class="table-title">
+                    <div class="title"><strong>2019-20 NBA KEY DATES</strong></div>
+                </div>
+                <table class="table table-striped table-bordered" style="width: 173.73%;height: 726px">
+                    <thead>
+                    <tr class="headers" style="height: 20px">
+                        <th style="width: 375px;height: 20px">UPCOMING DATES</th>
+                        <th style="padding-left: 15px;width: 883px;height: 20px">EVENT</th>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 22nd, 2019</td>
+                        <td style="width: 897px;height: 20px">Kia NBA Tip Off 2019</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">December 12th, 2019</td>
+                        <td style="width: 897px;height: 20px">2019 NBA Mexico Games, Dallas Mavericks vs. Detroit
+                            Pistons (Mexico City)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">December 14th, 2019</td>
+                        <td style="width: 897px;height: 20px">2019 NBA Mexico Games, Phoenix Suns vs. San Antonio Spurs
+                            (Mexico City)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 26px">January 5th, 2020</td>
+                        <td style="width: 897px;height: 26px">10-day contracts may now be signed</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">January 10th, 2020</td>
+                        <td style="width: 897px;height: 20px">All contracts are guaranteed for the remainder of the
+                            season
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">January 15th, 2020</td>
+                        <td style="width: 897px;height: 20px">Last day to sign NBA Two-Way contracts</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">January 24th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Paris Game 2020, Charlotte Hornets vs. Milwaukee Bucks
+                            (Paris, France)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">February 6th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Trade Deadline (3 p.m. ET)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">February 14th-16th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA All-Star 2020 (Chicago)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">March 1st, 2020</td>
+                        <td style="width: 897px;height: 20px">Playoff Eligibility Waiver Deadline</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">April 15th, 2020</td>
+                        <td style="width: 897px;height: 20px">Final Day Of Regular Season</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">April 17th, 2020</td>
+                        <td style="width: 897px;height: 20px">Rosters set for NBA Playoffs 2020 (3 p.m. ET)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">April 18th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Playoffs 2020 begin</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">April 26th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Early Entry Eligibility Deadline (11:59 p.m. ET)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">May 4th-5th, 2020</td>
+                        <td style="width: 897px;height: 20px">Conference Semifinals begin (possible move up to May
+                            2-3)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">May 19th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Draft Lottery 2020 (Chicago)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">May 19th-20th, 2020</td>
+                        <td style="width: 897px;height: 20px">Conference Finals begin (possible move up to May 17-18)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">May 21st-24th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Draft Combine 2020 (Chicago)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">June 4th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Finals 2020 begin</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">June 15th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Draft Early Entry Entrant Withdrawal Deadline (5 p.m.
+                            ET)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">June 21st, 2020</td>
+                        <td style="width: 897px;height: 20px">The Finals 2020 latest possible date</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">June 25th, 2020</td>
+                        <td style="width: 897px;height: 20px">NBA Draft 2020</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px;text-align: center"><strong>PREVI</strong><strong>OUS
+                            DATES</strong></td>
+                        <td style="width: 897px;height: 20px;text-align: center"><strong>EVENT</strong></td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 22px;text-align: left">June 20, 2019</td>
+                        <td style="width: 897px;height: 22px;text-align: left">NBA Draft 2019</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">July 5-15, 2019</td>
+                        <td style="width: 897px;height: 20px">MGM Resorts NBA Summer League (Las Vegas)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">August 31-September 15, 2019</td>
+                        <td style="width: 897px;height: 20px">2019 FIBA Basketball World Cup (China)</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">September 30th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA Preseason Begins</td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 4th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA India Games 2019: Indiana Pacers vs. Sacramento Kings
+                            (Mumbai)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 5th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA India Games 2019: Indiana Pacers vs. Sacramento Kings
+                            (Mumbai)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 18px">October 8th, 2019</td>
+                        <td style="width: 897px;height: 18px">NBA Japan Games 2019: Houston Rockets vs. Toronto Raptors
+                            (Tokyo)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 10th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA Japan Games 2019: Houston Rockets vs. Toronto Raptors
+                            (Tokyo)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 10th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA China Games 2019: Brooklyn Nets vs. Los Angeles Lakers
+                            (Shanghai)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 12th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA China Games 2019: Brooklyn Nets vs. Los Angeles Lakers
+                            (Shenzhen)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 17th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA Canada Series 2019: Dallas Mavericks vs. LA Clippers
+                            (Vancouver)
+                        </td>
+                    </tr>
+                    <tr style="height: 20px">
+                        <td style="width: 375px;height: 20px">October 18th, 2019</td>
+                        <td style="width: 897px;height: 20px">NBA Preseason games end</td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </article>
+
+</main>
+
+<div class="footer nba-footer" id="nbaGlobalFooter">
+    <hr>
+    <p>Copyright © <em class="placeholder">2019</em> NBA Media Ventures, LLC. All rights reserved.</p>
+    <p>
+        <a href="http://www.nba.com/news/privacy_policy.html">Privacy Policy</a> | <a
+            href="http://www.nba.com/news/termsofuse.html">Terms of Use</a> | <a id="nba_cnsnt_trst"
+                                                                                 class="nbafooter__adchoices"
+                                                                                 href="http://www.nba.com/adchoices"
+                                                                                 target="_blank"
+                                                                                 rel="noreferrer noopener">Ad
+        Choices</a></p>
+    <p>NBA.com is part of Turner Sports Digital, part of the Turner Sports &amp; Entertainment Digital Network.</p><img
+        alt="Turner Broadcasting System, Inc. A Time Warner Company."
+        src="//i.cdn.turner.com/nba/nba/footer/turner_logo_200x35.png">
+</div>
+
+
+<script type='text/javascript' src='http://global.nba.com/scripts/extra/nav/v3/script.js'></script>
+<script type='text/javascript' src='http://global.nba.com/scripts/extra/iframe/resizelistener.js'></script>
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var global = {
+        "headlineLimit": "8",
+        "broadcastYear": "2019-20",
+        "broadcastSeason": "2019",
+        "ajaxToken": "55a025034b",
+        "themeConstants": {"siteURL": "http:\/\/global.nba.com"}
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='https://ak-static.cms.nba.com/wp-content/themes/nba-global/js/theme.min.js'></script>
+<script type='text/javascript' src='https://ak-static.cms.nba.com/wp-includes/js/wp-embed.min.js?ver=5.2.4'></script>
+<script type="text/javascript">_satellite.pageBottom();</script>
+<script type="text/javascript">window.NREUM || (NREUM = {});
+NREUM.info = {
+    "beacon": "bam.nr-data.net",
+    "licenseKey": "09f0cb5c68",
+    "applicationID": "76210961",
+    "transactionName": "NgcGZUJQVxYEVEJcCQ9NJVJEWFYLSkdXUgM=",
+    "queueTime": 0,
+    "applicationTime": 251,
+    "atts": "GkAREwpKRElHVhQPHRwf",
+    "errorBeacon": "bam.nr-data.net",
+    "agent": ""
+}</script>
+</body>
+</html>
+

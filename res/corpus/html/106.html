@@ -1,0 +1,4468 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-uk" dir="ltr" xmlns:dc="http://purl.org/dc/terms/" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:product="http://ogp.me/ns/product#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"3cad7d7fc7",applicationID:"190390077"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-18220598-10", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<meta name="title" content="UFC 245 | Usman vs Covington | UFC" />
+<link rel="canonical" href="https://www.ufc.com/event/ufc-245" />
+<meta name="twitter:title" content="UFC 245 | UFC" />
+<meta name="twitter:description" content="UFC is coming to Las Vegas on December 14th 2019 at T-Mobile Arena. Discover how and where to watch." />
+<meta name="description" content="UFC is coming to Las Vegas on December 14th 2019 at T-Mobile Arena. Discover how and where to watch." />
+<meta property="og:title" content="UFC 245 | UFC" />
+<meta property="og:description" content="UFC is coming to Las Vegas on December 14th 2019 at T-Mobile Arena. Discover how and where to watch." />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/javascript">
+// Initialize the google variables.
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+// Add a place to store the slot name variable.
+googletag.slots = googletag.slots || {};
+(function() {
+  var useSSL = "https:" == document.location.protocol;
+  var src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+  document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+</script>
+<script type="text/javascript">
+googletag.cmd.push(function() {
+      googletag.pubads().enableAsyncRendering();
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs(true);
+      });
+googletag.enableServices();
+</script>
+<link rel="shortcut icon" href="/sites/default/files/ufc_logo.png" type="image/png" />
+<link rel="alternate" hreflang="ru" href="https://www.ufc.com/event/ufc-245" />
+<link rel="revision" href="/event/ufc-245" />
+<script src="/sites/default/files/google_tag/google_tag.script.js?q1l2x2"></script>
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_config.icon_color = "transparent,black";</script>
+
+    <title>UFC 245 | Usman vs Covington | UFC</title>
+    <script type="text/javascript">
+      // https://github.com/js-cookie/js-cookie
+      // @todo: need use new version.
+      !function(e){var n=!1;if("function"==typeof define&&define.amd&&(define(e),n=!0),"object"==typeof exports&&(module.exports=e(),n=!0),!n){var o=window.Cookies,t=window.Cookies=e();t.noConflict=function(){return window.Cookies=o,t}}}(function(){function e(){for(var e=0,n={};e<arguments.length;e++){var o=arguments[e];for(var t in o)n[t]=o[t]}return n}return function n(o){function t(n,r,i){var c;if("undefined"!=typeof document){if(arguments.length>1){if("number"==typeof(i=e({path:"/"},t.defaults,i)).expires){var a=new Date;a.setMilliseconds(a.getMilliseconds()+864e5*i.expires),i.expires=a}i.expires=i.expires?i.expires.toUTCString():"";try{c=JSON.stringify(r),/^[\{\[]/.test(c)&&(r=c)}catch(e){}r=o.write?o.write(r,n):encodeURIComponent(String(r)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),n=(n=(n=encodeURIComponent(String(n))).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent)).replace(/[\(\)]/g,escape);var s="";for(var f in i)i[f]&&(s+="; "+f,!0!==i[f]&&(s+="="+i[f]));return document.cookie=n+"="+r+s}n||(c={});for(var p=document.cookie?document.cookie.split("; "):[],d=/(%[0-9A-Z]{2})+/g,u=0;u<p.length;u++){var l=p[u].split("="),C=l.slice(1).join("=");this.json||'"'!==C.charAt(0)||(C=C.slice(1,-1));try{var g=l[0].replace(d,decodeURIComponent);if(C=o.read?o.read(C,g):o(C,g)||C.replace(d,decodeURIComponent),this.json)try{C=JSON.parse(C)}catch(e){}if(n===g){c=C;break}n||(c[g]=C)}catch(e){}}return c}}return t.set=t,t.get=function(e){return t.call(t,e)},t.getJSON=function(){return t.apply({json:!0},[].slice.call(arguments))},t.defaults={},t.remove=function(n,o){t(n,"",e(o,{expires:-1}))},t.withConverter=n,t}(function(){})});
+
+      /**
+       * Promise: polyfill https://github.com/taylorhakes/promise-polyfill
+       */
+      !function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n():"function"==typeof define&&define.amd?define(n):n()}(0,function(){"use strict";function e(e){var n=this.constructor;return this.then(function(t){return n.resolve(e()).then(function(){return t})},function(t){return n.resolve(e()).then(function(){return n.reject(t)})})}function n(){}function t(e){if(!(this instanceof t))throw new TypeError("Promises must be constructed via new");if("function"!=typeof e)throw new TypeError("not a function");this._state=0,this._handled=!1,this._value=undefined,this._deferreds=[],u(e,this)}function o(e,n){for(;3===e._state;)e=e._value;0!==e._state?(e._handled=!0,t._immediateFn(function(){var t=1===e._state?n.onFulfilled:n.onRejected;if(null!==t){var o;try{o=t(e._value)}catch(f){return void i(n.promise,f)}r(n.promise,o)}else(1===e._state?r:i)(n.promise,e._value)})):e._deferreds.push(n)}function r(e,n){try{if(n===e)throw new TypeError("A promise cannot be resolved with itself.");if(n&&("object"==typeof n||"function"==typeof n)){var o=n.then;if(n instanceof t)return e._state=3,e._value=n,void f(e);if("function"==typeof o)return void u(function(e,n){return function(){e.apply(n,arguments)}}(o,n),e)}e._state=1,e._value=n,f(e)}catch(r){i(e,r)}}function i(e,n){e._state=2,e._value=n,f(e)}function f(e){2===e._state&&0===e._deferreds.length&&t._immediateFn(function(){e._handled||t._unhandledRejectionFn(e._value)});for(var n=0,r=e._deferreds.length;r>n;n++)o(e,e._deferreds[n]);e._deferreds=null}function u(e,n){var t=!1;try{e(function(e){t||(t=!0,r(n,e))},function(e){t||(t=!0,i(n,e))})}catch(o){if(t)return;t=!0,i(n,o)}}var c=setTimeout;t.prototype["catch"]=function(e){return this.then(null,e)},t.prototype.then=function(e,t){var r=new this.constructor(n);return o(this,new function(e,n,t){this.onFulfilled="function"==typeof e?e:null,this.onRejected="function"==typeof n?n:null,this.promise=t}(e,t,r)),r},t.prototype["finally"]=e,t.all=function(e){return new t(function(n,t){function o(e,f){try{if(f&&("object"==typeof f||"function"==typeof f)){var u=f.then;if("function"==typeof u)return void u.call(f,function(n){o(e,n)},t)}r[e]=f,0==--i&&n(r)}catch(c){t(c)}}if(!e||"undefined"==typeof e.length)throw new TypeError("Promise.all accepts an array");var r=Array.prototype.slice.call(e);if(0===r.length)return n([]);for(var i=r.length,f=0;r.length>f;f++)o(f,r[f])})},t.resolve=function(e){return e&&"object"==typeof e&&e.constructor===t?e:new t(function(n){n(e)})},t.reject=function(e){return new t(function(n,t){t(e)})},t.race=function(e){return new t(function(n,t){for(var o=0,r=e.length;r>o;o++)e[o].then(n,t)})},t._immediateFn="function"==typeof setImmediate&&function(e){setImmediate(e)}||function(e){c(e,0)},t._unhandledRejectionFn=function(e){void 0!==console&&console&&console.warn("Possible Unhandled Promise Rejection:",e)};var l=function(){if("undefined"!=typeof self)return self;if("undefined"!=typeof window)return window;if("undefined"!=typeof global)return global;throw Error("unable to locate global object")}();"Promise"in l?l.Promise.prototype["finally"]||(l.Promise.prototype["finally"]=e):l.Promise=t});
+
+      /**
+       * Github Fetch Poly
+       * https://github.com/github/fetch
+       *
+       * Minifed of fetch.umd.js at releases section https://github.com/github/fetch/releases
+       */
+      !function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e(t.WHATWGFetch={})}(this,function(t){"use strict";var e={searchParams:"URLSearchParams"in self,iterable:"Symbol"in self&&"iterator"in Symbol,blob:"FileReader"in self&&"Blob"in self&&function(){try{return new Blob,!0}catch(t){return!1}}(),formData:"FormData"in self,arrayBuffer:"ArrayBuffer"in self};if(e.arrayBuffer)var r=["[object Int8Array]","[object Uint8Array]","[object Uint8ClampedArray]","[object Int16Array]","[object Uint16Array]","[object Int32Array]","[object Uint32Array]","[object Float32Array]","[object Float64Array]"],o=ArrayBuffer.isView||function(t){return t&&r.indexOf(Object.prototype.toString.call(t))>-1};function n(t){if("string"!=typeof t&&(t=String(t)),/[^a-z0-9\-#$%&'*+.^_`|~]/i.test(t))throw new TypeError("Invalid character in header field name");return t.toLowerCase()}function i(t){return"string"!=typeof t&&(t=String(t)),t}function s(t){var r={next:function(){var e=t.shift();return{done:void 0===e,value:e}}};return e.iterable&&(r[Symbol.iterator]=function(){return r}),r}function a(t){this.map={},t instanceof a?t.forEach(function(t,e){this.append(e,t)},this):Array.isArray(t)?t.forEach(function(t){this.append(t[0],t[1])},this):t&&Object.getOwnPropertyNames(t).forEach(function(e){this.append(e,t[e])},this)}function h(t){if(t.bodyUsed)return Promise.reject(new TypeError("Already read"));t.bodyUsed=!0}function f(t){return new Promise(function(e,r){t.onload=function(){e(t.result)},t.onerror=function(){r(t.error)}})}function u(t){var e=new FileReader,r=f(e);return e.readAsArrayBuffer(t),r}function d(t){if(t.slice)return t.slice(0);var e=new Uint8Array(t.byteLength);return e.set(new Uint8Array(t)),e.buffer}function c(){return this.bodyUsed=!1,this._initBody=function(t){var r;this._bodyInit=t,t?"string"==typeof t?this._bodyText=t:e.blob&&Blob.prototype.isPrototypeOf(t)?this._bodyBlob=t:e.formData&&FormData.prototype.isPrototypeOf(t)?this._bodyFormData=t:e.searchParams&&URLSearchParams.prototype.isPrototypeOf(t)?this._bodyText=t.toString():e.arrayBuffer&&e.blob&&((r=t)&&DataView.prototype.isPrototypeOf(r))?(this._bodyArrayBuffer=d(t.buffer),this._bodyInit=new Blob([this._bodyArrayBuffer])):e.arrayBuffer&&(ArrayBuffer.prototype.isPrototypeOf(t)||o(t))?this._bodyArrayBuffer=d(t):this._bodyText=t=Object.prototype.toString.call(t):this._bodyText="",this.headers.get("content-type")||("string"==typeof t?this.headers.set("content-type","text/plain;charset=UTF-8"):this._bodyBlob&&this._bodyBlob.type?this.headers.set("content-type",this._bodyBlob.type):e.searchParams&&URLSearchParams.prototype.isPrototypeOf(t)&&this.headers.set("content-type","application/x-www-form-urlencoded;charset=UTF-8"))},e.blob&&(this.blob=function(){var t=h(this);if(t)return t;if(this._bodyBlob)return Promise.resolve(this._bodyBlob);if(this._bodyArrayBuffer)return Promise.resolve(new Blob([this._bodyArrayBuffer]));if(this._bodyFormData)throw new Error("could not read FormData body as blob");return Promise.resolve(new Blob([this._bodyText]))},this.arrayBuffer=function(){return this._bodyArrayBuffer?h(this)||Promise.resolve(this._bodyArrayBuffer):this.blob().then(u)}),this.text=function(){var t,e,r,o=h(this);if(o)return o;if(this._bodyBlob)return t=this._bodyBlob,e=new FileReader,r=f(e),e.readAsText(t),r;if(this._bodyArrayBuffer)return Promise.resolve(function(t){for(var e=new Uint8Array(t),r=new Array(e.length),o=0;o<e.length;o++)r[o]=String.fromCharCode(e[o]);return r.join("")}(this._bodyArrayBuffer));if(this._bodyFormData)throw new Error("could not read FormData body as text");return Promise.resolve(this._bodyText)},e.formData&&(this.formData=function(){return this.text().then(p)}),this.json=function(){return this.text().then(JSON.parse)},this}a.prototype.append=function(t,e){t=n(t),e=i(e);var r=this.map[t];this.map[t]=r?r+", "+e:e},a.prototype.delete=function(t){delete this.map[n(t)]},a.prototype.get=function(t){return t=n(t),this.has(t)?this.map[t]:null},a.prototype.has=function(t){return this.map.hasOwnProperty(n(t))},a.prototype.set=function(t,e){this.map[n(t)]=i(e)},a.prototype.forEach=function(t,e){for(var r in this.map)this.map.hasOwnProperty(r)&&t.call(e,this.map[r],r,this)},a.prototype.keys=function(){var t=[];return this.forEach(function(e,r){t.push(r)}),s(t)},a.prototype.values=function(){var t=[];return this.forEach(function(e){t.push(e)}),s(t)},a.prototype.entries=function(){var t=[];return this.forEach(function(e,r){t.push([r,e])}),s(t)},e.iterable&&(a.prototype[Symbol.iterator]=a.prototype.entries);var l=["DELETE","GET","HEAD","OPTIONS","POST","PUT"];function y(t,e){var r,o,n=(e=e||{}).body;if(t instanceof y){if(t.bodyUsed)throw new TypeError("Already read");this.url=t.url,this.credentials=t.credentials,e.headers||(this.headers=new a(t.headers)),this.method=t.method,this.mode=t.mode,this.signal=t.signal,n||null==t._bodyInit||(n=t._bodyInit,t.bodyUsed=!0)}else this.url=String(t);if(this.credentials=e.credentials||this.credentials||"same-origin",!e.headers&&this.headers||(this.headers=new a(e.headers)),this.method=(r=e.method||this.method||"GET",o=r.toUpperCase(),l.indexOf(o)>-1?o:r),this.mode=e.mode||this.mode||null,this.signal=e.signal||this.signal,this.referrer=null,("GET"===this.method||"HEAD"===this.method)&&n)throw new TypeError("Body not allowed for GET or HEAD requests");this._initBody(n)}function p(t){var e=new FormData;return t.trim().split("&").forEach(function(t){if(t){var r=t.split("="),o=r.shift().replace(/\+/g," "),n=r.join("=").replace(/\+/g," ");e.append(decodeURIComponent(o),decodeURIComponent(n))}}),e}function b(t,e){e||(e={}),this.type="default",this.status=void 0===e.status?200:e.status,this.ok=this.status>=200&&this.status<300,this.statusText="statusText"in e?e.statusText:"OK",this.headers=new a(e.headers),this.url=e.url||"",this._initBody(t)}y.prototype.clone=function(){return new y(this,{body:this._bodyInit})},c.call(y.prototype),c.call(b.prototype),b.prototype.clone=function(){return new b(this._bodyInit,{status:this.status,statusText:this.statusText,headers:new a(this.headers),url:this.url})},b.error=function(){var t=new b(null,{status:0,statusText:""});return t.type="error",t};var m=[301,302,303,307,308];b.redirect=function(t,e){if(-1===m.indexOf(e))throw new RangeError("Invalid status code");return new b(null,{status:e,headers:{location:t}})},t.DOMException=self.DOMException;try{new t.DOMException}catch(e){t.DOMException=function(t,e){this.message=t,this.name=e;var r=Error(t);this.stack=r.stack},t.DOMException.prototype=Object.create(Error.prototype),t.DOMException.prototype.constructor=t.DOMException}function w(r,o){return new Promise(function(n,i){var s=new y(r,o);if(s.signal&&s.signal.aborted)return i(new t.DOMException("Aborted","AbortError"));var h=new XMLHttpRequest;function f(){h.abort()}h.onload=function(){var t,e,r={status:h.status,statusText:h.statusText,headers:(t=h.getAllResponseHeaders()||"",e=new a,t.replace(/\r?\n[\t ]+/g," ").split(/\r?\n/).forEach(function(t){var r=t.split(":"),o=r.shift().trim();if(o){var n=r.join(":").trim();e.append(o,n)}}),e)};r.url="responseURL"in h?h.responseURL:r.headers.get("X-Request-URL");var o="response"in h?h.response:h.responseText;n(new b(o,r))},h.onerror=function(){i(new TypeError("Network request failed"))},h.ontimeout=function(){i(new TypeError("Network request failed"))},h.onabort=function(){i(new t.DOMException("Aborted","AbortError"))},h.open(s.method,s.url,!0),"include"===s.credentials?h.withCredentials=!0:"omit"===s.credentials&&(h.withCredentials=!1),"responseType"in h&&e.blob&&(h.responseType="blob"),s.headers.forEach(function(t,e){h.setRequestHeader(e,t)}),s.signal&&(s.signal.addEventListener("abort",f),h.onreadystatechange=function(){4===h.readyState&&s.signal.removeEventListener("abort",f)}),h.send(void 0===s._bodyInit?null:s._bodyInit)})}w.polyfill=!0,self.fetch||(self.fetch=w,self.Headers=a,self.Request=y,self.Response=b),t.Headers=a,t.Request=y,t.Response=b,t.fetch=w,Object.defineProperty(t,"__esModule",{value:!0})});
+
+      function checkResponseStatus(response) {
+        if (response.status >= 200 && response.status < 300) {
+          return response
+        }
+        else {
+          let error = new Error(response.statusText);
+          error.response = response;
+          throw error
+        }
+      }
+
+      function checkCookies() {
+        if (!Cookies.get('UFCCookieTest')) {
+          Cookies.set('UFCCookieTest', 1)
+        }
+        return Cookies.get('UFCCookieTest');
+      }
+
+      function hasStyxkeyRegion() {
+        return Cookies.get('STYXKEY_region');
+      }
+
+      function tryLocale() {
+        return !Cookies.get('UFC_nolocale');
+      }
+
+      function parseJSON(response) {
+        return response.json()
+      }
+
+      if (checkCookies() && !hasStyxkeyRegion() && tryLocale()) {
+        // @todo should we really stop?, stopping because it improves end user experince
+        window.stop();
+        fetch('/ufc/setregion?_format=json', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+          .then(checkResponseStatus)
+          .then(parseJSON)
+          .then(function (json) {
+
+            // Write styxkey region
+            if (json.value && !json.redirect) {
+              Cookies.set('STYXKEY_region', json.value, {expires: 1})
+            }
+            // If can redirect and json.redirect exist (basically has a domain name), go to the new domain name
+            if (json.redirect) {
+              var path = window.location.pathname;
+
+              window.location.href = json.redirect + path;
+              return true;
+            }
+
+            // Check now if cookie is set, if not fallback
+            if (!hasStyxkeyRegion()) {
+              let error = new Error(response.statusText);
+              error.response = response;
+              throw error
+            }
+
+            // Now just reload the page to get the new localized verion of the site/page
+            location.reload();
+          }).catch(function (ex) {
+          // Mark this client not try localization for the next 5 mins
+          Cookies.set('UFC_nolocale', 1, {expires: (1 / 24 / 60) * 5});
+          console.log('something went wrong', ex);
+          location.reload();
+        });
+      }
+    </script>
+    <link rel="stylesheet" href="/sites/default/files/css/css_6Zp8Pv5ZP-bhW0myJ0LPO6zX5-pqYL4YDevrVpGBjCc.css?q1l2x2" media="all" />
+<link rel="stylesheet" href="/modules/custom/ufc_overlay/ufc_overlay.css?q1l2x2" media="all" />
+<link rel="stylesheet" href="/sites/default/files/css/css_DX5USQcYOaTUjhRhAGqbTnKdKHuRgEEBh_99-Ye4kIc.css?q1l2x2" media="all" />
+<link rel="stylesheet" href="/sites/default/files/css/css_nDNLM2juecvWFf6fqIGytG040SLfBVH3g_GQts_na24.css?q1l2x2" media="all" />
+<link rel="stylesheet" href="//unpkg.com/aos@next/dist/aos.css" media="all" />
+<link rel="stylesheet" href="/sites/default/files/css/css_wWq87hOasxkonPSh4mLTYKh82-G1Usz752EtDdvExeo.css?q1l2x2" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script>
+
+  </head>
+  <body class="fontyourface path-node page-node-type-event">
+    <a href="#main-content" class="u-visually--hidden focusable">
+      Skip to main content
+    </a>
+
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFBHZX5" height="0" width="0" title="Google Tag Manager">Google Tag Manager</iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      <div class="l-page">
+
+        <span class="l-page__header-pin" id="header-pin"></span>
+    <div class="l-page__header" id="header-wrapper">
+        <header class="c-site-header" data-header-state="animate">
+  <div class="c-site-header__content">
+
+    <div class="c-site-header__logo">
+      
+
+<a class="e-logo"
+      href="/"
+  >
+  <span class="e-logo__icon"><svg class="e-logo__svg" aria-hidden="true"><title>UFC</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#ufc-logo"></use></svg>
+  </span>
+</a>
+
+    </div>
+
+    <div class="c-site-header__menu-control">
+      <button class="c-site-header__button--menu" data-mobile-menu-component="toggle" aria-expanded="false">
+        <span class="c-site-header__button-text">Menu</span>
+
+        <span class="c-site-header__icon--toggle">
+          <svg class="e-svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#chevron-down"></use></svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="c-site-header__menu-panel" data-mobile-menu-component="panel" data-mobile-menu-state="is-hidden">
+      <nav role="navigation" aria-labelledby="main-menu-title" id="main-menu" class="c-menu-main">
+            
+  <h2 class="u-visually--hidden" id="main-menu-title">Main navigation</h2>
+
+  
+        
+                  <ul class="c-menu-main__menu--level-1" data-main-menu="smart-menu">
+                                                                      
+                
+                                                
+                
+        <li class="c-menu-main__item--left">
+          
+          
+                                <a href="/events" class="c-menu-main__button--level-1" data-drupal-link-system-path="events">Events</a>
+                              
+                  <ul class="c-menu-main__menu--level-2 mega-menu" aria-expanded="false">
+                                                                      
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/tickets" target="_self" class="c-menu-main__button--level-2" data-drupal-link-system-path="tickets">Tickets</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/events" target="_self" class="c-menu-main__button--level-2" data-drupal-link-system-path="events">All Events</a>
+                              </li>
+      
+            
+      </ul>
+      
+                              </li>
+                                        
+                
+                                                
+                
+        <li class="c-menu-main__item--left">
+          
+          
+                                <a href="/rankings" target="_self" class="c-menu-main__button--level-1" data-drupal-link-system-path="rankings">Rankings</a>
+                              </li>
+                                        
+                
+                                                
+                
+        <li class="c-menu-main__item--left">
+          
+          
+                                <a href="/athletes" class="c-menu-main__button--level-1" target="_self" data-drupal-link-system-path="athletes">Athletes</a>
+                              
+                  <ul class="c-menu-main__menu--level-2 mega-menu" aria-expanded="false">
+                                                                      
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/athletes/all?filters%5B0%5D=status%3A23" target="_self" class="c-menu-main__button--level-2" data-drupal-link-query="{&quot;filters&quot;:[&quot;status:23&quot;]}" data-drupal-link-system-path="athletes/all">All Athletes</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/ufc-hall-fame" target="_self" class="c-menu-main__button--level-2" data-drupal-link-system-path="node/90515">Hall of Fame</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/athletes" target="_self" class="c-menu-main__button--level-2" data-drupal-link-system-path="athletes">Featured</a>
+                              </li>
+      
+            
+      </ul>
+      
+                              </li>
+                                        
+                
+                                                
+                
+        <li class="c-menu-main__item--left">
+          
+          
+                                <a href="/trending/all" class="c-menu-main__button--level-1" data-drupal-link-system-path="trending/all">Trending</a>
+                              </li>
+                                        
+                                  
+                                                
+                
+        <li class="c-menu-main__item--home">
+          
+          
+                                            <a href="/home" class="c-menu-main__button--home" data-drupal-link-system-path="home">              
+
+<div class="e-logo"
+  >
+  <span class="e-logo__icon"><svg class="e-logo__svg" aria-hidden="true"><title>UFC</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#ufc-logo"></use></svg>
+  </span>
+</div>
+
+            </a>
+                            </li>
+                                                  
+                
+                                                
+                
+        <li class="c-menu-main__item--right is-pushed">
+          
+          
+                                <a href="/connect" class="c-menu-main__button--level-1" data-drupal-link-system-path="node/95284">Connect</a>
+                              
+                  <ul class="c-menu-main__menu--level-2 mega-menu" aria-expanded="false">
+                                                                      
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="https://facebook.com/ufccanada" target="_blank" class="c-menu-main__button--level-2">FACEBOOK</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="https://twitter.com/ufc_ca" target="_blank" class="c-menu-main__button--level-2">TWITTER</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="https://www.instagram.com/ufc/" target="_blank" class="c-menu-main__button--level-2">Instagram</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="http://www.ufcgym.com" target="_blank" class="c-menu-main__button--level-2">Find a Gym</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="https://www.ea.com/games/ufc/ufc-3" target="_blank" class="c-menu-main__button--level-2">EA Sports UFC 3</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/newsletter" target="_self" class="c-menu-main__button--level-2" data-drupal-link-system-path="node/94123">Newsletter</a>
+                              </li>
+      
+            
+      </ul>
+      
+                              </li>
+                                        
+                
+                                                
+                
+        <li class="c-menu-main__item--right">
+          
+          
+                                <a href="/watch" class="c-menu-main__button--level-1" target="_self" data-drupal-link-system-path="watch">Watch</a>
+                              
+                  <ul class="c-menu-main__menu--level-2 mega-menu" aria-expanded="false">
+                                                                      
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/watch" target="_self" class="c-menu-main__button--level-2" data-drupal-link-system-path="watch">How to Watch</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="/watch/library" target="_self" class="c-menu-main__button--level-2" data-drupal-link-system-path="watch/library">Video Library</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="https://www.foxsports.com.au/foxsportsvenues/pay-per-view" target="_self" class="c-menu-main__button--level-2">Find a Bar</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="https://www.ufc.tv/page/fightpass" target="_blank" class="c-menu-main__button--level-2">UFC Fight Pass</a>
+                              </li>
+                                        
+                
+        
+                
+        <li class="c-menu-main__item--below">
+          
+          
+                                <a href="https://www.ufc.tv/events" target="_self" class="c-menu-main__button--level-2">PAY-PER-VIEW</a>
+                              </li>
+      
+            
+      </ul>
+      
+                              </li>
+                                        
+                
+                                                
+                
+        <li class="c-menu-main__item--right">
+          
+          
+                                <a href="http://www.ufcstore.eu" target="_self" class="c-menu-main__button--level-1">UFC STORE</a>
+                              </li>
+      
+            
+      </ul>
+      
+
+  
+</nav>
+
+    </div>
+
+    <div class="c-site-header__search-control">
+      <button class="c-site-header__button--search" data-search-btn aria-expanded="false">
+        <span class="c-site-header__icon--search e-icon--xsmall"><svg class="e-icon__svg search"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#search"></use></svg><svg class="e-svg close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#close"></use></svg></span>
+      </button>
+    </div>
+
+    <div class="c-site-header__search-panel" data-search-panel data-search-state="is-hidden">
+      <div class="c-site-header__search-form">
+<div class="c-search">
+
+      <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+  <div class="js-form-item form-item js-form-type-search-api-autocomplete form-type-search-api-autocomplete js-form-item-search form-item-search form-no-label">
+        <input placeholder="Search ufc.com" data-drupal-selector="edit-search" data-search-api-autocomplete-search="search" class="form-autocomplete form-text" data-autocomplete-path="/search_api_autocomplete/search?display=page&amp;&amp;filter=search" type="text" id="edit-search" name="search" value="" size="30" maxlength="128" />
+
+        </div>
+<div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by">
+      <label for="edit-sort-by">Sort by</label>
+        <select data-drupal-selector="edit-sort-by" id="edit-sort-by" name="sort_by" class="form-select"><option value="created" selected="selected">Newest</option><option value="search_api_relevance">Most relevant</option></select>
+        </div>
+
+
+  <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+
+
+
+
+</div>
+
+</form>
+
+  </div>
+
+
+
+</div>
+
+      <div class="c-site-header__trending"><div class="views-element-container block block-views block-views-blocktrending-search-listing-trending-search-listing" id="block-trending-search-listing">
+  
+    
+      
+
+  <div><div class="view view-trending-search-listing view-id-trending_search_listing view-display-id-trending_search_listing js-view-dom-id-7d6fa8db348e9054d0064620a02ca93ba470e0c8c1c2c5db2957a691414810bf">
+  
+    
+      
+      <div class="view-content">
+              
+
+<div class="c-listing-inline-group">
+  <h2 class="c-listing-inline-group__title">Trending</h2>
+
+  <ul class="c-listing-inline-group__list">
+          <li class="c-listing-inline-group__item">
+        
+<a href="/athlete/kennedy-nzechukwu" class="c-listing-inline"
+
+  ><span class="c-listing-inline__thumbnail"><div class="field field--name-image field--type-entity-reference field--label-hidden field__item"><div class="layout layout--onecol"><div  class="layout__region layout__region--content"><img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/teaser/s3/2019-03/NZECHUKWU_KENNEDY.png?CNyKJ2rmw9z97CrILT2TvmjKEejXU_jV&amp;itok=ct803xpq" width="400" height="300" class="image-style-teaser" /></div></div></div></span><div class="field field--name-name field--type-name field--label-hidden field__item">Kennedy Nzechukwu</div></a>
+
+      </li>
+          <li class="c-listing-inline-group__item">
+        
+<a href="/athlete/jeremy-larsen" class="c-listing-inline"
+
+  ><span class="c-listing-inline__thumbnail"><div class="field field--name-image field--type-entity-reference field--label-hidden field__item"><div class="layout layout--onecol"><div  class="layout__region layout__region--content"><img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/teaser/s3/image/fighter_images/Jeremy_Larsen/JeremyLarsen_Headshot.png?NuG_.Aw.BEsW08Uw_XzCtd1cM5ayGoZC&amp;itok=pFxTj_1s" width="400" height="300" class="image-style-teaser" /></div></div></div></span><div class="field field--name-name field--type-name field--label-hidden field__item">Jeremy Larsen</div></a>
+
+      </li>
+          <li class="c-listing-inline-group__item">
+        
+<a href="/athlete/tebaris-gordon" class="c-listing-inline"
+
+  ><div class="field field--name-name field--type-name field--label-hidden field__item">Tebaris Gordon</div></a>
+
+      </li>
+          <li class="c-listing-inline-group__item">
+        
+<a href="/athlete/islam-makhachev" class="c-listing-inline"
+
+  ><span class="c-listing-inline__thumbnail"><div class="field field--name-image field--type-entity-reference field--label-hidden field__item"><div class="layout layout--onecol"><div  class="layout__region layout__region--content"><img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/teaser/s3/2018-10/MAKHACHEV_ISLAM.png?H3m3ZL4qZfYxNY5GeoC7yixpVo_Q7a2H&amp;itok=lMnXxrsR" width="400" height="300" class="image-style-teaser" /></div></div></div></span><div class="field field--name-name field--type-name field--label-hidden field__item">Islam Makhachev</div></a>
+
+      </li>
+      </ul>
+</div>
+
+
+    </div>
+  
+          </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+    </div>
+  
+        <div class="l-page__pre-content">
+        
+
+
+    </div>
+  
+    <div class="l-page__utilities">
+    
+      </div>
+
+  <main class="l-page__main">
+    <a id="main-content" tabindex="-1"></a>
+        
+        <div class="l-page__content">
+                <div id="block-mainpagecontent" class="block block-system block-system-main-block">
+  
+    
+      
+
+<div  class="node node--type-event node--view-mode-full ds-1col clearfix">
+
+          
+
+
+
+              
+          
+
+                      
+        
+
+
+  
+  
+  
+
+<div class="c-hero">
+                          <img class="c-hero__image" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl/s3/2019-11/UFC245Hero_0.jpg?bSlTrN.lRSHd6PSkovCjBmzvY0IpdOtC&itok=N00heoNz" data-aos="fade" data-aos-duration="300" />
+                  
+  <div class="c-hero__overlay"></div>
+  <div class="pager__nav"><div class="pager__nav__inner"><span><a href="/event/ufc-fight-night-december-7-2019" class="previous" hreflang="en">Previous</a></span><span><a href="/event/ufc-fight-night-december-21-2019" class="next" hreflang="en">Next</a></span></div></div>
+  <div class="c-hero__container">
+    <div class="c-hero__content " data-aos="fade-down" data-aos-duration="1200" data-aos-delay="750">
+      <div class="c-hero__header">
+
+                  <div class="c-hero__headline-prefix">
+            <div class="field field--name-node-title field--type-ds field--label-hidden field__item"><h2>
+  UFC 245
+</h2>
+</div>
+      </div>
+        
+                  <div class="c-hero__headline is-large-text">
+                          
+  
+
+<span class="e-divider">
+      <span class="e-divider__top">Usman</span>
+  
+  <span class="e-divider__border">
+    <span class="animate e-divider__border-line--start white"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="animate e-divider__border-line--end white"></span></span>
+
+      <span class="e-divider__bottom">Covington</span>
+  </span>
+
+                      </div>
+        
+                  <div class="c-hero__headline-suffix" >
+            Sun, Dec 15 / 3:00 AM GMT
+          </div>
+              </div>
+
+              <div class="c-hero__text">
+            <div class="field field--name-venue field--type-entity-reference field--label-hidden field__item">T Mobile Arena, 
+  Las Vegas United States
+
+
+</div>
+      </div>
+      
+              <div class="c-hero__actions">
+
+                                    
+
+<a
+
+        href="#"
+      
+    class="e-button--red "
+
+  
+  
+  ><span class="e-button__text">
+    
+    Follow live
+  </span></a>
+                                                
+
+<a
+
+        href="#how-to-watch"
+      
+    class="e-button--white "
+
+  
+  
+  ><span class="e-button__text">
+    
+    How to Watch
+  </span></a>
+                                                
+
+<a
+
+        href="https://www.axs.com/events/380434/ufc-245-tickets?q=ufc"
+      
+    class="e-button--white "
+
+  
+  
+  ><span class="e-button__text">
+    
+    Buy Tickets
+  </span></a>
+                      
+        </div>
+          </div>
+
+          <div class="c-hero__footer">
+        
+                  <div class="c-hero__links">
+                                          <a class="c-hero__footer-link" href="https://ufcvip.com/package-builder/ufc-245?utm_campaign=ufc_245-event_page&amp;utm_medium=referral&amp;utm_source=ufc.com">CLICK HERE TO PURCHASE UFC 245 VIP EXPERIENCE</a>
+                                    </div>
+        
+        
+        
+      </div>
+    
+  </div>
+</div>
+<div class="c-hero__end"></div>
+
+
+
+<div class="dfp-ad-block">
+  <div class="dfp-ad__headline e-t2">
+    
+  </div>
+  
+  <div class="dfp-ad__title e-tag">
+    Sponsored By
+  </div>
+  
+  <div class="dfp-ad__content">
+    <div class="dfp-tag" data-drupal-dfp-id="js-dfp-tag-event_detail_logo">
+    </div>
+
+  </div>
+</div>
+
+
+<div class="l-main">
+
+  
+  <div >
+
+    
+    <div class="l-main__content ">
+      
+            <div class="l-container">
+        <div class=" fight-card field-group-tabs-wrapper"><div class="c-listing__wrapper--horizontal-tabs" data-horizontal-tabs-panes><input class="horizontal-tabs-active-tab" type="hidden" />
+<details class="main-card js-form-wrapper form-wrapper" id="edit-group-main-card" open="open">    <summary role="button" aria-controls="edit-group-main-card" aria-expanded="true" aria-pressed="true">Main Card</summary><div class="details-wrapper">
+    
+
+  <div class="view view-eva view-event-fights view-id-event_fights view-display-id-entity_view_1 js-view-dom-id-451386f7ddaa82959d6c0449005daf133e6e4a74746a6ec671283041a271520d">
+  
+    
+
+  
+  
+
+  
+<div class="c-event-fight-card-broadcaster__container">
+  <div class="c-event-fight-card-broadcaster__desktop-wrapper">
+    <div class="c-event-fight-card-broadcaster__mobile-wrapper">
+      <div class="c-event-fight-card-broadcaster__name">
+              </div>
+      <div class="c-event-fight-card-broadcaster__time">
+                  Sun, Dec 15 / 3:00 AM GMT
+              </div>
+    </div>
+    <div class="c-event-fight-card-broadcaster__link">
+          </div>
+  </div>
+</div>
+          
+
+<section class="l-listing--stacked--full-width">
+
+   
+    <ul class="l-listing__group--bordered"><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+    
+  
+<div class="c-listing-fight" data-fmid="8180" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/fighter_images/1USMAN_KAMARU_L.png?oNdzc2HGepslmD4AvwzFbpmAPjDzBokj&amp;itok=V8T8QiwT" width="185" height="617" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank c-listing-fight__corner-rank--champion">
+                      <span>C</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Kamaru</span>
+          <span class="c-listing-fight__corner-family-name">Usman</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile c-listing-fight__corner-rank--champion">
+          C
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Welterweight Title Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Kamaru Usman
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Colby Covington
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/fighter_images/Colby_Covington/COVINGTON_COLBY_R.png?gVNxaOUKt6I93HBV1MQvJMKc_w1OsSU8&amp;itok=UHhW5RyZ" width="185" height="655" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#2</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Colby</span>
+          <span class="c-listing-fight__corner-family-name">Covington</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #2
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+    
+  
+<div class="c-listing-fight" data-fmid="8152" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2019-07/HOLLOWAY_MAX_L_BELT.png?DMNMA6LT4.NLErH58P9Jdfwe_prO6cIZ&amp;itok=vEd9DmB_" width="185" height="629" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank c-listing-fight__corner-rank--champion">
+                      <span>C</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Max</span>
+          <span class="c-listing-fight__corner-family-name">Holloway</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile c-listing-fight__corner-rank--champion">
+          C
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Featherweight Title Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Max Holloway
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Alexander Volkanovski
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2019-05/VOLKANOVSKI_ALEXANDER_R.png?MrDPOSo_PGoXFky2Au8ovaZW_qV_I_K0&amp;itok=99AvCc0L" width="185" height="541" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#1</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Alexander</span>
+          <span class="c-listing-fight__corner-family-name">Volkanovski</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #1
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+    
+  
+<div class="c-listing-fight" data-fmid="8101" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2019-07/NUNES_AMANDA_L.png?aGW0tzaXfQoedFVWrJ53GkmBkpuM0EY4&amp;itok=B1rgUj-g" width="185" height="594" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank c-listing-fight__corner-rank--champion">
+                      <span>C</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Amanda</span>
+          <span class="c-listing-fight__corner-family-name">Nunes</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile c-listing-fight__corner-rank--champion">
+          C
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Women&#039;s Bantamweight Title Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Amanda Nunes
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Germaine de Randamie
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2018-11/DE-RANDAMIE_GERMAINE_R.png?Jq5SzvWpLzJvlwghAtX0YVA745N86LWF&amp;itok=ylM_ftHj" width="185" height="535" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#1</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Germaine</span>
+          <span class="c-listing-fight__corner-family-name">de Randamie</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #1
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+  
+  
+<div class="c-listing-fight" data-fmid="8200" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/fighter_images/Marlon_Moraes/MORAES_MARLON_L.png?x4xbCGntSm2QLPxN7lHeBL8KpxXlV9Gy&amp;itok=FGzdNBtz" width="185" height="625" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#1</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Marlon</span>
+          <span class="c-listing-fight__corner-family-name">Moraes</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile">
+          #1
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Bantamweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Marlon Moraes
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Jose Aldo
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2018-10/ALDO_JOSE_L.png?lkTy7CGp.fx_6vrcH35wxBKKBCrYz5K4&amp;itok=VHeqDudg" width="185" height="599" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#3</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Jose</span>
+          <span class="c-listing-fight__corner-family-name">Aldo</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #3
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+  
+  
+<div class="c-listing-fight" data-fmid="8201" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2018-10/YAN_PETR_L_0.png?itFXobLoxM6ATgzynY1u3IpU1npysLLT&amp;itok=EAgQ0jwn" width="185" height="647" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#4</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Petr</span>
+          <span class="c-listing-fight__corner-family-name">Yan</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile">
+          #4
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Bantamweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Petr Yan
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Urijah Faber
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/ufc-fighter-container/69437/profile-galery/fullbodyright-picture/Urijah-Faber_369_RightFullBodyImage.png?2ghkbdcbIYKhcxjTsxciErdgZkpKbREw&amp;itok=qKp7kACj" width="185" height="556" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#12</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Urijah</span>
+          <span class="c-listing-fight__corner-family-name">Faber</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #12
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li></ul></section>
+
+  
+  
+
+  
+  
+
+  
+  </div>
+
+
+
+
+
+</div>
+</details>
+<details class="fight-card-prelims js-form-wrapper form-wrapper" id="edit-group-prelims">    <summary role="button" aria-controls="edit-group-prelims" aria-expanded="false" aria-pressed="false">Prelims</summary><div class="details-wrapper">
+    
+
+  <div class="view view-eva view-event-fights view-id-event_fights view-display-id-entity_view_2 js-view-dom-id-eaf1d830ce3601a56c8a8c137c06fb5bffa95bdef1dada00e88ecc037980756b">
+  
+    
+
+  
+  
+
+  
+<div class="c-event-fight-card-broadcaster__container">
+  <div class="c-event-fight-card-broadcaster__desktop-wrapper">
+    <div class="c-event-fight-card-broadcaster__mobile-wrapper">
+      <div class="c-event-fight-card-broadcaster__name">
+              </div>
+      <div class="c-event-fight-card-broadcaster__time">
+                  Sun, Dec 15 / 1:00 AM GMT
+              </div>
+    </div>
+    <div class="c-event-fight-card-broadcaster__link">
+          </div>
+  </div>
+</div>
+      
+
+<section class="l-listing--stacked--full-width">
+
+   
+    <ul class="l-listing__group--bordered"><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+  
+
+<div class="c-listing-fight" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2019-07/NEAL_GEOFF_L.png?qSKJNAd7M2vS7AfBITTSBxvLARbvigD_&amp;itok=ul5zmT4A" width="185" height="599" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#14</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Geoff</span>
+          <span class="c-listing-fight__corner-family-name">Neal</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile">
+          #14
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Welterweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Geoff Neal
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Mike Perry
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2018-11/PERRY_MIKE_R.png?D3PmqYOpWEbTzKYURa3w6XKsIb76pO3Q&amp;itok=yfhk85nd" width="185" height="618" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Mike</span>
+          <span class="c-listing-fight__corner-family-name">Perry</span>
+        </div>
+      </div>
+
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+  
+  
+<div class="c-listing-fight" data-fmid="8205" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/ufc-fighter-container/68489/profile-galery/fullbodyleft-picture/ketlen-vieira_600855_LeftFullBodyImage.png?jx7VY_CdZXW4N4B8hecO2tXpMKc43AMl&amp;itok=D0dGmYSz" width="185" height="657" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#2</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Ketlen</span>
+          <span class="c-listing-fight__corner-family-name">Vieira</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile">
+          #2
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Women&#039;s Bantamweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Ketlen Vieira
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Irene Aldana
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2019-07/ALDANA_IRENE_R.png?lvRFU9rrVlUCCYdhOGSETxSsFcA44jFQ&amp;itok=WZ5C9I_y" width="185" height="629" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#10</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Irene</span>
+          <span class="c-listing-fight__corner-family-name">Aldana</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #10
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+
+
+<div class="c-listing-fight" data-fmid="8126" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/ufc-fighter-container/68754/profile-galery/fullbodyleft-picture/Matt-Brown_927_LeftFullBodyImage.png?2i8vkg28xfdS5RuRvgw.4kb91yt267UF&amp;itok=haCQt7Op" width="185" height="617" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Matt</span>
+          <span class="c-listing-fight__corner-family-name">Brown</span>
+        </div>
+      </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Welterweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Matt Brown
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Ben Saunders
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2018-11/SAUNDERS_BEN_R.png?TaYzNfBBvswpgHrCuLm6cIMwGKDAFk7N&amp;itok=TCKUhaAf" width="185" height="574" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Ben</span>
+          <span class="c-listing-fight__corner-family-name">Saunders</span>
+        </div>
+      </div>
+
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li></ul></section>
+
+  
+  
+
+  
+  
+
+  
+  </div>
+
+
+
+
+
+</div>
+</details>
+<details class="fight-card-prelims-early js-form-wrapper form-wrapper" id="edit-group-early-prelims">    <summary role="button" aria-controls="edit-group-early-prelims" aria-expanded="false" aria-pressed="false">Early Prelims</summary><div class="details-wrapper">
+    
+
+  <div class="view view-eva view-event-fights view-id-event_fights view-display-id-entity_view_3 js-view-dom-id-bcc9a7464bbc6ae2b74129a10ed88a3813157b60d07cee2db10d668790003395">
+  
+    
+
+  
+  
+
+  
+<div class="c-event-fight-card-broadcaster__container">
+  <div class="c-event-fight-card-broadcaster__desktop-wrapper">
+    <div class="c-event-fight-card-broadcaster__mobile-wrapper">
+      <div class="c-event-fight-card-broadcaster__name">
+              </div>
+      <div class="c-event-fight-card-broadcaster__time">
+                  Sat, Dec 14 / 11:30 PM GMT
+              </div>
+    </div>
+    <div class="c-event-fight-card-broadcaster__link">
+          </div>
+  </div>
+</div>
+        
+
+<section class="l-listing--stacked--full-width">
+
+   
+    <ul class="l-listing__group--bordered"><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+
+
+<div class="c-listing-fight" data-fmid="8204" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">          <img src="/themes/custom/ufc/assets/img/standing-stance-right-silhouette.png" class="image-style-teaser" width="185" height="300">
+      </div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Chase</span>
+          <span class="c-listing-fight__corner-family-name">Hooper</span>
+        </div>
+      </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Featherweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Chase Hooper
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Daniel Teymur
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/ufc-fighter-container/67734/profile-galery/fullbodyright-picture/Daniel-Teymur_633027_RightFullBodyImage.png?QS4KoFw5atGTB5FD4bKtPSenQ2IuzXZ4&amp;itok=JXOjFOlC" width="185" height="646" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Daniel</span>
+          <span class="c-listing-fight__corner-family-name">Teymur</span>
+        </div>
+      </div>
+
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+  
+  
+<div class="c-listing-fight" data-fmid="8161" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/ufc-fighter-container/67491/profile-galery/fullbodyleft-picture/brandon-moreno_607021_LeftFullBodyImage.png?0PDpjLxo9Oz5eubyl9egxRb1e8BhgcHV&amp;itok=PRNgEt0C" width="185" height="551" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#5</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Brandon</span>
+          <span class="c-listing-fight__corner-family-name">Moreno</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile">
+          #5
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Flyweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Brandon Moreno
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Kai Kara France
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2018-12/FRANCE_KAI_KARA_R.png?Zd8p_6IM4ojEYLtUr847MvWtPRaVRt1K&amp;itok=ywmoN8ct" width="185" height="565" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#6</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Kai Kara</span>
+          <span class="c-listing-fight__corner-family-name">France</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #6
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+  
+  
+<div class="c-listing-fight" data-fmid="8093" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/fighter_images/Jessica_Eye/EYE_JESSICA_L3.png?habpppTJkSLlpIypYE7qexntvXPXIZX.&amp;itok=Yu3oTJWb" width="185" height="667" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#2</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Jessica</span>
+          <span class="c-listing-fight__corner-family-name">Eye</span>
+        </div>
+      </div>
+              <div class="js-listing-fight__corner-rank c-listing-fight__red-corner-rank--mobile">
+          #2
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Women&#039;s Flyweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Jessica Eye
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Viviane Araujo
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2019-07/ARAUJO_VIVIANE_R.png?dhcEtTQ5WsqCP.zErFvlqJA_hPvCiS_v&amp;itok=x4CWbRif" width="185" height="632" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                      <span>#6</span>
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Viviane</span>
+          <span class="c-listing-fight__corner-family-name">Araujo</span>
+        </div>
+      </div>
+
+              <div class="js-listing-fight__corner-rank c-listing-fight__blue-corner-rank--mobile">
+          #6
+        </div>
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li><li class="l-listing__item">
+                                <div class="node node--type-fight node--view-mode-card-event ds-1col clearfix">
+
+
+  
+
+
+
+  
+  
+
+
+
+<div class="c-listing-fight" data-fmid="8162" data-status="">
+  <div class="c-listing-fight__content">
+
+        <div class="c-listing-fight__corner--red">
+      <div class="c-listing-fight__corner-image--red">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/image/fighter_images/SHADOW_Fighter_fullLength_RED.png?pHL.kwEugVBrUJRtg70H9GIXymBzFaaW&amp;itok=njUVNrn_" width="185" height="624" alt="Men&#039;s full body silhouette image" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--red">
+
+        <div class="c-listing-fight__outcome-wrapper ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Punahele</span>
+          <span class="c-listing-fight__corner-family-name">Soriano</span>
+        </div>
+      </div>
+          </div>
+    
+        <div class="c-listing-fight__details">
+
+      <div class="c-listing-fight__banner--live hidden">Live now</div>
+      <div class="c-listing-fight__awards">
+              </div>
+
+              <div class="c-listing-fight__class">Middleweight Bout</div>
+      
+      <div class="c-listing-fight__detail-corner-name">
+        Punahele Soriano
+      </div>
+
+      <div class="c-listing-fight__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+
+      <div class="c-listing-fight__detail-corner-name">
+        Oskar Piechota
+      </div>
+
+      <div class="js-listing-fight__results c-listing-fight__results--desktop  hidden">
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Round</div>
+          <div class="c-listing-fight__result-text round"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Time</div>
+          <div class="c-listing-fight__result-text time"></div>
+        </div>
+
+        <div class="c-listing-fight__result">
+          <div class="c-listing-fight__result-label">Method</div>
+          <div class="c-listing-fight__result-text method"></div>
+        </div>
+      </div>
+    </div>
+    
+        <div class="c-listing-fight__corner--blue">
+      <div class="c-listing-fight__corner-image--blue">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+          <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/event_fight_card_upper_body_of_standing_athlete/s3/2018-10/PIECHOTA_OSKAR_R.png?MdiENmoklVi6yMLMXuhkj1xMN5oz.fZY&amp;itok=4CxGhGc9" width="185" height="559" class="image-style-event-fight-card-upper-body-of-standing-athlete" />
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+      <div class="c-listing-fight__corner-body--blue">
+
+        <div class="c-listing-fight__outcome-wrapper  ">
+                      <div class="c-listing-fight__outcome"></div>
+                  </div>
+
+        <div class="js-listing-fight__corner-rank c-listing-fight__corner-rank">
+                  </div>
+
+        <div class="c-listing-fight__corner-name">
+          <span class="c-listing-fight__corner-given-name">Oskar</span>
+          <span class="c-listing-fight__corner-family-name">Piechota</span>
+        </div>
+      </div>
+
+          </div>
+    
+        <div class="c-listing-fight__odds">
+      <span class="c-listing-fight__odds-amount">-</span>
+      <span class="c-listing-fight__odds-text">odds</span>
+      <span class="c-listing-fight__odds-amount">-</span>
+    </div>
+    
+    <div class="js-listing-fight__results c-listing-fight__results--mobile  hidden">
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Round</div>
+        <div class="c-listing-fight__result-text round"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Time</div>
+        <div class="c-listing-fight__result-text time"></div>
+      </div>
+
+      <div class="c-listing-fight__result">
+        <div class="c-listing-fight__result-label">Method</div>
+        <div class="c-listing-fight__result-text method"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+                  </li></ul></section>
+
+  
+  
+
+  
+  
+
+  
+  </div>
+
+
+
+
+
+</div>
+</details>
+</div>
+</div>
+      </div>
+    
+      
+              <div class="l-container--bg-grey">
+        <div class="l-container__content">
+                      <div class="l-container__title">
+              Get the advance word
+            </div>
+                    
+
+  <div class="view view-eva view-related-content-event view-id-related_content_event view-display-id-entity_view_1 js-view-dom-id-27bbc546958b327bbf2bdc5e6648769cd3d7aa20aaddc357229b3c10b1ccecb8">
+
+  
+  
+
+                        
+
+<div class="c-carousel-wrapper c-carousel--dots-multiple">
+
+  
+      
+  <div class="c-carousel--dots-multiple__content carousel__dots-multiple-3-items" data-carousel="dots-multiple-3-items">
+                                    
+
+
+
+<a href="/news/ben-saunders-living-his-dream-matt-brown-ufc-245" class="c-card">
+
+    
+  <div class="c-card__media">
+          
+            <div class="field field--name-thumbnail field--type-entity-reference field--label-hidden field__item">  <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-11/BenSaundersUFC245Thumbnail.jpg?yRoN.pfSYlRhCrZ4nmumueU8OQkX06Dn&amp;itok=qRY9kh4f" width="585" height="330" alt="Thumbnail" title="BenSaundersUFC245Thumbnail.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+</div>
+      
+                
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">
+      
+              Athletes
+          
+  </span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">3 days ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3" id="n-98698">
+            <span class="field field--name-title field--type-string field--label-hidden">Ben Saunders Is Living His Dream</span>
+
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+            <div class="clearfix text-formatted field field--name-teaser field--type-text-long field--label-hidden field__item"><p>Ben Saunders cannot wait to battle an "absolute savage" in Matt Brown at UFC 245.</p>
+</div>
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/news/kamaru-usman-six-greatest-fights-ufc-245-champion" class="c-card">
+
+    
+  <div class="c-card__media">
+          
+            <div class="field field--name-thumbnail field--type-entity-reference field--label-hidden field__item">  <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-11/UsmanGreatestFightsThumbnail.jpg?.84a2W1WtbuuyoYF3CkHww4LPRXiD06M&amp;itok=Sf-VrSSJ" width="585" height="330" alt="Thumbnail" title="UsmanGreatestFightsThumbnail.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+</div>
+      
+                
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">
+      
+              Athletes
+          
+  </span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">3 days ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3" id="n-98697">
+            <span class="field field--name-title field--type-string field--label-hidden">Kamaru Usman&#039;s Six Greatest Fights</span>
+
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+            <div class="clearfix text-formatted field field--name-teaser field--type-text-long field--label-hidden field__item"><p>Relive Kamaru Usman's greatest fights before UFC 245.</p>
+</div>
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/video/ufc-245-free-fight-nunes-vs-holm" class="c-card" data-modal-callback="/ajax/modal/node/98686">
+
+    
+  <div class="c-card__media">
+          
+              <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-11/nunes-holm-freefight-hero.jpg?gzZUldlkiuK3QRmYyVQRxyUN.PLeRT0d&amp;itok=BsL_nnPh" width="585" height="330" alt="Thumbnail" title="nunes-holm-freefight-hero.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+
+      
+                              <div class="c-card__icon-big">
+            <svg class="e-icon__svg"><title>Play</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#play"></use></svg>
+          </div>
+                <div class="c-card__icon">
+                      <svg class="e-icon__svg"><title>Video</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#video"></use></svg>
+                    <span class="e-p--small">30:09</span>
+        </div>
+          
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+                    <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">6 days ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3">
+            UFC 245 Free Fight: Nunes vs Holm
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/video/ufc-245-ready-rise" class="c-card" data-modal-callback="/ajax/modal/node/98657">
+
+    
+  <div class="c-card__media">
+          
+              <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-11/UFC245_PRO1_THUMBNAIL.jpg?J0iU_BOgWg9zmEwvC8tGDaqEhZ_Dm5p5&amp;itok=joWzt_-b" width="585" height="330" alt="Thumbnail" title="UFC245_PRO1_THUMBNAIL.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+
+      
+                              <div class="c-card__icon-big">
+            <svg class="e-icon__svg"><title>Play</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#play"></use></svg>
+          </div>
+                <div class="c-card__icon">
+                      <svg class="e-icon__svg"><title>Video</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#video"></use></svg>
+                    <span class="e-p--small">01:00</span>
+        </div>
+          
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">The Sport</span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">1 week ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3">
+            UFC 245: Ready to Rise
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/video/ufc-245-3-champions-3-titles-1-historic-night" class="c-card" data-modal-callback="/ajax/modal/node/98658">
+
+    
+  <div class="c-card__media">
+          
+              <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-11/UFC245_PRO2_V1_THUMBNAIL.jpg?0L.n2zkZv.Tqb8XZFUIiC_ehGrCyRV8M&amp;itok=xp2boopK" width="585" height="330" alt="Thumbnail" title="UFC245_PRO2_V1_THUMBNAIL.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+
+      
+                              <div class="c-card__icon-big">
+            <svg class="e-icon__svg"><title>Play</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#play"></use></svg>
+          </div>
+                <div class="c-card__icon">
+                      <svg class="e-icon__svg"><title>Video</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#video"></use></svg>
+                    <span class="e-p--small">50:58</span>
+        </div>
+          
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">The Sport</span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">1 week ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3">
+            UFC 245: 3 Champions, 3 Titles, 1 Historic Night
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/video/ufc-245-press-conference-highlights" class="c-card" data-modal-callback="/ajax/modal/node/98345">
+
+    
+  <div class="c-card__media">
+          
+              <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-11/usman-covington-hero_0.jpg?IHa21LqKIdwS73hbPiy_rnhbYT0vXeSP&amp;itok=4oCm3pcC" width="585" height="330" alt="Thumbnail" title="usman-covington-hero.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+
+      
+                              <div class="c-card__icon-big">
+            <svg class="e-icon__svg"><title>Play</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#play"></use></svg>
+          </div>
+                <div class="c-card__icon">
+                      <svg class="e-icon__svg"><title>Video</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#video"></use></svg>
+                    <span class="e-p--small">52:49</span>
+        </div>
+          
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+                    <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">3 weeks 5 days ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3">
+            UFC 245: Press Conference Highlights
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/news/ufc-245-press-conference-recap-usman-covington-holloway-volkanovski-nunes-gdr-features" class="c-card">
+
+    
+  <div class="c-card__media">
+          
+            <div class="field field--name-thumbnail field--type-entity-reference field--label-hidden field__item">  <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-11/UFC245PressConferenceRecapHero.jpg?uYu4Q0OWe.IyXucFzHM6Dv_nj0FxZrcg&amp;itok=flU6VP3q" width="585" height="330" alt="Thumbnail" title="UFC245PressConferenceRecapHero.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+</div>
+      
+                
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">
+      
+              Athletes
+          
+  </span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">3 weeks ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3" id="n-98340">
+            <span class="field field--name-title field--type-string field--label-hidden">UFC 245 Press Conference Recap</span>
+
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/video/ufc-245-usman-vs-covington-press-conference" class="c-card" data-modal-callback="/ajax/modal/node/98306">
+
+    
+  <div class="c-card__media">
+          
+              <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-10/colby-covington-hero.jpg?UnRK5MoMKpvMG.x65JgaHCgk1GEr1cGA&amp;itok=Ean6R6f-" width="585" height="330" alt="Thumbnail" title="colby-covington-hero.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+
+      
+                              <div class="c-card__icon-big">
+            <svg class="e-icon__svg"><title>Play</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#play"></use></svg>
+          </div>
+                <div class="c-card__icon">
+                      <svg class="e-icon__svg"><title>Video</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#video"></use></svg>
+                    <span class="e-p--small">52:49</span>
+        </div>
+          
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">The Sport</span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">3 weeks 5 days ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3">
+            UFC 245: Usman vs. Covington Press Conference
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/news/kamaru-usman-vs-colby-covington-headline-ufc-245" class="c-card">
+
+    
+  <div class="c-card__media">
+          
+            <div class="field field--name-thumbnail field--type-entity-reference field--label-hidden field__item">  <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-10/050602_245_BoutAnn_KU-CC_1920x1080.jpg?AT9J1HfXOU_SS3haCtLZKE9xsb2R55N8&amp;itok=UZue2OXt" width="585" height="330" alt="Thumbnail" title="050602_245_BoutAnn_KU-CC_1920x1080.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+</div>
+      
+                
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">
+      
+              Announcements
+          
+  </span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">1 month ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3" id="n-97698">
+            <span class="field field--name-title field--type-string field--label-hidden">Kamaru Usman Vs Colby Covington To Headline UFC 245</span>
+
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/news/holloway-vs-volkanovski-set-ufc-245" class="c-card">
+
+    
+  <div class="c-card__media">
+          
+            <div class="field field--name-thumbnail field--type-entity-reference field--label-hidden field__item">  <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-09/holloway-hero.jpg?7EhRjX3Ge_7HOX60cUjQsJL8yAVBpc_P&amp;itok=aRyq0bHn" width="585" height="330" alt="Thumbnail" title="holloway-hero.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+</div>
+      
+                
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">
+      
+              Announcements
+          
+  </span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">2 months ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3" id="n-97502">
+            <span class="field field--name-title field--type-string field--label-hidden">Holloway vs Volkanovski Set For UFC 245</span>
+
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                                          
+
+
+
+<a href="/news/amanda-nunes-gdr-rematch-set-ufc-245" class="c-card">
+
+    
+  <div class="c-card__media">
+          
+            <div class="field field--name-thumbnail field--type-entity-reference field--label-hidden field__item">  <img src="http://dmxg5wxfqgb4u.cloudfront.net/styles/card_3_2_crop_585x330px_/s3/2019-08/049736_245_BoutAnn_AN-GdR_1920x1080.jpg?rT4kI.7zXyrXLVCytvadq4ShCjItETsn&amp;itok=YbA70b8r" width="585" height="330" alt="Thumbnail" title="049736_245_BoutAnn_AN-GdR_1920x1080.jpg" class="image-style-card-3-2-crop-585x330px-" />
+
+
+</div>
+      
+                
+        
+        
+
+  </div> 
+        <div class="c-card__allinfo">
+
+              <div class="c-card__info">
+          <span class="c-card__info-prefix">
+      
+              Announcements
+          
+  </span>          <span class="c-card__info-suffix">
+            <div class="field field--name-datetime field--type-datetime field--label-hidden field__item">3 months ago</div>
+      </span>        </div>
+      
+              <div class="c-card__headline">
+          <h3 class="e-t3" id="n-96804">
+            <span class="field field--name-title field--type-string field--label-hidden">Amanda Nunes, GDR Rematch Set For UFC 245</span>
+
+          </h3>
+        </div>
+      
+    </div>
+  
+      <div class="c-card__body e-p--small">
+      
+    </div>
+  
+  
+</a>
+
+
+                                </div>
+
+    
+  
+</div>
+
+  
+  
+
+  
+  
+
+  
+  </div>
+
+
+
+
+
+
+        </div>
+      </div>
+    
+              <div class="l-container" id="follow-along-live">
+        
+
+  
+
+
+
+
+
+      </div>
+    
+              <div class="l-container">
+        <div class="l-container__content" id="how-to-watch">
+          <div class="block block-ufc-events-watch block-ufc-events-watch-block">
+  
+    
+      
+                
+    
+    
+        
+        
+  
+  
+
+
+<section class="l-how-to-watch-event-group l-how-to-watch-event-group watch-subsection">
+
+      <h2 class="l-how-to-watch-event-group__header">
+      <div class="l-how-to-watch-event-group__title">How to Watch</div>
+    </h2>
+  <ul class="l-flex--3col-1to3">          <li class="l-flex__item" data-aos="fade-up" data-aos-delay="0">
+            
+
+  
+
+
+
+  
+
+<div class="watch-subsection c-how-to-watch--event-tickets">
+
+      <div class="c-how-to-watch__title--event-tickets">
+      Tickets
+    </div>
+  
+  <ul class="c-how-to-watch__list--event-tickets">
+          <li class="c-how-to-watch__item--event-tickets">
+        
+<div class="c-listing-ticket">
+  <div class="c-listing-ticket__row">
+    <div class="c-listing-ticket__date" >Wed, Oct  16</div>
+    <div class="c-listing-ticket__status">Presale</div>
+  </div>
+  <div class="c-listing-ticket__row">
+    <div class="c-listing-ticket__time">6PM IST</div>
+    <div class="c-listing-ticket__title">UFC Fight Club</div>
+  </div>
+</div>
+
+      </li>
+              <li class="c-how-to-watch__item--event-tickets">
+        
+<div class="c-listing-ticket">
+  <div class="c-listing-ticket__row">
+    <div class="c-listing-ticket__date" ><time datetime="2019-10-17T17:00:00Z" class="datetime">Thu, Oct 17</time>
+</div>
+    <div class="c-listing-ticket__status">Presale</div>
+  </div>
+  <div class="c-listing-ticket__row">
+    <div class="c-listing-ticket__time">6PM IST</div>
+    <div class="c-listing-ticket__title">UFC Newsletter</div>
+  </div>
+</div>
+
+      </li>
+              <li class="c-how-to-watch__item--event-tickets">
+        
+<div class="c-listing-ticket">
+  <div class="c-listing-ticket__row">
+    <div class="c-listing-ticket__date" ><time datetime="2019-10-18T17:00:00Z" class="datetime">Fri, Oct 18</time>
+</div>
+    <div class="c-listing-ticket__status">On Sale</div>
+  </div>
+  <div class="c-listing-ticket__row">
+    <div class="c-listing-ticket__time">6PM IST</div>
+    <div class="c-listing-ticket__title">Public</div>
+  </div>
+</div>
+
+      </li>
+      </ul>
+
+      <div class="btn-container">
+      <a href="https://www.axs.com/events/380434/ufc-245-tickets?q=ufc" class="e-button--red">
+                  Available
+              </a>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+          </li>          <li class="l-flex__item" data-aos="fade-up" data-aos-delay="0">
+                        
+<div class="c-how-to-watch--event-download-card">
+
+      <div class="c-how-to-watch__title--event-download-card">
+      Watch On-the-Go
+    </div>
+  
+  Download the UFC Mobile App for past & live fights and more!
+
+  <div class="watch-phone-container c-how-to-watch__watch-phone-container--event-download-card">
+    <img data-aos="slide-up" data-aos-duration="1000" src="/themes/custom/ufc/assets/img/howtowatch-app-middle.png" srcset="/themes/custom/ufc/assets/img/howtowatch-app-middle@2x.png 2x, /themes/custom/ufc/assets/img/howtowatch-app-middle@3x.png 3x">
+  </div>
+  <div class="btn-container">
+          <a href="https://itunes.apple.com/us/app/ufc/id534568162" class="btn-light btn-big btn-apps">
+        <svg aria-hidden="true" class="svg-icon-app-store">
+          <use xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#icon-app-store" />
+        </svg>
+      </a>
+              <a href="https://play.google.com/store/apps/details?id=com.neulion.smartphone.ufc.android" class="btn-light btn-big btn-apps">
+        <svg aria-hidden="true" class="svg-icon-google-play">
+          <use xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#icon-google-play" />
+          </svg>
+      </a>
+      </div>
+
+</div>
+
+    
+          </li></ul></section>
+
+
+  
+
+  </div>
+
+        </div>
+      </div>
+    
+              <div class="l-container">
+        <div class="l-container__content" id="dfp-ad">
+          <div class="dfp-tag" data-drupal-dfp-id="js-dfp-tag-event_detail_banner">
+    </div>
+
+        </div>
+      </div>
+    
+        
+              <div class="l-container">
+        <div class="l-container__content">
+          <div class="block block-ufc-social block-ufc-social-blocks">
+  
+    
+      
+<div class="c-call-to-action" data-cta >
+  
+      <div class="c-call-to-action__title">Fans voices come first</div>
+  
+  <div class="c-call-to-action__text">Favorite athlete? Fantasy match-ups?<br />Comments? Leave 'em here!</div>
+
+  <div class="c-call-to-action__actions">
+                <div class="c-call-to-action__btn">
+        
+
+<button
+
+    
+    class="e-button--white-icon-inner "
+
+      data-cta-btn="share"
+  
+  
+  ><span class="e-button__text"><svg class="e-button__svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#share"></use></svg>
+    
+    Share
+  </span></button>
+      </div>
+    
+                <div class="c-call-to-action__btn">
+        
+
+<button
+
+    
+    class="e-button--white-icon-inner "
+
+      data-cta-btn="comment"
+  
+  
+  ><span class="e-button__text"><svg class="e-button__svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#comment"></use></svg>
+    
+    Comments
+  </span></button>
+      </div>
+      </div>
+
+      <div class="c-call-to-action__content" data-cta-content="share" aria-hidden="true">
+              <div id="block-addtoanybuttons" class="c-social-block">
+  
+    
+      <span class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://www.ufc.com/event/ufc-245" data-a2a-title="UFC 245"><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_email"></a><a class="a2a_button_reddit"></a><a class="a2a_button_pinterest"></a><a class="a2a_button_facebook_messenger"></a></span>
+  </div>
+
+          </div>
+  
+      <div class="c-call-to-action__content" data-cta-content="comment" aria-hidden="true">
+              <div id="block-facebookcomments" class="block block-facebook-comments">
+  
+    
+      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script>
+<div class="fb-comments fb-comments-fluid" data-href="https://www.ufc.com/event/ufc-245" data-num-posts="5" data-width="208" data-colorscheme="light"></div>
+  </div>
+
+          </div>
+  
+</div>
+
+
+  </div>
+
+        </div>
+      </div>
+          </div>
+
+  </div>
+
+  
+</div>
+
+
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+    
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+    
+          
+          
+  
+            
+
+<div id="c-listing-ticker" class="c-listing-ticker--footer" data-fmid="953">
+  <div class="c-listing-ticker__content" data-carousel="variable" >
+    
+          <div class="c-listing-ticker__section">
+        <div class="c-listing-ticker__section-label">
+          Early<br> Prelims
+        </div>
+              </div>
+              <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8162">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Punahele Soriano</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Oskar Piechota</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/fighter_images/SHADOW_Fighter_fullLength_RED.png?zUETofqVA4Z.a4ZINB24OhdY8ez8AXZh&amp;itok=oKCK-Sax">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2018-10/PIECHOTA_OSKAR_R.png?4RO3jMF3ArERFZ_jHYUt1yjpdR5Msk9y&amp;itok=Swo0wX_M">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8093">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Jessica Eye</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Viviane Araujo</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/fighter_images/Jessica_Eye/EYE_JESSICA_L3.png?l3gvYHhudgRegoN9SisyX6RZ4STvfwHS&amp;itok=3CbXpwPw">
+              <div class="c-listing-ticker-fightcard__rank">#2</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2019-07/ARAUJO_VIVIANE_R.png?VjLG7X5N_w.LOw5Fcp4Iq4a_2fB3bVG5&amp;itok=inS9WDwY">
+              <div class="c-listing-ticker-fightcard__rank">#6</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8161">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Brandon Moreno</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Kai Kara France</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/ufc-fighter-container/67491/profile-galery/fullbodyleft-picture/brandon-moreno_607021_LeftFullBodyImage.png?MSfmo.LcGatvXmun8YHR7Ms6ahxQ0mcK&amp;itok=4z4-2-vQ">
+              <div class="c-listing-ticker-fightcard__rank">#5</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2018-12/FRANCE_KAI_KARA_R.png?OtUff4hXU10fxv6Kp.ul4EMFIuvL6IZy&amp;itok=hzBOUNS7">
+              <div class="c-listing-ticker-fightcard__rank">#6</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8204">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Chase Hooper</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Daniel Teymur</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="/themes/custom/ufc/assets/img/fighterpose_right.png">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/ufc-fighter-container/67734/profile-galery/fullbodyright-picture/Daniel-Teymur_633027_RightFullBodyImage.png?2phBz36kBZ9elYz2EQdXxM6UKaBINa3G&amp;itok=TYVU4jXR">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                  
+          <div class="c-listing-ticker__section">
+        <div class="c-listing-ticker__section-label">
+          Prelims
+        </div>
+              </div>
+              <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8126">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Matt Brown</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Ben Saunders</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/ufc-fighter-container/68754/profile-galery/fullbodyleft-picture/Matt-Brown_927_LeftFullBodyImage.png?8UjGv9WVoXXrJHE28swgW8K8JLX9I6Zz&amp;itok=fA22FYpQ">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2018-11/SAUNDERS_BEN_R.png?Z0NEHZzBIAqK39YwCHAn6jQHZx80JDnn&amp;itok=-xzCYySf">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8205">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Ketlen Vieira</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Irene Aldana</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/ufc-fighter-container/68489/profile-galery/fullbodyleft-picture/ketlen-vieira_600855_LeftFullBodyImage.png?fGvtnqVPBlMAXBOl2EujkWbT32SmeRfQ&amp;itok=BfzCsIoU">
+              <div class="c-listing-ticker-fightcard__rank">#2</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2019-07/ALDANA_IRENE_R.png?1Uzhqwhw8JWaBzc_UNMF1E1EOwLWPqEi&amp;itok=BB8pBMLM">
+              <div class="c-listing-ticker-fightcard__rank">#10</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Geoff Neal</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Mike Perry</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2019-07/NEAL_GEOFF_L.png?dZxmFOYKx3IRxX9yEXN2I3C4kkzvYFeu&amp;itok=Ic2pF0In">
+              <div class="c-listing-ticker-fightcard__rank">#14</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2018-11/PERRY_MIKE_R.png?SUCun2y2_NM_Ol4j9PhbOeNrvAdLNXox&amp;itok=DiY5n4VI">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                  
+          <div class="c-listing-ticker__section">
+        <div class="c-listing-ticker__section-label">
+          Main<br> Card
+        </div>
+              </div>
+              <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8201">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Petr Yan</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Urijah Faber</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2018-10/YAN_PETR_L_0.png?qFzKHER43CJW06VFV4BdUYisC4ITa09r&amp;itok=EDXb_qzh">
+              <div class="c-listing-ticker-fightcard__rank">#4</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/ufc-fighter-container/69437/profile-galery/fullbodyright-picture/Urijah-Faber_369_RightFullBodyImage.png?COPlNmtiTLii2bfSQ9PNidkTy6DFG_hO&amp;itok=GRAVrKl4">
+              <div class="c-listing-ticker-fightcard__rank">#12</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8200">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Marlon Moraes</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Jose Aldo</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/fighter_images/Marlon_Moraes/MORAES_MARLON_L.png?RyDn4MKYrRcL62my0Tv.ycjhjL2LWZjQ&amp;itok=65gRwMUg">
+              <div class="c-listing-ticker-fightcard__rank">#1</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2018-10/ALDO_JOSE_L.png?qQ.VxqN1NFYeN064TrtL0td69tqUILRV&amp;itok=CtyY0Dmm">
+              <div class="c-listing-ticker-fightcard__rank">#3</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8101">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Amanda Nunes</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Germaine de Randamie</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2019-07/NUNES_AMANDA_L.png?eFktlrTLKwmm6WYpsmSy_rO81oEqZwrg&amp;itok=vbrah8dI">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2018-11/DE-RANDAMIE_GERMAINE_R.png?dCsAau2WHI2YR1P1EJSlfqnW9ZiOFGQI&amp;itok=IaRBUcsx">
+              <div class="c-listing-ticker-fightcard__rank">#1</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8152">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Max Holloway</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Alexander Volkanovski</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2019-07/HOLLOWAY_MAX_L_BELT.png?rOxfD7LRsyhATw2I_3v9Oz0PrAEVlOY7&amp;itok=ApU1IKpl">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/2019-05/VOLKANOVSKI_ALEXANDER_R.png?lYjoBnpbRJoXCM0IWVsS07zjkeNTa9p0&amp;itok=r5hj4CmC">
+              <div class="c-listing-ticker-fightcard__rank">#1</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                      <div class="c-listing-ticker__fightcard-wrapper">
+          
+<div class="c-listing-ticker-fightcard " data-fmid="8180">
+
+  <div class="c-listing-ticker-fightcard__content">
+    <div class="c-listing-ticker-fightcard__athletes">
+      <div class="c-listing-ticker-fightcard__red_corner_name">Kamaru Usman</div>
+      <div class="c-listing-ticker-fightcard__vs">
+        
+  
+
+<span class="e-divider">
+  
+  <span class="e-divider__border">
+    <span class="e-divider__border-line--start grey-light"></span>
+    <span class="e-divider__border-text">vs</span>
+    <span class="e-divider__border-line--end grey-light"></span></span>
+
+  </span>
+
+      </div>
+      <div class="c-listing-ticker-fightcard__blue_corner_name">Colby Covington</div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__red_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/fighter_images/1USMAN_KAMARU_L.png?M4YYwWOB1B68virvC5iJXQC_bA8FG.6N&amp;itok=vfqwrD2i">
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__blue_corner">
+      <img class="c-listing-ticker-fightcard__thumbnail" src="http://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_detail_stance_thumbnail_full_body/s3/image/fighter_images/Colby_Covington/COVINGTON_COLBY_R.png?FmK0TF_Ltv251oFmNvIkdk2B35fZ1AoB&amp;itok=pWqMGLpu">
+              <div class="c-listing-ticker-fightcard__rank">#2</div>
+              <div class="c-listing-ticker-fightcard__outcome"></div>
+    </div>
+
+    <div class="c-listing-ticker-fightcard__live">LIVE NOW</div>
+  </div>
+
+  <div class="c-listing-ticker-fightcard__results">
+    <div>
+      <div class="c-listing-ticker-fightcard__round">
+        Round <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__time">
+        Time <span></span>
+      </div>
+      <div class="c-listing-ticker-fightcard__method">
+        Method <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+                    </div>
+</div>
+
+</div>
+
+
+  </div>
+<div id="block-event-detail-modal-ad" class="block block-ufc-ads block-modal-ad">
+  
+    
+      <div class="hidden modal-ad-content" data-ufc-modal-ad="event_detail_modal"><div class="modal-ad-inner"><div class="dfp-tag" data-drupal-dfp-id="js-dfp-tag-event_detail_modal">
+    </div>
+</div></div>
+  </div>
+
+
+          </div>
+
+        
+    
+          <div class="l-page__footer">
+        <footer class="c-site-footer" role="contentinfo">
+  <div class="c-site-footer__main">
+    <a class="c-site-footer__logo" href="/">
+      <svg>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#ufc-logo"></use>
+      </svg>
+    </a>
+    
+<div id="block-ufc-localization">
+  
+    
+      <div class="ufc-block-localization__title e-t6">
+  <div class="block-ufc-localization-title">UFC.COM - UK</div>
+  <svg>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/ufc/assets/svg/sprite-ui.svg#triangle-down"></use>
+  </svg>
+
+</div>
+
+<div class="ufc-block-localization__links" aria-hidden="true">
+  <ul class="links"><li class="pt-br"><a href="https://www.ufc.com.br">Brazil</a></li><li class="zh-hans"><a href="http://ufc.cn">China</a></li><li class="fr"><a href="https://www.ufc.com/language/switch/fr">France</a></li><li class="ja"><a href="http://jp.ufc.com">Japan</a></li><li class="ko"><a href="https://kr.ufc.com">Korea</a></li><li class="es"><a href="https://www.ufcespanol.com">Latin America</a></li><li class="ru"><a href="https://ru.ufc.com">Russia</a></li><li class="en"><a href="https://www.ufc.com/language/switch/en">United States</a></li><li class="es-us"><a href="https://us.ufcespanol.com">USA Espanol</a></li></ul>
+</div>
+  </div>
+
+    <nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer" class="c-menu-footer">
+            
+  <h2 class="u-visually--hidden" id="block-footer-menu">Footer</h2>
+
+  
+                          <ul class="c-menu-footer__menu--level-1">
+                            <li class="c-menu-footer__item--level-1">
+          <a href="/about" target="_self" class="c-menu-footer__link--level-1" data-drupal-link-system-path="node/7258">UFC</a>
+                                            <ul class="c-menu-footer__menu--level-2">
+                            <li class="c-menu-footer__item--level-2">
+          <a href="/about/sport" target="_self" class="c-menu-footer__link--level-2" data-drupal-link-system-path="node/7260">The Sport</a>
+                  </li>
+                      <li class="c-menu-footer__item--level-2">
+          <a href="/about/community" target="_self" class="c-menu-footer__link--level-2" data-drupal-link-system-path="node/7259">Community</a>
+                  </li>
+                      <li class="c-menu-footer__item--level-2">
+          <a href="http://mmajobs.teamworkonline.com/teamwork/jobs/default.cfm" target="_self" class="c-menu-footer__link--level-2">Careers</a>
+                  </li>
+                      <li class="c-menu-footer__item--level-2">
+          <a href="http://www.ufcstore.com/?ecid=PRF-SM-100419&amp;pa=ufc.com_footer-shop-link_03-06-13" target="_blank" class="c-menu-footer__link--level-2">Store</a>
+                  </li>
+                      <li class="c-menu-footer__item--level-2">
+          <a href="http://ufc.allow.me/media/" target="_self" class="c-menu-footer__link--level-2">Press Credentials</a>
+                  </li>
+            </ul>
+      
+                  </li>
+                      <li class="c-menu-footer__item--level-1">
+          <a href="/faq" target="_self" class="c-menu-footer__link--level-1" data-drupal-link-system-path="node/90551">Help</a>
+                                            <ul class="c-menu-footer__menu--level-2">
+                            <li class="c-menu-footer__item--level-2">
+          <a href="/news/ufctv-ufc-fight-pass-frequently-asked-questions" target="_self" class="c-menu-footer__link--level-2" data-drupal-link-system-path="node/90552">Fight Pass FAQ</a>
+                  </li>
+            </ul>
+      
+                  </li>
+                      <li class="c-menu-footer__item--level-1">
+          <a href="/fighter/Joe-Lauzon" target="_self" class="c-menu-footer__link--level-1" data-drupal-link-system-path="node/524">Legal</a>
+                                            <ul class="c-menu-footer__menu--level-2">
+                            <li class="c-menu-footer__item--level-2">
+          <a href="/fighter/Joe-Lauzon" target="_self" class="c-menu-footer__link--level-2" data-drupal-link-system-path="node/524">Terms</a>
+                  </li>
+                      <li class="c-menu-footer__item--level-2">
+          <a href="/privacy-policy" target="_self" class="c-menu-footer__link--level-2" data-drupal-link-system-path="node/525">Privacy Policy</a>
+                  </li>
+                      <li class="c-menu-footer__item--level-2">
+          <a href="https://www.networkadvertising.org/choices/   " target="_self" class="c-menu-footer__link--level-2">Ad Choices</a>
+                  </li>
+            </ul>
+      
+                  </li>
+            </ul>
+      
+
+  
+</nav>
+
+  </div>
+  <div class="c-site-footer__copyright">
+    <div id="block-sitebranding" class="block block-system block-system-branding-block">
+  
+    
+      Copyright © 2001-2018 UFC All Rights Reserved
+  </div>
+
+  </div>
+</footer>
+      </div>
+      </main>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/96096","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en-uk"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"addtoany\/addtoany,back_to_top\/back_to_top_js,back_to_top\/back_to_top_text,classy\/base,classy\/messages,core\/html5shiv,core\/normalize,dfp\/dfp,facebook_comments\/fluid,field_group\/element.horizontal_tabs,google_analytics\/google_analytics,layout_discovery\/onecol,poll\/drupal.poll-links,search_api_autocomplete\/search_api_autocomplete,system\/base,ufc\/global-css,ufc\/global-js,ufc_events\/eventLiveStats,ufc_localization\/region,ufc_overlay\/ufc_overlay,ufc_social\/social,ufc_social\/ufc_social.social,views\/views.module","theme":"ufc","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"back_to_top":{"back_to_top_button_trigger":"100","back_to_top_prevent_on_mobile":1,"back_to_top_prevent_in_admin":1,"back_to_top_button_type":"text","back_to_top_button_text":""},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"dfp":{"slots":{"js-dfp-tag-event_detail_modal":{"breakpoints":[],"adUnit":"\/5458\/zuffa.ufc\/events_modal","size":[[0,0]],"clickUrl":"","adsenseAdTypes":"","adsenseChannelIds":"","adSenseColors":[],"targeting":[],"outOfPage":true,"display":true},"js-dfp-tag-event_detail_banner":{"breakpoints":[{"browser":[1024,0],"sizes":[[728,90]]},{"browser":[0,0],"sizes":[[300,300]]}],"adUnit":"\/5458\/zuffa.ufc\/event","size":[[728,90]],"clickUrl":"","adsenseAdTypes":"","adsenseChannelIds":"","adSenseColors":[],"targeting":[],"outOfPage":null,"display":true},"js-dfp-tag-event_detail_logo":{"breakpoints":[],"adUnit":"\/5458\/zuffa.ufc\/event","size":[[50,50]],"clickUrl":"","adsenseAdTypes":"","adsenseChannelIds":"","adSenseColors":[],"targeting":[],"outOfPage":null,"display":true}}},"eventLiveStats":{"event_fmid":"953","simulate":""},"widthBreakpoint":1,"field_group":{"tabs":{"mode":"full","context":"view","settings":{"label":"Fight Card","direction":"horizontal","id":"","classes":"fight-card","formatter":"closed","description":""}},"tab":{"mode":"full","context":"view","settings":{"id":"","classes":"main-card","formatter":"open","description":"","label":"Main Card"}}},"search_api_autocomplete":{"search":{"auto_submit":true}},"user":{"uid":0,"permissionsHash":"20c1a33671c073513fee492e5c6e581591da044f9b3e8f22d5cd26a6f59a13bb"}}</script>
+<script src="/sites/default/files/js/js_3Xc6VMMrbvougZXNsvTlal3dwCSC9azoSBNUZxezP78.js"></script>
+<script src="https://static.addtoany.com/menu/page.js" async></script>
+<script src="/sites/default/files/js/js_HhIiRcTMNE9PtIUma66QRuaf1s66LXRAIakZQEhJ2bI.js"></script>
+<script src="//unpkg.com/aos@next/dist/aos.js"></script>
+<script src="/sites/default/files/js/js_VMUWL-yHlD-3erE3AkL20PrHdxy5hUNGRVxfL_2lfi4.js"></script>
+<script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<script src="//www.youtube.com/iframe_api"></script>
+<script src="/sites/default/files/js/js_AeRXgU1N693QqAE2hgDIuNZINieYBzgbvXd7Xt2gEuY.js"></script>
+<script src="/modules/custom/ufc_overlay/ufc_overlay.js?v=8.5.4"></script>
+<script src="/sites/default/files/js/js_R2fDTLZcQRBytqiUOhApz0dNfLqwp1PliRX_MTyjwyU.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3cad7d7fc7","applicationID":"190390077","transactionName":"NgZVbUYDCEdSVEdeWA9MdExHFglZHFlcU1JbBkFcWhY=","queueTime":0,"applicationTime":3453,"atts":"GkFCGw4ZGxgRVhENTBwe","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

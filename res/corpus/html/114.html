@@ -1,0 +1,462 @@
+<!DOCTYPE html> <html> <head> <meta charset=utf-8> <meta http-equiv=X-UA-Compatible content="IE=edge"> <script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"eef0e0e62d","applicationID":"17785850","transactionName":"J1ZXTEBeX15VRxwAVA1NVkpbUF8dQ11cEg==","queueTime":2,"applicationTime":135,"agent":""}</script> <script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"eef0e0e62d",applicationID:"17785850"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script> <meta name=viewport content="initial-scale=1,maximum-scale=1,user-scalable=no"> <title>UPCOMING: UFC events and fights</title> <meta name=description content="Complete listing of all upcoming UFC fights this year"> <meta name=keywords content=ufc> <link rel=canonical href="https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34"> <meta name="twitter:card" content=summary_large_image> <meta name="twitter:url" content="https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34"> <meta name="twitter:title" content="UPCOMING: UFC events and fights"> <meta name="twitter:description" content="Complete listing of all upcoming UFC fights this year"> <meta name="twitter:site" content="The Underground"> <meta name="twitter:image:src" content="https://media.elegantcms.io/a/db2690c8-28e3-4983-94a3-ac331c6be926/424037b2-f9e1-4118-ab63-de59d2546298/1540050841/o/low_res_blog_image_1.jpg?1540050841"> <meta property="og:title" content="UPCOMING: UFC events and fights"> <meta property="og:description" content="Complete listing of all upcoming UFC fights this year"> <meta property="og:type" content=article> <meta property="og:site_name" content="The Underground"> <meta property="og:url" content="https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34"> <meta property="og:image" content="https://media.elegantcms.io/a/db2690c8-28e3-4983-94a3-ac331c6be926/424037b2-f9e1-4118-ab63-de59d2546298/1540050841/o/low_res_blog_image_1.jpg?1540050841"> <meta property="article:published_time" content="2019-11-21T18:35:00-05:00"> <meta property="article:modified_time" content="2019-11-22T16:57:29-05:00"> <meta property="article:author" content="Kirik Jenness"> <meta property="article:section" content="MMA Editorials"> <meta property="article:tag" content="Kirik Jenness"> <link rel=apple-touch-icon href="https://assets.mixedmartialarts.com/assets/icon-2-1ac153ef6856590ef90e15229b44a3899643a68ce56f15e40e3f8bc9dae931f6.png"> <meta property="fb:app_id" content=219235348099045 /> <meta property="fb:pages" content=137714746661132 /> <meta property="fb:pages" content=50312224788 /> <meta property="fb:pages" content=162692044106868 /> <link rel=stylesheet media=all href="https://assets.mixedmartialarts.com/assets/application-78ec32e139a1f7c8279417b6d9122e6c1ebd3c391d2f84b6633f4e01194b23ae.css"/> <link rel=stylesheet media=all href="https://assets.mixedmartialarts.com/assets/main-050c6bc9192f77d144363fbde6e60d2d633d3fbcb0be117eb6f82668933ed672.css"/> <style>
+    .bgwrap {background: url("") top center no-repeat fixed;display:block;margin:0 auto;padding:0;}
+    @media (max-width:768px) {.bgwrap {background: none;display:block;margin:0 auto;background-image:none;}}
+  </style> <script> var WC_pub =  "0c0c90f7-e631-1c98-d0db-862fdd1df100"; var WC_param = "0"; </script> <script src="https://d1usx49nhcilp7.cloudfront.net/current/wowconnect.min.js"></script> <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-187373-27', 'auto');
+	  ga('send', 'pageview');
+	</script> <script async=true>
+      var elem = document.createElement('script');
+      elem.src = 'https://quantcast.mgr.consensu.org/cmp.js';
+      elem.async = true;
+      elem.type = "text/javascript";
+      var scpt = document.getElementsByTagName('script')[0];
+      scpt.parentNode.insertBefore(elem, scpt);
+      (function() {
+          var gdprAppliesGlobally = false;
+          function addFrame() {
+              if (!window.frames['__cmpLocator']) {
+                  if (document.body) {
+                      var body = document.body,
+                          iframe = document.createElement('iframe');
+                      iframe.style = 'display:none';
+                      iframe.name = '__cmpLocator';
+                      body.appendChild(iframe);
+                  } else {
+                      // In the case where this stub is located in the head,
+                      // this allows us to inject the iframe more quickly than
+                      // relying on DOMContentLoaded or other events.
+                      setTimeout(addFrame, 5);
+                  }
+              }
+          }
+          addFrame();
+          function cmpMsgHandler(event) {
+              var msgIsString = typeof event.data === "string";
+              var json;
+              if(msgIsString) {
+                  json = event.data.indexOf("__cmpCall") != -1 ? JSON.parse(event.data) : {};
+              } else {
+                  json = event.data;
+              }
+              if (json.__cmpCall) {
+                  var i = json.__cmpCall;
+                  window.__cmp(i.command, i.parameter, function(retValue, success) {
+                      var returnMsg = {"__cmpReturn": {
+                              "returnValue": retValue,
+                              "success": success,
+                              "callId": i.callId
+                          }};
+                      event.source.postMessage(msgIsString ?
+                          JSON.stringify(returnMsg) : returnMsg, '*');
+                  });
+              }
+          }
+          window.__cmp = function (c) {
+              var b = arguments;
+              if (!b.length) {
+                  return __cmp.a;
+              }
+              else if (b[0] === 'ping') {
+                  b[2]({"gdprAppliesGlobally": gdprAppliesGlobally,
+                      "cmpLoaded": false}, true);
+              } else if (c == '__cmp')
+                  return false;
+              else {
+                  if (typeof __cmp.a === 'undefined') {
+                      __cmp.a = [];
+                  }
+                  __cmp.a.push([].slice.apply(b));
+              }
+          }
+          window.__cmp.gdprAppliesGlobally = gdprAppliesGlobally;
+          window.__cmp.msgHandler = cmpMsgHandler;
+          if (window.addEventListener) {
+              window.addEventListener('message', cmpMsgHandler, false);
+          }
+          else {
+              window.attachEvent('onmessage', cmpMsgHandler);
+          }
+      })();
+      window.__cmp('init', {
+          'Language': 'en',
+          'Initial Screen Reject Button Text': 'I do not accept',
+          'Initial Screen Accept Button Text': 'I accept',
+          'Purpose Screen Body Text': 'You can set your consent preferences and determine how you want your data to be used based on the purposes below. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data.',
+          'Vendor Screen Body Text': 'You can set consent preferences for each individual third-party company below. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may disclose that they use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policies for more information and to opt out.',
+          'Vendor Screen Accept All Button Text': 'Accept all',
+          'Vendor Screen Reject All Button Text': 'Reject all',
+          'Initial Screen Body Text': 'We and our partners use technology such as cookies on our site to personalise content and ads, provide social media features, and analyse our traffic. Click below to consent to the use of this technology across the web. You can change your mind and change your consent choices at anytime by returning to this site.',
+          'Initial Screen Body Text Option': 1,
+          'Publisher Name': 'Mixed Martial Arts LLC',
+          'Publisher Logo': 'https://assets.mixedmartialarts.com/assets/logo-23260e86a8902e77c4f0007db00e63f83b6eb3b6427a0f7874f9c596a24bae21.png',
+          'Post Consent Page': 'https://www.facebook.com/mixedmartialarts',
+          'UI Layout': 'banner',
+          'Non-Consent Display Frequency': 7,
+      });
+  </script> <style>
+    .qc-cmp-button {
+      background-color: #b62024 !important;
+      border-color: #b62024 !important;
+    }
+    .qc-cmp-button:hover {
+      background-color: transparent !important;
+      border-color: #b62024 !important;
+    }
+    .qc-cmp-alt-action,
+    .qc-cmp-link {
+      color: #b62024 !important;
+    }
+    .qc-cmp-button {
+      color: #FFFFFF !important;
+    }
+    .qc-cmp-button.qc-cmp-secondary-button {
+      color: #a0a0a0 !important;
+    }
+    .qc-cmp-button.qc-cmp-button.qc-cmp-secondary-button:hover {
+      color:#ffffff !important;
+    }
+    .qc-cmp-button.qc-cmp-secondary-button {
+      border-color: #a0a0a0 !important;
+      background-color: transparent !important;
+    }
+    .qc-cmp-button.qc-cmp-secondary-button:hover {
+      background-color: #a0a0a0 !important;
+    }
+    .qc-cmp-ui,
+    .qc-cmp-ui .qc-cmp-main-messaging,
+    .qc-cmp-ui .qc-cmp-messaging,
+    .qc-cmp-ui .qc-cmp-beta-messaging,
+    .qc-cmp-ui .qc-cmp-title,
+    .qc-cmp-ui .qc-cmp-sub-title,
+    .qc-cmp-ui .qc-cmp-purpose-info,
+    .qc-cmp-ui .qc-cmp-table,
+    .qc-cmp-ui .qc-cmp-table-header,
+    .qc-cmp-ui .qc-cmp-vendor-list,
+    .qc-cmp-ui .qc-cmp-vendor-list-title {
+      color: #b62024 !important;
+    }
+    .qc-cmp-ui a,
+    .qc-cmp-ui .qc-cmp-alt-action {
+      color: #FFFFFF !important;
+    }
+    .qc-cmp-ui {
+      background-color: #d5d5d5 !important;
+    }
+    .qc-cmp-publisher-purposes-table .qc-cmp-table-header {
+      background-color: #fafafa !important;
+    }
+    .qc-cmp-publisher-purposes-table .qc-cmp-table-row {
+      background-color: #ffffff !important;
+    }
+    .qc-cmp-small-toggle.qc-cmp-toggle-on,
+    .qc-cmp-toggle.qc-cmp-toggle-on {
+      background-color: #b62024 !important;
+      border-color: #b62024 !important;
+    }
+  </style> <script>
+    let cookieDomain = ".mixedmartialarts.com", cookieNamePrefix = "";
+</script> <script src="https://assets.mixedmartialarts.com/assets/application-7b6dca31c1caee4f21b4da203c839c4b34230c59a2bbc4e67bdf7e29d6cf2716.js"></script> <script src="//s.206ads.com/configs/mixedmartialarts.com.js"></script> <script async=async src="//www.googletagservices.com/tag/js/gpt.js"></script> <script>
+      var bannerAd_A;
+      var bannerAd_B;
+      var bannerAd_C;
+
+      var boxAd_A;
+      var boxAd_B;
+      var boxAd_C;
+
+      var bannerAd_Am;
+      var bannerAd_Bm;
+
+      var boxAd_Am;
+      var boxAd_Bm;
+      var boxAd_Cm;
+
+      var nativeAd_A;
+      var nativeAd_B;
+      var nativeAd_C;
+      var nativeAd_D;
+
+      var oopAd_A;
+      var oopAd_B;
+
+      var bannerAd_AApp;
+      var bannerAd_BApp;
+      var bannerAd_CApp;
+      var boxAd_AApp;
+      var boxAd_BApp;
+      var boxAd_CApp;
+      var boxAd_DApp;
+
+      var TPD_Mobile;
+      googletag.cmd.push(function () {
+          if (TPD_Mobile == false) {
+              bannerAd_A = googletag.defineSlot(TPD_AdUnit_Dsk_Banner_A, prebidLeaderboard, 'tpd-banner-ad-a').addService(googletag.pubads()).setTargeting("position", pos_bannerAdA).setTargeting("refreshcount", TPD_BannerA_refresh).setTargeting("refresh", 'false');
+              bannerAd_B = googletag.defineSlot(TPD_AdUnit_Dsk_Banner_B, prebidLeaderboard_B, 'tpd-banner-ad-b').addService(googletag.pubads()).setTargeting("position", pos_bannerAdB).setTargeting("refreshcount", TPD_BannerB_refresh).setTargeting("refresh", 'false');
+              bannerAd_C = googletag.defineSlot(TPD_AdUnit_Dsk_Banner_C, prebidLeaderboard_C, 'tpd-banner-ad-c').addService(googletag.pubads()).setTargeting("position", pos_bannerAdC).setTargeting("refreshcount", TPD_BannerC_refresh).setTargeting("refresh", 'false');
+
+              boxAd_A = googletag.defineSlot(TPD_AdUnit_Dsk_Box_A, prebidBoxAd_A, 'tpd-box-ad-a').addService(googletag.pubads()).setTargeting("position", pos_boxAdA).setTargeting("refreshcount", TPD_BoxA_refresh).setTargeting("refresh", 'false');
+              boxAd_B = googletag.defineSlot(TPD_AdUnit_Dsk_Box_B, prebidBoxAd_B, 'tpd-box-ad-b').addService(googletag.pubads()).setTargeting("position", pos_boxAdB).setTargeting("refreshcount", TPD_BoxB_refresh).setTargeting("refresh", 'false');
+              boxAd_C = googletag.defineSlot(TPD_AdUnit_Dsk_Box_C, prebidBoxAd_C, 'tpd-box-ad-c').addService(googletag.pubads()).setTargeting("position", pos_boxAdC).setTargeting("refreshcount", TPD_BoxC_refresh).setTargeting("refresh", 'false');
+
+              nativeAd_A = googletag.defineSlot(TPD_AdUnit_Native_A, prebidNativeAd_A, 'tpd-native-ad-a').addService(googletag.pubads()).setTargeting("position", pos_nativeAdA).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+              nativeAd_B = googletag.defineSlot(TPD_AdUnit_Native_B, prebidNativeAd_B, 'tpd-native-ad-b').addService(googletag.pubads()).setTargeting("position", pos_nativeAdB).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+              nativeAd_C = googletag.defineSlot(TPD_AdUnit_Native_C, prebidNativeAd_C, 'tpd-native-ad-c').addService(googletag.pubads()).setTargeting("position", pos_nativeAdC).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+              nativeAd_D = googletag.defineSlot(TPD_AdUnit_Native_D, prebidNativeAd_D, 'tpd-native-ad-d').addService(googletag.pubads()).setTargeting("position", pos_nativeAdD).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+
+              oopAd_A = googletag.defineSlot(TPD_AdUnit_OOP_A, prebidOOPAd_A, 'tpd-oop-ad-a').addService(googletag.pubads()).setTargeting("refresh", 'false').setTargeting("position", pos_oopAdA).setCollapseEmptyDiv(true);
+              oopAd_B = googletag.defineSlot(TPD_AdUnit_OOP_B, prebidOOPAd_B, 'tpd-oop-ad-b').addService(googletag.pubads()).setTargeting("position", pos_oopAdB).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+          } else if (TPD_Mobile == true) {
+              bannerAd_Am = googletag.defineSlot(TPD_AdUnit_Mob_Banner_A, prebidLeaderboard, 'tpd-banner-ad-am').addService(googletag.pubads()).setTargeting("position", pos_bannerAdA).setTargeting("refreshcount", TPD_BannerAm_refresh).setTargeting("refresh", 'false');
+              bannerAd_AApp = googletag.defineSlot(TPD_AdUnit_App_Banner_A, prebidLeaderboard_App, 'tpd-app-banner-ad-a').addService(googletag.pubads()).setTargeting("position", pos_app_bannerAdA).setTargeting("refreshcount", TPD_BannerAApp_refresh).setTargeting("refresh", 'false');
+              bannerAd_Bm = googletag.defineSlot(TPD_AdUnit_Mob_Banner_B, prebidLeaderboard_B, 'tpd-banner-ad-bm').addService(googletag.pubads()).setTargeting("position", pos_bannerAdB).setTargeting("refreshcount", TPD_BannerBm_refresh).setTargeting("refresh", 'false');
+              bannerAd_BApp = googletag.defineSlot(TPD_AdUnit_App_Banner_B, prebidLeaderboard_B_App, 'tpd-app-banner-ad-b').addService(googletag.pubads()).setTargeting("position", pos_app_bannerAdB).setTargeting("refreshcount", TPD_BannerBApp_refresh).setTargeting("refresh", 'false');
+
+              bannerAd_CApp = googletag.defineSlot(TPD_AdUnit_App_Banner_C, prebidLeaderboard_C_App, 'tpd-app-banner-ad-c').addService(googletag.pubads()).setTargeting("position", pos_app_bannerAdC).setTargeting("refreshcount", TPD_BannerCApp_refresh).setTargeting("refresh", 'false');
+
+              boxAd_Am = googletag.defineSlot(TPD_AdUnit_Mob_Box_A, prebidBoxAd_A, 'tpd-box-ad-am').addService(googletag.pubads()).setTargeting("position", pos_boxAdA).setTargeting("refreshcount", TPD_BoxAm_refresh).setTargeting("refresh", 'false');
+              boxAd_AApp = googletag.defineSlot(TPD_AdUnit_App_Box_A, prebidBoxAd_A_App, 'tpd-app-box-ad-a').addService(googletag.pubads()).setTargeting("position", pos_app_boxAdA).setTargeting("refreshcount", TPD_BoxAApp_refresh).setTargeting("refresh", 'false');
+              boxAd_Bm = googletag.defineSlot(TPD_AdUnit_Mob_Box_B, prebidBoxAd_B, 'tpd-box-ad-bm').addService(googletag.pubads()).setTargeting("position", pos_boxAdB).setTargeting("refreshcount", TPD_BoxBm_refresh).setTargeting("refresh", 'false');
+              boxAd_BApp = googletag.defineSlot(TPD_AdUnit_App_Box_B, prebidBoxAd_B_App, 'tpd-app-box-ad-b').addService(googletag.pubads()).setTargeting("position", pos_app_boxAdB).setTargeting("refreshcount", TPD_BoxBApp_refresh).setTargeting("refresh", 'false');
+              boxAd_Cm = googletag.defineSlot(TPD_AdUnit_Mob_Box_C, prebidBoxAd_C, 'tpd-box-ad-cm').addService(googletag.pubads()).setTargeting("position", pos_boxAdC).setTargeting("refreshcount", TPD_BoxCm_refresh).setTargeting("refresh", 'false');
+              boxAd_CApp = googletag.defineSlot(TPD_AdUnit_App_Box_C, prebidBoxAd_C_App, 'tpd-app-box-ad-c').addService(googletag.pubads()).setTargeting("position", pos_app_boxAdC).setTargeting("refreshcount", TPD_BoxCApp_refresh).setTargeting("refresh", 'false');
+              boxAd_DApp = googletag.defineSlot(TPD_AdUnit_App_Box_D, prebidBoxAd_D_App, 'tpd-app-box-ad-d').addService(googletag.pubads()).setTargeting("position", pos_app_boxAdD).setTargeting("refreshcount", TPD_BoxDApp_refresh).setTargeting("refresh", 'false');
+
+              nativeAd_A = googletag.defineSlot(TPD_AdUnit_Native_A, prebidNativeAd_A, 'tpd-native-ad-a').addService(googletag.pubads()).setTargeting("position", pos_nativeAdA).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+              nativeAd_B = googletag.defineSlot(TPD_AdUnit_Native_B, prebidNativeAd_B, 'tpd-native-ad-b').addService(googletag.pubads()).setTargeting("position", pos_nativeAdB).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+              nativeAd_C = googletag.defineSlot(TPD_AdUnit_Native_C, prebidNativeAd_C, 'tpd-native-ad-c').addService(googletag.pubads()).setTargeting("position", pos_nativeAdC).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+              nativeAd_D = googletag.defineSlot(TPD_AdUnit_Native_D, prebidNativeAd_D, 'tpd-native-ad-d').addService(googletag.pubads()).setTargeting("position", pos_nativeAdD).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+
+              oopAd_A = googletag.defineSlot(TPD_AdUnit_OOP_A, prebidOOPAd_A, 'tpd-oop-ad-a').addService(googletag.pubads()).setTargeting("refresh", 'false').setTargeting("position", pos_oopAdA).setCollapseEmptyDiv(true);
+              oopAd_B = googletag.defineSlot(TPD_AdUnit_OOP_B, prebidOOPAd_B, 'tpd-oop-ad-b').addService(googletag.pubads()).setTargeting("position", pos_oopAdB).setTargeting("refresh", 'false').setCollapseEmptyDiv(true);
+          }
+          googletag.pubads().setTargeting("Domain", TPD_Domain);
+          googletag.pubads().setTargeting("Path", TPD_Path);
+          googletag.pubads().setTargeting("URL", TPD_URL);
+          googletag.pubads().setTargeting("Testmode", TPD_Testmode);
+          googletag.pubads().setTargeting("kw", TPD_TitleKW);
+
+          googletag.pubads().setTargeting('PostID', ['baefc60e-fbc8-41d4-b31c-407448473d34']);
+          googletag.pubads().setTargeting('Page-Type', ['single']);
+          googletag.pubads().setTargeting('Post-Type', ['']);
+          googletag.pubads().setTargeting('Post-Author', ['Kirik Jenness']);
+          googletag.pubads().setTargeting('Category', ['']);
+
+          googletag.enableServices();
+      });
+  </script> <style>
+      .hidden {
+        display: none !important;
+        visibility: hidden !important;
+      }
+    </style> </head> <body id=editorial_show> <div id=fb-root></div> <div class=bgwrap> <div id=top-bar class=content-wrapper> <div class=container> <ul id=top-bar-menu class=top-bar-nav> <li><a href="/events/UFC-on-ESPN-7:FCC8CB4E-495D-4F70-96A3-8AF854EF574F">UFC on ESPN 7 - Sat. 12/7</a></li> <li><a href="/events/UFC-245:26C12A39-04F4-48D8-854A-8F10CE23151F">UFC 245 - Sat. 12/14</a></li> </ul> </div> <div class="container container-partner-logo"> <ul id=top-bar-menu class=top-bar-nav> <li><a href="https://www.evolve-mma.com" target=_blank><img src="https://media.elegantcms.io/a/db2690c8-28e3-4983-94a3-ac331c6be926/424037b2-f9e1-4118-ab63-de59d2546298/1574644147/o/evolve.png?1574644147"/></a></li> </ul> </div> </div> <header id=header> <div class=container> <div class=logo> <a href="https://www.mixedmartialarts.com/"><img src="https://assets.mixedmartialarts.com/assets/logo-23260e86a8902e77c4f0007db00e63f83b6eb3b6427a0f7874f9c596a24bae21.png" alt="The Underground : Official MMA Database" title="The Underground"/></a> </div> <nav class="navbar navbar-default navbar-responsive visible-xs"> <div class=container-fluid> <div class=navbar-header> <button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target="#navbar-collapse"> <span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> </div> <div class="collapse navbar-collapse" id=navbar-collapse> <ul class="nav navbar-nav navbar-left" itemtype="http://www.schema.org/SiteNavigationElement"> <li class=dropdown> <a data-target="#" href="https://www.mixedmartialarts.com/forums" class=dropdown-toggle data-toggle=dropdown role=button aria-haspopup=true aria-expanded=false>Forums <span class=caret></span></a> <ul class=dropdown-menu role=menu> <li><a href="https://www.mixedmartialarts.com/forums">Standard (No Frames)</a></li> <li><a href="https://www.mixedmartialarts.com/forums/frames/UnderGround">Old School UG (BETA)</a></li> <li><a href="http://forum.mixedmartialarts.com/mma.cfm?go=forum_framed.frame&page=1">Old School UG (Frames)</a></li> <li><a href="https://www.mixedmartialarts.com/trending/threads">Trending Threads</a></li> <li><a href="/votes">Karma Log</a></li> </ul> </li> <li class=dropdown> <a href="#" class=dropdown-toggle data-toggle=dropdown role=button aria-expanded=false>Events <span class=caret></span></a> <ul class=dropdown-menu role=menu> <li><a href="https://www.mixedmartialarts.com/events" itemprop=url>Upcoming Events</a></li> <li><a href="https://www.mixedmartialarts.com/events/results" itemprop=url>MMA Event Results</a></li> <li><a href="https://events.mixedmartialarts.com/?ref=events/add" target=_blank>Add/Edit Event</a></li> </ul> </li> <li><a href="/fighter" itemprop=url>Fighters</a></li> <li class=dropdown> <a href="#" class=dropdown-toggle data-toggle=dropdown role=button aria-expanded=false>Account <span class=caret></span></a> <ul class="dropdown-menu account-nav" role=menu> <li><a href="/signup">Sign Up</a></li> <li><a href="/login">Log In</a></li> </ul> </li> </ul> <div class="nav navbar-right"> <form class="navbar-form direct" role=search action="/fighter/search" method=get> <div class=input-group> <input class="form-control pull-right" placeholder="Search a fighter.." name=search> <span class=input-group-btn> <button type=submit class="btn btn-default btn-search ladda-button" data-style=zoom-out data-spinner-size=30> <span class="glyphicon glyphicon-search"> <span class=sr-only><span class=ladda-label>Search a fighter..</span></span> </span> </button> </span> </div> </form> </div> </div> </div> </nav> <nav class="navbar navbar-default navbar-right hidden-xs"> <div> <ul id=sample-menu-1 class="sf-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;"> <li> <a href="https://www.mixedmartialarts.com/forums" class=sf-with-ul>Forums</a> <ul style="display: none;"> <li><a href="https://www.mixedmartialarts.com/forums">Standard (No Frames)</a></li> <li><a href="https://www.mixedmartialarts.com/forums/frames/UnderGround">Old School UG (BETA)</a></li> <li><a href="http://forum.mixedmartialarts.com/mma.cfm?go=forum_framed.frame&page=1">Old School UG (Frames)</a></li> <li><a href="https://www.mixedmartialarts.com/trending/threads">Trending Threads</a></li> <li><a href="/votes">Karma Log</a></li> </ul> </li> <li> <a href="https://www.mixedmartialarts.com/events" class=sf-with-ul>Events</a> <ul style="display: none;"> <li><a href="https://www.mixedmartialarts.com/events" itemprop=url>Upcoming Events</a></li> <li><a href="https://www.mixedmartialarts.com/events/results" itemprop=url>MMA Event Results</a></li> <li><a href="https://events.mixedmartialarts.com/?ref=events/add" target=_blank>Add/Edit Event</a></li> </ul> </li> <li> <a href="https://www.mixedmartialarts.com/fighter">Fighters</a> </li> <li> <a href="#" class=sf-with-ul>Account</a> <ul style="display: none;" id=account-nav-ul class=account-nav> <li><a href="/signup">Sign Up</a></li> <li><a href="/login">Log In</a></li> </ul> </li> </ul> <div class="nav navbar-right"> <form class="navbar-form direct" role=search action="/fighter/search" method=get> <div class=input-group> <input class="form-control pull-right" placeholder="Search a fighter.." name=search> <span class=input-group-btn> <button type=submit class="btn btn-default btn-search ladda-button" data-style=zoom-out data-size=xs> <span class=ladda-label><span class="glyphicon glyphicon-search"></span></span> </button> </span> </div> </form> </div> </div> </nav> </div> </header> <div class=tpd-box id=tpd-oop-ad-a> <script>
+          if (navigator.userAgent.toLowerCase().indexOf('mma') == -1 && typeof(googletag) !== 'undefined') {
+              googletag.cmd.push( function() {
+                  googletag.display( 'tpd-oop-ad-a' );
+              } );
+          }
+          else{
+              $('#tpd-oop-ad-a').remove();
+          }
+      </script></div> <div class=tpd-box id=tpd-oop-ad-b> <script>
+          if (navigator.userAgent.toLowerCase().indexOf('mma') == -1 && typeof(googletag) !== 'undefined') {
+              googletag.cmd.push(function () {
+                  googletag.display('tpd-oop-ad-b');
+              });
+          }
+          else{
+              $('#tpd-oop-ad-b').remove();
+          }
+      </script></div> <div class=container> <div class=ad-wrapper id=top-ad> <div class=tpd-box id=tpd-banner-ad-b> <script>
+              if (typeof(TPD_Mobile) !== 'undefined' && TPD_Mobile === false) {
+                  googletag.cmd.push( function() {
+                      googletag.display( 'tpd-banner-ad-b' );
+                  } );
+              }
+              else {
+                  $('#tpd-banner-ad-b').remove();
+              }
+			    </script> </div> <div class=tpd-box id=tpd-banner-ad-bm> <script>
+          if (typeof(TPD_Mobile) !== 'undefined' && TPD_Mobile === true) {
+              googletag.cmd.push( function() {
+                  googletag.display( 'tpd-banner-ad-bm' );
+              } );
+          }
+          else {
+              $('#tpd-banner-ad-bm').remove();
+          }
+      </script> </div> </div> </div> <div class=container> <main role=main class=mainArticle> <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.mixedmartialarts.com",
+      "name": "Home"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://www.mixedmartialarts.com/trending/editorial",
+      "name": "Editorial"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34",
+      "name": "UPCOMING: UFC events and fights"
+    }
+  }
+  ]
+}
+</script> <article itemscope itemtype="http://schema.org/NewsArticle"> <div class=row> <div class="col-md-7 col-xs-10"> <div class=section-wrapper> <div class=row> <div class="col-lg-7 col-sm-6 col-xs-10"> <h1 class=newsHeader itemprop="name headline">UPCOMING: UFC events and fights</h1> </div> <div class="col-lg-3 col-sm-4 col-xs-10"> <ul class=social-share-bar> <li> <a href="javascript:fbShare('https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34', 'Share on Facebook', 'Facebook share popup', '', 520, 350)" class=facebook title="Share on Facebook"> <i class="fa fa-facebook"></i>Share on Facebook </a> </li> <li> <a href="javascript:twShare('https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34', 'UPCOMING: UFC events and fights', 'Share on Twitter', '', 520, 350)" class=twitter title="Share on Twitter"> <i class="fa fa-twitter"></i>Share on Twitter </a> </li> <li> <a href="javascript:gpShare('https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34', 'UPCOMING: UFC events and fights', 'Share on Google Plus', '', 520, 350)" class=google-plus title="Share on Google Plus"> Share on Google Plus </a> </li> <li> <a href="#fb-comments" class=post-comment title="Post a Comment">Post a Comment</a> </li> </ul> </div> </div> <div class=row> <div class="col-sm-3 col-xs-10"> <div class=author-information itemprop=author itemscope="" itemtype="https://schema.org/Person"> <span>by </span><span class=author-name itemprop=name>Kirik Jenness</span><br> </div> </div> <div class="col-sm-7 col-xs-10"> <div class=date-information> <span class=date>Thursday, November 21, 2019</span> </div> </div> </div> </div> <div class=section-wrapper> <script src="https://trinitymedia.ai/sas/player/trinity.php?sCampaignID=1605303595"></script> <div itemprop="articleBody text" class=news-body> <p><strong>Upcoming Events</strong></p> <p>November 16 &bull; UFC on ESPN+ 22 &bull; Sao Paulo, Brazil<br/>December 7 &bull; UFC on ESPN 9 &bull; Washington, DC, USA<br/>December 14 &bull; UFC 245 &bull; Las Vegas, Nevada, USA<br/>December 21 &bull; UFC on ESPN+ 23 &bull; Busan, South Korea<br/>January 18, 2020 &bull; UFC 246 &bull; Las Vegas, Nevada, UFC<br/>January 25, 2020 &bull; UFC on ESPN+ event &bull; Raleigh, North Carolina, USA<br/>February 8, 2020 &bull;&nbsp;UFC 247 &bull;&nbsp;Houston, Texas, USA<br/>February 23 &bull; UFC on ESPN+ event &bull;&nbsp;Auckland, New Zealand<br/>March 14 &bull;&nbsp;UFC on ESPN+ event &bull;&nbsp;Bras&iacute;lia, Brazil&nbsp;<br/>March 21, 2020 &bull; .UFC on ESPN+ event &bull;&nbsp;London, England</p><div class=tpd-box id=tpd-box-ad-cm> <script>             if (TPD_Mobile == true) {                 googletag.cmd.push( function() {                   googletag.display( 'tpd-box-ad-cm' );                 } );             }             else{                 $('#tpd-box-ad-cm').remove();             }             </script> </div> <div class=tpd-box id=tpd-box-ad-c> <script>                 if (TPD_Mobile == false) {                     googletag.cmd.push( function() {                       googletag.display( 'tpd-box-ad-c' );                     } );                 }                 else{                     $('#tpd-box-ad-c').remove();                 }                 </script> </div> <p><strong>UPCOMING FIGHT CARDS</strong></p> <p><strong>UFC on ESPN 7</strong> will be held on December 7, 2019, at Capital One Arena in Washington, DC.<br/><strong>Main Card</strong><br/>Alistair Overeem vs. Jairzinho Rozenstruik <br/>Marina Rodriguez vs. Cynthia Calvillo <br/>Stefan Struve vs. Ben Rothwell <br/>Aspen Ladd vs. Yana Kunitskaya <br/>Cody Stamann vs. Song Yadong <br/>TBA vs. Mickey Gall <br/><strong>Late Prelims</strong><br/>Rob Font vs. Ricky Simon <br/>Thiago Alves vs. Tim Means <br/>Billy Quarantillo vs. Chris Fishgold <br/>Bryce Mitchell vs. Matt Sayles <br/><strong>Early Prelims</strong><br/>Joe Solecki vs. Matt Wiman <br/>Livia Renata Souza vs. Virna Jandiroba <br/>Makhmud Muradov vs. Trevor Smith</p> <p><strong>UFC 245</strong> will be held on December 14, 2019, at&nbsp;T-Mobile Arena in Las Vegas, Nevada.<br/><strong>Main Card (PPV)</strong><br/>Kamaru Usman (c) vs. Colby Covington for the welterweight championship<br/>Max Holloway (c) vs. Alexander Volkanovski for the featherweight championship<br/>Amanda Nunes (c) vs. Germaine de Randamie&nbsp;for the women's bantamweight championship<br/>Marlon Moraes vs. Jose Aldo <br/>Petr Yan vs. Urijah Faber <br/><strong>Late Prelims</strong><br/>Mike Perry vs. Geoff Neal <br/>Ketlen Vieira vs. Irene Aldana <br/>Matt Brown vs. Ben Saunders <br/>Omari Akhmedov vs. Ian Heinisch[<br/><strong>Early Prelims</strong> (UFC Fight Pass)<br/>Chase Hooper vs. Daniel Teymur <br/>Brandon Moreno vs. Kai Kara-France <br/>Jessica Eye vs. Viviane Araujo <br/>Punahele Soriano vs. Oskar Piechota</p><div class=ad-wrapper visible-sm-block visible-xs-block id=mob-ad-a> <div class=tpd-box id=tpd-box-ad-am> <script>           if (TPD_Mobile == true) {               googletag.cmd.push( function() {                   googletag.display( 'tpd-box-ad-am' );               });           }           else {               $('#tpd-box-ad-am').remove();           }           </script> </div> </div> <p><strong>UFC on ESPN+ 23</strong>, also known as UFC Fight Night 165 and UFC Busan will be held on December 21, 2019, at&nbsp;Sajik Arena in Busan, South Korea.<br/>Brian Ortega vs. Chan Sung Jung <br/>Volkan Oezdemir vs. Aleksandar Rakic<br/>Doo Ho Choi vs. Charles Jourdain <br/>Da Un Jung vs. Mike Rodriguez <br/>Jun Yong Park vs. Marc-Andre Barriault <br/>Raoni Barcelos vs. Said Nurmagomedov <br/>Ciryl Gane vs. Tanner Boser<br/>Seung Woo Choi vs. Suman Mokhtarian<br/>Dong Hyun Ma vs. Omar Antonio Morales Ferrer <br/>Alexandre Pantoja vs. Matt Schnell <br/>Kyung Ho Kang vs. Liu Pingyuan<br/>Alateng Heili vs. Ryan Benoit <br/>TBA vs. Sabina Mazo</p> <p><strong>UFC 246</strong> will be held on January 18, 2020,at T-Mobile Arena Las Vegas, Nevada, USA.<br/>Roxanne Modafferi vs. Maycee Barber<br/>Nasrat Haqparast vs. Drew Dober<br/>Grant Dawson vs. Chas Skelly</p> <p><strong>UFC Raleigh</strong>, also known as UFC Fight Night: Blaydes vs. dos Santos will be held on January 25, 2020 at PNC Arena in Raleigh, North Carolina, USA<br/>Curtis Blaydes vs. Junior dos Santos <br/>Cory Sandhagen vs. Frankie Edgar <br/>Justine Kish vs. Lucie Pudilova<br/>Bevon Lewis vs. Alen Amedovski <br/>Jamahal Hill vs. Darko Stosic<br/>Montel Jackson vs. Felipe Colares <br/>Herbert Burns vs. Nate Landwehr <br/>Brett Johns vs. Tony Gravely<br/>Sara McMann vs. Lina L&auml;nsberg<br/>Brianna Van Buren vs. Hannah Cifers<br/>Jordan Espinosa vs. Alex Perez<br/>Rafael dos Anjos vs. Michael Chiesa</p> <p><strong>UFC 247</strong> will be held on February 8, 2020, at Toyota Center in Houston, Texas, USA.|<br/>Jon Jones (LHW C) vs. Dominick Reyes<br/>Valentina Shevchenko vs. Katlyn Chookagian<br/>Andrea Lee vs. Lauren Murphy<br/>Mirsad Bektic vs. Dan Ige<br/>Ovince Saint Preux vs. Ryan Spann</p> <p><strong>UFC on ESPN+ event</strong> will be held on February 23, 2020, at Spark Arena Auckland, New Zealand [11]</p> <p><strong>UFC on ESPN+ event&nbsp;</strong>will be held on&nbsp;March 14, 2020, at Ginasio Nilson Nelson, in Bras&iacute;lia, Brazil&nbsp;</p> <p><strong>UFC on ESPN+ event&nbsp;</strong>will be held on&nbsp;March 21, 2020, at The O2 Arena in London, England, U.K.<br/><br/><br/><br/><br/><br/></p> <p>&nbsp;</p> </div> <br><br> <div class=tpd-box id=tpd-native-ad-a> <script>
+          googletag.cmd.push(function() { googletag.display('tpd-native-ad-a'); });
+        </script> </div> <div id=tpd-contextual-ad-a> <div id=taboola-below-article-thumbnails></div> <script>
+            window._taboola = window._taboola || [];
+            _taboola.push({
+                device: TPD_ContextualAd_A_Tab_device,
+                mode: TPD_ContextualAd_A_Tab_mode,
+                container: TPD_ContextualAd_A_Tab_container,
+                placement: TPD_ContextualAd_A_Tab_placement,
+                target_type: TPD_ContextualAd_A_Tab_targettype
+            });
+        </script> </div> <div id=fb-comments> <script async src="https://launcher.spot.im/spot/sp_rhr9c9dv" data-spotim-module=spotim-launcher data-post-id=baefc60e-fbc8-41d4-b31c-407448473d34 data-post-url="https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34" data-facebook-url="https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34"></script> </div> <div id=tpd-contextual-ad-d> <div id=taboola-below-article-thumbnails-feed></div> <script>
+              window._taboola = window._taboola || [];
+              _taboola.push({
+                  device: TPD_ContextualAd_D_Tab_device,
+                  mode: TPD_ContextualAd_D_Tab_mode,
+                  container: TPD_ContextualAd_D_Tab_container,
+                  placement: TPD_ContextualAd_D_Tab_placement,
+                  target_type: TPD_ContextualAd_D_Tab_targettype
+              });
+          </script> </div> </div> </div> <aside class="col-md-3 col-xs-10 sidebar"> <div class="ad-wrapper visible-sm-block visible-xs-block" id=mob-ad-b></div> <div class=hottest-threads-wrapper> <h4 class=section-header><span>Hottest <span class=title-two>UG Threads</span></span></h4> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/UnderGround/Canelo-claps-at-Masvidal-This-is-something-else:2800810" rel=bookmark>Canelo claps at Masvidal &quot;This is something else&quot;</a> <span class=time>57 minutes ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/UnderGround/Megan-Anderson-hnnnnng:2800948" rel=bookmark>Megan Anderson hnnnnng</a> <span class=time>12 minutes ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/UnderGround/Jacked-Vitor-is-BACK:2800944" rel=bookmark>Jacked Vitor is BACK!</a> <span class=time>4 hours ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/UnderGround/How-Dom-Reyes-Twitter-game-is-not-like-the-others:2800797" rel=bookmark>How Dom Reyes’ Twitter game is not like the others</a> <span class=time>1 day ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/UnderGround/Zabit-who-told-you-Im-getting-tired:2800829" rel=bookmark>Zabit: who told you I&#39;m getting tired?</a> <span class=time>1 day ago</span> </div> </div> <div class="ad-wrapper ad-move hidden-sm hidden-xs" data-move-to=mob-ad-a> <div class=tpd-box id=tpd-box-ad-a> <script>
+          if (TPD_Mobile == false) {
+              googletag.cmd.push( function() {
+                  googletag.display( 'tpd-box-ad-a' );
+              });
+          }
+          else {
+              $('#tpd-box-ad-a').remove();
+          }
+      </script> </div> </div> <div class=hottest-threads-wrapper> <h4 class=section-header><span>Hottest <span class=title-two>OG Threads</span></span></h4> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/OtherGround/Whos-hotter-pic-one:2800893" rel=bookmark>Who&#39;s hotter pic one..</a> <span class=time>6 hours ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/OtherGround/I-tried-Meth-for-the-first-time-AMA:2800935" rel=bookmark>I tried Meth for the first time AMA</a> <span class=time>17 minutes ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/OtherGround/soup-request---Jodie-Sweetin:2800892" rel=bookmark>soup request - Jodie Sweetin</a> <span class=time>8 hours ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/OtherGround/Trump-just-posted-the-greatest-picture-ever:2800851" rel=bookmark>Trump just posted the greatest picture ever</a> <span class=time>1 hour ago</span> </div> <div class=hottest-thread-item> <a href="https://www.mixedmartialarts.com/forums/OtherGround/Still-the-greatest-gif-ever:2800921" rel=bookmark>Still the greatest gif ever</a> <span class=time>7 hours ago</span> </div> </div> <div class="ad-wrapper ad-move hidden-sm hidden-xs" data-move-to=mob-ad-b> <div class=tpd-box id=tpd-box-ad-b> <script>
+          if (TPD_Mobile == false) {
+              googletag.cmd.push( function() {
+                  googletag.display( 'tpd-box-ad-b' );
+              });
+          }
+          else {
+              $('#tpd-box-ad-b').remove();
+          }
+      </script> </div> </div> <div class=trending-wrapper> <h4 class=section-header><span>Latest <span class=title-two>Trending</span></span></h4> <div class=trending-content-wrapper> <div class="trending-item " itemscope itemtype="http://schema.org/NewsArticle"> <div class=trending-item-header> <span class="trend-type thread quicknews"></span> <h2> <a href="/forums/UnderGround/ConorCerrone-Main-Event-on-for-UFC-246:2801006-1" title="McGregor returns versus Cerrone to headline UFC 246"> McGregor returns versus Cerrone to headline UFC 246 </a> </h2> <div class=clear></div> </div> <a href="/forums/UnderGround/ConorCerrone-Main-Event-on-for-UFC-246:2801006-1" title="McGregor returns versus Cerrone to headline UFC 246"><img src="https://media.elegantcms.io/a/db2690c8-28e3-4983-94a3-ac331c6be926/424037b2-f9e1-4118-ab63-de59d2546298/1574989795/o/conor-vs-cowboy.jpg?1574989795"/></a> <div class=trending-item-content> <div class=trending-item-info> <div class=row> <div class=col-xs-7> <span class=author>By TokenlovesMMA</span> </div> </div> </div> Today ESPN was the first to report that former two division champion Conor McGregor is returning to take on Donald Cerrone in a welterweight fight to main event UFC 246 in Las Vegas. </div> </div> <div class="trending-item " itemscope itemtype="http://schema.org/NewsArticle"> <div class=trending-item-header> <span class="trend-type thread user"></span> <h2> <a href="/forums/UnderGround/Happy-Thanksgiving-2019:2800969-1" title="Happy Thanksgiving 2019"> Happy Thanksgiving 2019 </a> </h2> <div class=clear></div> </div> <a href="/forums/UnderGround/Happy-Thanksgiving-2019:2800969-1" title="Happy Thanksgiving 2019"><img src="https://media.elegantcms.io/a/db2690c8-28e3-4983-94a3-ac331c6be926/424037b2-f9e1-4118-ab63-de59d2546298/1542867890/o/thanksgiving-template-copy.jpg?1542867890"/></a> <div class=trending-item-content> <div class=trending-item-info> <div class=row> <div class=col-xs-7> <span class=author>By Kirik</span> </div> </div> </div> Thanksgiving = Love. Love came from fighting. So Happy Thanksgiving to the OG and the UG. </div> </div> <div class="trending-item " itemscope itemtype="http://schema.org/NewsArticle"> <div class=trending-item-header> <span class="trend-type thread quicknews"></span> <h2> <a href="/forums/UnderGround/10-LATEST-UFC-Fights-todays-in-bold:2800846-1" title="10 LATEST UFC Fights, today&#39;s in bold"> 10 LATEST UFC Fights, today&#39;s in bold </a> </h2> <div class=clear></div> </div> <a href="/forums/UnderGround/10-LATEST-UFC-Fights-todays-in-bold:2800846-1" title="10 LATEST UFC Fights, today&#39;s in bold"><img src="https://media.elegantcms.io/a/db2690c8-28e3-4983-94a3-ac331c6be926/424037b2-f9e1-4118-ab63-de59d2546298/1541792191/o/low_res_blog_image_1.jpg?1541792191"/></a> <div class=trending-item-content> <div class=trending-item-info> <div class=row> <div class=col-xs-7> <span class=author>By Underground Feed </span> </div> </div> </div> The latest announced fights in the UFC. </div> </div> </div> </div> </aside> </div> <meta itemscope="" itemprop=mainEntityOfPage itemtype="https://schema.org/WebPage" itemid="https://www.mixedmartialarts.com/editorial/upcoming-ufc-events-and-fights:baefc60e-fbc8-41d4-b31c-407448473d34"> <meta itemprop=datePublished content="2019-11-21T23:35:00Z"> <meta itemprop=dateModified content="2019-11-22T21:57:29Z"> <span style="display: none;" itemprop=image itemscope="" itemtype="https://schema.org/ImageObject"> <meta itemprop=url content="https://media.elegantcms.io/a/db2690c8-28e3-4983-94a3-ac331c6be926/424037b2-f9e1-4118-ab63-de59d2546298/1540050841/o/low_res_blog_image_1.jpg?1540050841"> </span> <span style="display: none;" itemprop=publisher itemscope="" itemtype="https://schema.org/SportsOrganization"> <span style="display: none;" itemprop=logo itemscope="" itemtype="https://schema.org/ImageObject"> <meta itemprop=url content="https://d1xm02xn12sxh7.cloudfront.net/icon-2.png"> </span> <meta itemprop=name content="The Underground"> </span> </article> </main> </div> <div class=container> <div class=ad-wrapper id=bot-ad> <div class=tpd-box id=tpd-banner-ad-a> <script>
+          if (typeof(TPD_Mobile) !== 'undefined' && TPD_Mobile === false) {
+              googletag.cmd.push( function() {
+                  googletag.display( 'tpd-banner-ad-a' );
+              } );
+          }
+          else {
+              $('#tpd-banner-ad-a').remove();
+          }
+      </script> </div> <div class=tpd-box id=tpd-banner-ad-am> <script>
+          if (typeof(TPD_Mobile) !== 'undefined' && TPD_Mobile === true) {
+              googletag.cmd.push( function() {
+                  googletag.display( 'tpd-banner-ad-am' );
+              } );
+          }
+          else {
+              $('#tpd-banner-ad-am').remove();
+          }
+      </script> </div> </div> </div> <footer class=clearfix> <div class="container separator"> <div class=row> <div class=col-md-3> <div class=logo> <a href="https://www.mixedmartialarts.com/"><img src="https://assets.mixedmartialarts.com/assets/logo-23260e86a8902e77c4f0007db00e63f83b6eb3b6427a0f7874f9c596a24bae21.png" alt="The Underground : Official MMA Database" title="The Underground"/></a> </div> <p class=footer-policy>This is the official website of Mixedmartialarts LLC. Commercial reproduction, distribution or transmission of any part or parts of this website or any information contained therein by any means whatsoever without the prior written permission is not permitted.</p> <ul class=footer-social-links> <li><a class=facebook href="https://www.facebook.com/MixedMartialArts/" target=_blank></a></li> <li><a class=instagram href="https://www.instagram.com/theug/" target=_blank></a></li> <li><a class=twitter href="https://twitter.com/theug" target=_blank></a></li> <li><a class=android href="https://play.google.com/store/apps/details?id=com.mobile.android.mixedmartialarts&hl=en_US" target=_blank></a></li> <li><a class=apple href="https://itunes.apple.com/us/app/mma-underground/id336474791?mt=8" target=_blank></a></li> </ul> </div> <div class="col-md-3 col-md-offset-1"> <h3>Quick Links</h3> <div class=row> <div class=col-xs-5> <ul class=footer-links> <li><a href="https://www.mixedmartialarts.com">Home</a></li> <li><a href="https://www.mixedmartialarts.com/about">About</a></li> <li><a href="https://www.mixedmartialarts.com/advertising">Advertising</a></li> <li><a href="https://www.mixedmartialarts.com">Trending</a></li> <li><a href="https://forum.mixedmartialarts.com">Forums</a></li> <li><a href="https://www.mixedmartialarts.com/events">Events</a></li> </ul> </div> <div class=col-xs-5> <ul class=footer-links> <li><a href="https://www.mixedmartialarts.com/fighter">Fighters</a></li> <li><a href="https://www.mixedmartialarts.com/signup">Create Account</a></li> <li><a href="/login">Log In</a></li> <li><a href="https://forum.mixedmartialarts.com/mma.cfm?go=ContactUs.home">Contact Us</a></li> <li><a href="https://www.mixedmartialarts.com/news/">News Archive</a></li> <li><a href="https://www.mixedmartialarts.com/vault/">Vault Archive</a></li> </ul> </div> </div> </div> <div class="col-md-3 contact-section"> <h3>Contact Us</h3> <div class=contact><a href="mailto:mmastaff@MixedMartialArts.com">mmastaff@MixedMartialArts.com</a></div> <div class=tel><a href="tel:5084433376">(508) 443-3376</a></div> </div> </div> </div> <div class=container> <div class=row> <div class=col-sm-5> <p class=footer-policy><a href="https://www.mixedmartialarts.com/about">Mixedmartialarts LLC.</a> &copy; 2019 All rights reserved.</p> </div> <div class="col-sm-5 text-right"> <p class=footer-policy><a href="https://www.mixedmartialarts.com/copyright">Copyright</a> <a href="https://www.mixedmartialarts.com/terms_of_use">Terms of Use</a> <a href="https://www.mixedmartialarts.com/privacy_policy">Privacy Policy</a> <a href="https://www.mixedmartialarts.com/advertising">Advertising</a></p> </div> </div> </div> </footer> </div> <script>
+jQuery(document).ready(function() {
+	//Global Debug
+
+	if (MMAdebug.enabled) {
+		console.log("debugger on")
+	}
+	//Nav Menu
+	jQuery('ul.sf-menu').superfish();
+	
+	try {
+		//Check local storage
+		Storage.init();
+	}
+	catch(err) {
+		console.log("Could Not Init Storage -> " + err);
+	}
+	try {
+		Auth.updateDisplay();
+		if (MMAdebug.enabled) {
+			console.log("updating display ")
+		}
+	}
+	catch(err) {
+		console.log("Unable to update display")
+	}
+	// try {
+	// 	Auth.update_user_nav();
+	// 	if (MMAdebug.enabled) {
+	// 		console.log("updating user nav via reset")
+	// 	}
+	// }
+	// catch(err) {
+	// 	console.log("Unable to update display")
+	// }
+
+	try {
+		Auth.updateAccount();
+	}
+	catch(err) {
+		console.log("Unable to update account info"+err)
+	}
+	try {
+		Auth.update_user_nav();
+	}
+	catch(err) {
+		console.log("Unable to update user nav"+err)
+	}
+});
+</script> <script type="application/ld+json">{ "@context" : "http://schema.org", "@type" : "WebSite", "name" : "The UnderGround", "alternateName" : "MMA UnderGround", "url" : "https://www.mixedmartialarts.com"}</script> <script type="application/ld+json">{ "@context" : "http://schema.org", "@type" : "SportsOrganization", "sport" : "Mixed Martial Arts", "address" : { "@type" : "PostalAddress", "addressLocality" : "Amherst, MA", "postalCode" : "01002", "streetAddress" : "1240 South East" }, "email" : "mmastaff@MixedMartialArts.com", "name" : "The UnderGround", "legalName" : "Mixed Martial Arts LLC", "url" : "https://www.mixedmartialarts.com", "description" : "The official Mixed Martial Arts event & fighter database", "logo" : "https://d1xm02xn12sxh7.cloudfront.net/icon-2.png", "sameAs" : [ "http://www.facebook.com/mixedmartialarts", "http://www.instagram.com/theUG", "http://www.google.com/+mixedmartialarts", "https://www.youtube.com/user/theMMAUG", "https://twitter.com/theug" ] }</script> <script>
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-Usc8TfxkCK_W_"
+});
+</script> <noscript> <div style="display:none;"> <img src="//pixel.quantserve.com/pixel/p-Usc8TfxkCK_W_.gif" border=0 height=1 width=1 alt=Quantcast /> </div> </noscript> <script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "19962823" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script> <noscript> <img src="http://b.scorecardresearch.com/p?c1=2&c2=19962823&cv=2.0&cj=1"/> </noscript> <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '345440736078848');
+  fbq('track', 'PageView');
+</script> <noscript><img height=1 width=1 style="display:none" src="https://www.facebook.com/tr?id=345440736078848&ev=PageView&noscript=1"/></noscript> </body> </html>

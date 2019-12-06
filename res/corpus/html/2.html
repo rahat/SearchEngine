@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript">(window.NREUM || (NREUM = {})).loader_config = {
+        licenseKey: "dddd82eb94",
+        applicationID: "121561738"
+    };
+    window.NREUM || (NREUM = {}), __nr_require = function (n, e, t) {
+        function r(t) {
+            if (!e[t]) {
+                var i = e[t] = {exports: {}};
+                n[t][0].call(i.exports, function (e) {
+                    var i = n[t][1][e];
+                    return r(i || e)
+                }, i, i.exports)
+            }
+            return e[t].exports
+        }
+
+        if ("function" == typeof __nr_require) return __nr_require;
+        for (var i = 0; i < t.length; i++) r(t[i]);
+        return r
+    }({
+        1: [function (n, e, t) {
+            function r() {
+            }
+
+            function i(n, e, t) {
+                return function () {
+                    return o(n, [u.now()].concat(f(arguments)), e ? null : this, t), e ? void 0 : this
+                }
+            }
+
+            var o = n("handle"), a = n(4), f = n(5), c = n("ee").get("tracer"), u = n("loader"), s = NREUM;
+            "undefined" == typeof window.newrelic && (newrelic = s);
+            var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                d = "api-", l = d + "ixn-";
+            a(p, function (n, e) {
+                s[e] = i(d + e, !0, "api")
+            }), s.addPageAction = i(d + "addPageAction", !0), s.setCurrentRouteName = i(d + "routeName", !0), e.exports = newrelic, s.interaction = function () {
+                return (new r).get()
+            };
+            var m = r.prototype = {
+                createTracer: function (n, e) {
+                    var t = {}, r = this, i = "function" == typeof e;
+                    return o(l + "tracer", [u.now(), n, t], r), function () {
+                        if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], t), i) try {
+                            return e.apply(this, arguments)
+                        } catch (n) {
+                            throw c.emit("fn-err", [arguments, this, n], t), n
+                        } finally {
+                            c.emit("fn-end", [u.now()], t)
+                        }
+                    }
+                }
+            };
+            a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (n, e) {
+                m[e] = i(l + e)
+            }), newrelic.noticeError = function (n, e) {
+                "string" == typeof n && (n = new Error(n)), o("err", [n, u.now(), !1, e])
+            }
+        }, {}], 2: [function (n, e, t) {
+            function r(n, e) {
+                var t = n.getEntries();
+                t.forEach(function (n) {
+                    "first-paint" === n.name ? a("timing", ["fp", Math.floor(n.startTime)]) : "first-contentful-paint" === n.name && a("timing", ["fcp", Math.floor(n.startTime)])
+                })
+            }
+
+            function i(n) {
+                if (n instanceof c && !s) {
+                    var e, t = Math.round(n.timeStamp);
+                    e = t > 1e12 ? Date.now() - t : f.now() - t, s = !0, a("timing", ["fi", t, {type: n.type, fid: e}])
+                }
+            }
+
+            if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) {
+                var o, a = n("handle"), f = n("loader"), c = NREUM.o.EV;
+                if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) {
+                    o = new PerformanceObserver(r);
+                    try {
+                        o.observe({entryTypes: ["paint"]})
+                    } catch (u) {
+                    }
+                }
+                if ("addEventListener" in document) {
+                    var s = !1, p = ["click", "keydown", "mousedown", "pointerdown", "touchstart"];
+                    p.forEach(function (n) {
+                        document.addEventListener(n, i, !1)
+                    })
+                }
+            }
+        }, {}], 3: [function (n, e, t) {
+            function r(n, e) {
+                if (!i) return !1;
+                if (n !== i) return !1;
+                if (!e) return !0;
+                if (!o) return !1;
+                for (var t = o.split("."), r = e.split("."), a = 0; a < r.length; a++) if (r[a] !== t[a]) return !1;
+                return !0
+            }
+
+            var i = null, o = null, a = /Version\/(\S+)\s+Safari/;
+            if (navigator.userAgent) {
+                var f = navigator.userAgent, c = f.match(a);
+                c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1])
+            }
+            e.exports = {agent: i, version: o, match: r}
+        }, {}], 4: [function (n, e, t) {
+            function r(n, e) {
+                var t = [], r = "", o = 0;
+                for (r in n) i.call(n, r) && (t[o] = e(r, n[r]), o += 1);
+                return t
+            }
+
+            var i = Object.prototype.hasOwnProperty;
+            e.exports = r
+        }, {}], 5: [function (n, e, t) {
+            function r(n, e, t) {
+                e || (e = 0), "undefined" == typeof t && (t = n ? n.length : 0);
+                for (var r = -1, i = t - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;) o[r] = n[e + r];
+                return o
+            }
+
+            e.exports = r
+        }, {}], 6: [function (n, e, t) {
+            e.exports = {exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart}
+        }, {}], ee: [function (n, e, t) {
+            function r() {
+            }
+
+            function i(n) {
+                function e(n) {
+                    return n && n instanceof r ? n : n ? c(n, f, o) : o()
+                }
+
+                function t(t, r, i, o) {
+                    if (!d.aborted || o) {
+                        n && n(t, r, i);
+                        for (var a = e(i), f = v(t), c = f.length, u = 0; u < c; u++) f[u].apply(a, r);
+                        var p = s[y[t]];
+                        return p && p.push([b, t, r, a]), a
+                    }
+                }
+
+                function l(n, e) {
+                    h[n] = v(n).concat(e)
+                }
+
+                function m(n, e) {
+                    var t = h[n];
+                    if (t) for (var r = 0; r < t.length; r++) t[r] === e && t.splice(r, 1)
+                }
+
+                function v(n) {
+                    return h[n] || []
+                }
+
+                function g(n) {
+                    return p[n] = p[n] || i(t)
+                }
+
+                function w(n, e) {
+                    u(n, function (n, t) {
+                        e = e || "feature", y[t] = e, e in s || (s[e] = [])
+                    })
+                }
+
+                var h = {}, y = {}, b = {
+                    on: l,
+                    addEventListener: l,
+                    removeEventListener: m,
+                    emit: t,
+                    get: g,
+                    listeners: v,
+                    context: e,
+                    buffer: w,
+                    abort: a,
+                    aborted: !1
+                };
+                return b
+            }
+
+            function o() {
+                return new r
+            }
+
+            function a() {
+                (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+            }
+
+            var f = "nr@context", c = n("gos"), u = n(4), s = {}, p = {}, d = e.exports = i();
+            d.backlog = s
+        }, {}], gos: [function (n, e, t) {
+            function r(n, e, t) {
+                if (i.call(n, e)) return n[e];
+                var r = t();
+                if (Object.defineProperty && Object.keys) try {
+                    return Object.defineProperty(n, e, {value: r, writable: !0, enumerable: !1}), r
+                } catch (o) {
+                }
+                return n[e] = r, r
+            }
+
+            var i = Object.prototype.hasOwnProperty;
+            e.exports = r
+        }, {}], handle: [function (n, e, t) {
+            function r(n, e, t, r) {
+                i.buffer([n], r), i.emit(n, e, t)
+            }
+
+            var i = n("ee").get("handle");
+            e.exports = r, r.ee = i
+        }, {}], id: [function (n, e, t) {
+            function r(n) {
+                var e = typeof n;
+                return !n || "object" !== e && "function" !== e ? -1 : n === window ? 0 : a(n, o, function () {
+                    return i++
+                })
+            }
+
+            var i = 1, o = "nr@id", a = n("gos");
+            e.exports = r
+        }, {}], loader: [function (n, e, t) {
+            function r() {
+                if (!x++) {
+                    var n = E.info = NREUM.info, e = l.getElementsByTagName("script")[0];
+                    if (setTimeout(s.abort, 3e4), !(n && n.licenseKey && n.applicationID && e)) return s.abort();
+                    u(y, function (e, t) {
+                        n[e] || (n[e] = t)
+                    }), c("mark", ["onload", a() + E.offset], null, "api");
+                    var t = l.createElement("script");
+                    t.src = "https://" + n.agent, e.parentNode.insertBefore(t, e)
+                }
+            }
+
+            function i() {
+                "complete" === l.readyState && o()
+            }
+
+            function o() {
+                c("mark", ["domContent", a() + E.offset], null, "api")
+            }
+
+            function a() {
+                return O.exists && performance.now ? Math.round(performance.now()) : (f = Math.max((new Date).getTime(), f)) - E.offset
+            }
+
+            var f = (new Date).getTime(), c = n("handle"), u = n(4), s = n("ee"), p = n(3), d = window, l = d.document,
+                m = "addEventListener", v = "attachEvent", g = d.XMLHttpRequest, w = g && g.prototype;
+            NREUM.o = {
+                ST: setTimeout,
+                SI: d.setImmediate,
+                CT: clearTimeout,
+                XHR: g,
+                REQ: d.Request,
+                EV: d.Event,
+                PR: d.Promise,
+                MO: d.MutationObserver
+            };
+            var h = "" + location, y = {
+                    beacon: "bam.nr-data.net",
+                    errorBeacon: "bam.nr-data.net",
+                    agent: "js-agent.newrelic.com/nr-1153.min.js"
+                }, b = g && w && w[m] && !/CriOS/.test(navigator.userAgent),
+                E = e.exports = {offset: f, now: a, origin: h, features: {}, xhrWrappable: b, userAgent: p};
+            n(1), n(2), l[m] ? (l[m]("DOMContentLoaded", o, !1), d[m]("load", r, !1)) : (l[v]("onreadystatechange", i), d[v]("onload", r)), c("mark", ["firstbyte", f], null, "api");
+            var x = 0, O = n(6)
+        }, {}], "wrap-function": [function (n, e, t) {
+            function r(n) {
+                return !(n && n instanceof Function && n.apply && !n[a])
+            }
+
+            var i = n("ee"), o = n(5), a = "nr@original", f = Object.prototype.hasOwnProperty, c = !1;
+            e.exports = function (n, e) {
+                function t(n, e, t, i) {
+                    function nrWrapper() {
+                        var r, a, f, c;
+                        try {
+                            a = this, r = o(arguments), f = "function" == typeof t ? t(r, a) : t || {}
+                        } catch (u) {
+                            d([u, "", [r, a, i], f])
+                        }
+                        s(e + "start", [r, a, i], f);
+                        try {
+                            return c = n.apply(a, r)
+                        } catch (p) {
+                            throw s(e + "err", [r, a, p], f), p
+                        } finally {
+                            s(e + "end", [r, a, c], f)
+                        }
+                    }
+
+                    return r(n) ? n : (e || (e = ""), nrWrapper[a] = n, p(n, nrWrapper), nrWrapper)
+                }
+
+                function u(n, e, i, o) {
+                    i || (i = "");
+                    var a, f, c, u = "-" === i.charAt(0);
+                    for (c = 0; c < e.length; c++) f = e[c], a = n[f], r(a) || (n[f] = t(a, u ? f + i : i, o, f))
+                }
+
+                function s(t, r, i) {
+                    if (!c || e) {
+                        var o = c;
+                        c = !0;
+                        try {
+                            n.emit(t, r, i, e)
+                        } catch (a) {
+                            d([a, t, r, i])
+                        }
+                        c = o
+                    }
+                }
+
+                function p(n, e) {
+                    if (Object.defineProperty && Object.keys) try {
+                        var t = Object.keys(n);
+                        return t.forEach(function (t) {
+                            Object.defineProperty(e, t, {
+                                get: function () {
+                                    return n[t]
+                                }, set: function (e) {
+                                    return n[t] = e, e
+                                }
+                            })
+                        }), e
+                    } catch (r) {
+                        d([r])
+                    }
+                    for (var i in n) f.call(n, i) && (e[i] = n[i]);
+                    return e
+                }
+
+                function d(e) {
+                    try {
+                        n.emit("internal-error", e)
+                    } catch (t) {
+                    }
+                }
+
+                return n || (n = i), t.inPlace = u, t.flag = a, t
+            }
+        }, {}]
+    }, {}, ["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>When do the 2020 NBA Playoffs and Finals begin? | NBA.com India | The official site of the NBA</title>
+    <meta name="description"
+          content="The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more than a month later, on June 5."/>
+    <link rel="canonical"
+          href="https://in.nba.com/news/when-do-the-2020-nba-playoffs-and-finals-begin/2wi18c0d9k4q1d16lzcv13i13"/>
+    <link rel="amphtml"
+          href="https://in.nba.com/amp/news/when-do-the-2020-nba-playoffs-and-finals-begin/2wi18c0d9k4q1d16lzcv13i13"/>
+    <meta id="js-timestamp-settings"
+          data-settings="{&quot;longDateFormat&quot;:{&quot;lll&quot;:&quot;MMM D, h:mm A&quot;},&quot;relativeTime&quot;:{&quot;m&quot;:&quot;a minute&quot;,&quot;mm&quot;:&quot;%dm&quot;,&quot;h&quot;:&quot;an hour&quot;,&quot;hh&quot;:&quot;%dh&quot;,&quot;past&quot;:&quot;%s ago&quot;}}"/>
+    <meta id="js-quantcast-settings"
+          data-settings="{&quot;Vendor Screen Reject All Button Text&quot;:&quot;Reject all&quot;,&quot;Vendor Screen Cancel Button Text&quot;:&quot;Cancel&quot;,&quot;Initial Screen Title Text&quot;:&quot;NBA values your privacy&quot;,&quot;Purpose Screen Save and Exit Button Text&quot;:&quot;Save &amp; take me to NBA&quot;,&quot;Purpose Screen Title Text&quot;:&quot;Settings&quot;,&quot;Initial Screen Reject Button Text&quot;:&quot;I do not accept&quot;,&quot;Purpose Screen Header Title Text&quot;:&quot;Settings&quot;,&quot;Vendor Screen Body Text&quot;:&quot;You can set consent preferences for each individual third-party below. Expand each third-party list item to see what purposes they use data for to help make your choices. In some cases, third-parties may disclose that they use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policies for more information and to opt out.&quot;,&quot;Purpose Screen Vendor Link Text&quot;:&quot;See third-party list&quot;,&quot;Vendor Screen Accept All Button Text&quot;:&quot;Accept all&quot;,&quot;Purpose Screen Cancel Button Text&quot;:&quot;Cancel&quot;,&quot;Initial Screen Body Text&quot;:&quot;NBA recognises the importance of your online privacy. We use technology such as cookies to ensure that you have the best experience on our website, in accordance with our &lt;a href=\&quot;https:\/\/www.nba.com\/news\/privacy_policy.html\&quot; target=\&quot;_blank\&quot;&gt;privacy policy&lt;\/a&gt;. We and a number of 3rd parties may also use these technologies to analyse our traffic, and provide personalised content, social media features, and relevant advertising to you.&quot;,&quot;Purpose Screen Enable All Button Text&quot;:&quot;Enable all purposes&quot;,&quot;Purpose Screen Body Text&quot;:&quot;You can set your consent preferences and determine how you want your data to be used by third-parties based on the purposes below. Each purpose has a description so that you know how third-parties use your data.&quot;,&quot;Initial Screen Purpose Link Text&quot;:&quot;Show more settings&quot;,&quot;Initial Screen Accept Button Text&quot;:&quot;OK&quot;,&quot;Vendor Screen Title Text&quot;:&quot;Full third-party list&quot;,&quot;Vendor Screen Purposes Link Text&quot;:&quot;Back to settings&quot;,&quot;Vendor Screen Save and Exit Button Text&quot;:&quot;Save &amp; take me to NBA&quot;}"/>
+    <meta property="fb:app_id" content="117854138246106">
+    <meta property="og:description"
+          content="The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more than a month later, on June 5.">
+    <meta property="og:image"
+          content="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/2d/5d/nba-playoffs-signage_kw8a22jml6ez14o5yjcz2vsn5.jpg?t=-1866155380&amp;quality=100">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="NBA.com India | The official site of the NBA">
+    <meta property="og:title"
+          content="When do the 2020 NBA Playoffs and Finals begin? | NBA.com India | The official site of the NBA">
+    <meta property="og:type" content="article">
+    <meta property="og:url"
+          content="https://in.nba.com/news/when-do-the-2020-nba-playoffs-and-finals-begin/2wi18c0d9k4q1d16lzcv13i13">
+    <meta property="twitter:site" content="@NBAIndia">
+    <meta property="twitter:card" content="summary_large_image">
+    <link href="https://ca.nba.com/news/when-do-the-2020-nba-playoffs-and-finals-begin/1p13fdeii1u8q109cu959hvalr"
+          hreflang="x-default" rel="alternate">
+    <link href="https://ca.nba.com/news/when-do-the-2020-nba-playoffs-and-finals-begin/1p13fdeii1u8q109cu959hvalr"
+          hreflang="en-CA" rel="alternate">
+    <link href="https://in.nba.com/news/when-do-the-2020-nba-playoffs-and-finals-begin/2wi18c0d9k4q1d16lzcv13i13"
+          hreflang="en-IN" rel="alternate">
+
+
+    <link rel="stylesheet" href="https://in.nba.com/assets/css/common.css?v=3.24.0">
+    <link rel="stylesheet" href="https://in.nba.com/assets/css/page-article.css?v=3.24.0">
+
+
+    <script src="//assets.adobedtm.com/1d1f22b7fbd1c6b82b92f8fffd66868071b86080/satelliteLib-592a75d49ac75c4df2cbbace0e363994899bcc98.js"></script>
+    <script type="text/javascript">window.digitalData = {
+        "page": {
+            "pageInfo": {
+                "pageName": "in:news:article",
+                "language": "en",
+                "partner": "dazn"
+            },
+            "category": {
+                "primaryCategory": "india",
+                "subCategory1": "in:news",
+                "subCategory2": "india|nba in|news|article"
+            }
+        },
+        "content": {
+            "id": "2wi18c0d9k4q1d16lzcv13i13",
+            "type": "News",
+            "title": "When do the 2020 NBA Playoffs and Finals begin?",
+            "author": "NBA.com Staff",
+            "meta": "NBA, Golden State Warriors, default, en, Los Angeles Lakers, Milwaukee Bucks, Philadelphia 76ers, Los Angeles Clippers, Toronto Raptors, 1iaoypzp6syf32cz9l15pzp7e, 7hr2f89v44y65dyu9k92vprwn, NBA IN"
+        }
+    };</script>
+
+    <script type="application/ld+json">{
+        "@context": "https:\/\/schema.org",
+        "@type": "WebSite",
+        "name": "NBA IN",
+        "description": "The official site of the National Basketball Association. Your home for scores, schedules, stats, League Pass, video recaps, news, fantasy, rankings and more for NBA players and teams.",
+        "inLanguage": {
+            "@type": "Language",
+            "alternateName": "en"
+        },
+        "isFamilyFriendly": true,
+        "url": "in.nba.com"
+    }</script>
+
+    <script type="application/ld+json">{
+        "@context": "https:\/\/schema.org",
+        "@type": "NewsArticle",
+        "author": {
+            "@type": "Organization",
+            "name": "NBA IN",
+            "url": "in.nba.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/in.nba.com\/assets\/img\/nba-logo--blue.png",
+                "width": {
+                    "@type": "Intangible",
+                    "name": "102"
+                },
+                "height": {
+                    "@type": "Intangible",
+                    "name": "60"
+                }
+            }
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more than a month later, on June 5."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "NBA IN",
+            "url": "in.nba.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/in.nba.com\/assets\/img\/nba-logo--blue.png",
+                "width": {
+                    "@type": "Intangible",
+                    "name": "102"
+                },
+                "height": {
+                    "@type": "Intangible",
+                    "name": "60"
+                }
+            }
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/images.daznservices.com\/di\/library\/NBA_Global_CMS_image_storage\/2d\/5d\/nba-playoffs-signage_kw8a22jml6ez14o5yjcz2vsn5.jpg?t=-1866155380&quality=80"
+        },
+        "thumbnailUrl": "https:\/\/images.daznservices.com\/di\/library\/NBA_Global_CMS_image_storage\/2d\/5d\/nba-playoffs-signage_kw8a22jml6ez14o5yjcz2vsn5.jpg?t=-1866155380&quality=80&h=185",
+        "inLanguage": {
+            "@type": "Language",
+            "alternateName": "en"
+        },
+        "isFamilyFriendly": true,
+        "headline": "When do the 2020 NBA Playoffs and Finals begin?",
+        "description": "The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more than a month later, on June 5.",
+        "alternativeHeadline": "When do the 2020 Playoffs & Finals begin?",
+        "datePublished": "2019-08-15T08:55:00+00:00",
+        "dateModified": "2019-08-15T09:08:25+00:00",
+        "mainEntityOfPage": "The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more than a month later, on June 5."
+    }</script>
+    <script async src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [], window.ads = [];
+        googletag.cmd.push(function () {
+            googletag.pubads().setTargeting('environment', String("production"));
+            googletag.pubads().setTargeting('sitePlatform', String("ResponsiveP0"));
+            googletag.pubads().setTargeting('version', String("3.24.0"));
+            googletag.pubads().setTargeting('edition', String("EN-IN"));
+            googletag.pubads().setTargeting('adPageName', String("Article"));
+            googletag.pubads().setTargeting('articleId', String("2wi18c0d9k4q1d16lzcv13i13"));
+            googletag.pubads().setTargeting('authorType', String(null));
+            googletag.pubads().setTargeting('contentAuthorName', String("NBA.com Staff"));
+            googletag.pubads().setTargeting('contentHeadline', String("When do the 2020 NBA Playoffs and Finals begin?"));
+            googletag.pubads().setTargeting('contentPublishedDate', String("2019-08-15T14:25:00+05:30"));
+            googletag.pubads().setTargeting('hoursSincePublished', String("2538"));
+            googletag.pubads().setTargeting('pageName', String("article:when-do-the-2020-nba-playoffs-and-finals-begin"));
+            googletag.pubads().setTargeting('pageType', String("Article"));
+            googletag.pubads().setTargeting('lastUpdateTime', String("2019-08-15T14:38:25+05:30"));
+            googletag.pubads().setTargeting('primaryTag', String("NBA"));
+            googletag.pubads().setTargeting('primaryTagId', String("e2w9iicoifx689pzi5jqw7j4a"));
+            googletag.pubads().setTargeting('primaryTagType', String("MFL competition"));
+            googletag.pubads().setTargeting('secondaryTag', String("Golden State Warriors"));
+            googletag.pubads().setTargeting('secondaryTagId', String("btbrq55c3e6btsf1z2poaakb4"));
+            googletag.pubads().setTargeting('secondaryTagType', String("MFL contestant"));
+            googletag.pubads().setTargeting('otherContentTags', String("NBA, Golden State Warriors, default, en, Los Angeles Lakers, Milwaukee Bucks, Philadelphia 76ers, Los Angeles Clippers, Toronto Raptors, 1iaoypzp6syf32cz9l15pzp7e, 7hr2f89v44y65dyu9k92vprwn, NBA IN"));
+            googletag.pubads().setTargeting('otherContentTagIds', String("e2w9iicoifx689pzi5jqw7j4a, btbrq55c3e6btsf1z2poaakb4, default, en, 2ja1jlnhsy0ksuvvxzff3ky9e, 56w4zt5ftzbg7jt1bb4g8kui5, 6n0ha9kzay94zalli108m7fp1, 8dhx7ac7n30mwl2wgmpsuve14, dxjosqw1acmrjm1gt2wmis1ru, 1iaoypzp6syf32cz9l15pzp7e, 7hr2f89v44y65dyu9k92vprwn, vvhhl96y6jp5183mpksbvlggw"));
+        });
+    </script>
+    <style>.async-hide {
+        opacity: 0 !important
+    } </style>
+    <script>(function (a, s, y, n, c, h, i, d, e) {
+        s.className += ' ' + y;
+        h.start = 1 * new Date;
+        h.end = i = function () {
+            s.className = s.className.replace(RegExp(' ?' + y), '')
+        };
+        (a[n] = a[n] || []).hide = h;
+        setTimeout(function () {
+            i();
+            h.end = null
+        }, c);
+        h.timeout = c;
+    })(window, document.documentElement, 'async-hide', 'gtmDataLayer', 4000,
+        {'GTM-K6VV8QC': true});</script>
+    );
+    <script type="text/javascript">
+        window.gdprTextData = {
+            "buttonText": "I Agree",
+            "cookiePolicyLink": "http:\/\/www.nba.com\/news\/privacy_policy.html#Cookies",
+            "cookiePolicyLinkText": "Cookie Policy",
+            "privacyLink": "https:\/\/www.nba.com\/news\/privacy_policy.html",
+            "privacyLinkText": "Privacy Policy",
+            "termsOfUseLink": "http:\/\/www.nba.com\/news\/termsofuse",
+            "termsOfUseLinkText": "Terms of Use",
+            "text": "NBA sites use cookies and similar technologies. By using NBA sites, you are agreeing to our revised :privacyPolicy and :termsOfUse, including our :cookiePolicy"
+        };
+        window.gdprTextData.text = "NBA sites use cookies and similar technologies. By using NBA sites, you are agreeing to our revised <a target=\"_blank\" href=\"https:\/\/www.nba.com\/news\/privacy_policy.html\">Privacy Policy<\/a> and <a target=\"_blank\" href=\"http:\/\/www.nba.com\/news\/termsofuse\">Terms of Use<\/a>, including our <a target=\"_blank\" href=\"http:\/\/www.nba.com\/news\/privacy_policy.html#Cookies\">Cookie Policy<\/a>";
+    </script>
+</head>
+<body class="page article__page">
+
+<!-- Google Tag Manager -->
+<script>
+    window.gtmDataLayer = window.gtmDataLayer || [];
+
+    window.gtmDataLayer.push.apply(window.gtmDataLayer, [
+        {
+            "environment": "production",
+            "sitePlatform": "ResponsiveP0",
+            "version": "3.24.0",
+            "edition": "EN-IN",
+            "adPageName": "Article",
+            "articleId": "2wi18c0d9k4q1d16lzcv13i13",
+            "authorType": null,
+            "contentAuthorName": "NBA.com Staff",
+            "contentHeadline": "When do the 2020 NBA Playoffs and Finals begin?",
+            "contentPublishedDate": "2019-08-15T14:25:00+05:30",
+            "hoursSincePublished": "2538",
+            "pageName": "article:when-do-the-2020-nba-playoffs-and-finals-begin",
+            "pageType": "Article",
+            "lastUpdateTime": "2019-08-15T14:38:25+05:30",
+            "primaryTag": "NBA",
+            "primaryTagId": "e2w9iicoifx689pzi5jqw7j4a",
+            "primaryTagType": "MFL competition",
+            "secondaryTag": "Golden State Warriors",
+            "secondaryTagId": "btbrq55c3e6btsf1z2poaakb4",
+            "secondaryTagType": "MFL contestant",
+            "otherContentTags": "NBA, Golden State Warriors, default, en, Los Angeles Lakers, Milwaukee Bucks, Philadelphia 76ers, Los Angeles Clippers, Toronto Raptors, 1iaoypzp6syf32cz9l15pzp7e, 7hr2f89v44y65dyu9k92vprwn, NBA IN",
+            "otherContentTagIds": "e2w9iicoifx689pzi5jqw7j4a, btbrq55c3e6btsf1z2poaakb4, default, en, 2ja1jlnhsy0ksuvvxzff3ky9e, 56w4zt5ftzbg7jt1bb4g8kui5, 6n0ha9kzay94zalli108m7fp1, 8dhx7ac7n30mwl2wgmpsuve14, dxjosqw1acmrjm1gt2wmis1ru, 1iaoypzp6syf32cz9l15pzp7e, 7hr2f89v44y65dyu9k92vprwn, vvhhl96y6jp5183mpksbvlggw"
+        }
+    ]);
+</script>
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-K6VV8QC&gtm_cookies_win=x&environment=production&sitePlatform=ResponsiveP0&version=3.24.0&edition=EN-IN&adPageName=Article&articleId=2wi18c0d9k4q1d16lzcv13i13&contentAuthorName=NBA.com+Staff&contentHeadline=When+do+the+2020+NBA+Playoffs+and+Finals+begin%3F&contentPublishedDate=2019-08-15T14%3A25%3A00%2B05%3A30&hoursSincePublished=2538&pageName=article%3Awhen-do-the-2020-nba-playoffs-and-finals-begin&pageType=Article&lastUpdateTime=2019-08-15T14%3A38%3A25%2B05%3A30&primaryTag=NBA&primaryTagId=e2w9iicoifx689pzi5jqw7j4a&primaryTagType=MFL+competition&secondaryTag=Golden+State+Warriors&secondaryTagId=btbrq55c3e6btsf1z2poaakb4&secondaryTagType=MFL+contestant&otherContentTags=NBA%2C+Golden+State+Warriors%2C+default%2C+en%2C+Los+Angeles+Lakers%2C+Milwaukee+Bucks%2C+Philadelphia+76ers%2C+Los+Angeles+Clippers%2C+Toronto+Raptors%2C+1iaoypzp6syf32cz9l15pzp7e%2C+7hr2f89v44y65dyu9k92vprwn%2C+NBA+IN&otherContentTagIds=e2w9iicoifx689pzi5jqw7j4a%2C+btbrq55c3e6btsf1z2poaakb4%2C+default%2C+en%2C+2ja1jlnhsy0ksuvvxzff3ky9e%2C+56w4zt5ftzbg7jt1bb4g8kui5%2C+6n0ha9kzay94zalli108m7fp1%2C+8dhx7ac7n30mwl2wgmpsuve14%2C+dxjosqw1acmrjm1gt2wmis1ru%2C+1iaoypzp6syf32cz9l15pzp7e%2C+7hr2f89v44y65dyu9k92vprwn%2C+vvhhl96y6jp5183mpksbvlggw"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        '//www.googletagmanager.com/gtm.js?id=GTM-K6VV8QC&gtm_cookies_win=x' + dl + '&__=' + (new Date().getTime());
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'gtmDataLayer', 'GTM-K6VV8QC');</script>
+<!-- End Google Tag Manager -->
+
+
+<header class="nbap-header__container headroom">
+    <div class="commercial">
+        <div class="commercial__container">
+            <div data-role="ad" data-name="masthead" class="commercial__ad commercial__masthead"
+                 data-slot-id="/67970281/DISPLAY_OWNED_GBL/NBA_Responsive_Perform/ROS/Masthead" data-empty="true">
+                <div id="placement--5de088cc458bd0.13344319" data-state="unloaded"></div>
+                <script type="text/javascript">
+                    window.ads.push({
+                        "name": "masthead",
+                        "slotName": "\/67970281\/DISPLAY_OWNED_GBL\/NBA_Responsive_Perform\/ROS\/Masthead",
+                        "uuid": "placement--5de088cc458bd0.13344319",
+                        "className": "commercial__ad commercial__masthead",
+                        "defaultSize": [[2, 2], [740, 50], [980, 80], [580, 50], [1580, 80], [321, 50], [480, 50]],
+                        "position": "Masthead",
+                        "sizeMapping": [{"viewport": [1580, 300], "slot": [1580, 80]}, {
+                            "viewport": [980, 250],
+                            "slot": [980, 80]
+                        }, {"viewport": [740, 100], "slot": [740, 50]}, {
+                            "viewport": [580, 70],
+                            "slot": [580, 50]
+                        }, {"viewport": [480, 50], "slot": [480, 50]}, {"viewport": [0, 0], "slot": [321, 50]}],
+                        "refreshOnBreakPointChange": true
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="nbap-header__inner-container">
+        <div data-module="global-navigation"
+             data-settings="{&quot;languageCode&quot;:&quot;en&quot;,&quot;siteName&quot;:&quot;NBA IN&quot;,&quot;navigationOptions&quot;:{&quot;language&quot;:&quot;en&quot;,&quot;optionText&quot;:&quot;NBA IN&quot;,&quot;otherLocation&quot;:&quot;https:\/\/www.nba.com\/gr\/reflectIntl.html?gr=indiauw&amp;page=www&amp;dur=ses&quot;,&quot;usLocation&quot;:&quot;https:\/\/www.nba.com\/gr\/reflectIntl.html?gr=indiauw&amp;page=www&amp;&amp;dur=1w&quot;,&quot;editionCookie&quot;:&quot;in_hp&quot;}}"
+             class="widget-global-navigation">
+            <div id="edition_wrapper" class="edition-picker">
+                <div id="edition" class="edition_open edition-picker__form-container">
+                    <form name="editionForm" class="edition-picker__form">
+                        <div class="rule"></div>
+                        <span class="choose-edition">Please select your default edition</span>
+                        <span class="controls">
+                    <input type="radio" name="edition" value="us" onclick="set_HP_default('us');"> US
+                </span>
+                    </form>
+                </div>
+                <div id="edition_message" class="edition_closed edition-picker__message">
+                    <span class="edition-message">Your default site has been set for 7 days</span>
+                </div>
+            </div>
+            <nav class="nbap-nav nbap-nav--global">
+                <ul class="nbap-nav__menu nbap-nav--global__menu" role="navigation">
+                    <li class="nbap-nav__menu-item">
+                        <a class="nbap-nav__link" href="javascript:handle_redirect();">NBA.com</a>
+                    </li>
+                    <li class="nbap-nav__menu-item nbap-nav--global__menu-item  js-has-dropdown ">
+                        <a class="nbap-nav__link" title="Teams" href="javascript:void(0);">Teams</a>
+                        <div class="nbap-nav__dropdown-container js-dropdown-container">
+                            <ul class="nbap-nav__dropdown">
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Atlanta" href="https://www.nba.com/hawks/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Atlanta
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Boston"
+                                       href="https://www.nba.com/celtics/" target="_blank" rel="noopener noreferrer">
+                                        Boston
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Brooklyn" href="https://www.nba.com/nets/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Brooklyn
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Charlotte"
+                                       href="https://www.nba.com/hornets/" target="_blank" rel="noopener noreferrer">
+                                        Charlotte
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Chicago" href="https://www.nba.com/bulls/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Chicago
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Cleveland"
+                                       href="https://www.nba.com/cavaliers/" target="_blank" rel="noopener noreferrer">
+                                        Cleveland
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Dallas"
+                                       href="https://www.nba.com/mavericks/" target="_blank" rel="noopener noreferrer">
+                                        Dallas
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Denver"
+                                       href="https://www.nba.com/nuggets/" target="_blank" rel="noopener noreferrer">
+                                        Denver
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Detroit"
+                                       href="https://www.nba.com/pistons/" target="_blank" rel="noopener noreferrer">
+                                        Detroit
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Golden State"
+                                       href="https://www.nba.com/warriors/" target="_blank" rel="noopener noreferrer">
+                                        Golden State
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Houston"
+                                       href="https://www.nba.com/rockets/" target="_blank" rel="noopener noreferrer">
+                                        Houston
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Indiana"
+                                       href="https://www.nba.com/pacers/" target="_blank" rel="noopener noreferrer">
+                                        Indiana
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="LA Clippers"
+                                       href="https://www.nba.com/clippers/" target="_blank" rel="noopener noreferrer">
+                                        LA Clippers
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="LA Lakers"
+                                       href="https://www.nba.com/lakers/" target="_blank" rel="noopener noreferrer">
+                                        LA Lakers
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Memphis"
+                                       href="https://www.nba.com/grizzlies/" target="_blank" rel="noopener noreferrer">
+                                        Memphis
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nbap-nav__dropdown">
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Miami" href="https://www.nba.com/heat/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Miami
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Milwaukee"
+                                       href="https://www.nba.com/bucks/" target="_blank" rel="noopener noreferrer">
+                                        Milwaukee
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Minnesota"
+                                       href="https://www.nba.com/timberwolves/" target="_blank"
+                                       rel="noopener noreferrer">
+                                        Minnesota
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="New Orleans"
+                                       href="https://www.nba.com/pelicans/" target="_blank" rel="noopener noreferrer">
+                                        New Orleans
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="New York"
+                                       href="https://www.nba.com/knicks/" target="_blank" rel="noopener noreferrer">
+                                        New York
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Oklahoma City"
+                                       href="https://www.nba.com/thunder/" target="_blank" rel="noopener noreferrer">
+                                        Oklahoma City
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Orlando" href="https://www.nba.com/magic/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Orlando
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Philadelphia"
+                                       href="https://www.nba.com/sixers/" target="_blank" rel="noopener noreferrer">
+                                        Philadelphia
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Phoenix" href="https://www.nba.com/suns/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Phoenix
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Portland"
+                                       href="https://www.nba.com/blazers/" target="_blank" rel="noopener noreferrer">
+                                        Portland
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Sacramento"
+                                       href="https://www.nba.com/kings/" target="_blank" rel="noopener noreferrer">
+                                        Sacramento
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="San Antonio"
+                                       href="https://www.nba.com/spurs/" target="_blank" rel="noopener noreferrer">
+                                        San Antonio
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Toronto"
+                                       href="https://www.nba.com/raptors/" target="_blank" rel="noopener noreferrer">
+                                        Toronto
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Utah" href="https://www.nba.com/jazz/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Utah
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Washington"
+                                       href="https://www.nba.com/wizards/" target="_blank" rel="noopener noreferrer">
+                                        Washington
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nbap-nav__menu-item nbap-nav--global__menu-item  js-has-dropdown ">
+                        <a class="nbap-nav__link" title="Global" href="javascript:void(0);">Global</a>
+                        <div class="nbap-nav__dropdown-container js-dropdown-container">
+                            <ul class="nbap-nav__dropdown">
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Argentina" href="https://ar.nba.com/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Argentina
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Australia"
+                                       href="https://www.nba.com/australia" target="_blank" rel="noopener noreferrer">
+                                        Australia
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Belarus"
+                                       href="https://by.tribuna.com/nba/" target="_blank" rel="noopener noreferrer">
+                                        Belarus
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Brasil" href="http://www.nba.com/brasil"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Brasil
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Canada" href="https://ca.nba.com/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Canada
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="中国" href="http://www.nba.com/china"
+                                       target="_blank" rel="noopener noreferrer">
+                                        中国
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="éne-bé-a" href="http://www.nba.com/enebea"
+                                       target="_blank" rel="noopener noreferrer">
+                                        éne-bé-a
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Deutschland"
+                                       href="http://www.nba.com/germany" target="_blank" rel="noopener noreferrer">
+                                        Deutschland
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="España" href="https://es.nba.com/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        España
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="France" href="http://www.nba.com/france"
+                                       target="_blank" rel="noopener noreferrer">
+                                        France
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="日本" href="https://www.nba.com/japan"
+                                       target="_blank" rel="noopener noreferrer">
+                                        日本
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="India" href="https://in.nba.com/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        India
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nbap-nav__dropdown">
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Israel" href="http://www.nba.com/israel"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Israel
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Italia" href="http://www.nba.com/italia"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Italia
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Lithuania"
+                                       href="http://www.nba.com/lithuania" target="_blank" rel="noopener noreferrer">
+                                        Lithuania
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="" href="http://www.nba.com/arabic"
+                                       target="_blank" rel="noopener noreferrer">
+                                        MENA
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Mexico" href="https://mx.nba.com/">
+                                        Mexico
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Philippines"
+                                       href="http://www.nba.com/philippines" target="_blank" rel="noopener noreferrer">
+                                        Philippines
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Russia" href="http://www.nba.com/russia"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Russia
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Taiwan" href="http://www.nba.com/taiwan"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Taiwan
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Turkey" href="http://www.nba.com/turkiye"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Turkey
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="United Kingdom"
+                                       href="http://www.nba.com/uk" target="_blank" rel="noopener noreferrer">
+                                        United Kingdom
+                                    </a>
+                                </li>
+                                <li class="nbap-nav__dropdown-item">
+                                    <a class="nbap-nav__dropdown-link" title="Ukraine"
+                                       href="https://ua.tribuna.com/nba/" target="_blank" rel="noopener noreferrer">
+                                        Ukraine
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nbap-nav__menu-item nbap-nav--global__menu-item ">
+                        <a class="nbap-nav__link" title="" href="javascript:handle_edition();">Set Default Edition</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div data-module="navigation" data-settings="{}" class="widget-navigation">
+            <nav class="nbap-nav nbap-nav--main">
+                <div class="nbap-nav__start">
+                    <a href="https://in.nba.com">
+                        <div class="nbap-nav__svg">
+                            <svg width="90" height="40" viewBox="0 0 90 40" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink"><title>webSVG</title>
+                                <defs>
+                                    <path id="a" d="M0 20V0h17.653v40H0z"/>
+                                    <path id="c" d="M45.946 39.04V.96H.4v38.08h45.546z"/>
+                                </defs>
+                                <g fill="none" fill-rule="evenodd">
+                                    <g transform="translate(11)">
+                                        <mask id="b" fill="#fff">
+                                            <use xlink:href="#a"/>
+                                        </mask>
+                                        <path d="M17.653 4.16v31.734c0 2.293-1.866 4.106-4.16 4.106H4.16C1.866 40 0 38.187 0 35.894V4.16A4.165 4.165 0 0 1 4.16 0h9.387c2.24 0 4.106 1.867 4.106 4.16"
+                                              fill="#FFF" mask="url(#b)"/>
+                                    </g>
+                                    <path d="M24.546 39.04H15.16c-1.76 0-3.2-1.387-3.2-3.146V4.16c0-1.76 1.44-3.2 3.2-3.2h5.333c-1.013.426-1.174.853-1.227 2.293-.16.054-.533-.16-.373.747 0 0 .053.586.267.48-.214 1.493.053 1.653-1.547 1.706l-.053.107c-1.6.16-2.08-.053-3.414 2.667 0 0-.373.853-.48 1.173-.32.694-1.12 2.24-1.333 3.253-.107.321-.266.427-.054.907.321.693-.212.853 1.6.8v.426s-.479.427-.586.641c-.107.266-.373 1.493-.373 2.08.053 1.546 1.28 2.826 1.653 4.32l.853.16c.427 1.013 2.453 3.893 2.88 4.266.107.267.64.587.907.96.267.214 1.707 1.814 3.413 2.774 0 0 .32.587.427 1.066-.533.427.533 1.28.907 2.667 0 .213-.32.373.16.854-.053 2.08-.64 3.2.426 3.733"
+                                          fill="#1D428A"/>
+                                    <path d="M21.186 6.72c-.16-.106-.107-.32 0-.427.267-.053.586-.586.853-1.173.213 0 .267-.213.374-.32.213-.373.48-.693.16-.907.693-1.279.213-2.186-.16-2.186-.16-.32-.427-.533-.907-.747h3.04c1.706 0 3.146 1.44 3.146 3.2v15.307a3.885 3.885 0 0 0-.373-.64c0-.427-.426-.427-.587-.587-.106-.106.107-.213-.639-.374-.16-.106-.267-1.226-.267-1.226-.16-.747-.427-1.28-.8-2.08-.214-.373-.32-1.653-.533-2.293.16-2.934-.8-3.84-1.547-4.32-.32-.16-.427-.32-.747-.48V7.36c-.213-.213-.693-.427-1.013-.64zm6.506 29.174c0 1.599-1.173 2.88-2.666 3.146h-.053c1.386-.853.533-2.454.266-3.414 0-.052.053-.106.053-.159.107-.107-.053-.427-.053-.427-.16-.107-.213-.907-.32-1.28-.16-.587.267-1.6.267-1.974 0-.319-.267-.799-.747-1.439-.107-.107-.426-3.094-.747-3.841-.426-1.013-.586-.852-1.066-2.133-.427-.853-.107-2.132-1.013-5.12l.213-.213s-.694-2.56-.96-3.253c-.214-.747-.64-.8-.64-.8s0-.267.053-.32c0-.16.853-2.294.907-2.347 0-.053 1.227-.853 1.227-.746.106.533.586 3.199.746 3.626.214.427.907 1.76 1.227 2.56a2.864 2.864 0 0 0-2.134 2.773 2.811 2.811 0 0 0 2.827 2.827c1.173 0 2.187-.746 2.613-1.813v14.347z"
+                                          fill="#C8102E"/>
+                                    <g transform="translate(33)">
+                                        <mask id="d" fill="#fff">
+                                            <use xlink:href="#c"/>
+                                        </mask>
+                                        <path d="M37.146 27.573h2.72l-.426-6.986c-.16-2.773-.587-11.573-.907-16.32h-.213l-.747 16.32-.427 6.986zm2.987 4.32h-3.2l-.427 7.148h-5.172L35.067.96h7.253l3.627 38.08H40.56l-.427-7.148zm-17.6-9.386V34.24h.853c1.6 0 2.08-.905 2.08-2.72v-6.452c0-1.867-.587-2.56-2.293-2.56h-.64zm0-16.747v12.586h.64c1.814 0 2.293-.692 2.293-2.773V8.32c0-1.76-.533-2.56-2.08-2.56h-.853zm-5.12 33.28V.96h6.347c4.213 0 6.826 2.293 6.826 7.626v5.6c0 3.468-1.066 5.227-2.56 6.134 1.494.96 2.56 2.666 2.56 5.6v5.547c0 5.227-2.773 7.574-6.826 7.574h-6.347zm-12.533 0H.4V.96h6.933l4.64 31.413c-.693-7.466-1.6-19.52-1.6-25.866V.96h4.48v38.08H8.506L4.24 8.534c.373 6.826.64 14.986.64 19.572V39.04z"
+                                              fill="#FFF" mask="url(#d)"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="nbap-nav__menu nbap-nav--main__menu" role="navigation"
+                        data-settings="{&quot;0&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/news&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;More News&quot;,&quot;name&quot;:&quot;All News and Stories&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;1&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/scores\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Scores&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;2&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/standings\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Standings&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;3&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/news\/broadcast-tv-schedule-for-the-2019-20-nba-season-in-india-sony-six-ten1-ten-3\/vd61iwa650z01g5uyoceexbxj&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;National TV Schedule&quot;,&quot;name&quot;:&quot;TV Broadcasts&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;4&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/videos&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Videos&quot;,&quot;name&quot;:&quot;Videos&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;5&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/basketball-and-india\/news\/m3c023o9w9ge18mccay7qbjl0&quot;,&quot;classes&quot;:&quot; js-has-dropdown &quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Basketball and India&quot;,&quot;name&quot;:&quot;Basketball and India&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{&quot;0&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/basketball-and-india\/news\/m3c023o9w9ge18mccay7qbjl0&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Local content&quot;,&quot;name&quot;:&quot;News and Stories&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;1&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/nba-india-games\/news\/1q4mzhvdb0euk1tr8n6ldd3ehw&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;NBA India Games 2019&quot;,&quot;name&quot;:&quot;NBA India Games 2019&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}}},&quot;6&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/schedule\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Schedule&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;7&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/playerindex\/&quot;,&quot;classes&quot;:&quot; js-has-dropdown &quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Players&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{&quot;0&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/draft\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;2019 Draft Results&quot;,&quot;name&quot;:&quot;2019 Draft&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}}},&quot;8&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/teamindex\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Teams&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;9&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/statistics\/&quot;,&quot;classes&quot;:&quot; js-has-dropdown &quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Stats&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{&quot;0&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/statistics\/teamstats\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Team Stats&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;1&quot;:{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/statistics\/leagueleaders\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;League Leaders&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}}}}">
+                        <li class="nbap-nav__menu-item "
+                            data-settings="{&quot;url&quot;:&quot;https:\/\/in.nba.com\/news&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;More News&quot;,&quot;name&quot;:&quot;All News and Stories&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}">
+                            <a class="nbap-nav__link" href="https://in.nba.com/news" title="More News">All News and
+                                Stories</a>
+                        </li>
+                        <li class="nbap-nav__menu-item "
+                            data-settings="{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/scores\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Scores&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}">
+                            <a class="nbap-nav__link" href="https://in.global.nba.com/scores/" title="">Scores</a>
+                        </li>
+                        <li class="nbap-nav__menu-item "
+                            data-settings="{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/standings\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Standings&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}">
+                            <a class="nbap-nav__link" href="https://in.global.nba.com/standings/" title="">Standings</a>
+                        </li>
+                        <li class="nbap-nav__menu-item "
+                            data-settings="{&quot;url&quot;:&quot;https:\/\/in.nba.com\/news\/broadcast-tv-schedule-for-the-2019-20-nba-season-in-india-sony-six-ten1-ten-3\/vd61iwa650z01g5uyoceexbxj&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;National TV Schedule&quot;,&quot;name&quot;:&quot;TV Broadcasts&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}">
+                            <a class="nbap-nav__link"
+                               href="https://in.nba.com/news/broadcast-tv-schedule-for-the-2019-20-nba-season-in-india-sony-six-ten1-ten-3/vd61iwa650z01g5uyoceexbxj"
+                               title="National TV Schedule">TV Broadcasts</a>
+                        </li>
+                        <li class="nbap-nav__menu-item "
+                            data-settings="{&quot;url&quot;:&quot;https:\/\/in.nba.com\/videos&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Videos&quot;,&quot;name&quot;:&quot;Videos&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}">
+                            <a class="nbap-nav__link" href="https://in.nba.com/videos" title="Videos">Videos</a>
+                        </li>
+                        <li class="nbap-nav__menu-item  js-has-dropdown "
+                            data-settings="{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/basketball-and-india\/news\/m3c023o9w9ge18mccay7qbjl0&quot;,&quot;classes&quot;:&quot; js-has-dropdown &quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Basketball and India&quot;,&quot;name&quot;:&quot;Basketball and India&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{&quot;0&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/basketball-and-india\/news\/m3c023o9w9ge18mccay7qbjl0&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Local content&quot;,&quot;name&quot;:&quot;News and Stories&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;1&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/nba-india-games\/news\/1q4mzhvdb0euk1tr8n6ldd3ehw&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;NBA India Games 2019&quot;,&quot;name&quot;:&quot;NBA India Games 2019&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}}}">
+                            <a class="nbap-nav__link"
+                               href="https://in.nba.com/category/basketball-and-india/news/m3c023o9w9ge18mccay7qbjl0"
+                               title="Basketball and India">Basketball and India</a>
+                            <div class="nbap-nav__dropdown-container js-dropdown-container">
+                                <ul class="nbap-nav__dropdown">
+                                    <li class="nbap-nav__dropdown-item"
+                                        data-settings='{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/basketball-and-india\/news\/m3c023o9w9ge18mccay7qbjl0&quot;,&quot;classes&quot;:&quot; js-has-dropdown &quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Basketball and India&quot;,&quot;name&quot;:&quot;Basketball and India&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{&quot;0&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/basketball-and-india\/news\/m3c023o9w9ge18mccay7qbjl0&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;Local content&quot;,&quot;name&quot;:&quot;News and Stories&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}},&quot;1&quot;:{&quot;url&quot;:&quot;https:\/\/in.nba.com\/category\/nba-india-games\/news\/1q4mzhvdb0euk1tr8n6ldd3ehw&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;NBA India Games 2019&quot;,&quot;name&quot;:&quot;NBA India Games 2019&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}}}'>
+                                        <a class="nbap-nav__dropdown-link"
+                                           href="https://in.nba.com/category/basketball-and-india/news/m3c023o9w9ge18mccay7qbjl0">News
+                                            and Stories</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nbap-nav__menu-item "
+                            data-settings="{&quot;url&quot;:&quot;https:\/\/in.global.nba.com\/schedule\/&quot;,&quot;classes&quot;:&quot;&quot;,&quot;anchorClasses&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;name&quot;:&quot;Schedule&quot;,&quot;attributes&quot;:&quot;&quot;,&quot;children&quot;:{}}">
+                            <a class="nbap-nav__link" href="https://in.global.nba.com/schedule/" title="">Schedule</a>
+                        </li>
+                        <li class="nbap-nav__menu-item js-has-dropdown">
+                            <a class="nbap-nav__link nbap-nav__link--ellipsis"></a>
+                            <div class="nbap-nav__dropdown-container js-dropdown-container">
+                                <ul class="nbap-nav__dropdown">
+                                    <li class="nbap-nav__dropdown-item">
+                                        <a class="nbap-nav__dropdown-link"
+                                           href="https://in.global.nba.com/playerindex/">Players</a>
+                                    </li>
+                                    <li class="nbap-nav__dropdown-item">
+                                        <a class="nbap-nav__dropdown-link" href="https://in.global.nba.com/teamindex/">Teams</a>
+                                    </li>
+                                    <li class="nbap-nav__dropdown-item">
+                                        <a class="nbap-nav__dropdown-link" href="https://in.global.nba.com/statistics/">Stats</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="is-bookmark">
+                    <div class="nav-items">
+                        <div class="nav-item is-parent widget-bookmarks__nav "></div>
+                        <span class="nav-label">bookmarks</span>
+                    </div>
+                </div>
+                <div class="nbap-nav__end">
+
+                    <div class="nbap-nav__store-logo locale-in">
+                        <a rel="noopener noreferrer" data-track="Click" data-type="Exit" data-id="NBA store"
+                           data-pos="Nav" href="http://NBAStore.in" target="_blank">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 648 200" xml:space="preserve"> <g> <g> <path
+                                    fill="#fff"
+                                    d="M97.7,9.5H54.6c-10.5,0-19.1,8.6-19.1,19.1v146.2c0,10.5,8.6,19.1,19.1,19.1h43.2c10.5,0,19.1-8.6,19.1-19.1 V28.6C116.8,18.1,108.3,9.5,97.7,9.5"/>
+                                <path fill="#1D428A"
+                                      d="M95.9,172c-2.3-2.1-0.8-3-0.9-3.8c-1.5-6.4-6.6-10.3-4-12.4c-0.6-2.1-2-4.8-1.9-4.8 c-7.9-4.5-14.6-11.9-15.8-13c-1.4-1.5-3.7-3-4.2-4.2c-1.9-1.7-11.2-15-13.4-19.8l-3.8-0.5c-1.7-7-7.5-12.9-7.6-20 c-0.1-2.7,1.2-8.4,1.7-9.5c0.5-1.2,2.7-3.1,2.7-3.1v-1.9c-8.3,0.2-5.9-0.6-7.3-3.8c-1-2.2-0.3-2.7,0.1-4.2 c1.1-4.5,4.8-11.6,6.3-14.7c0.5-1.6,2.1-5.5,2.1-5.5c6.1-12.5,8.4-11.6,15.7-12.3l0.4-0.5c7.3-0.3,6.1-0.9,7.2-7.9 c-1.1,0.5-1.4-2.2-1.4-2.2c-0.6-4,1.1-3.3,1.9-3.3c0.2-6.6,0.8-8.7,5.6-10.5H54.6C46.5,14,40,20.5,40,28.6v146.2 c0,8.1,6.5,14.6,14.6,14.6h43.2C92.8,186.7,95.7,181.7,95.9,172z"/>
+                                <path fill="#C8102E"
+                                      d="M87,43.3l0,0.6c1.3,0.8,2,1.4,3.3,2.2c3.5,2.2,7.9,6.2,7.3,19.7c1,3,1.4,8.8,2.3,10.6c1.8,3.6,3.1,6,3.6,9.4 c0,0,0.5,5.3,1.2,5.7c3.6,0.8,2.6,1.2,3.1,1.8c0.6,0.7,2.7,0.7,2.7,2.7c0.7,1,1.3,2,1.7,3V28.6c0-8.1-6.5-14.6-14.6-14.6h-14 c2.2,0.8,3.5,1.7,4.2,3.2c1.8,0.2,3.9,4.2,0.6,10.2c1.5,1,0.3,2.5-0.7,4.2c-0.3,0.5-0.7,1.5-1.6,1.5c-1.3,2.7-2.8,5.2-4,5.4 c-0.4,0.4-0.6,1.6-0.1,2.1C83.9,41.3,86,42.3,87,43.3"/>
+                                <path fill="#C8102E"
+                                      d="M112.3,108.8c-1.9,4.8-6.6,8.2-12.1,8.2c-7.2,0-13-5.8-13-13c0-6.1,4.2-11.3,9.9-12.7 c-1.5-3.8-4.7-9.8-5.6-11.8c-0.9-2-3-14.4-3.5-16.8c-0.1-0.5-5.6,3.2-5.6,3.4c-0.3,0.3-4.1,10.3-4.3,10.8C78,77.3,78,78.6,78,78.6 s1.9,0.2,3,3.5c1.1,3.3,4.3,15.2,4.3,15.2s-0.9,0.9-0.9,0.9c4.1,13.8,2.7,19.7,4.5,23.7c2.3,5.7,2.9,4.9,4.9,9.7 c1.4,3.5,3,17.2,3.5,17.8c2.2,2.8,3.4,5,3.4,6.6c0,1.6-1.9,6.3-1.2,9.1c0.4,1.6,0.6,5.2,1.4,5.9c0,0,0.7,1.4,0.4,2 c-0.1,0.2-0.3,0.5-0.2,0.8c1.2,4.3,5.2,11.7-1.2,15.5h0.1c7-1.1,12.3-7.1,12.3-14.4V108.8z"/> </g>
+                                <g> <path fill="#fff"
+                                          d="M159.6,189.7H139V14.3h31.9L192.3,159c-3.2-34.4-7.4-89.9-7.4-119.1V14.3h20.6v175.3h-29.2L156.7,49.2 c1.7,31.4,2.9,69,2.9,90.1V189.7z"/>
+                                    <path fill="#fff"
+                                          d="M240.9,113.5v54h3.9c7.4,0,9.6-4.2,9.6-12.5v-29.7c0-8.6-2.7-11.8-10.6-11.8H240.9z M240.9,36.4v57.9h2.9 c8.3,0,10.6-3.2,10.6-12.8V48.2c0-8.1-2.5-11.8-9.6-11.8H240.9z M217.3,189.7V14.3h29.2c19.4,0,31.4,10.6,31.4,35.1v25.8 c0,16-4.9,24.1-11.8,28.2c6.9,4.4,11.8,12.3,11.8,25.8v25.5c0,24.1-12.8,34.9-31.4,34.9H217.3z"/>
+                                    <path fill="#fff"
+                                          d="M308.4,136.9h12.5l-2-32.2c-0.7-12.8-2.7-53.3-4.2-75.1h-1l-3.4,75.1L308.4,136.9z M322.1,156.7h-14.7 l-2,32.9h-23.8l17.2-175.3h33.4l16.7,175.3h-24.8L322.1,156.7z"/> </g>
+                                <g> <path fill="#fff"
+                                          d="M423.7,158.7c0,23.8-8.4,32.4-22.8,32.4c-15.7,0-23.3-8.6-23.3-32.4v-26.5H390v29.2 c0,12.5,2.2,17.7,10.8,17.7c7.4,0,10.3-5.2,10.3-17.7v-10.1c0-13.5-1.2-21.6-15.7-41.8c-11.5-16.2-17.9-26-17.9-48.6V45.2 c0-23.8,8.8-32.4,23.3-32.4c15.5,0,22.8,8.6,22.8,32.4v26.3h-12.5v-29c0-12.5-1.7-17.7-10.3-17.7c-7.4,0-10.8,5.2-10.8,17.7v16 c0,18.2,3.2,24.6,14.2,40.3c15.7,22.1,19.4,29,19.4,49.4V158.7z"/>
+                                    <path fill="#fff"
+                                          d="M459.5,190.2c-12.3,0-18.7-4.4-18.7-19.7V62.9h-7.6V52.1h7.6V26.8l11.8-2.9v28.3h11.3v10.8h-11.3V170 c0,6.6,2.7,9.1,8.8,9.1h3.4v10.6C463.2,189.9,461.4,190.2,459.5,190.2z"/>
+                                    <path fill="#fff"
+                                          d="M518,162.1c0,22.9-8.6,29-22.1,29c-13.5,0-22.1-6.1-22.1-29V80.1c0-22.6,8.6-29.5,22.1-29.5 c13.5,0,22.1,6.1,22.1,29V162.1z M485.5,76.6v88.5c0,9.8,2,15.5,10.3,15.5c8.4,0,10.3-5.7,10.3-15.5V76.6c0-9.8-2-15.5-10.3-15.5 C487.5,61.2,485.5,66.8,485.5,76.6z"/>
+                                    <path fill="#fff"
+                                          d="M543.5,189.7h-11.8V52.1h7.9c1.7,3.2,2.7,6.4,3.2,9.3c2.7-7.4,10.8-10.8,19.7-10.8h0.2v12h-1 c-9.6,0-18.2,3.7-18.2,11.1V189.7z"/>
+                                    <path fill="#fff"
+                                          d="M589.3,191.1c-13.5,0-22.1-6.1-22.1-29V80.1c0-22.6,8.6-29.5,22.1-29.5s22.1,6.1,22.1,29v49.1H579v36.4 c0,9.8,2,15.5,10.3,15.5s10.3-5.7,10.3-15.5v-18.2h11.8v15.2C611.5,185,602.9,191.1,589.3,191.1z M579,118.4h20.6V76.6 c0-9.8-2-15.5-10.3-15.5S579,66.8,579,76.6V118.4z"/> </g> </g> </svg>
+                        </a>
+                    </div>
+
+                    <div class="nbap-nav__leaguepass-logo">
+                        <a rel="noopener noreferrer"
+                           href="http://watch.nba.com/packages?ls=leaguepass:localsite:in:perform:topnav"
+                           target="_blank">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 648 139.7" xml:space="preserve"> <g> <g> <path
+                                    fill="#fff"
+                                    d="M71.4,8.5H47.2c-5.9,0-10.7,4.8-10.7,10.7v82.1c0,5.9,4.8,10.7,10.7,10.7h24.2c5.9,0,10.7-4.8,10.7-10.7V19.2 C82.1,13.3,77.3,8.5,71.4,8.5"/>
+                                <path fill="#1D428A"
+                                      d="M70.4,99.7c-1.3-1.2-0.4-1.7-0.5-2.1c-0.9-3.6-3.7-5.8-2.2-6.9c-0.4-1.2-1.1-2.7-1.1-2.7 c-4.4-2.5-8.2-6.7-8.9-7.3c-0.8-0.8-2.1-1.7-2.4-2.4c-1.1-1-6.3-8.4-7.5-11.1l-2.1-0.3c-1-3.9-4.2-7.3-4.3-11.2 c0-1.5,0.7-4.7,0.9-5.3c0.3-0.6,1.5-1.7,1.5-1.7v-1.1c-4.6,0.1-3.3-0.3-4.1-2.1c-0.6-1.2-0.2-1.5,0-2.4c0.6-2.6,2.7-6.5,3.5-8.3 c0.3-0.9,1.2-3.1,1.2-3.1c3.5-7,4.7-6.5,8.8-6.9l0.2-0.3c4.1-0.2,3.4-0.5,4-4.4c-0.6,0.3-0.8-1.2-0.8-1.2 c-0.3-2.3,0.6-1.8,1.1-1.9C58,13.2,58.3,12,61,11H47.2c-4.5,0-8.2,3.7-8.2,8.2v82.1c0,4.5,3.7,8.2,8.2,8.2h24.2 C68.6,108,70.3,105.2,70.4,99.7"/>
+                                <path fill="#C8102E"
+                                      d="M65.4,27.5l0,0.3c0.7,0.4,1.1,0.8,1.9,1.3c2,1.2,4.4,3.5,4.1,11.1c0.6,1.7,0.8,4.9,1.3,6c1,2,1.7,3.4,2,5.3 c0,0,0.3,3,0.7,3.2c2,0.5,1.5,0.7,1.8,1c0.3,0.4,1.5,0.4,1.5,1.5c0.4,0.5,0.7,1.1,0.9,1.7V19.2c0-4.5-3.7-8.2-8.2-8.2h-7.8 c1.3,0.4,2,1,2.4,1.8c1,0.1,2.2,2.4,0.3,5.7c0.8,0.6,0.2,1.4-0.4,2.3c-0.2,0.3-0.4,0.9-0.9,0.8c-0.7,1.5-1.6,2.9-2.2,3 c-0.2,0.2-0.3,0.9,0,1.2C63.7,26.3,64.8,26.9,65.4,27.5"/>
+                                <path fill="#C8102E"
+                                      d="M79.6,64.2c-1.1,2.7-3.7,4.6-6.8,4.6c-4,0-7.3-3.3-7.3-7.3c0-3.4,2.4-6.3,5.6-7.1c-0.8-2.1-2.6-5.5-3.1-6.6 c-0.5-1.1-1.7-8.1-2-9.4c-0.1-0.3-3.2,1.8-3.2,1.9c-0.2,0.2-2.3,5.8-2.4,6.1c0,0.2,0,0.9,0,0.9s1.1,0.1,1.7,2 c0.6,1.8,2.4,8.5,2.4,8.5s-0.5,0.5-0.5,0.5c2.3,7.7,1.5,11.1,2.5,13.3c1.3,3.2,1.7,2.8,2.8,5.5c0.8,2,1.7,9.6,2,10 c1.2,1.6,1.9,2.8,1.9,3.7c0,0.9-1.1,3.5-0.7,5.1c0.2,0.9,0.4,2.9,0.8,3.3c0,0,0.4,0.8,0.2,1.1c-0.1,0.1-0.2,0.3-0.1,0.4 c0.7,2.4,2.9,6.6-0.7,8.7h0.1c3.9-0.6,6.9-4,6.9-8.1V64.2z"/> </g>
+                                <g class="league-pass-text"> <g> <path fill="#fff"
+                                                                       d="M105.7,109.5H94.1V10.8h18l12,81.4c-1.8-19.4-4.1-50.6-4.1-67V10.8h11.6v98.7h-16.4l-11.1-79.1 c1,17.7,1.7,38.8,1.7,50.7V109.5z"/>
+                                    <path fill="#fff"
+                                          d="M138.2,109.5V10.8h16.4c10.9,0,17.7,5.9,17.7,19.8v14.5c0,9-2.8,13.5-6.6,15.9c3.9,2.5,6.6,6.9,6.6,14.5 v14.4c0,13.5-7.2,19.6-17.7,19.6H138.2z M151.5,23.2v32.6h1.7c4.7,0,5.9-1.8,5.9-7.2V29.9c0-4.6-1.4-6.6-5.4-6.6H151.5z M151.5,66.7v30.4h2.2c4.1,0,5.4-2.3,5.4-7.1V73.3c0-4.8-1.5-6.6-5.9-6.6H151.5z"/>
+                                    <path fill="#fff"
+                                          d="M197.2,91h-8.3l-1.1,18.5h-13.4l9.7-98.7h18.8l9.4,98.7h-14L197.2,91z M189.5,79.8h7.1l-1.1-18.1 c-0.4-7.2-1.5-30-2.3-42.3h-0.6l-1.9,42.3L189.5,79.8z"/> </g>
+                                    <g> <path fill="#fff"
+                                              d="M599.1,93.3c0,3.9-0.7,5.8-3.3,5.8c-2.9,0-3.3-2.2-3.3-5.8v-9h-13.3v8c0,13.4,4.8,18.1,16.3,18.1 s16.9-6.6,16.9-19.1c0-6.9-2.9-15-10.5-24c-6.8-8-9.4-12.6-9.4-18.7c0-4.2,1-6.1,3.5-6.1c2.5,0,3.2,1.7,3.2,7.2v8.3h13.2v-8.7 c0-13.7-5-18.1-16.6-18.1c-11.9,0-16.5,7.8-16.5,18.8c0,10,4.6,17.9,11.1,25.5C596.8,83.1,599.1,88.3,599.1,93.3 M560.9,93.3 c0,3.9-0.7,5.8-3.3,5.8c-2.9,0-3.3-2.2-3.3-5.8v-9H541v8c0,13.4,4.8,18.1,16.3,18.1c11.5,0,16.9-6.6,16.9-19.1 c0-6.9-2.9-15-10.5-24c-6.8-8-9.4-12.6-9.4-18.7c0-4.2,1-6.1,3.5-6.1c2.5,0,3.2,1.7,3.2,7.2v8.3h13.2v-8.7 c0-13.7-5-18.1-16.6-18.1c-11.9,0-16.5,7.8-16.5,18.8c0,10,4.6,17.9,11.1,25.5C558.6,83.1,560.9,88.3,560.9,93.3 M515.7,92.8 V80.8c0-5,1.7-6.8,6.6-6.9v24c-1.1,0.4-2.2,0.7-3.2,0.7C516.2,98.6,515.7,96.4,515.7,92.8 M524.4,109.6h11.2V50.9 c0-14.3-4.6-19.7-16.5-19.7c-11.4,0-16.5,4.7-16.5,18.8v9.7h13v-9.7c0-5.5,0.8-6.9,3.3-6.9c2.5,0,3.3,1.2,3.3,6.9v15.5 c-12.5-1.7-19.9,3.7-19.9,15.9v15.4c0,9.4,3.7,13.6,10.7,13.6c4.7,0,8-2.5,10.1-5.5C523.6,106.7,524,108.5,524.4,109.6 M478.8,23.3c4.2,0,5.4,2.4,5.4,7.1v31.2c0,4.6-1.2,6.9-5.4,6.9h-2.2V23.3H478.8z M479.8,80.3c11.2,0,17.7-6.6,17.7-20.2V30.7 c0-13.6-6.5-19.9-17.7-19.9h-16.5v98.9h13.3V80.3H479.8z M425.9,49c0-4.4,1-5.8,3.3-5.8c2.4,0,3.3,1.4,3.3,5.8v16.8h-6.6V49z M445.8,91.2V79.5h-13.3v13.3c0,4.4-0.8,5.8-3.3,5.8c-2.5,0-3.3-1.4-3.3-5.8V74.5h19.9v-24c0-15.6-6.2-19.2-16.6-19.2 c-10.4,0-16.6,3.6-16.6,19.2v40.7c0,15.6,6.2,19.2,16.6,19.2C439.6,110.5,445.8,106.9,445.8,91.2 M395.5,109.6h11.2V32.1h-13.3 V98c-1,0.3-2.1,0.6-3.3,0.6c-2.4,0-3.3-1.4-3.3-4.6V32.1h-13.3v65.8c0,9,4.6,12.6,10.4,12.6c5.1,0,8.3-2.8,10.4-5.5 C394.7,106.9,395.1,108.5,395.5,109.6 M341.9,116c0-1.4,0.3-2.5,1-3.6c2.1,0.7,4.4,1.1,7.1,1.2c5.5,0.4,7.2,1,7.2,3.3 c0,2.9-2.5,3.9-6.6,3.9C346,120.9,341.9,119.6,341.9,116 M352.9,49v29.6c0,4.6-0.7,5.8-3.3,5.8c-2.4,0-3.3-1.2-3.3-5.8V49 c0-4.4,1.1-5.8,3.3-5.8C352.1,43.2,352.9,44.6,352.9,49 M368.4,115.2c0-9-4.4-13-13-14.1c-9.4-1.1-12.2-1.7-12.2-4.2 c0-0.3,0.1-0.7,0.4-1c1.8,0.4,3.7,0.6,6,0.6c10.5,0,16.6-3.6,16.6-19.2V50.5c0-2.6-0.1-4.8-0.6-6.8l3-0.8 c0.4-3.6,0.8-7.2,0.8-10.7c0-0.7-0.4-1-1.1-1c-3,0-5.4,1.2-6.8,3.5c-2.9-2.6-6.9-3.5-12-3.5c-10.4,0-16.6,3.6-16.6,19.2v26.7 c0,8.9,2.1,14,5.7,16.6c-2.9,2.1-4.8,4.8-4.8,8.3c0,3.7,1.7,6.4,4.4,8.2c-3.5,2.1-6.1,5.4-6.1,9.3c0,7.2,6.2,10.8,18.6,10.8 C363.2,130.4,368.4,123.6,368.4,115.2 M307.3,92.8V80.8c0-5,1.7-6.8,6.6-6.9v24c-1.1,0.4-2.2,0.7-3.2,0.7 C307.9,98.6,307.3,96.4,307.3,92.8 M316,109.6h11.2V50.9c0-14.3-4.6-19.7-16.5-19.7c-11.4,0-16.5,4.7-16.5,18.8v9.7h13v-9.7 c0-5.5,0.8-6.9,3.3-6.9c2.5,0,3.3,1.2,3.3,6.9v15.5C301.5,64,294,69.4,294,81.5v15.4c0,9.4,3.7,13.6,10.7,13.6 c4.7,0,8-2.5,10.1-5.5C315.2,106.7,315.6,108.5,316,109.6 M268.2,49c0-4.4,1-5.8,3.3-5.8s3.3,1.4,3.3,5.8v16.8h-6.6V49z M288.1,91.2V79.5h-13.3v13.3c0,4.4-0.8,5.8-3.3,5.8c-2.5,0-3.3-1.4-3.3-5.8V74.5h19.9v-24c0-15.6-6.2-19.2-16.6-19.2 c-10.4,0-16.6,3.6-16.6,19.2v40.7c0,15.6,6.2,19.2,16.6,19.2C281.9,110.5,288.1,106.9,288.1,91.2 M251.1,97.2h-10.9V10.8h-13.3 v98.9h24.2V97.2z"/> </g> </g> </g> </svg>
+                        </a>
+                    </div>
+                    <div class="nbap-hamburger">
+                        <div class="nbap-hamburger__dropdown-container js-dropdown-container">
+                            <ul class="nbap-hamburger__dropdown">
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link" href="https://in.nba.com/news">All News and
+                                        Stories</a>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link" href="https://in.global.nba.com/scores/">Scores</a>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link"
+                                       href="https://in.global.nba.com/standings/">Standings</a>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link"
+                                       href="https://in.nba.com/news/broadcast-tv-schedule-for-the-2019-20-nba-season-in-india-sony-six-ten1-ten-3/vd61iwa650z01g5uyoceexbxj">TV
+                                        Broadcasts</a>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link" href="https://in.nba.com/videos">Videos</a>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link"
+                                       href="https://in.nba.com/category/basketball-and-india/news/m3c023o9w9ge18mccay7qbjl0">Basketball
+                                        and India</a>
+                                    <ul class="nbap-hamburger__dropdown">
+                                        <li class="nbap-hamburger__dropdown-item nbap-hamburger__dropdown-item--secondary">
+                                            <a class="nbap-hamburger__dropdown-link nbap-hamburger__dropdown-link--secondary"
+                                               href="https://in.nba.com/category/basketball-and-india/news/m3c023o9w9ge18mccay7qbjl0">News
+                                                and Stories</a>
+                                        </li>
+                                        <li class="nbap-hamburger__dropdown-item nbap-hamburger__dropdown-item--secondary">
+                                            <a class="nbap-hamburger__dropdown-link nbap-hamburger__dropdown-link--secondary"
+                                               href="https://in.nba.com/category/nba-india-games/news/1q4mzhvdb0euk1tr8n6ldd3ehw">NBA
+                                                India Games 2019</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link" href="https://in.global.nba.com/schedule/">Schedule</a>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link"
+                                       href="https://in.global.nba.com/playerindex/">Players</a>
+                                    <ul class="nbap-hamburger__dropdown">
+                                        <li class="nbap-hamburger__dropdown-item nbap-hamburger__dropdown-item--secondary">
+                                            <a class="nbap-hamburger__dropdown-link nbap-hamburger__dropdown-link--secondary"
+                                               href="https://in.global.nba.com/draft/">2019 Draft</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link"
+                                       href="https://in.global.nba.com/teamindex/">Teams</a>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item">
+                                    <a class="nbap-hamburger__dropdown-link"
+                                       href="https://in.global.nba.com/statistics/">Stats</a>
+                                    <ul class="nbap-hamburger__dropdown">
+                                        <li class="nbap-hamburger__dropdown-item nbap-hamburger__dropdown-item--secondary">
+                                            <a class="nbap-hamburger__dropdown-link nbap-hamburger__dropdown-link--secondary"
+                                               href="https://in.global.nba.com/statistics/teamstats/">Team Stats</a>
+                                        </li>
+                                        <li class="nbap-hamburger__dropdown-item nbap-hamburger__dropdown-item--secondary">
+                                            <a class="nbap-hamburger__dropdown-link nbap-hamburger__dropdown-link--secondary"
+                                               href="https://in.global.nba.com/statistics/leagueleaders/">League
+                                                Leaders</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nbap-hamburger__dropdown-item nbap-hamburger__store-logo">
+                                    <a rel="noopener noreferrer" data-track="Click" data-type="Exit" data-id="NBA store"
+                                       data-pos="Nav" class="nbap-hamburger__dropdown-link" href="http://NBAStore.in"
+                                       target="_blank">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 648 200" xml:space="preserve"> <g> <g> <path
+                                                fill="#fff"
+                                                d="M97.7,9.5H54.6c-10.5,0-19.1,8.6-19.1,19.1v146.2c0,10.5,8.6,19.1,19.1,19.1h43.2c10.5,0,19.1-8.6,19.1-19.1 V28.6C116.8,18.1,108.3,9.5,97.7,9.5"/>
+                                            <path fill="#1D428A"
+                                                  d="M95.9,172c-2.3-2.1-0.8-3-0.9-3.8c-1.5-6.4-6.6-10.3-4-12.4c-0.6-2.1-2-4.8-1.9-4.8 c-7.9-4.5-14.6-11.9-15.8-13c-1.4-1.5-3.7-3-4.2-4.2c-1.9-1.7-11.2-15-13.4-19.8l-3.8-0.5c-1.7-7-7.5-12.9-7.6-20 c-0.1-2.7,1.2-8.4,1.7-9.5c0.5-1.2,2.7-3.1,2.7-3.1v-1.9c-8.3,0.2-5.9-0.6-7.3-3.8c-1-2.2-0.3-2.7,0.1-4.2 c1.1-4.5,4.8-11.6,6.3-14.7c0.5-1.6,2.1-5.5,2.1-5.5c6.1-12.5,8.4-11.6,15.7-12.3l0.4-0.5c7.3-0.3,6.1-0.9,7.2-7.9 c-1.1,0.5-1.4-2.2-1.4-2.2c-0.6-4,1.1-3.3,1.9-3.3c0.2-6.6,0.8-8.7,5.6-10.5H54.6C46.5,14,40,20.5,40,28.6v146.2 c0,8.1,6.5,14.6,14.6,14.6h43.2C92.8,186.7,95.7,181.7,95.9,172z"/>
+                                            <path fill="#C8102E"
+                                                  d="M87,43.3l0,0.6c1.3,0.8,2,1.4,3.3,2.2c3.5,2.2,7.9,6.2,7.3,19.7c1,3,1.4,8.8,2.3,10.6c1.8,3.6,3.1,6,3.6,9.4 c0,0,0.5,5.3,1.2,5.7c3.6,0.8,2.6,1.2,3.1,1.8c0.6,0.7,2.7,0.7,2.7,2.7c0.7,1,1.3,2,1.7,3V28.6c0-8.1-6.5-14.6-14.6-14.6h-14 c2.2,0.8,3.5,1.7,4.2,3.2c1.8,0.2,3.9,4.2,0.6,10.2c1.5,1,0.3,2.5-0.7,4.2c-0.3,0.5-0.7,1.5-1.6,1.5c-1.3,2.7-2.8,5.2-4,5.4 c-0.4,0.4-0.6,1.6-0.1,2.1C83.9,41.3,86,42.3,87,43.3"/>
+                                            <path fill="#C8102E"
+                                                  d="M112.3,108.8c-1.9,4.8-6.6,8.2-12.1,8.2c-7.2,0-13-5.8-13-13c0-6.1,4.2-11.3,9.9-12.7 c-1.5-3.8-4.7-9.8-5.6-11.8c-0.9-2-3-14.4-3.5-16.8c-0.1-0.5-5.6,3.2-5.6,3.4c-0.3,0.3-4.1,10.3-4.3,10.8C78,77.3,78,78.6,78,78.6 s1.9,0.2,3,3.5c1.1,3.3,4.3,15.2,4.3,15.2s-0.9,0.9-0.9,0.9c4.1,13.8,2.7,19.7,4.5,23.7c2.3,5.7,2.9,4.9,4.9,9.7 c1.4,3.5,3,17.2,3.5,17.8c2.2,2.8,3.4,5,3.4,6.6c0,1.6-1.9,6.3-1.2,9.1c0.4,1.6,0.6,5.2,1.4,5.9c0,0,0.7,1.4,0.4,2 c-0.1,0.2-0.3,0.5-0.2,0.8c1.2,4.3,5.2,11.7-1.2,15.5h0.1c7-1.1,12.3-7.1,12.3-14.4V108.8z"/> </g>
+                                            <g> <path fill="#fff"
+                                                      d="M159.6,189.7H139V14.3h31.9L192.3,159c-3.2-34.4-7.4-89.9-7.4-119.1V14.3h20.6v175.3h-29.2L156.7,49.2 c1.7,31.4,2.9,69,2.9,90.1V189.7z"/>
+                                                <path fill="#fff"
+                                                      d="M240.9,113.5v54h3.9c7.4,0,9.6-4.2,9.6-12.5v-29.7c0-8.6-2.7-11.8-10.6-11.8H240.9z M240.9,36.4v57.9h2.9 c8.3,0,10.6-3.2,10.6-12.8V48.2c0-8.1-2.5-11.8-9.6-11.8H240.9z M217.3,189.7V14.3h29.2c19.4,0,31.4,10.6,31.4,35.1v25.8 c0,16-4.9,24.1-11.8,28.2c6.9,4.4,11.8,12.3,11.8,25.8v25.5c0,24.1-12.8,34.9-31.4,34.9H217.3z"/>
+                                                <path fill="#fff"
+                                                      d="M308.4,136.9h12.5l-2-32.2c-0.7-12.8-2.7-53.3-4.2-75.1h-1l-3.4,75.1L308.4,136.9z M322.1,156.7h-14.7 l-2,32.9h-23.8l17.2-175.3h33.4l16.7,175.3h-24.8L322.1,156.7z"/> </g>
+                                            <g> <path fill="#fff"
+                                                      d="M423.7,158.7c0,23.8-8.4,32.4-22.8,32.4c-15.7,0-23.3-8.6-23.3-32.4v-26.5H390v29.2 c0,12.5,2.2,17.7,10.8,17.7c7.4,0,10.3-5.2,10.3-17.7v-10.1c0-13.5-1.2-21.6-15.7-41.8c-11.5-16.2-17.9-26-17.9-48.6V45.2 c0-23.8,8.8-32.4,23.3-32.4c15.5,0,22.8,8.6,22.8,32.4v26.3h-12.5v-29c0-12.5-1.7-17.7-10.3-17.7c-7.4,0-10.8,5.2-10.8,17.7v16 c0,18.2,3.2,24.6,14.2,40.3c15.7,22.1,19.4,29,19.4,49.4V158.7z"/>
+                                                <path fill="#fff"
+                                                      d="M459.5,190.2c-12.3,0-18.7-4.4-18.7-19.7V62.9h-7.6V52.1h7.6V26.8l11.8-2.9v28.3h11.3v10.8h-11.3V170 c0,6.6,2.7,9.1,8.8,9.1h3.4v10.6C463.2,189.9,461.4,190.2,459.5,190.2z"/>
+                                                <path fill="#fff"
+                                                      d="M518,162.1c0,22.9-8.6,29-22.1,29c-13.5,0-22.1-6.1-22.1-29V80.1c0-22.6,8.6-29.5,22.1-29.5 c13.5,0,22.1,6.1,22.1,29V162.1z M485.5,76.6v88.5c0,9.8,2,15.5,10.3,15.5c8.4,0,10.3-5.7,10.3-15.5V76.6c0-9.8-2-15.5-10.3-15.5 C487.5,61.2,485.5,66.8,485.5,76.6z"/>
+                                                <path fill="#fff"
+                                                      d="M543.5,189.7h-11.8V52.1h7.9c1.7,3.2,2.7,6.4,3.2,9.3c2.7-7.4,10.8-10.8,19.7-10.8h0.2v12h-1 c-9.6,0-18.2,3.7-18.2,11.1V189.7z"/>
+                                                <path fill="#fff"
+                                                      d="M589.3,191.1c-13.5,0-22.1-6.1-22.1-29V80.1c0-22.6,8.6-29.5,22.1-29.5s22.1,6.1,22.1,29v49.1H579v36.4 c0,9.8,2,15.5,10.3,15.5s10.3-5.7,10.3-15.5v-18.2h11.8v15.2C611.5,185,602.9,191.1,589.3,191.1z M579,118.4h20.6V76.6 c0-9.8-2-15.5-10.3-15.5S579,66.8,579,76.6V118.4z"/> </g> </g> </svg>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+</header>
+<div class="nbap-header__spacer"></div>
+
+
+<div class="commercial">
+    <div class="commercial__container">
+        <div data-role="ad" data-name="topBanner" class="commercial__ad commercial__top-banner"
+             data-slot-id="/67970281/DISPLAY_OWNED_GBL/NBA_Responsive_Perform/ROS/Top_Banner" data-empty="true">
+            <div id="placement--5de088cc45b600.52079020" data-state="unloaded"></div>
+            <script type="text/javascript">
+                window.ads.push({
+                    "name": "topBanner",
+                    "slotName": "\/67970281\/DISPLAY_OWNED_GBL\/NBA_Responsive_Perform\/ROS\/Top_Banner",
+                    "uuid": "placement--5de088cc45b600.52079020",
+                    "className": "commercial__ad commercial__top-banner",
+                    "defaultSize": [[970, 90], [728, 90], [970, 250], [320, 50]],
+                    "position": "Top_Banner",
+                    "sizeMapping": [{
+                        "viewport": [970, 250],
+                        "slot": [[970, 250], [970, 90], [728, 90]]
+                    }, {"viewport": [760, 100], "slot": [728, 90]}, {"viewport": [0, 0], "slot": [320, 50]}],
+                    "lazyLoad": true,
+                    "amazonTam": true,
+                    "refreshOnBreakPointChange": true
+                });
+            </script>
+        </div>
+    </div>
+</div>
+<section class="grid article-container">
+    <article class="article grid__content">
+        <header class="article__header">
+            <div class="article__time-label">
+                <time
+                        class="time-block  js-timestamp "
+                        datetime="2019-08-15T14:25:00+05:30"
+                        data-timestamp="1565859300000"
+                >
+                    08/15/2019
+                </time>
+                <span class="label " title="NBA">
+        <a href="https://in.nba.com/competition/nba/news/e2w9iicoifx689pzi5jqw7j4a" class="label__anchor">NBA</a>
+    </span>
+            </div>
+            <div data-module="bookmarks"
+                 data-settings="{&quot;url&quot;:&quot;https:\/\/in.nba.com\/news\/when-do-the-2020-nba-playoffs-and-finals-begin\/2wi18c0d9k4q1d16lzcv13i13&quot;,&quot;headline&quot;:&quot;When do the 2020 NBA Playoffs and Finals begin?&quot;,&quot;uuid&quot;:&quot;2wi18c0d9k4q1d16lzcv13i13&quot;}"
+                 class="widget-bookmarks widget-bookmarks__article">
+                <div class='widget-bookmarks__article'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                        <defs>
+                            <style>.cls-1 {
+                                display: none;
+                            }</style>
+                        </defs>
+                        <g id="bookmarked" class="cls-1 bookmarked">
+                            <circle id="circle" cx="17" cy="17" r="17" fill=""/>
+                            <path fill="#FFF" fill-rule="nonzero"
+                                  d="M23.9893859,7 L10,7 L10,27 L16.9946929,20.9957492 L23.9787718,27 L23.9787718,7 L23.9893859,7 Z M23.9893859,27 L23.8832449,27 L24,27 L23.9893859,27 Z M10.0212282,27 L10.1379833,27 L10.0318423,27 L10.0212282,27 Z"/>
+                        </g>
+                        <g id="outline" class="bookmark-outline">
+                            <path fill="#16181b"
+                                  d="M17,2A15,15,0,1,1,2,17,15,15,0,0,1,17,2m0-1A16,16,0,1,0,33,17,16,16,0,0,0,17,1Z"/>
+                            <path fill="#16181b"
+                                  d="M22.59,8.58V24.23L17.65,20,17,19.44l-.65.55-4.94,4.24V8.58H22.59m1-1H10.41V26.4h0L17,20.75l6.58,5.65h0V7.58Zm0,18.82h0Zm-13.16,0Z"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="article__headline">When do the 2020 NBA Playoffs and Finals begin?</h1>
+            <p class="article__teaser">The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more
+                than a month later, on June 5.</p>
+            <div class="article__author-share">
+                <div class="article__author">
+                    <span class="article__author-copy">By NBA.com Staff</span>
+                </div>
+                <div class="social-share js-social-share"
+                     data-settings="{&quot;description&quot;:&quot;The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more than a month later, on June 5.&quot;,&quot;emailSubject&quot;:&quot;When do the 2020 NBA Playoffs and Finals begin? | NBA.com India | The official site of the NBA&quot;,&quot;emailBody&quot;:&quot;The 2020 NBA Playoffs are set to begin on April 19. The Finals will begin more than a month later, on June 5... Read more: https:\/\/in.nba.com\/news\/when-do-the-2020-nba-playoffs-and-finals-begin\/2wi18c0d9k4q1d16lzcv13i13&quot;}">
+                    <ul class="social-share__ul ul--reset-style">
+                        <li class="social-share__li">
+                            <button class="social-share__button social-share__button--facebook js-facebook"></button>
+                        </li>
+                        <li class="social-share__li">
+                            <button class="social-share__button social-share__button--twitter js-twitter"></button>
+                        </li>
+                        <li class="social-share__li">
+                            <button class="social-share__button social-share__button--email js-email"></button>
+                        </li>
+                        <li class="social-share__li">
+                            <button class="social-share__button social-share__button--link tooltip__container js-copy">
+                                <div class="tooltip__tip">
+                                    <div class="tooltip__copy">url copied to clipboard</div>
+                                </div>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="article__top-media">
+            <figure class="widget-perform-image__container " itemscope itemtype="http://schema.org/ImageObject">
+                <img class="lazyload widget-perform-image"
+                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                     data-src="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/2d/5d/nba-playoffs-signage_kw8a22jml6ez14o5yjcz2vsn5.jpg?t=-1866155380&amp;w={width}"
+                     data-sizes="auto" alt="nba-playoffs-signage">
+                <figcaption class="widget-perform-image__caption-container"
+                            title="NBA Playoffs Signage (NBAE/Getty Images)">
+                    <span class="widget-perform-image__caption" itemprop="caption">NBA Playoffs Signage</span>
+                    <span class="widget-perform-image__credit" itemprop="producer">(NBAE/Getty Images)</span>
+                    <span class="widget-perform-image__url" itemprop="url">https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/2d/5d/nba-playoffs-signage_kw8a22jml6ez14o5yjcz2vsn5.jpg?t=-1866155380&w=500</span>
+                </figcaption>
+            </figure>
+        </section>
+        <section class="article__body">
+            <p>On April 16, the 2019-20 NBA season will come to an end. The 2020 NBA Playoffs will begin three days
+                later, on April 19.</p>
+            <p>The opening round of the playoffs will last just over a week, with the Conference Semifinals scheduled to
+                begin on April 30 - May 1. Depending on how long the first-round series last, the Conference Semifinals
+                could commence a couple of days earlier, on April 28-29.</p>
+            <p>The Conference Finals are set for May 15-16, with a possible move up to May 13-14. The 2020 NBA Finals
+                will then begin on June 5.</p>
+            <div class="table-element__container">
+                <table>
+                    <caption><strong>When are the 2020 NBA Playoffs and Finals?</strong></caption>
+                    <tbody>
+                    <tr>
+                        <td>NBA Playoffs 2020 begin</td>
+                        <td>April 19</td>
+                    </tr>
+                    <tr>
+                        <td>Conference Semifinals begin</td>
+                        <td>April 30 - May 1 (possible move up to April 28-29)</td>
+                    </tr>
+                    <tr>
+                        <td>Conference Finals begin</td>
+                        <td>May 15-16 (possible move up to May 13-14)</td>
+                    </tr>
+                    <tr>
+                        <td>NBA Finals 2020 begin</td>
+                        <td>June 5</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>The top eight teams in both the Western Conference and Eastern Conference will qualify for the playoffs.
+                Each team will be seeded based on their record and matched up in the first round with a team in their
+                conference based on the following format: 1 vs. 8, 2 vs. 7, 3 vs. 6 and 4 vs. 5.</p>
+            <p>Every series throughout the playoffs will be best-of-seven. The team with the better record will host
+                games 1, 2, 5 and 7 in each series, leaving games 3, 4 and 6 to be played on the home court of the
+                lower-seeded team.</p>
+            <p>Whichever team makes it out of the East will then match up with whichever team makes it out of the West
+                in the Finals. The Golden State Warriors have represented the West in the last five NBA Finals, but the
+                loss of Kevin Durant coupled with the Los Angeles Lakers and LA Clippers improving paves the way for a
+                new team to make it out of the conference next season.</p>
+            <p>In the East, meanwhile, Kawhi Leonard's departure from the Toronto Raptors has the Milwaukee Bucks and
+                Philadelphia 76ers as preseason favourites to make the Finals.</p>
+        </section>
+    </article>
+    <aside class="grid__aside">
+        <div class="commercial commercial--sidebar">
+            <div class="commercial__container commercial__container--sidebar commercial__container--sticky js-offset-for-header">
+                <div data-role="ad" data-name="topMpu" class="commercial__ad commercial__top-mpu"
+                     data-slot-id="/67970281/DISPLAY_OWNED_GBL/NBA_Responsive_Perform/ROS/Top_MPU" data-empty="true">
+                    <div data-label="Advertisement" id="placement--5de088cc465af7.24705478" data-state="unloaded"></div>
+                    <script type="text/javascript">
+                        window.ads.push({
+                            "name": "topMpu",
+                            "slotName": "\/67970281\/DISPLAY_OWNED_GBL\/NBA_Responsive_Perform\/ROS\/Top_MPU",
+                            "uuid": "placement--5de088cc465af7.24705478",
+                            "label": "Advertisement",
+                            "className": "commercial__ad commercial__top-mpu",
+                            "defaultSize": [[300, 600], [300, 250]],
+                            "position": "Top_MPU",
+                            "sizeMapping": [{
+                                "viewport": [760, 100],
+                                "slot": [[300, 600], [300, 250]]
+                            }, {"viewport": [0, 0], "slot": [300, 250]}],
+                            "lazyLoad": true,
+                            "amazonTam": true,
+                            "refreshOnBreakPointChange": true
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="latest-news">
+        <h2 class="header header--underline">More from NBA.com</h2>
+        <div class="card-group card-group--six-cards">
+            <div class="p0comp-card card card--type--article" data-module="perform/p0/components/card"
+                 data-settings="&quot;&quot;">
+                <article class="card__body">
+                    <figure class="widget-perform-image__container card__image" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                        <img class="lazyload widget-perform-image"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-src="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/8c/ee/mccollum_eyoijqaiwjen124hoq9ymzblu.jpg?t=-1266507266&amp;w={width}"
+                             data-sizes="auto" alt="#McCollum">
+                        <span class="widget-perform-image__url" itemprop="url">https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/8c/ee/mccollum_eyoijqaiwjen124hoq9ymzblu.jpg?t=-1266507266&w=500</span>
+                    </figure>
+
+                    <div class="card__inner-body">
+                        <div class="card__headline"> Canton will always be home for C.J and Errick McCollum</div>
+                        <div class="card__author"> Kane Pitman</div>
+                    </div>
+                    <a href="https://in.nba.com/news/for-cj-mccollum-and-brother-errick-canton-will-always-be-home/dmpdj92oopgo1lfabo6ncy602"
+                       class="card__link"></a>
+                </article>
+                <div class="card__footer">
+    <span class="card__published-date
+         js-timestamp "
+          datetime="2019-11-29T07:41:58+05:30" data-timestamp="1574993518000">44m ago</span>
+
+                    <a href="https://in.nba.com/contestant/portland-trail-blazers/news/asuhlmjsiz41hxk2ywwp6ntt3"
+                       class="card__label card__label--link"> Portland Trail Blazers </a>
+                </div>
+
+            </div>
+            <div class="p0comp-card card card--type--article" data-module="perform/p0/components/card"
+                 data-settings="&quot;&quot;">
+                <article class="card__body">
+                    <figure class="widget-perform-image__container card__image" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                        <img class="lazyload widget-perform-image"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-src="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/2d/57/irving_d47lvb9zjqri1wiyheh006nfe.jpg?t=-1187065458&amp;w={width}"
+                             data-sizes="auto" alt="#Irving">
+                        <span class="widget-perform-image__url" itemprop="url">https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/2d/57/irving_d47lvb9zjqri1wiyheh006nfe.jpg?t=-1187065458&w=500</span>
+                    </figure>
+
+                    <div class="card__inner-body">
+                        <div class="card__headline"> Nets&#039; Irving set to again miss meeting with Celtics</div>
+                        <div class="card__author"> Kane Pitman</div>
+                    </div>
+                    <a href="https://in.nba.com/news/brooklyn-nets-kyrie-irving-set-to-again-miss-meeting-with-boston-celtics/1x3n419b0pugw15vn9bpklfhfk"
+                       class="card__link"></a>
+                </article>
+                <div class="card__footer">
+    <span class="card__published-date
+         js-timestamp "
+          datetime="2019-11-29T05:30:40+05:30" data-timestamp="1574985640000">2h ago</span>
+
+                    <a href="https://in.nba.com/contestant/brooklyn-nets/news/a6a8ao1fyhpxswr8sizvg9hwa"
+                       class="card__label card__label--link"> Brooklyn Nets </a>
+                </div>
+
+            </div>
+            <div class="p0comp-card card card--type--article" data-module="perform/p0/components/card"
+                 data-settings="&quot;&quot;">
+                <article class="card__body">
+                    <figure class="widget-perform-image__container card__image" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                        <img class="lazyload widget-perform-image"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-src="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/6a/b8/malcolm-brogdon-domantas-sabonis-buddy-hield-and-bogdan-bogdanovic_niyn3maa6vcz1hdli0f5wg7ak.jpg?t=-1281835778&amp;w={width}"
+                             data-sizes="auto"
+                             alt="Malcolm Brogdon, Domantas Sabonis, Buddy Hield, and Bogdan Bogdanovic">
+                        <span class="widget-perform-image__url" itemprop="url">https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/6a/b8/malcolm-brogdon-domantas-sabonis-buddy-hield-and-bogdan-bogdanovic_niyn3maa6vcz1hdli0f5wg7ak.jpg?t=-1281835778&w=500</span>
+                    </figure>
+
+                    <div class="card__inner-body">
+                        <div class="card__headline"> Pacers &amp; Kings steady ship after rough start</div>
+                        <div class="card__author"> Yash Matange</div>
+                    </div>
+                    <a href="https://in.nba.com/news/nba-india-games-2019-pacers-and-kings-bounce-back-from-rough-starts-to-the-2019-20-regular-season/38j2fm0v5qwp1svz0qgme1ewb"
+                       class="card__link"></a>
+                </article>
+                <div class="card__footer">
+    <span class="card__published-date
+         js-timestamp "
+          datetime="2019-11-29T05:02:37+05:30" data-timestamp="1574983957000">3h ago</span>
+
+                    <a href="https://in.nba.com/category/nba-india-games-2019/news/1q4mzhvdb0euk1tr8n6ldd3ehw"
+                       class="card__label card__label--link"> NBA India Games 2019 </a>
+                </div>
+
+            </div>
+            <div class="p0comp-card card card--type--article" data-module="perform/p0/components/card"
+                 data-settings="&quot;&quot;">
+                <article class="card__body">
+                    <figure class="widget-perform-image__container card__image" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                        <img class="lazyload widget-perform-image"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-src="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/b1/de/when-are-the-stars-playing_smwtffgy1z8i1i3ka0ibm1brk.jpg?t=-152584675&amp;w={width}"
+                             data-sizes="auto" alt="When are the stars playing?">
+                        <span class="widget-perform-image__url" itemprop="url">https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/b1/de/when-are-the-stars-playing_smwtffgy1z8i1i3ka0ibm1brk.jpg?t=-152584675&w=500</span>
+                    </figure>
+
+                    <div class="card__inner-body">
+                        <div class="card__headline"> TV schedule for the 2019-20 NBA season in India</div>
+                        <div class="card__author"> NBA.com Staff</div>
+                    </div>
+                    <a href="https://in.nba.com/news/broadcast-tv-schedule-for-the-2019-20-nba-season-in-india-sony-six-ten1-ten-3/vd61iwa650z01g5uyoceexbxj"
+                       class="card__link"></a>
+                </article>
+                <div class="card__footer">
+    <span class="card__published-date
+         js-timestamp "
+          datetime="2019-11-28T15:30:38+05:30" data-timestamp="1574935238000">16h ago</span>
+
+                    <a href="https://in.nba.com/competition/nba/news/e2w9iicoifx689pzi5jqw7j4a"
+                       class="card__label card__label--link"> NBA </a>
+                </div>
+
+            </div>
+            <div class="p0comp-card card card--type--article" data-module="perform/p0/components/card"
+                 data-settings="&quot;&quot;">
+                <article class="card__body">
+                    <figure class="widget-perform-image__container card__image" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                        <img class="lazyload widget-perform-image"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-src="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/e4/ad/nima-doma-bhutia_115wkafvtyr1z1ia94sgw5uqq6.png?t=-1841337458&amp;w={width}"
+                             data-sizes="auto" alt="Nima Doma Bhutia">
+                        <span class="widget-perform-image__url" itemprop="url">https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/e4/ad/nima-doma-bhutia_115wkafvtyr1z1ia94sgw5uqq6.png?t=-1841337458&w=500</span>
+                    </figure>
+
+                    <div class="card__inner-body">
+                        <div class="card__headline"> Nima Doma Bhutia makes history</div>
+                        <div class="card__author"> Yash Matange</div>
+                    </div>
+                    <a href="https://in.nba.com/news/fiba-olympic-pre-qualifying-tournament-nima-doma-bhutia-becam-first-from-north-east-india-to-represent-womens-senior-team/113etdnzlafk411ptqf3r7n4xh"
+                       class="card__link"></a>
+                </article>
+                <div class="card__footer">
+    <span class="card__published-date
+         js-timestamp "
+          datetime="2019-11-28T14:54:00+05:30" data-timestamp="1574933040000">17h ago</span>
+
+                    <a href="https://in.nba.com/category/basketball-and-india/news/m3c023o9w9ge18mccay7qbjl0"
+                       class="card__label card__label--link"> Basketball and India </a>
+                </div>
+
+            </div>
+            <div class="p0comp-card card card--type--article" data-module="perform/p0/components/card"
+                 data-settings="&quot;&quot;">
+                <article class="card__body">
+                    <figure class="widget-perform-image__container card__image" itemscope
+                            itemtype="http://schema.org/ImageObject">
+                        <img class="lazyload widget-perform-image"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-src="https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/76/67/carmelo-anthony_1lpts0phrd1m61qevekmsc9d4q.png?t=-1311665330&amp;w={width}"
+                             data-sizes="auto" alt="Carmelo Anthony">
+                        <span class="widget-perform-image__url" itemprop="url">https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/76/67/carmelo-anthony_1lpts0phrd1m61qevekmsc9d4q.png?t=-1311665330&w=500</span>
+                    </figure>
+
+                    <div class="card__inner-body">
+                        <div class="card__headline"> Melo posts most accurate shooting game of his career</div>
+                        <div class="card__author"> Yash Matange</div>
+                    </div>
+                    <a href="https://in.nba.com/news/carmelo-anthony-posts-most-accurate-shooting-game-of-his-career-in-his-home-debut-for-the-portland-trail-blazers/1k0bz0de47kn011t104ctpu0hr"
+                       class="card__link"></a>
+                </article>
+                <div class="card__footer">
+    <span class="card__published-date
+         js-timestamp "
+          datetime="2019-11-28T13:24:57+05:30" data-timestamp="1574927697000">19h ago</span>
+
+                    <a href="https://in.nba.com/contestant/portland-trail-blazers/news/asuhlmjsiz41hxk2ywwp6ntt3"
+                       class="card__label card__label--link"> Portland Trail Blazers </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <a href="https://in.nba.com/news" class="button button--primary button--next button--latest-news">
+        <span>More News</span>
+    </a>
+</section>
+
+<div data-module="navigation"
+     data-settings="{&quot;footerCopy&quot;:&quot;Copyright \u00a9 2018 NBA. All rights reserved.&quot;}"
+     class="nbap-widget-navigation">
+    <div class="nbap-nav--footer">
+        <div class="nbap-nav--footer__svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338.867 768" height="768" width="100">
+                <path d="M259.32 0H79.494C35.63 0 0 35.681 0 79.49v608.906C0 732.275 35.629 768 79.494 768h179.698c43.857 0 79.67-35.725 79.67-79.604V79.489C338.861 35.681 303.158 0 259.32 0"
+                      fill="#fff"/>
+                <path d="M214.713 140.792l.188 2.599c5.486 3.193 8.263 5.796 13.788 9.357 14.67 9.228 32.734 25.636 30.455 82.176 4.11 12.33 5.928 36.561 9.727 44.33 7.636 15.142 12.736 24.995 14.966 39.295 0 0 2.203 22.252 5.074 23.86 15.162 3.423 10.782 4.916 12.998 7.515 2.354 3.045 11.107 2.904 11.107 11.063 3.041 4.065 5.284 8.289 6.997 12.684V79.489c0-33.525-27.269-60.746-60.694-60.746h-58.1c9.336 3.312 14.598 7.229 17.674 13.445 7.506.645 16.426 17.46 2.528 42.297 6.155 4.098 1.354 10.222-3.062 17.332-1.294 2.283-2.708 6.328-6.818 6.06-5.274 11.098-11.649 21.854-16.46 22.534-1.46 1.8-2.52 6.576-.325 8.818 7.072 3.172 15.69 7.519 19.957 11.563M320.01 413.53c-7.88 20-27.505 34.134-50.427 34.134-30.003 0-54.184-24.25-54.184-54.157 0-25.552 17.565-46.98 41.404-52.703-6.248-15.628-19.431-40.96-23.348-49.276-3.707-8.25-12.64-59.77-14.564-69.96-.438-2.227-23.374 13.31-23.418 14.27-1.341 1.3-17.209 42.74-17.876 44.978-.32 1.415-.358 6.948-.358 6.948s7.802.964 12.293 14.577c4.443 13.595 17.995 63.226 17.995 63.226s-3.668 3.794-3.826 3.562c17.114 57.294 11.134 81.952 18.814 98.75 9.652 23.681 12.254 20.578 20.534 40.478 5.942 14.498 12.566 71.543 14.779 74.071 9.24 11.71 14.213 20.868 14.213 27.475 0 6.646-7.825 26.292-4.973 37.736 1.73 6.729 2.633 21.822 5.77 24.688 0 0 2.874 5.665 1.463 8.18-.408.872-1.226 2.186-.858 3.22 5.094 17.994 21.542 48.671-5.096 64.738h.57c29.074-4.5 51.094-29.442 51.094-60.068V413.53"
+                      fill="#ca1c2e"/>
+                <path d="M251.588 676.73c-9.765-8.715-3.241-12.4-3.632-15.84-6.44-26.598-27.567-42.686-16.64-51.466-2.695-8.784-8.184-19.812-7.983-19.795-32.925-18.905-60.961-49.618-65.724-54.122-5.774-6.274-15.61-12.578-17.458-17.674-7.914-7.269-46.722-62.32-55.76-82.592l-15.752-2.225c-7.164-29.272-31.085-53.803-31.676-83.148-.224-11.093 5.024-34.863 6.983-39.603 1.915-4.806 11.08-12.701 11.08-12.701v-7.852c-34.358.977-24.478-2.532-30.401-15.89-4.158-9.249-1.18-11.282.32-17.697 4.609-18.936 19.925-48.137 26.26-61.408 1.937-6.694 8.562-22.838 8.562-22.838 25.608-52.147 35.168-48.314 65.584-51.252l1.498-2.156c30.476-1.32 25.486-3.62 29.788-32.979-4.442 1.907-5.761-9.192-5.761-9.192-2.428-16.71 4.617-13.543 7.965-13.875.714-27.47 3.531-36.116 23.343-43.686H79.531c-33.587 0-60.79 27.225-60.79 60.786v608.87c0 33.6 27.203 60.822 60.79 60.822h179.79c-20.584-11.12-8.434-32.295-7.733-72.488"
+                      fill="#27418d"/>
+                <path d="M69.844 710.952H57.007v-110.24h20.33l16.344 90.325c-1.375-21.612-3.217-47.706-3.217-69.94v-20.385h12.841v110.24H84.663l-16.34-88.323c1.07 20.386 1.521 36.605 1.521 53.586zm113.048-97.884h-.761c-.915 13.275-2.75 36.59-3.364 44.001l-1.672 18.987h11.454l-1.684-18.987c-.613-7.562-2.749-30.568-3.973-44.001m6.577 75.495h-13.293l-1.843 22.39H159.52l13.293-110.241h21.083l12.83 110.24H191.3zm-61.265-73.955v36.439h5.5c5.195 0 6.57-1.86 6.57-7.875v-21.15c0-5.102-1.537-7.414-6.42-7.414zm0 48.478v33.969h5.65c5.045 0 6.42-2.628 6.42-7.875v-18.682c0-5.407-1.68-7.412-6.57-7.412zm-14.664 47.866v-110.24h21.384c12.37 0 20.017 6.643 20.017 22.083v16.366c0 10.025-3.054 15.128-7.341 17.599 4.287 2.937 7.341 7.879 7.341 16.212v16.061c0 15.128-8.102 21.92-20.017 21.92H113.54"
+                      fill="#fff"/>
+            </svg>
+        </div>
+        <ul class="nbap-nav--footer__nav nbap-nav">
+            <li class="nbap-nav--footer__menu-item">
+                <a class="nbap-nav--footer__link" href="https://global.nba.com/privacy-policy/" target="_blank"
+                   rel="noopener noreferrer">Privacy Policy</a>
+            </li>
+            <li class="nbap-nav--footer__menu-item">
+                <a class="nbap-nav--footer__link" href="https://global.nba.com/terms-of-use/" target="_blank"
+                   rel="noopener noreferrer">Terms of Use</a>
+            </li>
+            <li class="nbap-nav--footer__menu-item">
+                <a class="nbap-nav--footer__link" href="mailto:NBAGlobalFeedback@dazn.com">Contact Us</a>
+            </li>
+            <li class="nbap-nav--footer__menu-item">
+                <a class="nbap-nav--footer__link"
+                   href="https://in.nba.com/news/nba-nbacom-authors-writers-staff-canada-mexico-australia-india-spain-argentina-japan/1ne8s1fv4pjav1215l2epa5sho">NBA.com
+                    Global Staff</a>
+            </li>
+        </ul>
+        <div class="nbap-nav--footer__copy">
+            <p class="nbap-nav--footer__text">Copyright © 2018 NBA. All rights reserved.</p>
+        </div>
+    </div>
+    <div class="nbap-nav__spacer--footer"></div>
+</div>
+
+
+<script type="text/javascript">
+    window.loggingEnabled = false;
+</script>
+
+<script src="https://in.nba.com/assets/js/common.js?v=3.24.0"></script>
+
+
+<script src="https://in.nba.com/assets/js/page-article.js?v=3.24.0"></script>
+
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+<script type="text/javascript">window.NREUM || (NREUM = {});
+NREUM.info = {
+    "beacon": "bam.nr-data.net",
+    "licenseKey": "dddd82eb94",
+    "applicationID": "121561738",
+    "transactionName": "MQEBYhRVXkAEVEJZDghLIlUSXV9dSlZERAgFCAY=",
+    "queueTime": 0,
+    "applicationTime": 227,
+    "atts": "HUYCFFxPTU4=",
+    "errorBeacon": "bam.nr-data.net",
+    "agent": ""
+}</script>
+</body>
+</html>

@@ -1,0 +1,2331 @@
+	<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYEVVNXGwIJU1hVBAQF",licenseKey:"aaccaa7fff",applicationID:"19797352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(24),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(25),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){L++,C=g.hash,this[u]=y.now()}function o(){L--,g.hash!==C&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),N=t(7),P=t(14),M=t(9),T=t("ee"),S=T.get("tracer");t(16),y.features.spa=!0;var C,L=0;T.on(u,r),T.on(p,r),T.on(d,o),T.on(l,o),T.buffer([u,d,"xhr-done","xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),P.buffer([u,"new-xhr","send-xhr"+s]),N.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),S.buffer([u,"no-"+u]),M.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(P,"send-xhr"+s),a(T,"xhr-resolved"),a(T,"xhr-done"),a(N,m+s),a(N,m+"-done"),a(M,"new-jsonp"),a(M,"jsonp-end"),a(M,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(25),a=t(24);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t("wrap-function")(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,l,"dom-"):(f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-")),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=s(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t("wrap-function"),a=t("ee").get("promise"),s=i(a),c=t(24),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),s=f.resolve(i);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this),t[1]=s(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),s.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=s(t[0],"cb-",this),t[1]=s(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(){var t=window.NREUM;if(!t.loader_config)return null;var e=(t.loader_config.accountID||"").toString()||null,n=(t.loader_config.agentID||"").toString()||null,r=(t.loader_config.trustKey||"").toString()||null;if(!e||!n)return null;var a=i.generateCatId(),s=i.generateCatId(),c=Date.now(),f=o(a,s,c,e,n,r);return{header:f,guid:a,traceId:s,timestamp:c}}function o(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}var i=t(22);e.exports={generateTracePayload:r,generateTraceHeader:o}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(p[r],this.listener,!1);e.aborted||(n.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):a(this,t),n.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return v(r)}function i(t,e){var n=f(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}function a(t,e){t.params.status=e.status;var n=o(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(17),u=t(15).generateTracePayload,d=t("ee"),p=["load","error","abort","timeout"],l=p.length,h=t("id"),m=t(20),v=t(19),w=window.XMLHttpRequest;s.features.xhr=!0,t(14),t(7),d.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){a(e,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=!!NREUM.init.distributed_tracing.enabled),n&&this.sameOrigin){var r=u();r&&r.header&&(e.setRequestHeader("newrelic",r.header),this.dt=r)}}),d.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=v(r);i&&(n.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{d.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<l;a++)e.addEventListener(p[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),d.on("xhr-load-added",function(t,e){var n=""+h(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,e){var n=""+h(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],e)}),d.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],e)}),d.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,e){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,e],e)}),d.on("fetch-before-start",function(t){var e,n=t[1]||{};"string"==typeof t[0]?e=t[0]:t[0]&&t[0].url&&(e=t[0].url),e&&(this.sameOrigin=f(e).sameOrigin);var r=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(r=!!NREUM.init.distributed_tracing.enabled),r&&this.sameOrigin){var o=u();if(!o||!o.header)return;var i=o.header;if("string"==typeof t[0]){var a={};for(var s in n)a[s]=n[s];a.headers=new Headers(n.headers||{}),a.headers.set("newrelic",i),this.dt=o,t.length>1?t[1]=a:t.push(a)}else t[0]&&t[0].headers&&(t[0].headers.append("newrelic",i),this.dt=o)}})}},{}],17:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],18:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(24),s=t(25),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],19:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],20:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?a("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&a("timing",["fcp",Math.floor(t.startTime)])})}function o(t){if(t instanceof c&&!u){var e,n=Math.round(t.timeStamp);e=n>1e12?Date.now()-n:s.now()-n,u=!0,a("timing",["fi",n,{type:t.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var i,a=t("handle"),s=t("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){i=new PerformanceObserver(r);try{i.observe({entryTypes:["paint"]})}catch(f){}}if("addEventListener"in document){var u=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(t){document.addEventListener(t,o,!1)})}}},{}],22:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(e=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}e.exports={generateUuid:r,generateCatId:o}},{}],23:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),s=m(n),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function l(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:l,addEventListener:l,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var s="nr@context",c=t("gos"),f=t(24),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()+b.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(24),u=t("ee"),d=t(23),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1153.min.js"},x=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:s,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(18),t(21),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(26)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(25),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],s])}u(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],s),d}finally{u(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<e.length;c++)s=e[c],a=t[s],r(a)||(t[s]=n(a,f?s+o:o,i,s))}function u(n,r,o){if(!c||e){var i=c;c=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}c=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,16,5,3,4]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://ksassets.timeincuk.net" crossorigin>
+<link rel="preconnect" href="https://assets.ti-media.net" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="https://js-sec.indexww.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+<link rel="preconnect" href="https://display.apester.com" crossorigin>
+<link rel="preconnect" href="https://player.apester.com" crossorigin>
+<link rel="preconnect" href="https://renderer.apester.com" crossorigin>
+<link rel="preconnect" href="https://static.apester.com" crossorigin>
+<link rel="preconnect" href="https://content.jwplatform.com" crossorigin>
+<link rel="preconnect" href="https://jwpltx.com" crossorigin>
+<link rel="preconnect" href="https://ssl.p.jwpcdn.com" crossorigin>
+<link rel="preconnect" href="https://cdn.taboola.com" crossorigin>
+<link rel="preconnect" href="https://trc.taboola.com" crossorigin>
+
+
+    <title>iPhone 11 Battery Life Review: How long does the iPhone 11 last?</title>
+<link rel="preload" href="https://www.trustedreviews.com/wp-content/plugins/keystone-jwplayer/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script async>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script><style>
+@font-face {
+	font-family: "keystone";
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+	src:	url("//www.trustedreviews.com/wp-content/themes/simba-theme/assets/fonts/standard.woff2?v=1574936320") format("woff2"),
+	url("//www.trustedreviews.com/wp-content/themes/simba-theme/assets/fonts/standard.woff?v=1574936320") format("woff");
+}
+.icon-spinner {
+	background-image: url("//www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/spinner.gif");
+}
+
+</style><style>@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:fallback;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(/wp-content/themes/simba-theme/assets/fonts/google/open-sans/open-sans-v15-latin-regular.woff2) format("woff2"),url(/wp-content/themes/simba-theme/assets/fonts/google/open-sans/open-sans-v15-latin-regular.woff) format("woff")}@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;font-display:fallback;src:local("Open Sans Italic"),local("OpenSans-Italic"),url(/wp-content/themes/simba-theme/assets/fonts/google/open-sans/open-sans-v15-latin-italic.woff2) format("woff2"),url(/wp-content/themes/simba-theme/assets/fonts/google/open-sans/open-sans-v15-latin-italic.woff) format("woff")}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:fallback;src:local("Open Sans Bold"),local("OpenSans-Bold"),url(/wp-content/themes/simba-theme/assets/fonts/google/open-sans/open-sans-v15-latin-700.woff2) format("woff2"),url(/wp-content/themes/simba-theme/assets/fonts/google/open-sans/open-sans-v15-latin-700.woff) format("woff")}a,aside,body,div,form,header,html,iframe,img,label,li,nav,span,ul{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}aside,header,nav{display:block}body{line-height:1}ul{list-style:none}*{box-sizing:border-box}:after,:before{box-sizing:border-box}html{height:auto;overflow-x:hidden;width:100vw}body{color:#3f3f3f;font-family:"Open Sans",Arial;height:100%;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}a{color:#216db5;outline:0;text-decoration:none}.container-fluid{margin:0;padding:0}.container-fluid:after{content:"";display:table;clear:both}.row:after{content:"";display:table;clear:both}#wrapper{margin:0 auto;font-size:18px;overflow:hidden}.s-container{margin:15px auto;padding:0 15px;max-width:1440px;box-sizing:content-box}@media (min-width:45.5em){.s-container{margin:45px auto;padding:0 45px}}.s-container__inner{margin:0 auto;position:relative;max-width:1440px}.btn{background:#216db5;color:#fff!important;display:inline-block;font-size:.8em;font-weight:700;margin:0;min-width:130px;padding:10px 15px;text-align:center;white-space:normal}.btn.btn--sm{min-width:90px}@media (max-width:45.49em){.btn.btn--sm{width:100%;margin:0 0 2px 0!important}}#wrapper{overflow:unset}@media (max-width:45.49em){#wrapper{padding-top:61px!important}#wrapper .header{margin-top:-61px}}.header{z-index:999997;margin:0 auto;overflow:visible;position:relative;line-height:75px}.header nav .menu-icon-link,.header nav .search-site{padding:0 15px}.header nav .menu-icon-link span,.header nav .search-site span{height:100%}.header nav a{display:block}.header .search-form,.header nav ul{position:absolute;overflow:hidden}.header .logo a{width:110px}@media (min-width:45.5em){.header .logo a{width:175px}}.header .logo a img{display:block;width:100%}.header .submenu-toggle{display:none}@media (max-width:45.49em){.header{position:fixed;padding:5px 0;line-height:50px;box-sizing:content-box;width:100%;height:52px}.header .header__inner{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;height:100%}.header nav{width:100%}.header nav .menu-icon-link,.header nav .search-site{margin-top:-50px}.header nav .menu-icon-link{float:left}.header nav .search-site{float:right}.header .navigation{top:100%;width:100%;height:0}.header .navigation ul{position:initial}.header .navigation li{position:relative}.header .navigation li a{padding:0 15px}.header .navigation li .submenu-toggle{display:block;font-size:.8em;position:absolute;right:0;top:0;text-align:center;width:50px}.header .navigation li .submenu-toggle:before{display:inline-block}}@media (min-width:45.5em){.header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.header .header__inner{-moz-flex-grow:0;-ms-flex-positive:0;flex-grow:0}.header nav{position:initial;-moz-flex-grow:1;-ms-flex-positive:1;flex-grow:1}.header nav ul{box-sizing:border-box;position:initial;overflow:visible}.header nav ul ul{display:none;position:absolute;padding:0 45px}.header nav .navigation{display:inline-block}.header nav .navigation>li>a{padding:0 5px}.header nav .navigation>li>ul{left:0;padding-bottom:30px;width:100%;line-height:initial;z-index:9999999}.header nav .navigation>li>ul a{line-height:1.3em;vertical-align:text-top}.header nav .navigation>li>ul>li{width:200px;vertical-align:text-top;padding:30px 45px 0 0}.header nav li{display:inline-block}.header nav .search-site{position:relative;float:right;right:-15px}.header nav .menu-icon-link{display:none}}.header{background:#fff;border-bottom:1px #ececec solid;border-top:1px #ececec solid;font-family:"Open Sans"}@media (max-width:45.49em){.header .logo img{max-height:52px;max-width:110px}.header nav .navigation{border-top:1px #ececec solid;border-top-color:transparent;background-clip:padding-box!important}}.header nav{background:#fff}.header nav .navigation{background:#fff}.header nav .navigation>li a{color:#3f3f3f;font-family:"Open Sans";font-size:1em;font-weight:700}.header nav .navigation>li>ul{background:#fbfbfb}.header nav .navigation>li>ul>li a{color:#141012;font-size:.9em;font-weight:700;text-transform:initial}.header .icon-search,.header .menu-icon-link{color:#216db5;outline:0;text-decoration:none}.header .icon-search{color:#3f3f3f}@media (min-width:45.5em){.header .logo img{max-width:175px}.header.has-single-tier .logo{margin-right:30px}.header.has-single-tier .logo a{display:block}.header.has-single-tier .logo img{padding:5px 0}.header nav .navigation{background:0 0}.header nav .navigation>li a{position:relative}.header nav .navigation>li>a:after{background:#e52a18;bottom:0;content:"";height:4px;left:0;position:absolute;right:100%}.header nav .navigation>li.menu-more{display:none;opacity:0}.header nav .navigation>li.menu-more .icon-plus{font-size:.6em;line-height:.6em;position:relative;top:-2px}.header nav .navigation>li>ul{background-clip:padding-box!important;border-top:1px #ececec solid;border-top-color:transparent}.header nav .navigation>li>ul>li a{display:inline-block;font-size:1em}}@media (min-width:45.5em) and (max-width:61.99em){.header nav .navigation.hide-overflow-items>li:nth-child(n+5){display:none}.header nav .navigation.hide-overflow-items>li:nth-child(n+5).menu-more{display:inline-block!important}}@media (min-width:62em) and (max-width:89.99em){.header nav .navigation.hide-overflow-items>li:nth-child(n+7){display:none}.header nav .navigation.hide-overflow-items>li:nth-child(n+7).menu-more{display:inline-block!important}}.search-form{background-color:#fff;border-bottom:1px #ececec solid;box-sizing:border-box;height:0;left:0;margin:0;max-width:100%;opacity:0;overflow:hidden;position:absolute;top:100%;width:100vw;z-index:9}.search-form label{display:none}.search-form .input-group{padding:0 10px;position:relative;top:72px;width:100%;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.search-form .input-group .btn{margin-left:36px}.search-form .form-control{background:#fff;border:none;border-bottom:1px #ececec solid;border-radius:0;box-shadow:none;color:#3f3f3f;display:inline-block;font-family:"Open Sans";font-size:2em;height:auto;padding:10px 0;outline:0;-ms-flex:1;flex:1}.search-form .form-control::-webkit-input-placeholder{color:#141012}.search-form .form-control:-ms-input-placeholder{color:#141012}.search-form .form-control::-ms-input-placeholder{color:#141012}.search-form .message-wrapper{color:#141012;float:left;font-size:.8em;margin-top:10px;position:relative;width:100%}.search-form .message-wrapper .message{left:0;position:absolute;top:0}.search-form .message-wrapper .message.hide{display:none}[class*=" icon-"]:after,[class*=" icon-"]:before,[class^=icon-]:after,[class^=icon-]:before{font-family:keystone!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;font-display:fallback;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-search:before{content:"s"}.icon-menu:before{content:"m"}.icon-arrow-down:before{content:"D"}.icon-plus:before{content:"+"}label{display:block;margin:0 0 15px 0}input[type=search]{background-color:#f7f7f7;border:1px solid #ececec;border-radius:0;font-size:1em;outline:0;padding:15px;display:block;width:100%;-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type=search]::-ms-expand{display:none}input[type=search][type=search]{color:#3f3f3f;font-family:"Open Sans";padding:18px 15px}.trending{background:#f7f7f7}.trending__inner{font-size:.8em;margin-bottom:0;margin-top:0;padding-bottom:15px;padding-top:15px;position:relative}@media (max-width:45.5em){.trending__inner{font-size:.7em}}.trending__inner ul{list-style:none;margin:0;overflow:auto;padding:0 0 15px 0;width:auto;white-space:nowrap}.trending__inner ul::-webkit-scrollbar{display:none}.trending__inner ul li{display:inline;padding:0 15px}@media (max-width:45.5em){.trending__inner ul li{padding:0 10px}}.trending__title{left:0;position:absolute}.trending-list__outer{height:1.5em;overflow:hidden;padding-left:85px;width:100%}@media (max-width:45.49em){.trending-list__outer{padding-left:60px}}@media (min-width:45.5em) and (max-width:61.99em){.hidden-md{display:none!important}}@media (min-width:62em){.hidden-lg{display:none!important}}.hide{display:none!important}@media (max-width:45.49em){.has-adverts{margin-top:54px;padding-top:0}}@media (min-width:45.5em){.has-adverts .header-advert-wrapper{background:#f7f7f7;display:block;height:50px;position:relative;width:100%;height:110px}}@media (min-width:970px){.has-adverts .header-advert-wrapper{height:270px}}.has-adverts .header-advert{background:#f7f7f7;display:block;top:0;overflow:hidden;position:fixed;width:100%}@media (max-width:45.49em){.has-adverts .header-advert{z-index:999997;display:-ms-flexbox;display:flex;height:54px;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}}@media (min-width:45.5em){.has-adverts .header-advert{z-index:999999}}@media (min-width:45.5em) and (max-width:969px){.has-adverts .header-advert{height:110px}}@media (min-width:970px){.has-adverts .header-advert{height:270px}}@media (min-width:45.5em) and (max-width:969px){.has-adverts .header-advert.is-absolute{margin-top:0!important;position:absolute!important}}@media (min-width:970px){.has-adverts .header-advert.is-absolute{margin-top:0!important;position:absolute!important}}@media (min-width:45.5em) and (max-width:969px){.has-adverts .header-advert .section-content{box-sizing:content-box;height:90px;padding:10px 0}.has-adverts .header-advert .section-content>*{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}}@media (min-width:970px){.has-adverts .header-advert .section-content{box-sizing:border-box;height:270px;padding:10px 0}.has-adverts .header-advert .section-content>*{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}}.ipc-advert{text-align:center;margin:0}@media (min-width:45.5em){.ipc-advert{margin:0}}</style><link rel="preload" href="https://www.trustedreviews.com/wp-content/themes/kiara-child-theme/assets/css/sites/post.min.css?v=1574936320" as="style" onload="this.onload=null;this.rel='stylesheet'">		<script type="text/javascript">
+		window.ipcTags = {"site":"trustedreviews","theme":"kiara-child-theme","section":"reviews","type":"core_review","cplatform":"keystone","dfp_config":{"required_tags":["type","section","site","tagging","pub","author","contentId","subtype","amp","single","page_slug"],"available_criteria":{"mobile":{"criteria":{"window_greater_than":{"width_minimum":0},"window_less_than_equal_to":{"width_maximum":727}},"display_mode":"mobile"},"desktop":{"criteria":{"window_greater_than":{"width_minimum":727}},"display_mode":"desktop"}},"slots":{"header-1":{"name":{"mobile":"mobilebanner01","desktop":"billboard01"},"criteria":["desktop","mobile"],"inview":false,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"inline-1":{"name":"inline01","criteria":["desktop","mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"inline-2":{"name":"inline02","criteria":["desktop","mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-side-1":{"name":"mpu01","criteria":["desktop"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-2":{"name":"mpu02","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-3":{"name":"mpu03","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-4":{"name":"mpu04","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-5":{"name":"mpu05","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-inline-2":{"name":"mpu01","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-3":{"name":"mpu02","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-4":{"name":"mpu03","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-5":{"name":"mpu04","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-1":{"name":"mpu01","criteria":["desktop"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-2":{"name":"mpu02","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-3":{"name":"mpu03","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-4":{"name":"mpu04","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-5":{"name":"mpu05","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-inline-1":{"name":"mpu01","criteria":["mobile"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-2":{"name":"mpu02","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-3":{"name":"mpu03","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-4":{"name":"mpu04","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-5":{"name":"mpu05","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-1":{"name":{"desktop":"mpu01","mobile":"mpu02"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-2":{"name":{"desktop":"mpu02","mobile":"mpu03"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-3":{"name":{"desktop":"mpu03","mobile":"mpu04"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-4":{"name":{"desktop":"mpu04","mobile":"mpu05"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-5":{"name":{"desktop":"mpu05","mobile":"mpu06"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-6":{"name":{"desktop":"mpu06","mobile":"mpu07"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-7":{"name":{"desktop":"mpu07","mobile":"mpu08"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-8":{"name":{"desktop":"mpu08","mobile":"mpu09"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-9":{"name":{"desktop":"mpu09","mobile":"mpu10"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-10":{"name":{"desktop":"mpu010","mobile":"mpu11"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-inline-1":{"name":"gallery_banner01","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-2":{"name":"gallery_banner02","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-3":{"name":"gallery_banner03","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-4":{"name":"gallery_banner04","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-5":{"name":"gallery_banner05","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-6":{"name":"gallery_banner06","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-7":{"name":"gallery_banner07","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-8":{"name":"gallery_banner08","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-9":{"name":"gallery_banner09","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-10":{"name":"gallery_banner10","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"instream":{"name":"instream","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[11,3]},"sovrn":{"name":"sovrn","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[12,2]},"gumgum":{"name":"gumgum","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[8,3]},"dfpad-overlay":{"name":"dfpad-overlay","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[1,1]}},"indexExchange":"ht\/p\/184316-8083655875230.js"},"env":"prod","geo":"us","skimlinks_enabled":true,"pxslot_base":"core_review","amp":false,"meta_title":"iPhone 11 Battery Life Review: How long does the iPhone 11 last?","meta_description":"iPhone 11 Battery LIfe: How long does the iPhone 11 take to charge and how long does it last? Find out in our full iPhone 11 battery life review.","page_slug":"\/reviews\/iphone-11-battery-life","contentId":3941237,"subtype":"none","tagging":["author:maxparker","product_name:iphone_battery_life","review_type:review","post_type:core_review"],"author":"maxparker","authorName":"Max Parker","datePublished":"20190927","hourPublished":"15","minPublished":"27","dateUpdated":"20191128","hourUpdated":"11","minUpdated":"59","item_brand":"Apple","single":true,"pub":"trusted_reviews","template":"single-core_review"};
+		</script>
+<meta name="description" content="iPhone 11 Battery LIfe: How long does the iPhone 11 take to charge and how long does it last? Find out in our full iPhone 11 battery life review."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://www.trustedreviews.com/reviews/iphone-11-battery-life" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="iPhone 11 Battery Life Review: How long does the iPhone 11 last?" />
+<meta property="og:description" content="iPhone 11 Battery LIfe: How long does the iPhone 11 take to charge and how long does it last? Find out in our full iPhone 11 battery life review." />
+<meta property="og:url" content="https://www.trustedreviews.com/reviews/iphone-11-battery-life" />
+<meta property="og:site_name" content="Trusted Reviews" />
+<meta property="article:publisher" content="https://www.facebook.com/TrustedReviews/" />
+<meta property="og:image" content="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-1024x683.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="iPhone 11 Battery LIfe: How long does the iPhone 11 take to charge and how long does it last? Find out in our full iPhone 11 battery life review." />
+<meta name="twitter:title" content="iPhone 11 Battery Life Review: How long does the iPhone 11 last?" />
+<meta name="twitter:site" content="@trustedreviews" />
+<meta name="twitter:image" content="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-1024x683.jpg" />
+<meta name="twitter:creator" content="@parkermax" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Trusted Reviews &raquo; Feed" href="https://www.trustedreviews.com/feed" />
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/js/dist/jquery-3.3.1.min.js?ver=3.3.1'></script>
+<link rel='https://api.w.org/' href='https://www.trustedreviews.com/wp-json/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.trustedreviews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.trustedreviews.com%2Freviews%2Fiphone-11-battery-life" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.trustedreviews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.trustedreviews.com%2Freviews%2Fiphone-11-battery-life&#038;format=xml" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Product","@id":"#structured-product","name":"iPhone 11","description":"The iPhone 11 is the successor to the popular iPhone XR and it stands as our favourite iPhone you can buy right now. It's an iPhone that's very easy to recommend. ","manufacturer":{"@type":"Organization","name":"Apple"},"brand":{"@type":"Brand","name":"iPhone"},"review":{"@type":"Review","headline":"iPhone 11 Battery Life Review","datePublished":"2019-09-27T15:27:58+00:00","dateModified":"2019-11-28T11:59:10+00:00","reviewBody":"What is the iPhone 11\u2019s battery life like?\r\n\r\n \tFollowing on from the excellent iPhone XR, the iPhone 11 retains strong battery life\r\n \tI\u2019ve been comfortably getting a day of battery life, even with \u2018heavy\u2019 use\r\n \tThe lack of an included fast charger is a pain and we\u2019d recommend buying one separately\r\n\r\nOver the review period the iPhone 11 has performed admirably when it comes to battery life, comfortably making it through the day and just about improving on the already excellent iPhone XR.\r\n\r\n\r\n\r\nWhile the XR might have been the longest-lasting iPhone we had ever reviewed, that award now goes to the iPhone 11 Pro Max. Saying that you\u2019re still getting excellent endurance with the iPhone 11 and you\u2019ll certainly notice the difference if you\u2019re upgrading an older iPhone like the iPhone 7, iPhone 8 or iPhone SE. I would even say you\u2019ll see suitably strong improvements if you\u2019re coming from a Plus-sized iPhone \u2013 like the iPhone 8 Plus.\r\n\r\nWhat remains disappointing is Apple\u2019s reluctance to include a fast charge capable charger with all of its phones. In the iPhone 11\u2019s box you\u2019ll find a limp 5w plug which can take up to 3 hours to fully charge the phone \u2013 when competing Android phones with much larger cells inside can go from 0-100% in an hour this simply isn\u2019t good enough. Apple has started shipping its iPhone 11 Pro models with an 18w charger and this works with iPhone 11 too. Picking up one of these chargers (\u00a329 for the plug, \u00a319 for USB-C to Lightning cable, though cheaper Anker ones are available for \u00a314) will make the charging process much quicker.\r\n\r\n \tBest phones\r\n\r\n\r\niPhone 11 battery \u2013 Video\r\nThe iPhone 11 has a 6.1-inch Liquid Retina LCD panel with a resolution that\u2019s slightly above 720p. This is far from the highest resolution on an iPhone and it lacks the deep blacks you\u2019d get with an OLED panel.\u00a0\r\n\r\nWhat that lower resolution does help with is battery life and you\u2019ll notice this when streaming video.\r\n\r\nWatching an hour of Netflix at roughly 50% brightness took the battery down between 6 and 7 %. It was a similar story for a downloaded video from iTunes.\r\niPhone 11 battery \u2013 Games\r\nWith Apple Arcade coming alongside iOS 13 the iPhone 11 is the perfect place to play some of the impressive new titles in the Apple subscription service.\r\n\r\nTake Oceanhorn 2 for example, The iPhone 11 went through between 6 and 9% per 30 mins in the graphically intensive game, and 5-7% in simpler titles such as Assemble with Care.\r\niPhone 11 battery \u2013 Charging\r\nAs I mentioned early in this section, Apple ships a paltry 5w plug with the \u00a3729 iPhone 11. Charging the phone up with that can take up to 3 hours and it doesn\u2019t do a very good job at giving you a quick boost if you\u2019re in a hurry and forgot to charge your phone the previous night.","mainEntityOfPage":"WebPage","publisher":{"@type":"Organization","name":"Trusted Reviews"},"reviewRating":{"@type":"Rating","bestRating":5,"worstRating":0,"ratingValue":4.5},"author":{"@type":"Person","name":"Max Parker"}},"image":"https:\/\/ksassets.timeincuk.net\/wp\/uploads\/sites\/54\/2019\/09\/iphone11-1.jpg"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Article","headline":"iPhone 11 Battery Life","url":"https:\/\/www.trustedreviews.com\/reviews\/iphone-11","thumbnailUrl":"https:\/\/ksassets.timeincuk.net\/wp\/uploads\/sites\/54\/2019\/09\/iphone11-1.jpg","image":"https:\/\/ksassets.timeincuk.net\/wp\/uploads\/sites\/54\/2019\/09\/iphone11-1.jpg","dateCreated":"2019-09-27T15:27:58+00:00","datePublished":"2019-09-27T15:27:58+00:00","dateModified":"2019-11-28T11:59:10+00:00","articleSection":"Review","creator":{"@type":"Person","name":"Max Parker"},"author":{"@type":"Person","name":"Max Parker"},"publisher":{"@type":"Organization","name":"Trusted Reviews","logo":{"@type":"http:\/\/schema.org\/ImageObject","url":"https:\/\/ksassets.timeincuk.net\/wp\/uploads\/sites\/54\/2018\/10\/tr-logo-large-1.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.trustedreviews.com\/reviews\/iphone-11-battery-life"},"keywords":[]}</script>
+<meta property="fb:pages" content="38275114220" />		<script type="text/javascript" charset="utf-8">
+		(function(a,b,c,d){
+		    var protocol = "https://";
+		    a="assets.ti-media.net/js/e1512726446_2a23693/min/gtm/utils-min.js";
+		    b=document;c='script';d=b.createElement(c);d.src=protocol+a;d.async=true;d.type='text/java'+c;
+		    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+		 })();
+		</script>
+	      <!-- Google Tag Manager -->
+      <script>(function ( w, d, s, l, i ) {
+          w[ l ] = w[ l ] || [];
+          w[ l ].push({
+            'gtm.start' :
+              new Date().getTime(), event : 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[ 0 ],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer','GTM-PHQNFGV');</script>
+      <!-- End Google Tag Manager -->
+            <meta name="onesignal" content="wordpress-plugin"/>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>    <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://www.trustedreviews.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '644e5c59-323a-453b-bfbe-430ae58ed2b8';
+oneSignal_options['autoRegister'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['disable'] = true;
+oneSignal_options['path'] = "https://www.trustedreviews.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.32551e0e-3454-416e-9258-23f2fe99c3c8";
+oneSignal_options['promptOptions'] = { };
+              OneSignal.init(window._oneSignalInitOptions);
+                    });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+
+<link rel="icon" href="https://ksassets.timeincuk.net/wp/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://ksassets.timeincuk.net/wp/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://ksassets.timeincuk.net/wp/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-180x180.png" />
+<meta name="msapplication-TileImage" content="https://ksassets.timeincuk.net/wp/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.apester-element {
+	width: auto!important;
+}
+
+/* DO NOT REMOVE ANYTHING BELOW HERE WITHOUT ASKING JOHN HUDSON */
+
+.home.has-adverts{
+	margin-top: 0!important;
+}
+
+@media (max-width: 45.49em) {
+	.header .logo img {
+		max-width: 140px;
+	}
+}
+
+/* ----- HERO ----- */
+.home .listing--hero.s-container--fullbleed {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.home .listing--hero.s-container--fullbleed .s-container__inner{
+	max-width: 100%;
+}
+
+.home .listing--hero.s-container--fullbleed .widgettitle {
+	display: block;
+    margin: 45px auto 30px;
+    max-width: 1440px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item {
+	padding: 0.5px;
+	text-align: left;
+  margin-bottom: 0!important;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .entry-content {
+	display: block;
+	padding: 30px 30px 65px 30px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:first-child .entry-content {
+	background: rgb(82,21,120);
+	background: -moz-linear-gradient(left,  rgba(82,21,120,0.8) 0%, rgba(33,109,181,0.8) 100%);
+	background: -webkit-linear-gradient(left,  rgba(82,21,120,0.8) 0%,rgba(33,109,181,0.8) 100%);
+	background: linear-gradient(to right,  rgba(82,21,120,0.8) 0%,rgba(33,109,181,0.8) 100%);
+	border-radius: 5px 0 0 0;
+	height: auto;
+	left: unset;
+    max-width: 720px;
+    right: 0;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:last-child .entry-content {
+	background: rgb(229,42,24);
+	background: -moz-linear-gradient(left,  rgba(229,42,24,0.8) 0%, rgba(82,21,120,0.8) 100%);
+	background: -webkit-linear-gradient(left,  rgba(229,42,24,0.8) 0%,rgba(82,21,120,0.8) 100%);
+	background: linear-gradient(to right,  rgba(229,42,24,0.8) 0%,rgba(82,21,120,0.8) 100%);
+	border-radius: 0 5px 0 0;
+	height: auto;
+    max-width: 720px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item h3{
+	height: 120px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item h3 span {
+	background: none;
+	box-shadow: none;
+	color: white;
+	line-height: 1;
+	padding: 0;
+	text-shadow: 1px 0 2px rgba(0,0,0,0.5);
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .taxonomy-signpost {
+	background: #000000;
+	border-radius: 20px;
+	bottom: 30px;
+	color: #ffffff;
+	display: block;
+	font-size: 0.65em;
+	left: 28px;
+	padding: 5px 10px;
+    position: absolute;
+    text-transform: capitalize;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author,
+.listing--hero.s-container--fullbleed .listing-item .date {
+	color: #ffffff;
+	float: left;
+	margin: 30px 0 0 0;
+    padding-right: 10px;
+    text-transform: capitalize;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author {
+	margin-right: 10px;
+	padding-right: 12px;
+	position: relative;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author:after {
+	background: rgba(255,255,255,0.7);
+	content: '';
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	right: 1px;
+    width: 1px;
+}
+
+/* ----- SINGLE INC SIDEBAR / FILMSTRIP ----- */
+
+.home .listing--single-inc-sidebar,
+.home .listing--filmstrip {
+  background: #eef4fa;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.home .listing--filmstrip {
+	padding-bottom: 15px;
+}
+
+.home .listing--filmstrip p {
+	color: #55627e;
+}
+
+.home .listing--filmstrip-b p {
+	color: #ffffff;
+}
+
+.home .listing--single-inc-sidebar .widgettitle,
+.home .listing--filmstrip .widgettitle{
+    display: block;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 30px 0 15px 0;
+}
+
+.home .listing--single-inc-sidebar .listing-items {
+  padding: 15px 0;
+}
+
+.home .listing--single-inc-sidebar .listing-item {
+  margin: 0;
+}
+
+.home .listing--single-inc-sidebar .listing-entry {
+  border-bottom: 1px #ffffff solid;
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.home .listing--single-inc-sidebar .listing-item:last-child .listing-entry {
+  border-bottom: none;
+}
+
+.home .listing--single-inc-sidebar .listing-entry .entry-image {
+  padding-top: 60%;
+}
+
+.home .listing--single-inc-sidebar .entry-media {
+  flex-basis: 30%;
+}
+
+.home .listing--single-inc-sidebar .entry-content {
+  flex-basis: 70%;
+  padding: 0 15px;
+}
+
+.home .listing--single-inc-sidebar .entry-content h3 {
+  font-size: 0.8em
+}
+
+.home .listing--single-inc-sidebar .entry-content .taxonomy-signpost,
+.home .listing--filmstrip .entry-content .taxonomy-signpost {
+  background: #000000;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.6em;
+  margin-bottom: 5px;
+  padding: 2px 5px;
+  text-transform: capitalize;
+}
+
+
+.home .listing--single-inc-sidebar .entry-content .author,
+.home .listing--single-inc-sidebar .entry-content .date,
+.home .listing--filmstrip .entry-content .author,
+.home .listing--filmstrip .entry-content .date{
+  color: #55627e;
+  display: block;
+  font-size: 0.6em;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.home .listing--single-inc-sidebar .querywidget-more {
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+
+@media (max-width: 1439px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item h3 {
+		font-size: 1.6em;
+		height: 90px;
+	}
+
+	.home .listing--hero.s-container--fullbleed .listing-item .author,
+	.home .listing--hero.s-container--fullbleed .listing-item .date {
+		margin-top: 15px;
+	}
+}
+
+@media (max-width: 991px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item {
+		flex-basis: 100%;
+		margin-bottom: 0!important;
+	}
+
+	.home .listing--hero.s-container--fullbleed .entry-content {
+		max-width: 100%!important;
+	}
+
+	.home .listing--hero.s-container--fullbleed .listing-item h3 {
+		height: auto;
+	}
+}
+
+@media (max-width: 727px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item .entry-content {
+		border-radius: 5px !important;
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+		display: block;
+		left: 5%!important;
+		margin-bottom: 5%;
+		margin-top: -10%;
+		max-width: 90% !important;
+		padding: 30px 30px 95px 30px;
+		right: 5%!important;
+	}
+}
+
+@media( min-width: 992px) {
+  /* ----- SINGLE INC SIDEBAR ----- */
+	
+	.home .listing--filmstrip {
+		padding-bottom: 30px;
+	}
+
+  .home .listing--single-inc-sidebar .listing-entry .entry-media {
+      flex-basis: 25%;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry h3 {
+      font-size: 1.2em;
+			padding-bottom: 0px;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry .entry-content {
+      display: block;
+  }
+  
+  .home .listing--single-inc-sidebar .entry-content .taxonomy-signpost, 
+  .home .listing--filmstrip .entry-content .taxonomy-signpost {
+    font-size: 0.8em;
+  }
+
+
+  .home .listing--single-inc-sidebar .entry-content .author,
+  .home .listing--single-inc-sidebar .entry-content .date,
+  .home .listing--filmstrip .entry-content .author,
+  .home .listing--filmstrip .entry-content .date {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 10px;
+    padding-right: 10px;
+    position: relative;
+  }
+  
+  .home .listing--single-inc-sidebar .entry-content .author:after,
+  .home .listing--filmstrip .entry-content .author:after {
+    background: #a6acbb;
+    content: '';
+    height: 12px;
+    position: absolute;
+    right: -2px;
+    top: 4px;
+    width: 1px;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry .entry-image {
+      padding-top: 56.25%;
+  }
+  
+}
+
+.listing-related {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 20px 0;
+}
+
+@media (min-width: 728px) {
+	.single-roundup .articleBody {
+		max-width: 992px !important;
+	}
+	
+	.single-roundup .roundup__card {
+		margin-left: unset;
+		margin-right: unset;
+		width: calc(100% - 300px)!important;
+	}
+	
+	.single-roundup .ad-container--inline-side {
+		margin-right: -20px !important;
+	}
+}
+
+@media (min-width: 78.25em) {
+
+	body.keystone-premium-inskin.has-adverts,
+	body.keystone-premium-sizmek.has-adverts,
+	body.keystone-premium-sizemek.has-adverts{
+		margin-top: 250px !important;
+	}
+	
+	body.keystone-premium-inskin.has-adverts #inline-1,
+	body.keystone-premium-sizmek.has-adverts #inline-1,
+	body.keystone-premium-sizemek.has-adverts #inline-1 {
+		height: 0;
+		margin-bottom: -90px;
+	}
+	
+	body.keystone-premium-inskin.has-adverts.single-roundup .articleBody,
+	body.keystone-premium-sizmek.has-adverts.single-roundup .articleBody,
+	body.keystone-premium-sizemek.has-adverts.single-roundup .articleBody {
+		margin: 0 !important;
+	}
+
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .listing-item h3, 
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .listing-item h3, 
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .listing-item h3 { 
+		font-size: 1.4em;
+		height: 60px;
+	}
+
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .listing-item .entry-content {
+		padding: 20px 30px 45px 30px;
+	}
+	
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .taxonomy-signpost, 
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .taxonomy-signpost, 
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .taxonomy-signpost { 
+	bottom: 10px;
+	}
+	
+	body.keystone-premium-inskin.single-format-video .post-body>*,
+	body.keystone-premium-sizmek.single-format-video .post-body>*,
+	body.keystone-premium-sizemek.single-format-video .post-body>*{
+		margin: 0 !important;
+		max-width: calc(100% - 315px);
+	}
+	
+	
+	.single-roundup .single-sidebar {
+		right: 20px;
+/* 		top: 560px; */
+	}
+	
+	.single-roundup .post-main__inner {
+		padding-right: 340px;
+	}
+	
+}
+
+
+/* DO NOT REMOVE ANYTHING ABOVE HERE WITHOUT ASKING JOHN HUDSON */
+
+.eagle-widget.eagle-combo-widget .egl-combo-container {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #E52A18 0%, #521578 100%) 1;
+  min-width: 100%;
+  margin: 20px 0;
+  padding: 15px 0 25px 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list h3.egl-combo-title {
+  display: block;
+  margin: 0 0 20px 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:not(:first-of-type) {
+    margin-top: 12px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a {
+  border-radius: 5px;
+  background-color: white;
+  height: 90px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+  flex: 1;
+  padding: 10px 0 0 10px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+  display: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+    display: flex;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name,
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  align-items: center;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2),
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  height: 45px;
+  background-color: #EEF4FA;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  justify-content: flex-end;
+  padding: 10px 15px 0 0;
+  color: #E52A18;
+  align-items: flex-start;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+  position: absolute;
+  bottom: 0;
+  flex: 1;
+  height: 45px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+  left: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+  display: flex;
+  justify-content: center;
+  right: 10px;
+  min-width: 13%;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view .egl-tr-button {
+  align-self: center;
+  background-color: transparent;
+  border-bottom: 1px solid red;
+  color: #000;
+  min-width: auto;
+  padding: 0 0 1px 0;
+  text-transform: capitalize;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  min-width: 80px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo img {
+  max-height: 75%;
+  object-fit: cover;
+  overflow: hidden;
+  margin: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a {
+  height: 120px;
+  margin-bottom: 18px;
+  background: linear-gradient(to right, #e52a18 0%, #521578 100%);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  left: 15px;
+  min-width: 105px;
+  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: white;
+  max-width: 20%;
+  margin: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo img {
+  max-width: 95%;
+  min-width: 90%;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+  border: 1px solid white;
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  flex: 1;
+  margin-right: 0;
+  height: 30px;
+  width: 80px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view .egl-tr-button {
+  color: white;
+  border-bottom: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+  color: #FFF;
+  font-size: 14px;
+  line-height: 18px;
+  min-width: 90px;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) {
+  display: flex;
+  flex: 5;
+  padding: 10px 20px 10px 10px;
+  height: auto;
+  background-color: transparent;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) .egl-deal-name {
+  font-size: 14px;
+  line-height: 18px;
+  font-family: 'Muli';
+  font-weight: bold;
+  color: #FFF;
+}
+
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+    min-width: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .eagle-widget.eagle-combo-widget .egl-combo-container {
+    border: none;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type div:nth-child(2) {
+    padding: 0;
+    min-height: 100%;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type div:nth-child(2) div.egl-deal-stock {
+    display: none;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo {
+    height: 100%;
+    position: relative;
+    min-width: 20%;
+    max-width: 20%;
+    margin: 0;
+    left: 0;
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #FFF;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) > div.egl-deal-name,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+    flex: 1;
+    margin: 0;
+    max-width: 20%;
+    justify-content: flex-end;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+    background-color: transparent;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a {
+    height: 50px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+    position: static;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+    max-width: 20%;
+    display: flex;
+    align-items: center;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo img {
+    max-width: 100%;
+    max-height: 80%;
+    margin: 0 auto;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+    max-width: 12%;
+    background-color: #EEF4FA;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+    height: 100%;
+    padding: 0;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+      min-width: 80px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+    display: inline-block;
+    background-color: #FFF;
+    padding: 2px 10px 3px 8px;
+    border-radius: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: lighter;
+    color: #555;
+    width: 95px;
+    margin-right: 15px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock:before {
+    content: '';
+    height: 9px;
+    width: 9px;
+    background-color: #7ED321;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    padding-top: 1px;
+    font-size: 13px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+    padding-left: 15px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+    max-width: 10%;
+  }
+}
+
+		</style>
+	    				<link rel="prev" href="https://www.trustedreviews.com/reviews/iphone-11-camera" />
+				<link rel="next" href="https://www.trustedreviews.com/reviews/iphone-11-performance" />
+		</head>
+
+<body class="core_review-template-default single single-core_review postid-3941237 has-adverts y2019 m11 d28 h16 iphone-11-battery-life standard slim-header">
+
+<div class="parallax-wrapper parallax-wrapper--header"></div>
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PHQNFGV"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+      </noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      
+<div id="wrapper" class="hfeed">
+
+	    
+			<header id="header" role="banner" class="header s-container has-single-tier">
+
+	<div class="header__inner">
+
+		
+						<div itemscope itemtype="http://schema.org/Organization" class="logo header-slot header-slot-">
+    <a itemprop="url" href="/" title="Trusted Reviews" name="Trusted Reviews">
+    	<span class="hide">Trusted Reviews</span>
+	<picture>
+		<source media="(min-width: 728px)" srcset="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/08/trusted-reviews-logo-white.png" >
+		<source media="(max-width: 727px)" srcset="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/08/trusted-reviews-logo-white.png" >
+		<img src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/08/trusted-reviews-logo-white.png" alt="hero profile" itemprop="logo" aria-hidden="true" data-pin-nopin="true">
+	</picture>
+    </a>
+</div>
+
+		
+	</div>
+
+		<nav>
+	<ul class="navigation hide-overflow-items" data-nav="closed">
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/" class= " "   title="Home Page"   name="HOME">
+									HOME
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="/reviews"     name="All Reviews">All Reviews</a>
+															</li>
+													<li >
+								<a href="/category/news"     name="All News">All News</a>
+															</li>
+													<li >
+								<a href="/category/opinion"     name="All Opinions">All Opinions</a>
+															</li>
+													<li >
+								<a href="/category/deals"     name="All Deals">All Deals</a>
+															</li>
+													<li >
+								<a href="/latest-articles"     name="100 Latest Articles">100 Latest Articles</a>
+															</li>
+													<li >
+								<a href="https://comps.trustedreviews.com"     name="Win">Win</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="/category/black-friday" class= " "    name="Black Friday">
+									Black Friday
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="/black-friday/best-black-friday-cyber-monday-deals-28-11-3958979"     name="Best Black Friday deals">Best Black Friday deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/amazon-black-friday-deals-3934697"     name="Amazon Black Friday">Amazon Black Friday</a>
+															</li>
+													<li >
+								<a href="/black-friday/currys-pc-world-black-friday-deals-3935666"     name="Currys Black Friday">Currys Black Friday</a>
+															</li>
+													<li >
+								<a href="/black-friday/argos-black-friday-3936350"     name="Argos Black Friday">Argos Black Friday</a>
+															</li>
+													<li >
+								<a href="/black-friday/john-lewis-black-friday-3936686"     name="John Lewis Black Friday">John Lewis Black Friday</a>
+															</li>
+													<li >
+								<a href="/black-friday/ebay-black-friday-3937800"     name="Ebay Black Friday">Ebay Black Friday</a>
+															</li>
+													<li >
+								<a href="/black-friday/apple-deals-black-friday-3940116"     name="Apple Black Friday">Apple Black Friday</a>
+															</li>
+													<li >
+								<a href="/black-friday/black-friday-mobile-phone-deals-3934089"     name="Phone deals">Phone deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/laptop-deals-black-friday-3939486"     name="Laptop deals">Laptop deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/tv-deals-black-friday-3938829"     name="TV deals">TV deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/nintendo-switch-black-friday-deals-3940515"     name="Nintendo Switch deals">Nintendo Switch deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/ps4-black-friday-deals-3940477"     name="PS4 deals">PS4 deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/black-friday-dyson-vacuum-cleaner-deals-3934126"     name="Dyson deals">Dyson deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/black-friday-camera-deals-3940917"     name="Camera deals">Camera deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/sonos-soundbar-deals-black-friday-3941281"     name="Sonos and Soundbar deals">Sonos and Soundbar deals</a>
+															</li>
+													<li >
+								<a href="/black-friday/xbox-one-black-friday-deals-xbox-one-x-and-xbox-one-s-discounts-3942263"     name="Xbox deals">Xbox deals</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="/reviews" class= " "    name="Reviews">
+									Reviews
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="/reviews/tvs-audio"     name="TV and Audio Reviews">TV and Audio Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/digital-cameras"     name="Camera Reviews">Camera Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/computing"     name="Computing Reviews">Computing Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/mobile"     name="Mobile Reviews">Mobile Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/home-appliances"     name="Home Appliance Reviews">Home Appliance Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/gaming"     name="Gaming Reviews">Gaming Reviews</a>
+															</li>
+											</ul>
+							</li>
+					<li >
+				<a href="/category/best" class= " "    name="Best Lists">
+									Best Lists
+								</a>
+							</li>
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/mobile" class= " "    name="Phones">
+									Phones
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/type/gps-sat-nav"     name="GPS and Sat Nav">GPS and Sat Nav</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/mobile-apps"     name="Mobile App">Mobile App</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/mobile-phone-accessories"     name="Mobile Phone Accessory">Mobile Phone Accessory</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/mobile-phones"     name="Mobile Phone">Mobile Phone</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/tablets"     name="Tablet">Tablet</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/wearables-fitness"     name="Wearables and Fitness">Wearables and Fitness</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/computing" class= " "    name="Computing">
+									Computing
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/type/desktop-pcs"     name="Desktop PC">Desktop PC</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/internet"     name="Internet, VPNs and Web Software">Internet, VPNs and Web Software</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/laptops"     name="Laptop">Laptop</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/monitors"     name="Monitor">Monitor</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/pc-components"     name="PC Component">PC Component</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/peripherals"     name="Peripheral">Peripheral</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/printers"     name="Printer">Printer</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/routers-networking"     name="Routers and Networking">Routers and Networking</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/software"     name="Software">Software</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/home-appliances" class= " "    name="Home Tech">
+									Home Tech
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/type/blender"     name="Blender">Blender</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/coffee-machines"     name="Coffee Machine">Coffee Machine</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/cooker"     name="Cooker">Cooker</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/dishwashers"     name="Dishwasher">Dishwasher</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/fans"     name="Fan">Fan</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/freezers"     name="Freezer">Freezer</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/fridges"     name="Fridge">Fridge</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/fridge-freezers"     name="Fridge Freezer">Fridge Freezer</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/garden-tools"     name="Garden Tool">Garden Tool</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/iron"     name="Iron">Iron</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/kettles"     name="Kettle">Kettle</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/kitchen-gadgets"     name="Kitchen Gadget">Kitchen Gadget</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/microwave"     name="Microwave">Microwave</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/mixers"     name="Mixer">Mixer</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/ovens"     name="Oven">Oven</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/personal-care"     name="Personal Care">Personal Care</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/smart-home"     name="Smart Home">Smart Home</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/steam-cleaners"     name="Steam Cleaner">Steam Cleaner</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/toasters"     name="Toaster">Toaster</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/tumble-dryers"     name="Tumble Dryer">Tumble Dryer</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/vacuum-cleaners"     name="Vacuum Cleaner">Vacuum Cleaner</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/washer-dryers"     name="Washer Dryer">Washer Dryer</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/washing-machines"     name="Washing Machine">Washing Machine</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/tvs-audio" class= " "    name="TV / Audio">
+									TV / Audio
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/type/blu-ray-players"     name="Blu-ray Player">Blu-ray Player</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/dvrs-and-media-players"     name="DVRs and Media Player">DVRs and Media Player</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/gadgets"     name="Gadgets">Gadgets</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/headphones"     name="Headphones">Headphones</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/hi-fi-wireless-audio"     name="Hi-Fi and Wireless Audio">Hi-Fi and Wireless Audio</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/portable-audio"     name="Portable Audio">Portable Audio</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/projectors"     name="Projector">Projector</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/sound-bars"     name="Sound Bar">Sound Bar</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/surround-sound-systems"     name="Surround Sound System">Surround Sound System</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/tvs"     name="TV">TV</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/cameras" class= " "    name="Cameras">
+									Cameras
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/type/camcorders"     name="Camcorder">Camcorder</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/camera-accessories"     name="Camera Accessory">Camera Accessory</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/camera-lenses"     name="Camera Lens">Camera Lens</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/digital-cameras"     name="Camera">Camera</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/gaming" class= " "    name="Games">
+									Games
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="https://www.trustedreviews.com/type/games"     name="Video Game">Video Game</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/games-accessories"     name="Video Game Accessory">Video Game Accessory</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/nintendo"     name="Nintendo">Nintendo</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/pc"     name="PC Gaming">PC Gaming</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/playstation"     name="PlayStation">PlayStation</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/toys"     name="Toy">Toy</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/vr"     name="VR">VR</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/type/xbox"     name="Xbox">Xbox</a>
+															</li>
+											</ul>
+							</li>
+					<li >
+				<a href="https://discountcodes.trustedreviews.com" class= " "    name="Discount Codes">
+									Discount Codes
+								</a>
+							</li>
+		
+		
+					<li class="has-subnav header-slot-right nav-follow">
+				<span class="submenu-toggle icon-arrow-down"></span>
+				<a href="javascript:void(0);" name="Follow us on social media">Follow</a>
+				<ul class="nav-social">
+											<li><a href="https://www.facebook.com/pages/TrustedReviews/38275114220?ref=ts" target="_blank" rel="noopener" name="Follow us on Facebook">Facebook</a></li>
+											<li><a href="https://twitter.com/trustedreviews" target="_blank" rel="noopener" name="Follow us on Twitter">Twitter</a></li>
+											<li><a href="https://www.youtube.com/user/TrustedReviews" target="_blank" rel="noopener" name="Follow us on YouTube">YouTube</a></li>
+											<li><a href="https://www.trustedreviews.com/rss-feeds" target="_blank" rel="noopener" name="Follow us on Follow Trusted Reviews via RSS">Follow Trusted Reviews via RSS</a></li>
+									</ul>
+			</li>
+		
+		<li class="menu-more has-subnav">
+			<a href="javascript:void(0)" name="See more menu items">More <span class="icon-plus"></span></a>
+			<ul></ul>
+		</li>
+	</ul>
+
+	<a href="javascript:void(0)" class="search-site icon-search" name="Search the site"><span class="hide">Search</span></a>
+
+	<a href="#" class="menu-icon-link hidden-md hidden-lg" name="Toggle the site menu">
+		<span class="menu-toggle icon-menu"><span class="hide">Menu</span></span>
+	</a>
+
+	<form role="search" method="get" class="search-form form-inline s-container" action="/">
+		<div class="input-group">
+			<input type="search" value="" name="s" class="input-sm search-field form-control" placeholder="Search">
+							<button type="submit" class="btn btn--sm" name="search">Search</button>
+						<div class="message-wrapper">
+				<label for="s" class="message message--type">Type to search</label>
+				<label for="s" class="message message--search hide">Press enter or click on the search icon</label>
+			</div>
+		</div>
+	</form>
+</nav>
+
+</header>	
+
+
+									<div class="trending">
+	<div class="trending__inner">
+		<div class="trending-list__outer">
+			<ul class="trending-list__inner">
+				<li>Trending:</li>
+									<li><a href="/black-friday/best-black-friday-cyber-monday-deals-28-11-3958979"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3641029"     name="Black Friday 2019">Black Friday 2019</a></li>
+									<li><a href="https://www.trustedreviews.com/reviews/iphone-11"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3931060"     name="iPhone 11 review">iPhone 11 review</a></li>
+									<li><a href="/news/iphone-11-pro-release-date-price-specs-3936937"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3628349"     name="iPhone 11 Pro">iPhone 11 Pro</a></li>
+									<li><a href="https://www.trustedreviews.com/best/best-iphone-3501342"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3628352"     name="Best iPhone">Best iPhone</a></li>
+									<li><a href="https://www.trustedreviews.com/news/ps5-release-date-news-specs-price-2993694"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3922840"     name="PS5">PS5</a></li>
+									<li><a href="https://www.trustedreviews.com/best/best-free-vpn-3692123"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3936304"     name="Best free VPN">Best free VPN</a></li>
+							</ul>
+		</div>
+		<div class="trending__fade trending__fade--before"></div>
+		<div class="trending__fade trending__fade--after"></div>
+	</div>
+</div>				
+	<div id="content" role="main" class="container-fluid" itemscope itemtype="http://schema.org/Product" itemid="#structured-product"
+>
+		
+	<style>
+
+		.has-adverts {
+			margin-top: 0px !important;
+		}
+
+	</style>
+
+	
+
+					<nav class="breadcrumb s-container"  role="navigation">
+	<div class="s-container__inner">
+		<ul xmlns:v="http://rdf.data-vocabulary.org/#">
+							<li typeof="v:Breadcrumb">
+					<a href="https://www.trustedreviews.com" rel="v:url" property="v:title" name="Home">Home</a>
+				</li>
+							<li typeof="v:Breadcrumb">
+					<a href="https://www.trustedreviews.com/reviews" rel="v:url" property="v:title" name="Reviews">Reviews</a>
+				</li>
+					</ul>
+	</div>
+</nav>	
+				<meta itemprop="name" content="iPhone 11">
+	
+		<article
+			class="post-3941237 core_review type-core_review status-publish hentry post"
+			role="article"
+			itemprop="review"
+			itemscope itemtype="http://schema.org/Review"
+	>
+							<meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://www.trustedreviews.com/reviews/iphone-11-battery-life" content="" />
+			<div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+	<meta itemprop="name" content="Trusted Reviews" />
+	<div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+		<meta itemprop="url" content="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/08/trusted-reviews-logo-white.png" />
+	</div>
+</div>		
+
+					
+		
+		<div class="post-main">
+
+				<header class="post-header post-header--article">
+		<h1 class="title-primary" itemprop="headline">
+												iPhone 11 Review - iPhone 11 Battery Life Review
+									</h1>
+
+							
+					<div class="post-author">
+    <small class="post-author-info">
+                    
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a class="post-author__name url fn n" href="https://www.trustedreviews.com/author/max-parker" name="A post from Max Parker">
+                    <span class="author vcard" itemprop="name">Max Parker</span>
+                </a>
+                                    <a rel="me noopener" href="https://twitter.com/parkermax" target="_blank" class="post-author__icon--twitter" name="Visit the authors Twitter" onClick="kiara.onTwitterIconClick(`Max Parker`)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve">
+                            <path d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/>
+                        </svg>
+                        <span class="visuallyhidden">Contact via Twitter</span>
+                    </a>
+                                <span class="vertical-bar">&vert;</span>
+            </span>
+
+        
+        
+                            <span>
+                                <time datetime="2019-11-28T11:59:10+00:00">November 28, 2019 11:59 am GMT</time>
+            </span>
+                <meta itemprop="datePublished" content="2019-09-27T15:27:58+01:00"/>        <meta itemprop="dateModified" content="2019-11-28T11:59:10+00:00"/>    </small>
+</div>		
+		<div class="review__icons">
+		
+								<div class="review-rating--score">
+		
+		
+		
+		
+					<div class="score-stars score-stars--large"
+											itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"
+								>
+												<span
+						class="star icon-star-full "
+						data-rating="20"
+					></span>
+																								<span
+						class="star icon-star-full "
+						data-rating="40"
+					></span>
+																								<span
+						class="star icon-star-full "
+						data-rating="60"
+					></span>
+																								<span
+						class="star icon-star-full "
+						data-rating="80"
+					></span>
+																												<span
+						class="star icon-star-half "
+						data-rating="100"
+					></span>
+													
+					<meta itemprop="bestRating" content="5">
+			<meta itemprop="worstRating" content="0">
+							<meta itemprop="ratingValue" content="4.5">
+						</div>
+
+		</div>
+			
+			
+				<div class="social-share">
+
+										
+																														<ul class="pw-widget hidden-xs">
+															<li>
+									<a
+										href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										name="Share this page on facebook"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&text=iPhone 11 Battery Life Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										name="Share this page on twitter"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&description=iPhone 11 Battery Life Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										name="Share this page on pinterest"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																			</a>
+								</li>
+																				</ul>
+																														<ul class="pw-widget hidden-sm hidden-md hidden-lg">
+															<li>
+									<a
+										href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										name="Share this page on facebook"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&text=iPhone 11 Battery Life Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										name="Share this page on twitter"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																			</a>
+								</li>
+															<li>
+									<a
+										href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&description=iPhone 11 Battery Life Review"
+										target="_blank"
+										 rel="noopener" 										class="share-button "
+										data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+										name="Share this page on pinterest"
+									>
+																					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																			</a>
+								</li>
+																				</ul>
+					
+				</div>
+
+			
+						
+			                                <div class="post__award">
+	
+	
+	</div>                        		</div>
+
+	</header>
+
+			
+			<div class="post-main__inner">
+
+				
+					<div class="featured-media ggnoads">
+			</div>
+
+				
+				<div class="slot-wrapper slot-wrapper--full">
+					<div id="header-1" class="ipc-advert"></div>				</div>
+
+				<div class="post-body">
+
+					<div class="social-share social-share--sticky">
+
+												
+																																			<ul class="pw-widget hidden-xs">
+																	<li>
+										<a
+											href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											name="Share this page on facebook"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&text=iPhone 11 Battery Life Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											name="Share this page on twitter"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&description=iPhone 11 Battery Life Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											name="Share this page on pinterest"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																					</a>
+									</li>
+																							</ul>
+																																			<ul class="pw-widget hidden-sm hidden-md hidden-lg">
+																	<li>
+										<a
+											href="https://www.facebook.com/sharer/sharer.php?u=https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											name="Share this page on facebook"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="25" viewBox="88.428 12.828 107.543 207.085"><path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z" fill="#3c5a9a"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://twitter.com/intent/tweet?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&text=iPhone 11 Battery Life Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											name="Share this page on twitter"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve"><path style="fill:#73A1FB;" d="M500.398,94.784c-8.043,3.567-16.313,6.578-24.763,9.023c10.004-11.314,17.631-24.626,22.287-39.193 c1.044-3.265-0.038-6.839-2.722-8.975c-2.681-2.137-6.405-2.393-9.356-0.644c-17.945,10.643-37.305,18.292-57.605,22.764 c-20.449-19.981-48.222-31.353-76.934-31.353c-60.606,0-109.913,49.306-109.913,109.91c0,4.773,0.302,9.52,0.9,14.201 c-75.206-6.603-145.124-43.568-193.136-102.463c-1.711-2.099-4.347-3.231-7.046-3.014c-2.7,0.211-5.127,1.734-6.491,4.075 c-9.738,16.709-14.886,35.82-14.886,55.265c0,26.484,9.455,51.611,26.158,71.246c-5.079-1.759-10.007-3.957-14.711-6.568 c-2.525-1.406-5.607-1.384-8.116,0.054c-2.51,1.439-4.084,4.084-4.151,6.976c-0.012,0.487-0.012,0.974-0.012,1.468 c0,39.531,21.276,75.122,53.805,94.52c-2.795-0.279-5.587-0.684-8.362-1.214c-2.861-0.547-5.802,0.456-7.731,2.638 c-1.932,2.18-2.572,5.219-1.681,7.994c12.04,37.591,43.039,65.24,80.514,73.67c-31.082,19.468-66.626,29.665-103.939,29.665 c-7.786,0-15.616-0.457-23.279-1.364c-3.807-0.453-7.447,1.795-8.744,5.416c-1.297,3.622,0.078,7.66,3.316,9.736 c47.935,30.735,103.361,46.98,160.284,46.98c111.903,0,181.907-52.769,220.926-97.037c48.657-55.199,76.562-128.261,76.562-200.451 c0-3.016-0.046-6.061-0.139-9.097c19.197-14.463,35.724-31.967,49.173-52.085c2.043-3.055,1.822-7.094-0.545-9.906 C507.7,94.204,503.76,93.294,500.398,94.784z"/></svg>
+																					</a>
+									</li>
+																	<li>
+										<a
+											href="https://pinterest.com/pin/create/button/?url=https://www.trustedreviews.com/reviews/iphone-11-battery-life&description=iPhone 11 Battery Life Review"
+											target="_blank"
+											 rel="noopener" 											class="share-button "
+											data-url="https://www.trustedreviews.com/reviews/iphone-11-battery-life"
+											name="Share this page on pinterest"
+										>
+																							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512.883 512.883" style="enable-background:new 0 0 512.883 512.883;" xml:space="preserve"> <path style="fill:#CB1F24;" d="M256.441,0c-141.241,0-256,114.759-256,256c0,105.048,62.676,195.09,153.6,234.814 c-0.883-17.655,0-39.724,4.414-59.145c5.297-21.186,32.662-139.476,32.662-139.476s-7.945-16.772-7.945-40.607 c0-37.959,22.069-66.207,49.434-66.207c22.952,0,34.428,17.655,34.428,38.841c0,22.952-15.007,58.262-22.952,90.924 c-6.179,27.366,13.241,49.434,40.607,49.434c48.552,0,81.214-62.676,81.214-135.945c0-56.497-37.959-97.986-106.814-97.986 c-77.683,0-126.234,58.262-126.234,122.703c0,22.069,6.179,37.959,16.772,50.317c4.414,5.297,5.297,7.945,3.531,14.124 c-0.883,4.414-4.414,15.89-5.297,20.303c-1.766,6.179-7.062,8.828-13.241,6.179c-36.193-15.007-52.083-53.848-52.083-97.986 c0-72.386,60.91-159.779,182.731-159.779c97.986,0,162.428,70.621,162.428,146.538c0,100.634-55.614,175.669-137.71,175.669 c-27.366,0-53.848-15.007-62.676-31.779c0,0-15.007,59.145-17.655,70.621c-5.297,19.421-15.89,39.724-25.6,54.731 c22.952,7.062,47.669,10.593,72.386,10.593c141.241,0,256-114.759,256-256S397.683,0,256.441,0"/></svg>
+																					</a>
+									</li>
+																							</ul>
+						
+					</div>
+
+					<div class="articleBody" itemprop=" ">
+																									
+						
+						
+								<div class="review-sections">
+		<h2>Sections</h2>
+		<ul>
+							<li>
+					<span>Page 1</span>
+											<a href="https://www.trustedreviews.com/reviews/iphone-11" name="iPhone 11 Review">iPhone 11 Review</a>
+									</li>
+							<li>
+					<span>Page 2</span>
+											<a href="https://www.trustedreviews.com/reviews/iphone-11-camera" name="iPhone 11 Camera Review">iPhone 11 Camera Review</a>
+									</li>
+							<li>
+					<span>Page 3</span>
+											<span>iPhone 11 Battery Life Review</span>
+									</li>
+							<li>
+					<span>Page 4</span>
+											<a href="https://www.trustedreviews.com/reviews/iphone-11-performance" name="iPhone 11 Performance Review">iPhone 11 Performance Review</a>
+									</li>
+					</ul>
+	</div>
+
+	
+	
+
+	
+
+	
+<h2><b>What is the <a href="https://www.trustedreviews.com/reviews/iphone-11">iPhone 11</a>’s battery life like?</b></h2>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">Following on from the excellent iPhone XR, the iPhone 11 retains strong battery life</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">I’ve been comfortably getting a day of battery life, even with ‘heavy’ use</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">The lack of an included fast charger is a pain and we’d recommend buying one separately</span></li>
+</ul>
+<p><span style="font-weight: 400">Over the review period the iPhone 11 has performed admirably when it comes to battery life, comfortably making it through the day and just about improving on the already excellent <a href="https://www.trustedreviews.com/reviews/iphone-xr">iPhone XR</a>.</span></p>
+<div id="attachment_3941385" style="width: 1034px" class="wp-caption alignnone"><img class="lazyload blur-up wp-image-3941385 size-large" src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png" data-src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-1024x683.jpg" alt="iPhone 11 holding" width="1024" height="683" data-sizes="auto" data-srcset="https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-1024x683.jpg 1024w, https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-300x200.jpg 300w, https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-768x512.jpg 768w, https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-320x213.jpg 320w, https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-620x413.jpg 620w, https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-920x613.jpg 920w, https://ksassets.timeincuk.net/wp/uploads/sites/54/2019/09/iphone11-1-1220x813.jpg 1220w" sizes="(max-width: 1024px) 100vw, 1024px" /><p class="wp-caption-text">The iPhone 11 should last you all-day</p></div>
+<p><span style="font-weight: 400">While the XR might have been the longest-lasting iPhone we had ever reviewed, that award now goes to the iPhone 11 Pro Max. Saying that you’re still getting excellent endurance with the iPhone 11 and you’ll certainly notice the difference if you’re upgrading an older iPhone like the <a href="https://www.trustedreviews.com/reviews/iphone-7">iPhone 7</a>, <a href="https://www.trustedreviews.com/reviews/iphone-8">iPhone 8</a> or <a href="https://www.trustedreviews.com/reviews/reviews/iphone-se-review">iPhone SE</a>. I would even say you’ll see suitably strong improvements if you’re coming from a Plus-sized iPhone – like the iPhone 8 Plus.</span></p>
+<p><span style="font-weight: 400">What remains disappointing is Apple’s reluctance to include a fast charge capable charger with all of its phones. In the iPhone 11’s box you’ll find a limp 5w plug which can take up to 3 hours to fully charge the phone – when competing <a href="https://www.trustedreviews.com/best/best-android-phones-3438996">Android phones</a> with much larger cells inside can go from 0-100% in an hour this simply isn’t good enough. Apple has started shipping its iPhone 11 Pro models with an 18w charger and this works with iPhone 11 too. Picking up one of these chargers (£29 for the plug, £19 for USB-C to Lightning cable, though cheaper Anker ones are available for £14) will make the charging process much quicker.</span></p>
+<ul>
+<li style="font-weight: 400"><a href="https://www.trustedreviews.com/best/best-smartphone-3431175"><b>Best phones</b></a></li>
+</ul>
+    <link rel="stylesheet" type="text/css" href="https://affiliate-api.ti-media.net/build/app.css?v=1">
+    
+<div class="egl-popup">
+    <div id="close" title="Close"></div>
+    <span id="info">
+        We continually check thousands of prices to show you the best deals. If you buy a product through our site we will earn a small commission from the retailer – a sort of automated referral fee – but our reviewers are always kept separate from this process. You can read more about how we make money in our
+        <a href="https://www.trustedreviews.com/info/trusted-reviews-ethics-policy-3521647#how-we-make-money">
+           Ethics Policy.
+        </a>
+    </span>
+</div>
+
+<script>
+    $(document).ready(function() {
+        let aboutDeals = $(".egl-about-deals");
+        let dealsPopup = $(".egl-popup");
+        let closeDealsPopup = $(".egl-popup #close");
+
+        aboutDeals.click(function () {
+            dealsPopup.addClass("active");
+        });
+
+        closeDealsPopup.click(function () {
+            dealsPopup.removeClass("active");
+        });
+    });
+</script>
+
+    <style>
+        .efw .efw_stacked .efw_stacked_heading {
+            background-image: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAiCAYAAACA5IOiAAACLUlEQVR4AWIgBcgV75oOxI4MpAJAZ/QAs0cQBGB4a9v9bdu2bdu2bQS1bYa1FTeobfuCWtO5y12y9d43yRvuc5hFlIB9wiYpgt9gDxSBpRhgG+XCudg7EdfLxesxEAuVA70xoDKUg89T8DU2lhXWYUB1lhWqYR9/wdtY8S4aamC6lYc7WWCIWuVhUEEwpfaY0HiMNJ5O/C9GeAUhHj4JM6uPgHrlISDVR6G2aL4jwXmtqj2Uc9Ib8qe3tmNAGk6CR9QqiFCvBX+degg3avx2xcD8wRtD7XsIH3H2el+xBTTUwb4PrzsOuiV7IVytCsJnlYLXnFLIVMqHN1bawDlpAyKpFzTejQmfa5uxDSLmVECkUhU4K5VDjVa2CHVovFCC0RgIuOU0uMeshvDZZRChXA12SmUwoJ8MnDOPdSX4DJvIw5HYXRr7+y8QPpnHDvjmDSYRPKbfmia9tVeC0paDnfsgAt8chthdqQIOWXjT+CD9r88lrFZzBAjeqbtpM/jgovhP9lQug2vW1vSyzGi8CAOjykMvScOpZ6R879N0jfKviUolEKlcBWuMoullDZJfB+FIUndyNME5Hh1v+1xHC57aG8ELB30eSou6i40g/5rXytoRnL14p44/bTie/G84B91GzkE4THeAsAweXIf9ig1Y8ZlfYCcrHI49puANbCgr1sGAKoQJijiIgruYoYgrRPgd05aLl4u4kRlR+Cr2RRE4CvuA5SqCHbCVcswPVuzRH40XEPgAAAAASUVORK5CYII=;
+        }
+    </style>
+
+<div class="flamingo-widget-root-v2" data-widget-type="stacked" data-widget-status="published">
+    <div class="efw v0.1.1 " data-widget-id="2145" data-reactroot="">
+        <div class="efw_stacked"><h3 class="efw_stacked_heading">Best iPhone 11 Contract Deals</h3>
+                            <div class="efw_stacked_product" data-widget-status="published" data-widget-scheduled-from=""><a
+                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=6399&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.virginmedia.com%2Fmobile%2Fpay-monthly%2Fapple%2Fiphone-11%3FcontractDuration%3D36%26tariffID%3D1209711626%5D%5D"
+                            target="_blank" rel="noopener noreferrer nofollow"
+                            data-vars-event-label="Pos 1 : Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts : Deal"
+                            data-retailer="Virgin Mobile" data-name="Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts"
+                            data-up-affiliate="true" class="efw_productImage  efw_large_device" data-magpie-disabled="true"><img
+                                placeholder="https://www.virginmedia.com/content/dam/virginmedia/dotcom/images/mobile-browse/Apple/iphone-11/purple/iPhone11-purple-front_back.png"
+                                data-src="https://www.virginmedia.com/content/dam/virginmedia/dotcom/images/mobile-browse/Apple/iphone-11/purple/iPhone11-purple-front_back.png" alt=""
+                                class="efw_productImage_image lazyloaded"
+                                style="transform:scale(1.0066666666666666);top:0.3355555555555527%;left:0.3355555555555589%"
+                                src="https://www.virginmedia.com/content/dam/virginmedia/dotcom/images/mobile-browse/Apple/iphone-11/purple/iPhone11-purple-front_back.png"></a>
+                    <div class="efw_stacked_content"><a
+                                href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=6399&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.virginmedia.com%2Fmobile%2Fpay-monthly%2Fapple%2Fiphone-11%3FcontractDuration%3D36%26tariffID%3D1209711626%5D%5D"
+                                target="_blank" rel="noopener noreferrer nofollow"
+                                data-vars-event-label="Pos 1 : http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=6399&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.virginmedia.com%2Fmobile%2Fpay-monthly%2Fapple%2Fiphone-11%3FcontractDuration%3D36%26tariffID%3D1209711626%5D%5D : Deal"
+                                data-retailer="Virgin Mobile" data-name="Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts"
+                                data-up-affiliate="true" class="efw_productImage  efw_small_device"
+                                data-magpie-disabled="true"><img
+                                    placeholder="https://www.virginmedia.com/content/dam/virginmedia/dotcom/images/mobile-browse/Apple/iphone-11/purple/iPhone11-purple-front_back.png"
+                                    data-src="https://www.virginmedia.com/content/dam/virginmedia/dotcom/images/mobile-browse/Apple/iphone-11/purple/iPhone11-purple-front_back.png"
+                                    alt="" class="efw_productImage_image lazyload"
+                                    style="transform:scale(1.0066666666666666);top:0.3355555555555527%;left:0.3355555555555589%"></a>
+                        <h3 class="efw_stacked_title"><a
+                                    href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=6399&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.virginmedia.com%2Fmobile%2Fpay-monthly%2Fapple%2Fiphone-11%3FcontractDuration%3D36%26tariffID%3D1209711626%5D%5D"
+                                    target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                    data-vars-event-label="Pos 1 : Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts : Deal"
+                                    data-retailer="Virgin Mobile" data-name="Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts"
+                                    data-magpie-disabled="true">
+                                <div><p>Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts</p></div>
+                            </a></h3>
+                        <div class="efw_stacked_body">
+                            <div><p>For just £1.50 extra a month on top of your tariff, get a sparkly new iPhone 11 and a pair of Apple AirPods, totally at just £36 for your new headgear.</p></div>
+                        </div>
+                        <div class="efw_stacked_footer">
+                            <div class="efw_stacked_informations efw_small_device">
+                                <div class="efw_stacked_retailer"><a
+                                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=6399&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.virginmedia.com%2Fmobile%2Fpay-monthly%2Fapple%2Fiphone-11%3FcontractDuration%3D36%26tariffID%3D1209711626%5D%5D"
+                                            target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                            data-vars-event-label="Pos 1 : Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts : Deal"
+                                            data-retailer="Virgin Mobile" data-name="Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts"
+                                            data-magpie-disabled="true">
+                                        <div><p>Virgin Mobile</p></div>
+                                    </a></div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_oldprice">
+                                    <div><p>Apple AirPods for £1.50</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_price">
+                                    <div><p>£47/month</p></div>
+                                </div>
+                            </div>
+                            <a href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=6399&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.virginmedia.com%2Fmobile%2Fpay-monthly%2Fapple%2Fiphone-11%3FcontractDuration%3D36%26tariffID%3D1209711626%5D%5D"
+                               class="efw_stacked_cta btn btn-primary" target="_blank" rel="noopener noreferrer nofollow"
+                               data-up-affiliate="true"
+                               data-vars-event-label="Pos 1 : Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts : Deal"
+                               data-retailer="Virgin Mobile" data-name="Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts"
+                               data-magpie-disabled="true">View Deal</a>
+                            <div class="efw_stacked_informations efw_large_device">
+                                <div class="efw_stacked_price">
+                                    <div><p>£47/month</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_oldprice">
+                                    <div><p>Apple AirPods for £1.50</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_retailer"><a
+                                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=6399&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.virginmedia.com%2Fmobile%2Fpay-monthly%2Fapple%2Fiphone-11%3FcontractDuration%3D36%26tariffID%3D1209711626%5D%5D"
+                                            target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                            data-vars-event-label="Pos 1 : Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts : Deal"
+                                            data-retailer="Virgin Mobile" data-name="Apple iPhone 11, Virgin Mobile - 4GB of Data, 1000 Minutes and Unlimited Texts"
+                                            data-magpie-disabled="true">
+                                        <div><p>Virgin Mobile</p></div>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="efw_stacked_product" data-widget-status="published" data-widget-scheduled-from=""><a
+                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=1257&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.vodafone.co.uk%2Fmobile%2Fphones%2Fpay-monthly-contracts%2Fapple%2Fiphone-11%5D%5D"
+                            target="_blank" rel="noopener noreferrer nofollow"
+                            data-vars-event-label="Pos 1 : Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts : Deal"
+                            data-retailer="Vodafone" data-name="Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts"
+                            data-up-affiliate="true" class="efw_productImage  efw_large_device" data-magpie-disabled="true"><img
+                                placeholder="https://johnlewis.scene7.com/is/image/JohnLewis/238349167alt1?$rsp-pdp-port-1440$"
+                                data-src="https://johnlewis.scene7.com/is/image/JohnLewis/238349167alt1?$rsp-pdp-port-1440$" alt=""
+                                class="efw_productImage_image lazyloaded"
+                                style="transform:scale(1.0066666666666666);top:0.3355555555555527%;left:0.3355555555555589%"
+                                src="https://johnlewis.scene7.com/is/image/JohnLewis/238349167alt1?$rsp-pdp-port-1440$"></a>
+                    <div class="efw_stacked_content"><a
+                                href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=1257&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.vodafone.co.uk%2Fmobile%2Fphones%2Fpay-monthly-contracts%2Fapple%2Fiphone-11%5D%5D"
+                                target="_blank" rel="noopener noreferrer nofollow"
+                                data-vars-event-label="Pos 1 : http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=1257&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.vodafone.co.uk%2Fmobile%2Fphones%2Fpay-monthly-contracts%2Fapple%2Fiphone-11%5D%5D : Deal"
+                                data-retailer="Vodafone" data-name="Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts"
+                                data-up-affiliate="true" class="efw_productImage  efw_small_device"
+                                data-magpie-disabled="true"><img
+                                    placeholder="https://johnlewis.scene7.com/is/image/JohnLewis/238349167alt1?$rsp-pdp-port-1440$"
+                                    data-src="https://johnlewis.scene7.com/is/image/JohnLewis/238349167alt1?$rsp-pdp-port-1440$"
+                                    alt="" class="efw_productImage_image lazyload"
+                                    style="transform:scale(1.0066666666666666);top:0.3355555555555527%;left:0.3355555555555589%"></a>
+                        <h3 class="efw_stacked_title"><a
+                                    href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=1257&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.vodafone.co.uk%2Fmobile%2Fphones%2Fpay-monthly-contracts%2Fapple%2Fiphone-11%5D%5D"
+                                    target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                    data-vars-event-label="Pos 1 : Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts : Deal"
+                                    data-retailer="Vodafone" data-name="Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts"
+                                    data-magpie-disabled="true">
+                                <div><p>Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts</p></div>
+                            </a></h3>
+                        <div class="efw_stacked_body">
+                            <div><p>Enjoy this unlimited plan and enjoy browsing speeds of up to 10mbps, as well as a 3 month free trial. You can also choose a 24 month free subscription to either Spotify, Prime Video, Now TV or Sky Sports with your brand new iPhone 11.</p></div>
+                        </div>
+                        <div class="efw_stacked_footer">
+                            <div class="efw_stacked_informations efw_small_device">
+                                <div class="efw_stacked_retailer"><a
+                                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=1257&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.vodafone.co.uk%2Fmobile%2Fphones%2Fpay-monthly-contracts%2Fapple%2Fiphone-11%5D%5D"
+                                            target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                            data-vars-event-label="Pos 1 : Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts : Deal"
+                                            data-retailer="Vodafone" data-name="Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts"
+                                            data-magpie-disabled="true">
+                                        <div><p>Vodafone</p></div>
+                                    </a></div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_oldprice">
+                                    <div><p>£29 Upfront</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_price">
+                                    <div><p>£48/month</p></div>
+                                </div>
+                            </div>
+                            <a href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=1257&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.vodafone.co.uk%2Fmobile%2Fphones%2Fpay-monthly-contracts%2Fapple%2Fiphone-11%5D%5D"
+                               class="efw_stacked_cta btn btn-primary" target="_blank" rel="noopener noreferrer nofollow"
+                               data-up-affiliate="true"
+                               data-vars-event-label="Pos 1 : Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts : Deal"
+                               data-retailer="Vodafone" data-name="Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts"
+                               data-magpie-disabled="true">View Deal</a>
+                            <div class="efw_stacked_informations efw_large_device">
+                                <div class="efw_stacked_price">
+                                    <div><p>£48/month</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_oldprice">
+                                    <div><p>£29 Upfront</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_retailer"><a
+                                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=1257&amp;clickref=iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.vodafone.co.uk%2Fmobile%2Fphones%2Fpay-monthly-contracts%2Fapple%2Fiphone-11%5D%5D"
+                                            target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                            data-vars-event-label="Pos 1 : Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts : Deal"
+                                            data-retailer="Vodafone" data-name="Apple iPhone 11, Vodafone - Unlimited Data, Minutes and Texts"
+                                            data-magpie-disabled="true">
+                                        <div><p>Vodafone</p></div>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="efw_stacked_product" data-widget-status="published" data-widget-scheduled-from=""><a
+                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=380&amp;clickref=tr-iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.mobiles.co.uk%2Fapple-iphone-11-64gb-white%3Ftariffcode%3DJHCZMAPR19%5D%5D"
+                            target="_blank" rel="noopener noreferrer nofollow"
+                            data-vars-event-label="Pos 1 : Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts : Deal"
+                            data-retailer="Mobiles.co.uk" data-name="Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts"
+                            data-up-affiliate="true" class="efw_productImage  efw_large_device" data-magpie-disabled="true"><img
+                                placeholder="https://media.secure-mobiles.com/product-images/apple-iphone-11-64gb-white.responsive-fs.centre.png"
+                                data-src="https://media.secure-mobiles.com/product-images/apple-iphone-11-64gb-white.responsive-fs.centre.png" alt=""
+                                class="efw_productImage_image lazyloaded"
+                                style="transform:scale(1.0066666666666666);top:0.3355555555555527%;left:0.3355555555555589%"
+                                src="https://media.secure-mobiles.com/product-images/apple-iphone-11-64gb-white.responsive-fs.centre.png"></a>
+                    <div class="efw_stacked_content"><a
+                                href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=380&amp;clickref=tr-iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.mobiles.co.uk%2Fapple-iphone-11-64gb-white%3Ftariffcode%3DJHCZMAPR19%5D%5D"
+                                target="_blank" rel="noopener noreferrer nofollow"
+                                data-vars-event-label="Pos 1 : http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=380&amp;clickref=tr-iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.mobiles.co.uk%2Fapple-iphone-11-64gb-white%3Ftariffcode%3DJHCZMAPR19%5D%5D : Deal"
+                                data-retailer="Mobiles.co.uk" data-name="Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts"
+                                data-up-affiliate="true" class="efw_productImage  efw_small_device"
+                                data-magpie-disabled="true"><img
+                                    placeholder="https://media.secure-mobiles.com/product-images/apple-iphone-11-64gb-white.responsive-fs.centre.png"
+                                    data-src="https://media.secure-mobiles.com/product-images/apple-iphone-11-64gb-white.responsive-fs.centre.png"
+                                    alt="" class="efw_productImage_image lazyload"
+                                    style="transform:scale(1.0066666666666666);top:0.3355555555555527%;left:0.3355555555555589%"></a>
+                        <h3 class="efw_stacked_title"><a
+                                    href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=380&amp;clickref=tr-iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.mobiles.co.uk%2Fapple-iphone-11-64gb-white%3Ftariffcode%3DJHCZMAPR19%5D%5D"
+                                    target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                    data-vars-event-label="Pos 1 : Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts : Deal"
+                                    data-retailer="Mobiles.co.uk" data-name="Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts"
+                                    data-magpie-disabled="true">
+                                <div><p>Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts</p></div>
+                            </a></h3>
+                        <div class="efw_stacked_body">
+                            <div><p>Bag yourself a brand new iPhone 11 and enjoy a healthy monthly allowance for a not too shabby monthly cost.</p></div>
+                        </div>
+                        <div class="efw_stacked_footer">
+                            <div class="efw_stacked_informations efw_small_device">
+                                <div class="efw_stacked_retailer"><a
+                                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=380&amp;clickref=tr-iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.mobiles.co.uk%2Fapple-iphone-11-64gb-white%3Ftariffcode%3DJHCZMAPR19%5D%5D"
+                                            target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                            data-vars-event-label="Pos 1 : Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts : Deal"
+                                            data-retailer="Mobiles.co.uk" data-name="Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts"
+                                            data-magpie-disabled="true">
+                                        <div><p>Mobiles.co.uk</p></div>
+                                    </a></div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_oldprice">
+                                    <div><p>£135 Upfront</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_price">
+                                    <div><p>£37/month</p></div>
+                                </div>
+                            </div>
+                            <a href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=380&amp;clickref=tr-iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.mobiles.co.uk%2Fapple-iphone-11-64gb-white%3Ftariffcode%3DJHCZMAPR19%5D%5D"
+                               class="efw_stacked_cta btn btn-primary" target="_blank" rel="noopener noreferrer nofollow"
+                               data-up-affiliate="true"
+                               data-vars-event-label="Pos 1 : Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts : Deal"
+                               data-retailer="Mobiles.co.uk" data-name="Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts"
+                               data-magpie-disabled="true">View Deal</a>
+                            <div class="efw_stacked_informations efw_large_device">
+                                <div class="efw_stacked_price">
+                                    <div><p>£37/month</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_oldprice">
+                                    <div><p>£135 Upfront</p></div>
+                                </div>
+                                <div class="efw_stacked_separator">|</div>
+                                <div class="efw_stacked_retailer"><a
+                                            href="http://www.awin1.com/cread.php?awinaffid=277673&amp;awinmid=380&amp;clickref=tr-iphone11&amp;platform=dl&amp;p=%5B%5Bhttps%3A%2F%2Fwww.mobiles.co.uk%2Fapple-iphone-11-64gb-white%3Ftariffcode%3DJHCZMAPR19%5D%5D"
+                                            target="_blank" rel="noopener noreferrer nofollow" data-up-affiliate="true"
+                                            data-vars-event-label="Pos 1 : Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts : Deal"
+                                            data-retailer="Mobiles.co.uk" data-name="Apple iPhone 11, O2 - 30GB of Data, Unlimited Minutes and Texts"
+                                            data-magpie-disabled="true">
+                                        <div><p>Mobiles.co.uk</p></div>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>
+
+                    <script>
+                    $(document).ready(function() {
+                        dataLayer.push({
+                              'event': 'element.click',
+                              'data':{
+                                'ga_eventCategory': 'Affiliates',
+                                'ga_eventAction': 'Widget Impression',
+                                'ga_eventLabel': 'Static - 2145',
+                                'ga_eventValue': 0,
+                                'ga_nonInteraction': true
+                             }
+                        });
+                         
+                         $('.flamingo-widget-root-v2 [data-widget-id=2145] p').click(function (){
+                                dataLayer.push({
+                              'event': 'element.click',
+                              'data':{
+                                    'ga_eventCategory': 'Affiliates',
+                                'ga_eventAction': 'Deal Click',
+                                'ga_eventLabel': 'Static - 2145',
+                                'ga_eventValue': 0,
+                                'ga_nonInteraction': true
+                             }
+                        });
+                    });
+                         
+                         $('.eagle-widget[data-uid=2145] .egl-deal-view').click(function (){
+                                dataLayer.push({
+                              'event': 'element.click',
+                              'data':{
+                                    'ga_eventCategory': 'Affiliates',
+                                'ga_eventAction': 'Deal Click',
+                                'ga_eventLabel': 'Dynamic - 2145',
+                                'ga_eventValue': 0,
+                                'ga_nonInteraction': true
+                             }
+                        });
+                                });
+                         });
+                        </script>
+                    
+<h2><b>iPhone 11 battery – Video</b></h2>
+<p><span style="font-weight: 400">The iPhone 11 has a 6.1-inch Liquid Retina LCD panel with a resolution that’s slightly above 720p. This is far from the highest resolution on an iPhone and it lacks the deep blacks you’d get with an OLED panel. </span></p>
+<p><span style="font-weight: 400">What that lower resolution does help with is battery life and you’ll notice this when streaming video.</span></p>
+<p><span style="font-weight: 400">Watching an hour of Netflix at roughly </span><b>50% brightness</b><span style="font-weight: 400"> took the battery </span><b>down between 6 and 7 %. </b>It was a similar story for a downloaded video from iTunes.</p>
+<h2><b>iPhone 11 battery – Games</b></h2>
+<p><span style="font-weight: 400">With <a href="https://www.trustedreviews.com/news/apple-arcade-release-date-price-3683862">Apple Arcade</a> coming alongside <a href="https://www.trustedreviews.com/news/ios-13-release-date-features-leaks-download-3690951">iOS 13</a> the iPhone 11 is the perfect place to play some of the impressive new titles in the Apple subscription service.</span></p>
+<p><span style="font-weight: 400">Take Oceanhorn 2 for example, The iPhone 11 </span><b>went through between 6 and 9% </b><span style="font-weight: 400">per 30 mins in the graphically intensive game, and </span><b>5-7% in simpler titles such as Assemble with Care.</b></p>
+<h2><b>iPhone 11 battery – Charging</b></h2>
+<p><span style="font-weight: 400">As I mentioned early in this section, Apple ships a paltry 5w plug with the £729 iPhone 11. Charging the phone up with that can take up to 3 hours and it doesn’t do a very good job at giving you a quick boost if you’re in a hurry and forgot to charge your phone the previous night.</span></p>
+
+
+	
+	
+				
+						<div class="post-author-card">
+
+	    <div class="post-author-card-image author-image--mobile">
+        <img
+            alt="Max Parker"
+            src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/09/Max-150x150.jpg"
+            class="post-author--img"
+            height="145"
+            width="145">
+    </div>
+	
+	<div class="post-author-card-details">
+		<div class="post-author-card-top">
+							<div class="post-author-card-name">
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+						<a class="url fn n" href="https://www.trustedreviews.com/author/max-parker" name="A post from Max Parker">
+							<span class="author vcard" itemprop="name">Max Parker</span>
+						</a>
+					</span>
+				</div>
+				<ul class="post-author-card-links author-links--desktop">
+                <li>
+            <a rel="me noopener" href="https://twitter.com/parkermax" target="_blank" class="icon-social-twitter" name="Visit the authors Twitter">
+                <span class="visuallyhidden">Contact via Twitter</span>
+            </a>
+        </li>
+                        <li>
+            <a rel="me noopener" href="https://www.instagram.com/mxprker/" target="_blank" class="icon-social-instagram" name="Visit the authors Instagram">
+                <span class="visuallyhidden">Contact via Instagram</span>
+            </a>
+        </li>
+    </ul>					</div>
+		
+		
+		<div class="post-author-card-lower">
+							<div class="post-author-card-description" itemprop="description">
+											Max is one the longest-serving members of the Trusted Reviews team. He was features editor but his expertise on mobile phones and tablets meant he transitioned to the role of mobile, wearables and tab&hellip;
+									</div>
+			
+			    <div class="post-author-card-image author-image--desktop">
+        <img
+            alt="Max Parker"
+            src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/09/Max-150x150.jpg"
+            class="post-author--img"
+            height="145"
+            width="145">
+    </div>
+
+		</div>
+
+		<ul class="post-author-card-links author-links--mobile">
+                <li>
+            <a rel="me noopener" href="https://twitter.com/parkermax" target="_blank" class="icon-social-twitter" name="Visit the authors Twitter">
+                <span class="visuallyhidden">Contact via Twitter</span>
+            </a>
+        </li>
+                        <li>
+            <a rel="me noopener" href="https://www.instagram.com/mxprker/" target="_blank" class="icon-social-instagram" name="Visit the authors Instagram">
+                <span class="visuallyhidden">Contact via Instagram</span>
+            </a>
+        </li>
+    </ul>
+	</div>
+</div>			
+	<div class="textwidget custom-html-widget"><p>Unlike other sites, we thoroughly test every product we review. We use industry standard tests in order to compare features properly. We’ll always tell you what we find. We never, ever accept money to review a product.
+	Tell us what you think - send your emails to <a href="mailto:editor@trustedreviews.com">the Editor.</a></p></div></li>
+
+
+					</div>
+
+						<div class="multi-pagination">
+			<a class='btn btn--prev' href="https://www.trustedreviews.com/reviews/iphone-11-camera" rel="prev" name="Previous page">
+			Previous<br/>
+			<span class="btn__page-title">iPhone 11 Camera Review</span>
+			<span class="icon icon-arrow-left"></span>
+		</a>
+				<a class='btn btn--next' href="https://www.trustedreviews.com/reviews/iphone-11-performance" rel="next" name="Next page">
+			Next<br/>
+			<span class="btn__page-title">iPhone 11 Performance Review</span>
+			<span class="icon icon-arrow-right"></span>
+		</a>
+	</div>
+					
+											<div id="taboola-below-article-thumbnails"></div>									</div>
+			</div>
+
+			
+		</div>
+	</article>
+			
+	</div>
+
+			<div class="parallax-wrapper parallax-wrapper--footer sticky-anchor"></div>
+
+<footer id="footer" role="contentinfo" class="footer sticky-anchor">
+	<div class="footer__row">
+		<nav class="footer__col footer__col--content">
+			<ul id="menu-3" class="footer-menu footer-menu--plain">
+			<li id="menu-item-3927554" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3927554">
+			<a href="/archive"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Content archive
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3614131" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3614131">
+			<a href="/info/browse-reviews-3614164"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Find a review
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651360" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2651360">
+			<a href="/info/about-trusted-reviews-3550741"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					About TrustedReviews
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3552607" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3552607">
+			<a href="/info/who-we-are-3551613"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Contact our editorial team
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3580003" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3580003">
+			<a href="https://www.trustedreviews.com/info/trusted-reviews-ethics-policy-3521647"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Why we are different
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550819" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3550819">
+			<a href="https://www.ti-media.com/terms-and-conditions/#_Toc513817991"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Labelling of commercial content
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3550821">
+			<a href="https://www.ipso.co.uk/editors-code-of-practice/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					IPSO Editors' Code of Practice
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2651363">
+			<a href="http://www.timeincuk.com/privacy/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Privacy & cookie policy
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2651362">
+			<a href="http://www.timeincuk.com/terms-and-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Terms & Conditions
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550818" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3550818">
+			<a href="https://www.ti-media.com/terms-and-conditions/#_Toc513817985"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Third party advertising policy
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3249531" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3249531">
+			<a href="https://www.trustedreviews.com/rss-feeds"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Follow Trusted Reviews via RSS
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3550823">
+			<a href="https://comps.trustedreviews.com/?_ga=2.81825043.400893545.1535971409-812703703.1535551482"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Competitions
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2651361">
+			<a href="http://www.timeincuk.com/advertise/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Advertise with us
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3525646" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3525646">
+			<a href="#"  title="privacy-settings"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Privacy Settings
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3716366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3716366">
+			<a href="https://www.trustedreviews.com/info/trusted-reviews-ethics-policy-3521647#how-we-make-money"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					> We may get a commission when you buy via a link <
+				</span>
+			</a>
+		</li>
+	</ul>		</nav>
+		<nav class="footer__col footer__col--sidebar">
+			<div class="ad-logos">
+	<a href="https://www.iabuk.com/goldstandard" class="footer__iab" target="_blank" rel="noopener" name="IAB Gold Standard">
+		<img 
+			src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png" 
+			data-src="/wp-content/themes/simba-theme/assets/images/iab_logo.png" 
+			class="lazyload blur-up" 
+			alt="IAB Gold Standard" 
+			width="100%" />
+	</a>
+	<a href="https://jicwebs.org/standards/brand-safety/" class="footer__jic" target="_blank" rel="noopener" name="JIC WEBS Brand Safety">
+		<img 
+			src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png" 
+			data-src="/wp-content/themes/simba-theme/assets/images/jic_webs_logo.jpg" 
+			class="lazyload blur-up" 
+			alt="JIC WEBS Brand Safety" 
+			width="100%" />
+	</a>
+</div>
+			
+		</nav>
+
+		<div class="footer-legal">
+			<a itemprop="url" href="" title="" name="">
+			<img 
+				itemprop="logo" 
+				src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png" 
+				data-src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2018/10/tr-logo-large-1.png" 
+				class="lazyload blur-up footer-logo" 
+				alt="" 
+				data-pin-nopin="true">
+		</a>
+		<sub>&copy; Copyright TI Media Limited. 161 Marsh Wall, London, E14 9SJ. All rights reserved.</sub>
+	<a href="https://www.ipso.co.uk/what-we-do/" class="footer__ipso" target="_blank" rel="noopener" name="Visit the IPSO website">
+		<img 
+			src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png" 
+			data-src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/ipso-dark.png" 
+			class="lazyload blur-up" 
+			alt="IPSO Regulated" 
+			width="100%" />
+	</a>
+</div>
+		<ul id="menu-8" class="footer-menu footer-menu--icons">
+			<li id="menu-item-2651357" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2651357">
+			<a href="https://www.facebook.com/pages/TrustedReviews/38275114220?ref=ts"   target="_blank" rel="noopener" class="menu-icon-item icon-social-facebook" name="Visit our facebook page">
+				<span class="menu-icon-item icon-facebook">
+					Facebook
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651356" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2651356">
+			<a href="https://twitter.com/trustedreviews"   target="_blank" rel="noopener" class="menu-icon-item icon-social-twitter" name="Visit our twitter page">
+				<span class="menu-icon-item icon-twitter">
+					Twitter
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651358" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2651358">
+			<a href="https://www.youtube.com/user/TrustedReviews"   target="_blank" rel="noopener" class="menu-icon-item icon-social-youtube" name="Visit our youtube page">
+				<span class="menu-icon-item icon-youtube">
+					YouTube
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3249533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3249533">
+			<a href="https://www.trustedreviews.com/rss-feeds"   target="_blank" rel="noopener" class="menu-icon-item icon-social-rss" name="Visit our rss page">
+				<span class="menu-icon-item icon-rss">
+					Follow Trusted Reviews via RSS
+				</span>
+			</a>
+		</li>
+	</ul>	</div>
+</footer>
+				<script type="text/javascript">
+			(function() {
+				/* Include required screen size functions right here */
+				var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+				var getWindowSize = getDisplayWidth();
+				window.ipcTags = window.ipcTags || {};
+				/* Pageskin targeting stuff */
+				if(getWindowSize >= 1350) {
+					window.ipcTags['pageskin'] = 'yes';
+				} else {
+					window.ipcTags['pageskin'] = 'no';
+				}
+
+				
+				if(getWindowSize >= 690) {
+					window.ipcTags.platform = 'desktop';
+				} else {
+					window.ipcTags.platform = 'mobile';
+				}
+
+				
+				window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+			})();
+		</script>
+		<script type='text/javascript'>
+			(function(d,w){
+				var s = d.createElement('script');
+				w.lazySizesConfig = {'expFactor':'1'};
+				s.src = 'https://www.trustedreviews.com/wp-content/plugins/keystone-images/assets/js/sizes.js?ver=0.0.1';
+				d.body.appendChild(s);
+			})(document,window);
+		</script><script type='text/javascript' src='https://www.trustedreviews.com/wp-content/plugins/keystone-apester/assets/js/apester.js?ver=1.1.14'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var keystoneJWPlayerConfig = {"viewplay":"desktop","viewplay_sticky_tabswitch":"0","sticky":"1","sticky_position":"right","mute":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/plugins/keystone-jwplayer/assets/js/main.js?ver=1.0.17'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var keystoneTaboolaConfig = {"lazyload":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/plugins/keystone-taboola/assets/js/taboola.js?ver=0.0.1'></script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/plugins/ipc-wordpress-digital-editions/public/assets/js/public.js?ver=2.2.2'></script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/themes/kiara-child-theme/assets/js/dist/review.min.js?ver=1574936320'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var keystone_newsletter = {"form_url":"https:\/\/ti-media.slgnt.eu\/renderers\/xml.ashx?ID=nLUnUG6KOH7JVtNut_mqr75CzNVCbo18YbNezlFBjHW9kR%2B98Rc6r4aNyu50jiA2PGhvykw1_OhnBfMVr5&NEWSLETTER_CODE=YTR-X&BRAND_CODE=YTR&SOURCE_CODE=RRL"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/plugins/keystone-newsletter/widget/js/widget.js?ver=1574936319'></script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-includes/js/wp-embed.min.js?ver=NC45Ljc'></script>
+		<script>
+			(function(){
+				var n='scr'+'ipt',p=document.getElementsByTagName(n)[0],s=document.createElement(n);
+				s.async=true;
+				s.src='https://ksassets.timeincuk.net/tenant/1.0.64/tenant.min.js'
+				p.parentNode.insertBefore(s,p);
+			})();
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			window.tenantGetterQueue = window.tenantGetterQueue || [];
+			window.tenantSetterQueue = window.tenantSetterQueue || [];
+		</script>
+		<div id="dfpad-overlay" class="ipc-advert"></div><div id="gumgum" class="ipc-advert"></div><div id="sovrn" class="ipc-advert"></div><div id="instream" class="ipc-advert"></div>
+	
+</div><!-- /wrapper -->
+
+
+	
+	
+	<script>
+    	let _ks_modules = [
+    		'billboard',
+            'navigation',
+            'objectFit',
+            'sharethroughListener',
+            'select2',
+        ];
+	</script>
+
+
+	<script>
+
+		_ks_modules.push('featuredVideo');
+		_ks_modules.push('kiara');
+        
+	</script>
+
+
+
+	<script>
+
+		_ks_modules.push('reviews');
+		_ks_modules.push('featuredVideo');
+		_ks_modules.push('multimediaGallery');
+        
+	</script>
+
+
+
+	<script>
+        for (let i = 0; i < _ks_modules.length; i++) {
+            let module = window[_ks_modules[i]];
+            if (typeof module !== 'undefined' && typeof module.init === 'function') {
+                module.init();
+            }
+        }
+	</script>
+
+
+	<div class="textwidget custom-html-widget"></div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"aaccaa7fff","applicationID":"19797352,9562757,45889822","transactionName":"YgNVYEcAXhJYBUQNXFtJdldBCF8PFhVZClRZAw==","queueTime":0,"applicationTime":1636,"atts":"TkRCFg8aTU0bBxJeSEgb","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

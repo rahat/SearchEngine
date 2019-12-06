@@ -28,7 +28,7 @@ public class InvertedIndex {
      */
     private void setStopwords() {
         try {
-            stopwords = Files.readAllLines(Paths.get("./stopwords"), StandardCharsets.UTF_8);
+            stopwords = Files.readAllLines(Paths.get("./stopwords.txt"), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,8 +50,8 @@ public class InvertedIndex {
                 String line;
                 while ((line = br.readLine()) != null) {
 
-                    // Strip HTML
-                    line = line.replaceAll("\\<.*?\\>", "");
+                    // Strip HTML, JS
+                    line = line.replaceAll("\\<.*?\\>", "").replaceAll("<script>(.*)</script>", "");
 
                     // Strip Punctuation, Convert Word to Lowercase, Split by Whitespace
                     String[] tokens = line.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");

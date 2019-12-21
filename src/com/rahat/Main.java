@@ -13,7 +13,7 @@ public class Main extends Application {
         // UI Initialization
         Parent root = FXMLLoader.load(getClass().getResource("SearchEngine.fxml"));
         primaryStage.setTitle("Search Engine");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
     }
 

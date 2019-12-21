@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Regular.ttf');
+}
+
+.root {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Roboto", sans-serif;
+    -fx-background: #FFFFFF;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    padding: 10px;
+}
+
+a {
+    color: #2B65EC;
+    text-decoration: none;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: #595959;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.button {
+    -fx-border-color: #8c8c8c;
+    -fx-border-width: 0.05em;
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Roboto", sans-serif;
+    -fx-font-size: 12pt;
+}
+
+.button:pressed {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #BCBCBC;
+    -fx-background-radius: 1em;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-padding: 0;
+}
+
+.text-field {
+    -fx-border-color: #8c8c8c;
+    -fx-border-width: 0.05em;
+}
+
+#header {
+    -fx-background-image: url(pattern-550px.jpg);
+    -fx-effect: dropshadow(three-pass-box, grey, 0, 0, 0, 1);
+    -fx-padding: 0.5em;
+}
